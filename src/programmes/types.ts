@@ -1,6 +1,6 @@
 /**
  * Thin multi-programme shell contract.
- * Phase 1 ships MSBA only; future programmes (e.g. MGM) plug in here.
+ * Build selects one active pack via PROGRAMME=msba|mgm.
  */
 export type ProgrammeId = 'msba' | 'mgm'
 
@@ -25,6 +25,17 @@ export interface ProgrammeStorageKeys {
   icsExportFormat: string
 }
 
+export interface ProgrammeStudyStatusConfig {
+  /** Regex source for course codes in Study Status paste (without flags). */
+  courseCodePattern: string
+}
+
+export interface ProgrammeIcsConfig {
+  prodId: string
+  uidDomain: string
+  filename: string
+}
+
 export interface ProgrammeConfig {
   id: ProgrammeId
   /** Short display name, e.g. MSc(BA) */
@@ -41,11 +52,13 @@ export interface ProgrammeConfig {
   moduleNumbers: readonly number[]
   /** Stream ids used in requirements.json */
   streamIds: readonly string[]
-  /** Public JSON paths relative to BASE_URL */
+  /** Public JSON paths relative to BASE_URL (programme publicDir root) */
   coursesDataPath: string
   requirementsDataPath: string
   storage: ProgrammeStorageKeys
   features: ProgrammeFeatureFlags
   /** Programme Office sync stamp (HKT) */
   dataSync: { display: string; iso: string }
+  studyStatus: ProgrammeStudyStatusConfig
+  ics: ProgrammeIcsConfig
 }

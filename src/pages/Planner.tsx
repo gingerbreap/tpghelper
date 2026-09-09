@@ -1,23 +1,27 @@
-import { useMemo, useState, useEffect, useCallback } from 'react'
+import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import ConflictNotices from '../components/ConflictNotices'
 import CourseDetailModal from '../components/CourseDetailModal'
 import PlannerCalendar from '../components/PlannerCalendar'
 import StreamTagBadges from '../components/StreamTagBadges'
 import TeachingPlanUpdateNotice from '../components/TeachingPlanUpdateNotice'
+import TimeBadge from '../components/TimeBadge'
 import WeekdayStrip from '../components/WeekdayStrip'
 import { useI18n } from '../i18n/context'
 import { useCourses, useRequirements } from '../hooks/useCoursesData'
-import { useSelections } from '../hooks/useSelections'
+import { groupBackupByType, useBackupSelections } from '../hooks/useBackupSelections'
+import {
+  countEffectiveSelections,
+  getModuleConflict,
+  getSameCourseBlockReason,
+  sortSelectionsForDisplay,
+  useSelections,
+} from '../hooks/useSelections'
 import { useWishlist } from '../hooks/useWishlist'
+import { getActiveProgramme } from '../programmes'
 import { buildCalendarEvents } from '../utils/calendarEvents'
 import { detectConflicts } from '../utils/conflicts'
 import { formatSectionInstructors } from '../utils/instructors'
 import type { Course, SelectedSection } from '../types'
-
-function TimeBadge({ bucket }: { bucket: string }) {
-  const cls = bucket === 'AM' ? 'badge-am' : bucket === 'PM' ? 'badge-pm' : 'badge-nt'
-  return <span className={`badge ${cls}`}>{bucket}</span>
-}
 
 function itemKey(s: SelectedSection): string {
   return `${s.courseCode}-M${s.module}-${s.sectionId}`
@@ -28,7 +32,7 @@ function catalogNumber(courseCode: string): number {
   return match ? Number(match[1]) : Number.POSITIVE_INFINITY
 }
 
-function compareSelections(a: SelectedSection, b: SelectedSection): number {
+function compareSelectionsMsba(a: SelectedSection, b: SelectedSection): number {
   if (a.module !== b.module) return b.module - a.module
   const numA = catalogNumber(a.courseCode)
   const numB = catalogNumber(b.courseCode)
@@ -38,9 +42,18 @@ function compareSelections(a: SelectedSection, b: SelectedSection): number {
 
 export default function Planner() {
   const { t, sectionLabel } = useI18n()
+  const programme = getActiveProgramme()
+  const modules = programme.moduleNumbers
+  const useBackup = programme.features.backupSelections
+  const useWishlistFeature = programme.features.wishlist
+
   const { courses, loading } = useCourses()
   const requirements = useRequirements()
-  const { selections, toggle, isSelected, getForCourseCode, clear, replace } = useSelections()
+  const enrollmentRules = programme.features.enrollmentRules
+    ? (requirements?.enrollmentRules ?? [])
+    : []
+  const { selections, toggle, isSelected, getForCourseCode, clear, replace } =
+    useSelections(enrollmentRules)
   const {
     wishlist,
     toggle: toggleWishlist,
@@ -49,34 +62,55 @@ export default function Planner() {
     isInWishlist,
     clear: clearWishlist,
   } = useWishlist()
+  const {
+    backup,
+    toggle: toggleBackup,
+    remove: removeBackup,
+    isBackup,
+    reorder: reorderBackup,
+  } = useBackupSelections()
+
   const [tab, setTab] = useState<'selected' | 'browse'>('selected')
   const [duplicateMsg, setDuplicateMsg] = useState<string | null>(null)
   const [detailCode, setDetailCode] = useState<string | null>(null)
   const [dragFrom, setDragFrom] = useState<number | null>(null)
   const [dragOver, setDragOver] = useState<number | null>(null)
+  const dragRef = useRef<{ type: string; index: number } | null>(null)
+  const [dragSource, setDragSource] = useState<{ type: string; index: number } | null>(null)
+  const [backupDragOver, setBackupDragOver] = useState<{ type: string; index: number } | null>(null)
 
   useEffect(() => {
     if (!duplicateMsg) return
-    const t = window.setTimeout(() => setDuplicateMsg(null), 4000)
-    return () => window.clearTimeout(t)
+    const timer = window.setTimeout(() => setDuplicateMsg(null), 4000)
+    return () => window.clearTimeout(timer)
   }, [duplicateMsg])
 
   const handleToggle = useCallback((s: SelectedSection) => {
     const result = toggle(s)
     if (result === 'duplicate') {
-      const existing = getForCourseCode(s.courseCode)
-      if (existing) {
+      if (programme.features.enrollmentRules) {
         setDuplicateMsg(
           t('planner.duplicateBrowse', {
             code: s.courseCode,
-            section: existing.sectionId,
-            module: existing.module,
+            section: selections.find(x => x.courseCode === s.courseCode)?.sectionId ?? s.sectionId,
+            module: selections.find(x => x.courseCode === s.courseCode)?.module ?? s.module,
           }),
         )
+      } else {
+        const existing = getForCourseCode(s.courseCode)
+        if (existing) {
+          setDuplicateMsg(
+            t('planner.duplicateBrowse', {
+              code: s.courseCode,
+              section: existing.sectionId,
+              module: existing.module,
+            }),
+          )
+        }
       }
     }
     return result
-  }, [toggle, getForCourseCode, t])
+  }, [toggle, getForCourseCode, t, programme.features.enrollmentRules, selections])
 
   const promoteFromWishlist = useCallback((s: SelectedSection) => {
     if (isSelected(s.courseCode, s.module, s.sectionId)) {
@@ -98,18 +132,103 @@ export default function Planner() {
     removeWishlist(s)
   }, [isSelected, getForCourseCode, toggle, removeWishlist, t])
 
+  const promoteFromBackup = useCallback((s: SelectedSection) => {
+    if (isSelected(s.courseCode, s.module, s.sectionId)) {
+      removeBackup(s)
+      return
+    }
+
+    const sameCourseBlock = getSameCourseBlockReason(
+      s.courseCode,
+      s.module,
+      s.sectionId,
+      selections,
+      enrollmentRules,
+    )
+    const moduleConflict = getModuleConflict(
+      s.courseCode,
+      s.module,
+      selections,
+      enrollmentRules,
+    )
+
+    if (sameCourseBlock) {
+      const existing = selections.find(x => x.courseCode === s.courseCode)
+      setDuplicateMsg(
+        t('planner.duplicateWishlist', {
+          code: s.courseCode,
+          section: existing?.sectionId ?? s.sectionId,
+          module: existing?.module ?? s.module,
+        }),
+      )
+      return
+    }
+    if (moduleConflict) {
+      setDuplicateMsg(`「${s.courseCode}」${moduleConflict.message}`)
+      return
+    }
+
+    const result = toggle(s)
+    if (result === 'added') {
+      removeBackup(s)
+    } else if (result === 'duplicate') {
+      setDuplicateMsg(
+        t('planner.duplicateWishlist', {
+          code: s.courseCode,
+          section: s.sectionId,
+          module: s.module,
+        }),
+      )
+    }
+  }, [isSelected, removeBackup, selections, enrollmentRules, toggle, t])
+
   const conflicts = useMemo(() => detectConflicts(selections, courses), [selections, courses])
   const calendarEvents = useMemo(() => buildCalendarEvents(selections, courses), [selections, courses])
 
+  const sortedSelections = useMemo(
+    () => (useBackup ? sortSelectionsForDisplay(selections) : [...selections].sort(compareSelectionsMsba)),
+    [selections, useBackup],
+  )
+
+  const selectionsByType = useMemo(() => {
+    const order = ['Core', 'Elective', 'Capstone'] as const
+    return order
+      .map(type => ({
+        type,
+        items: sortedSelections.filter(s => s.courseType === type),
+      }))
+      .filter(group => group.items.length > 0)
+  }, [sortedSelections])
+
+  const backupByType = useMemo(() => groupBackupByType(backup), [backup])
+
+  const effectiveCount = useMemo(
+    () => countEffectiveSelections(selections, enrollmentRules),
+    [selections, enrollmentRules],
+  )
+
   const stats = useMemo(() => {
+    if (useBackup) {
+      const countType = (type: string) =>
+        countEffectiveSelections(
+          selections.filter(s => s.courseType === type),
+          enrollmentRules,
+        )
+      return {
+        core: countType('Core'),
+        elective: countType('Elective'),
+        capstone: countType('Capstone'),
+        total: effectiveCount,
+      }
+    }
     const core = selections.filter(s => s.courseType === 'Core').length
     const elective = selections.filter(s => s.courseType === 'Elective').length
     const capstone = selections.filter(s => s.courseType === 'Capstone').length
     return { core, elective, capstone, total: selections.length }
-  }, [selections])
+  }, [selections, enrollmentRules, effectiveCount, useBackup])
 
   const streamCompletion = useMemo(() => {
-    if (!requirements) return null
+    if (!requirements?.streams.AI || !requirements?.streams.MC) return null
     const codes = new Set(selections.map(s => s.courseCode))
     const ai = requirements.streams.AI
     const mc = requirements.streams.MC
@@ -120,26 +239,68 @@ export default function Planner() {
     return { listA, listB, listC, listD }
   }, [selections, requirements])
 
+  const esgCompletion = useMemo(() => {
+    if (!requirements?.streams.ESG) return null
+    const esg = requirements.streams.ESG
+    const esgCourses = esg.courses ?? []
+    const minRequired = esg.minRequired ?? 3
+    const codes = new Set(selections.map(s => s.courseCode))
+    const count = esgCourses.filter(c => codes.has(c)).length
+    return { count, minRequired }
+  }, [selections, requirements])
+
   const grouped = useMemo(() => {
     const map: Record<number, Course[]> = {}
     for (const c of courses) (map[c.module] ||= []).push(c)
     return map
   }, [courses])
 
-  const displayedSelections = useMemo(
-    () => [...selections].sort(compareSelections),
-    [selections],
-  )
-
   const findCourse = (courseCode: string, module: number) =>
     courses.find(c => c.courseCode === courseCode && c.module === module)
 
   const findSection = (courseCode: string, module: number, sectionId: string) =>
-    courses
-      .find(c => c.courseCode === courseCode && c.module === module)
-      ?.sections.find(s => s.sectionId === sectionId)
+    findCourse(courseCode, module)?.sections.find(s => s.sectionId === sectionId)
+
+  const tabSelectedCount = useBackup && effectiveCount !== selections.length
+    ? `${effectiveCount} · ${selections.length}`
+    : useBackup
+      ? effectiveCount
+      : selections.length
 
   if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
+
+  const renderSelectionRow = (s: SelectedSection) => {
+    const sec = findSection(s.courseCode, s.module, s.sectionId)
+    const course = findCourse(s.courseCode, s.module)
+    const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
+    return (
+      <div className="selection-item" key={itemKey(s)}>
+        <div
+          className="selection-item-main"
+          role="button"
+          tabIndex={0}
+          onClick={() => setDetailCode(s.courseCode)}
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
+            <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
+            {sec && <TimeBadge bucket={sec.timeBucket} />}
+            {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
+            {!useBackup && (
+              <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
+                {s.courseType}
+              </span>
+            )}
+            {course && <StreamTagBadges tags={course.streamTags} />}
+          </div>
+          <div style={{ fontSize: 13, color: '#5f6368' }}>
+            {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+          </div>
+        </div>
+        <button className="remove-btn" onClick={() => handleToggle(s)}>{t('common.remove')}</button>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -166,7 +327,20 @@ export default function Planner() {
         </div>
       </div>
 
-      {streamCompletion && (
+      {esgCompletion && (
+        <div className="card" style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>{t('planner.streamProgress')}</div>
+          <div style={{ fontSize: 13 }}>
+            <strong>{t('planner.streamEsg')}</strong>
+            <span className={esgCompletion.count >= esgCompletion.minRequired ? 'check-icon' : 'cross-icon'}>
+              {esgCompletion.count >= esgCompletion.minRequired ? '✓' : '✗'}
+            </span>{' '}
+            {esgCompletion.count}/{esgCompletion.minRequired}
+          </div>
+        </div>
+      )}
+
+      {!esgCompletion && streamCompletion && (
         <div className="card" style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>{t('planner.streamProgress')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13 }}>
@@ -210,7 +384,7 @@ export default function Planner() {
 
       <div className="tabs">
         <button className={`tab ${tab === 'selected' ? 'active' : ''}`} onClick={() => setTab('selected')}>
-          {t('planner.tabSelected', { count: selections.length })}
+          {t('planner.tabSelected', { count: tabSelectedCount })}
         </button>
         <button className={`tab ${tab === 'browse' ? 'active' : ''}`} onClick={() => setTab('browse')}>
           {t('planner.tabBrowse')}
@@ -224,38 +398,24 @@ export default function Planner() {
               <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
                 {t('planner.emptySelected')}
               </div>
+            ) : useBackup ? (
+              <>
+                {selectionsByType.map(group => (
+                  <div className="selection-group" key={group.type}>
+                    <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
+                      <span>{group.type}</span>
+                      <span className="selection-group-count">{group.items.length}</span>
+                    </div>
+                    {group.items.map(renderSelectionRow)}
+                  </div>
+                ))}
+                <div style={{ padding: 12, textAlign: 'right' }}>
+                  <button className="remove-btn" onClick={clear}>{t('planner.clearAll')}</button>
+                </div>
+              </>
             ) : (
               <>
-                {displayedSelections.map(s => {
-                  const sec = findSection(s.courseCode, s.module, s.sectionId)
-                  const course = findCourse(s.courseCode, s.module)
-                  const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
-                  return (
-                    <div className="selection-item" key={itemKey(s)}>
-                      <div
-                        className="selection-item-main"
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => setDetailCode(s.courseCode)}
-                        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
-                          <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
-                          {sec && <TimeBadge bucket={sec.timeBucket} />}
-                          {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
-                          <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
-                            {s.courseType}
-                          </span>
-                          {course && <StreamTagBadges tags={course.streamTags} />}
-                        </div>
-                        <div style={{ fontSize: 13, color: '#5f6368' }}>
-                          {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
-                        </div>
-                      </div>
-                      <button className="remove-btn" onClick={() => handleToggle(s)}>{t('common.remove')}</button>
-                    </div>
-                  )
-                })}
+                {sortedSelections.map(renderSelectionRow)}
                 <div style={{ padding: 12, textAlign: 'right' }}>
                   <button className="remove-btn" onClick={clear}>{t('planner.clearAll')}</button>
                 </div>
@@ -263,99 +423,210 @@ export default function Planner() {
             )}
           </div>
 
-          <div className="wishlist-section">
-            <div className="wishlist-header">
-              <span>
-                {t('planner.wishlistTitle', { count: wishlist.length })}
-                <span className="wishlist-hint">{t('planner.wishlistHint')}</span>
-              </span>
-              {wishlist.length > 0 && (
-                <button className="remove-btn" onClick={clearWishlist}>{t('planner.clearWishlist')}</button>
-              )}
-            </div>
-            <div className="card" style={{ padding: 0 }}>
-              {wishlist.length === 0 ? (
-                <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
-                  {t('planner.emptyWishlist')}
-                </div>
-              ) : (
-                wishlist.map((s, index) => {
-                  const sec = findSection(s.courseCode, s.module, s.sectionId)
-                  const course = findCourse(s.courseCode, s.module)
-                  const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
-                  return (
-                    <div
-                      className={`selection-item wishlist-item ${dragFrom === index ? 'dragging' : ''} ${dragOver === index ? 'drag-over' : ''}`}
-                      key={itemKey(s)}
-                      onDragOver={e => {
-                        e.preventDefault()
-                        if (dragOver !== index) setDragOver(index)
-                      }}
-                      onDrop={e => {
-                        e.preventDefault()
-                        if (dragFrom !== null && dragFrom !== index) reorder(dragFrom, index)
-                        setDragFrom(null)
-                        setDragOver(null)
-                      }}
-                      onDragEnd={() => {
-                        setDragFrom(null)
-                        setDragOver(null)
-                      }}
-                    >
-                      <div className="wishlist-actions">
-                        <span
-                          className="drag-handle"
-                          title={t('planner.dragSort')}
-                          draggable
-                          onDragStart={e => {
-                            setDragFrom(index)
-                            e.dataTransfer.effectAllowed = 'move'
-                            e.dataTransfer.setData('text/plain', String(index))
-                          }}
-                          onClick={e => e.stopPropagation()}
-                        >
-                          ⋮⋮
-                        </span>
-                        <button
-                          className="select-btn"
-                          onClick={() => promoteFromWishlist(s)}
-                        >
-                          {t('planner.select')}
-                        </button>
-                      </div>
+          {useWishlistFeature && (
+            <div className="wishlist-section">
+              <div className="wishlist-header">
+                <span>
+                  {t('planner.wishlistTitle', { count: wishlist.length })}
+                  <span className="wishlist-hint">{t('planner.wishlistHint')}</span>
+                </span>
+                {wishlist.length > 0 && (
+                  <button className="remove-btn" onClick={clearWishlist}>{t('planner.clearWishlist')}</button>
+                )}
+              </div>
+              <div className="card" style={{ padding: 0 }}>
+                {wishlist.length === 0 ? (
+                  <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
+                    {t('planner.emptyWishlist')}
+                  </div>
+                ) : (
+                  wishlist.map((s, index) => {
+                    const sec = findSection(s.courseCode, s.module, s.sectionId)
+                    const course = findCourse(s.courseCode, s.module)
+                    const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
+                    return (
                       <div
-                        className="selection-item-main"
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => setDetailCode(s.courseCode)}
-                        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
+                        className={`selection-item wishlist-item ${dragFrom === index ? 'dragging' : ''} ${dragOver === index ? 'drag-over' : ''}`}
+                        key={itemKey(s)}
+                        onDragOver={e => {
+                          e.preventDefault()
+                          if (dragOver !== index) setDragOver(index)
+                        }}
+                        onDrop={e => {
+                          e.preventDefault()
+                          if (dragFrom !== null && dragFrom !== index) reorder(dragFrom, index)
+                          setDragFrom(null)
+                          setDragOver(null)
+                        }}
+                        onDragEnd={() => {
+                          setDragFrom(null)
+                          setDragOver(null)
+                        }}
                       >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
-                          <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
-                          {sec && <TimeBadge bucket={sec.timeBucket} />}
-                          {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
-                          <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
-                            {s.courseType}
+                        <div className="wishlist-actions">
+                          <span
+                            className="drag-handle"
+                            title={t('planner.dragSort')}
+                            draggable
+                            onDragStart={e => {
+                              setDragFrom(index)
+                              e.dataTransfer.effectAllowed = 'move'
+                              e.dataTransfer.setData('text/plain', String(index))
+                            }}
+                            onClick={e => e.stopPropagation()}
+                          >
+                            ⋮⋮
                           </span>
-                          {course && <StreamTagBadges tags={course.streamTags} />}
+                          <button
+                            className="select-btn"
+                            onClick={() => promoteFromWishlist(s)}
+                          >
+                            {t('planner.select')}
+                          </button>
                         </div>
-                        <div style={{ fontSize: 13, color: '#5f6368' }}>
-                          {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+                        <div
+                          className="selection-item-main"
+                          role="button"
+                          tabIndex={0}
+                          onClick={() => setDetailCode(s.courseCode)}
+                          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
+                            <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
+                            {sec && <TimeBadge bucket={sec.timeBucket} />}
+                            {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
+                            <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
+                              {s.courseType}
+                            </span>
+                            {course && <StreamTagBadges tags={course.streamTags} />}
+                          </div>
+                          <div style={{ fontSize: 13, color: '#5f6368' }}>
+                            {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+                          </div>
                         </div>
+                        <button className="remove-btn" onClick={() => removeWishlist(s)}>{t('common.remove')}</button>
                       </div>
-                      <button className="remove-btn" onClick={() => removeWishlist(s)}>{t('common.remove')}</button>
-                    </div>
-                  )
-                })
-              )}
+                    )
+                  })
+                )}
+              </div>
             </div>
-          </div>
+          )}
+
+          {useBackup && (
+            <div className="backup-section">
+              <div className="wishlist-header">
+                <span>
+                  {t('planner.wishlistTitle', { count: backup.length })}
+                  <span className="wishlist-hint">{t('planner.wishlistHint')}</span>
+                </span>
+              </div>
+              <div className="card" style={{ padding: 0 }}>
+                {backup.length === 0 ? (
+                  <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
+                    {t('planner.emptyWishlist')}
+                  </div>
+                ) : (
+                  backupByType.map(group => (
+                    <div className="selection-group" key={`backup-${group.type}`}>
+                      <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
+                        <span>{group.type}</span>
+                        <span className="selection-group-count">{group.items.length}</span>
+                      </div>
+                      {group.items.map((s, index) => {
+                        const sec = findSection(s.courseCode, s.module, s.sectionId)
+                        const course = findCourse(s.courseCode, s.module)
+                        const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
+                        const isDragging =
+                          dragSource?.type === group.type && dragSource?.index === index
+                        const isDragOver =
+                          backupDragOver?.type === group.type && backupDragOver?.index === index
+                        return (
+                          <div
+                            className={`selection-item${isDragging ? ' dragging' : ''}${isDragOver ? ' drag-over' : ''}`}
+                            key={`backup-${itemKey(s)}`}
+                            draggable
+                            onDragStart={e => {
+                              const src = { type: group.type, index }
+                              dragRef.current = src
+                              setDragSource(src)
+                              e.dataTransfer.effectAllowed = 'move'
+                              e.dataTransfer.setData('text/plain', `${group.type}:${index}`)
+                            }}
+                            onDragEnd={() => {
+                              dragRef.current = null
+                              setDragSource(null)
+                              setBackupDragOver(null)
+                            }}
+                            onDragOver={e => {
+                              e.preventDefault()
+                              e.dataTransfer.dropEffect = 'move'
+                              if (dragRef.current?.type !== group.type) return
+                              setBackupDragOver({ type: group.type, index })
+                            }}
+                            onDragLeave={() => {
+                              setBackupDragOver(prev =>
+                                prev?.type === group.type && prev.index === index ? null : prev,
+                              )
+                            }}
+                            onDrop={e => {
+                              e.preventDefault()
+                              const from = dragRef.current
+                              setBackupDragOver(null)
+                              setDragSource(null)
+                              dragRef.current = null
+                              if (!from || from.type !== group.type) return
+                              reorderBackup(group.type, from.index, index)
+                            }}
+                          >
+                            <span
+                              className="drag-handle"
+                              title={t('planner.dragSort')}
+                              aria-label={t('planner.dragSort')}
+                              onClick={e => e.stopPropagation()}
+                            >
+                              ⠿
+                            </span>
+                            <div
+                              className="selection-item-main"
+                              role="button"
+                              tabIndex={0}
+                              onClick={() => setDetailCode(s.courseCode)}
+                              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
+                                <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
+                                {sec && <TimeBadge bucket={sec.timeBucket} />}
+                                {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
+                                {course && <StreamTagBadges tags={course.streamTags} />}
+                              </div>
+                              <div style={{ fontSize: 13, color: '#5f6368' }}>
+                                {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+                              </div>
+                            </div>
+                            <div className="selection-item-actions">
+                              <button className="promote-btn" onClick={() => promoteFromBackup(s)}>
+                                {t('planner.select')}
+                              </button>
+                              <button className="remove-btn" onClick={() => removeBackup(s)}>
+                                {t('common.remove')}
+                              </button>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
         </>
       )}
 
       {tab === 'browse' && (
         <div>
-          {[1, 2, 3, 4, 5].map(mod => (
+          {modules.map(mod => (
             <div key={mod}>
               <div className="module-header">Module {mod}</div>
               {(grouped[mod] || []).map(course => (
@@ -376,10 +647,7 @@ export default function Planner() {
                   </div>
                   {course.sections.map(sec => {
                     const sel = isSelected(course.courseCode, course.module, sec.sectionId)
-                    const existingForCode = getForCourseCode(course.courseCode)
-                    const blockedByDuplicate = !!existingForCode && !sel
                     const instructorLabel = formatSectionInstructors(sec)
-                    const inWishlist = isInWishlist(course.courseCode, course.module, sec.sectionId)
                     const candidate: SelectedSection = {
                       courseCode: course.courseCode,
                       courseTitle: course.courseTitle,
@@ -388,12 +656,41 @@ export default function Planner() {
                       sectionId: sec.sectionId,
                       instructor: instructorLabel,
                     }
-                    const duplicateHint = blockedByDuplicate && existingForCode
-                      ? t('planner.duplicateHint', {
-                          section: existingForCode.sectionId,
-                          module: existingForCode.module,
-                        })
-                      : undefined
+
+                    let blocked = false
+                    let blockHint: string | undefined
+                    if (programme.features.enrollmentRules) {
+                      const sameCourseBlock = getSameCourseBlockReason(
+                        course.courseCode,
+                        course.module,
+                        sec.sectionId,
+                        selections,
+                        enrollmentRules,
+                        sel,
+                      )
+                      const moduleConflict = getModuleConflict(
+                        course.courseCode,
+                        course.module,
+                        selections,
+                        enrollmentRules,
+                      )
+                      blocked = !!sameCourseBlock || (!!moduleConflict && !sel)
+                      blockHint = sameCourseBlock ?? moduleConflict?.message ?? undefined
+                    } else {
+                      const existingForCode = getForCourseCode(course.courseCode)
+                      blocked = !!existingForCode && !sel
+                      blockHint = blocked && existingForCode
+                        ? t('planner.duplicateHint', {
+                            section: existingForCode.sectionId,
+                            module: existingForCode.module,
+                          })
+                        : undefined
+                    }
+
+                    const inAlt = useBackup
+                      ? isBackup(course.courseCode, course.module, sec.sectionId)
+                      : isInWishlist(course.courseCode, course.module, sec.sectionId)
+
                     return (
                       <div key={sec.sectionId} className="section-row" style={{ justifyContent: 'space-between' }}>
                         <div
@@ -408,25 +705,34 @@ export default function Planner() {
                           <TimeBadge bucket={sec.timeBucket} />
                           <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />
                           <span style={{ fontSize: 13 }}>{instructorLabel}</span>
-                          {duplicateHint && (
-                            <span className="duplicate-hint">{duplicateHint}</span>
+                          {blockHint && (
+                            <span className="duplicate-hint">{blockHint}</span>
                           )}
                         </div>
-                        <div className="section-actions">
+                        <div className={useBackup ? 'section-row-actions' : 'section-actions'}>
                           <button
-                            className={`select-btn ${sel ? 'selected' : ''} ${blockedByDuplicate ? 'disabled' : ''}`}
-                            disabled={blockedByDuplicate}
-                            title={duplicateHint}
+                            className={`select-btn ${sel ? 'selected' : ''} ${blocked ? 'disabled' : ''}`}
+                            disabled={blocked}
+                            title={blockHint}
                             onClick={() => handleToggle(candidate)}
                           >
-                            {sel ? t('planner.selected') : blockedByDuplicate ? t('planner.blocked') : t('planner.select')}
+                            {sel ? t('planner.selected') : blocked ? t('planner.blocked') : t('planner.select')}
                           </button>
-                          <button
-                            className={`alt-btn ${inWishlist ? 'in-wishlist' : ''}`}
-                            onClick={() => toggleWishlist(candidate)}
-                          >
-                            {inWishlist ? t('planner.inWishlist') : t('planner.addWishlist')}
-                          </button>
+                          {useBackup ? (
+                            <button
+                              className={`backup-btn ${inAlt ? 'in-backup' : ''}`}
+                              onClick={() => toggleBackup(candidate)}
+                            >
+                              {inAlt ? t('planner.inWishlist') : t('planner.addWishlist')}
+                            </button>
+                          ) : (
+                            <button
+                              className={`alt-btn ${inAlt ? 'in-wishlist' : ''}`}
+                              onClick={() => toggleWishlist(candidate)}
+                            >
+                              {inAlt ? t('planner.inWishlist') : t('planner.addWishlist')}
+                            </button>
+                          )}
                         </div>
                       </div>
                     )

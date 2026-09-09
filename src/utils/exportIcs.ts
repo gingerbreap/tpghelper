@@ -1,5 +1,8 @@
 import type { CalendarEvent } from './calendarEvents'
 import { applyIcsEventTemplates, type IcsFormatTemplates } from './icsFormat'
+import { getActiveProgramme } from '../programmes'
+
+const icsMeta = getActiveProgramme().ics
 
 const CRLF = '\r\n'
 
@@ -51,7 +54,7 @@ export function buildIcsContent(
   const lines: string[] = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//HKUBS MSc(BA) Course Planner//CN',
+    `PRODID:${icsMeta.prodId}`,
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
   ]
@@ -60,7 +63,7 @@ export function buildIcsContent(
     const { summary, description } = applyIcsEventTemplates(templates, ev)
 
     lines.push('BEGIN:VEVENT')
-    lines.push(`UID:${ev.id}@hkubs-ba-planner`)
+    lines.push(`UID:${ev.id}@${icsMeta.uidDomain}`)
     lines.push(`DTSTAMP:${stamp}`)
     if (isTimed(ev)) {
       lines.push(`DTSTART:${toIcsLocalDateTime(ev.date, ev.startTime)}`)
@@ -79,7 +82,7 @@ export function buildIcsContent(
   return lines.join(CRLF) + CRLF
 }
 
-export function downloadIcs(content: string, filename = 'hkubs-ba-planner.ics'): void {
+export function downloadIcs(content: string, filename = icsMeta.filename): void {
   const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' })
   const url = URL.createObjectURL(blob)
   const anchor = document.createElement('a')

@@ -3,15 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useCourses } from '../hooks/useCoursesData'
 import WeekdayStrip from '../components/WeekdayStrip'
 import StreamTagBadges from '../components/StreamTagBadges'
+import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
+import { getActiveProgramme } from '../programmes'
 import { formatSectionInstructors } from '../utils/instructors'
 import { timetableExamLine } from '../utils/exams'
 import type { Course, Section } from '../types'
-
-function TimeBadge({ bucket }: { bucket: string }) {
-  const cls = bucket === 'AM' ? 'badge-am' : bucket === 'PM' ? 'badge-pm' : 'badge-nt'
-  return <span className={`badge ${cls}`}>{bucket}</span>
-}
 
 function TypeBadge({ type }: { type: string }) {
   const cls = type === 'Core' ? 'badge-core' : type === 'Capstone' ? 'badge-capstone' : 'badge-elective'
@@ -97,6 +94,7 @@ function CourseCard({ course, sectionLabel, formatSessionCount }: {
 export default function Timetable() {
   const { t, sectionLabel } = useI18n()
   const { courses, loading } = useCourses()
+  const modules = getActiveProgramme().moduleNumbers
 
   const grouped = useMemo(() => {
     const map: Record<number, Course[]> = {}
@@ -108,22 +106,14 @@ export default function Timetable() {
 
   if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
 
-  const moduleNames: Record<number, string> = {
-    1: t('timetable.module1'),
-    2: t('timetable.module2'),
-    3: t('timetable.module3'),
-    4: t('timetable.module4'),
-    5: t('timetable.module5'),
-  }
-
   const formatSessionCount = (count: number) => t('timetable.sessionCount', { count })
 
   return (
     <div>
       <h1 className="page-title">{t('timetable.title')}</h1>
-      {[1, 2, 3, 4, 5].map(mod => (
+      {modules.map(mod => (
         <div key={mod}>
-          <div className="module-header">{moduleNames[mod]}</div>
+          <div className="module-header">{t(`timetable.module${mod}`)}</div>
           {(grouped[mod] || []).map(c => (
             <CourseCard
               key={`${c.courseCode}-${c.module}`}

@@ -1,10 +1,13 @@
 # Teaching Plan 日程改动检查清单
 
-以后每次 Programme Office 下发新 Teaching Plan 时，按本文操作。新旧 PDF **统一放在本目录**，文件名带日期后缀，便于对照。
+以后每次 Programme Office 下发新 Teaching Plan 时，按本文操作。新旧 PDF **统一放在对应 programme 的 public 目录**，文件名带日期后缀，便于对照。本目录仅保留操作说明。
 
 ## 1. 文件位置与命名
 
-目录：`src/teachingPlan/`
+| Programme | PDF 目录 |
+|-----------|----------|
+| MSBA | `public/msba/teachingPlan/` |
+| MGM | `public/mgm/teachingPlan/` |
 
 | 角色 | 命名示例 |
 |------|----------|
@@ -40,14 +43,14 @@ PO 的 Teaching Plan 用 **红色** 标出相对上一版的改动。检查时�
 
 | 内容 | 文件 |
 |------|------|
-| 课表事实（日期/时间/教室/TUT） | `public/courses.json` |
-| 选课页更新通知（表格数据） | `src/data/teachingPlanUpdates.ts` |
-| 通知 / 日历 / 关于文案 | `src/i18n/locales/{zh-CN,zh-HK,en}.ts` |
+| 课表事实（日期/时间/教室/TUT） | `public/{msba\|mgm}/courses.json` |
+| 选课页更新通知（表格数据） | `src/programmes/{msba\|mgm}/teachingPlanUpdates.ts` |
+| 通知 / 日历 / 关于文案 | `src/i18n/locales/*` + `src/programmes/mgm/locales/*`（MGM 覆盖） |
 | 通知 UI（影响摘要 + 明细） | `src/components/TeachingPlanUpdateNotice.tsx` |
 | 存档页卡片正文 | `src/components/TeachingPlanNoticeBody.tsx`、`src/pages/TeachingPlanArchive.tsx` |
 | 日历改动叠加 | `src/utils/teachingPlanImpact.ts`、`src/components/PlannerCalendar.tsx` |
 | 已读持久化 | `src/utils/teachingPlanDismiss.ts` |
-| 数据最后同步时间（关于页） | `src/utils/appMeta.ts` → `DATA_SYNC_HKT` |
+| 数据最后同步时间（关于页） | `src/programmes/{msba\|mgm}/index.ts` → `dataSync` |
 
 通知约定：
 
@@ -100,15 +103,15 @@ PO 的 Teaching Plan 用 **红色** 标出相对上一版的改动。检查时�
 
 ## 5. 推荐操作顺序（给 Agent / 维护者）
 
-1. 将新 PDF 拷入 `src/teachingPlan/`，确认旧版仍在同目录。
+1. 将新 PDF 拷入 `public/{programme}/teachingPlan/`，确认旧版仍在同目录。
 2. 对照旧版 + 扫新版红字，列出「课程 / 班或 TUT / 旧值 / 新值」（含邮件未点名的课）。
-3. 改 `public/courses.json`（TUT 共用则相关 meeting 一并改）。
-4. 更新 `teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` 并沉底。
-5. 更新三语 i18n body；更新 `DATA_SYNC_HKT`（关于页时间）。
-6. 本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页。
-7. Commit（约定式提交）+ push `main`（Pages 自动部署；关于页版本/SHA 随构建更新）。
+3. 改 `public/{programme}/courses.json`（TUT 共用则相关 meeting 一并改）。
+4. 更新 `src/programmes/{programme}/teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` 并沉底。
+5. 更新三语 i18n body（MSBA：`src/i18n/locales`；MGM：另更新 `src/programmes/mgm/locales`）；更新 programme `dataSync`。
+6. 用对应 `PROGRAMME=` 本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页。
+7. Commit（约定式提交）+ 按部署流程发布。
 
-## 6. 历史同步参考
+## 6. 历史同步参考（MSBA）
 
 | 后缀日期 | 通知焦点（不完全等于 PDF 全部红字） |
 |----------|--------------------------------------|
@@ -116,4 +119,4 @@ PO 的 Teaching Plan 用 **红色** 标出相对上一版的改动。检查时�
 | `20260814` / 通知 `2026/08/18` | 7015 & 7037 |
 | `20260903` | 7002、7003；补漏 7004 TUT Nov 19→16 |
 
-维护代码入口：`teachingPlanUpdates.ts`、`TeachingPlanUpdateNotice.tsx`、`teachingPlanImpact.ts`、`appMeta.ts`。
+维护代码入口：`src/programmes/*/teachingPlanUpdates.ts`、`TeachingPlanUpdateNotice.tsx`、`teachingPlanImpact.ts`、programme `dataSync`。

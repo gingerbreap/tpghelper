@@ -1,4 +1,6 @@
-const GA_ID = 'G-TGBLKX855E'
+import { getActiveProgramme } from '../programmes'
+
+const GA_ID = getActiveProgramme().analyticsId
 
 export function trackPageView(path: string) {
   window.gtag?.('event', 'page_view', {

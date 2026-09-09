@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import type { SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
 
-const STORAGE_KEY = getActiveProgramme().storage.wishlist!
+const programme = getActiveProgramme()
+const STORAGE_KEY = programme.storage.wishlist ?? `${programme.id}-planner-wishlist-unused`
 
 function load(): SelectedSection[] {
   try {

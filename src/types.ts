@@ -33,7 +33,7 @@ export interface Section {
   sectionId: string
   /** A class may be taught by one or several instructors. */
   instructors: Instructor[]
-  timeBucket: 'AM' | 'PM' | 'NT'
+  timeBucket: 'AM' | 'PM' | 'NT' | 'TBC'
   /** "Class Day & Time" as printed in the teaching plan. */
   dayPattern: string
   /** Weekdays (0 = Sunday) the class normally meets. Display only. */
@@ -71,10 +71,30 @@ export interface StreamList {
   courses: string[]
 }
 
+/** ESG-style flat list, or legacy AI/MC nested lists (listA–listD). */
 export interface Stream {
   name: string
   description: string
-  [key: string]: string | StreamList
+  minRequired?: number
+  courses?: string[]
+  [key: string]: string | number | string[] | StreamList | undefined
+}
+
+export type EnrollmentRuleType = 'mutualExclusion' | 'allowMultiModule'
+
+export interface EnrollmentRule {
+  type: EnrollmentRuleType
+  /** Courses subject to mutual exclusion (mutualExclusion). */
+  courses?: string[]
+  /** Single course allowed across multiple modules (allowMultiModule). */
+  courseCode?: string
+  /** Module numbers that may each hold a selection (allowMultiModule). */
+  modules?: number[]
+  /** When true, selections across listed modules count as one course (allowMultiModule). */
+  countsAsOneCourse?: boolean
+  scope?: string
+  message?: string
+  messageZh?: string
 }
 
 export interface Requirements {
@@ -84,6 +104,7 @@ export interface Requirements {
   capstoneCourses: { courseCode: string; courseTitle: string }[]
   streams: Record<string, Stream>
   electiveCount: number
+  enrollmentRules?: EnrollmentRule[]
   notes: string[]
   planningRules: string[]
 }

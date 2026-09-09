@@ -3,6 +3,17 @@ import { streamTagDisplay } from './streamTags'
 
 export { streamTagDisplay }
 export type { StreamTagVariant } from './streamTags'
+export {
+  teachingPlanNotices,
+  teachingPlanUpdates,
+} from './teachingPlanUpdates'
+export type {
+  TeachingPlanNotice,
+  TeachingPlanUpdate,
+  TeachingPlanUpdateRow,
+  ChangePart,
+  ChangeEmoji,
+} from './teachingPlanUpdates'
 
 /** HKU MSc(BA) programme pack — default active programme for tpghelper. */
 export const msbaProgramme: ProgrammeConfig = {
@@ -34,5 +45,13 @@ export const msbaProgramme: ProgrammeConfig = {
   dataSync: {
     display: '2026/09/03 17:23',
     iso: '2026-09-03T17:23:00+08:00',
+  },
+  studyStatus: {
+    courseCodePattern: String.raw`MSBA\d{4}`,
+  },
+  ics: {
+    prodId: '-//HKUBS MSc(BA) Course Planner//CN',
+    uidDomain: 'hkubs-ba-planner',
+    filename: 'hkubs-ba-planner.ics',
   },
 }

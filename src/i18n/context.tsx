@@ -4,12 +4,53 @@ import zhHK from './locales/zh-HK'
 import en from './locales/en'
 import { interpolate, resolveTranslation } from './resolve'
 import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, type Locale, type TranslationTree, type TranslationValue } from './types'
+import { getActiveProgramme } from '../programmes'
+import mgmEn from '../programmes/mgm/locales/en'
+import mgmZhCN from '../programmes/mgm/locales/zh-CN'
+import mgmZhHK from '../programmes/mgm/locales/zh-HK'
 
-const LOCALES: Record<Locale, TranslationTree> = {
+function deepMerge(base: TranslationTree, overlay: TranslationTree): TranslationTree {
+  const out: TranslationTree = { ...base }
+  for (const [key, value] of Object.entries(overlay)) {
+    const existing = out[key]
+    if (
+      value &&
+      typeof value === 'object' &&
+      !Array.isArray(value) &&
+      existing &&
+      typeof existing === 'object' &&
+      !Array.isArray(existing)
+    ) {
+      out[key] = deepMerge(existing, value)
+    } else {
+      out[key] = value
+    }
+  }
+  return out
+}
+
+const BASE_LOCALES: Record<Locale, TranslationTree> = {
   'zh-CN': zhCN,
   'zh-HK': zhHK,
   en,
 }
+
+const MGM_OVERLAYS: Record<Locale, TranslationTree> = {
+  'zh-CN': mgmZhCN,
+  'zh-HK': mgmZhHK,
+  en: mgmEn,
+}
+
+function buildLocales(): Record<Locale, TranslationTree> {
+  if (getActiveProgramme().id !== 'mgm') return BASE_LOCALES
+  return {
+    'zh-CN': deepMerge(BASE_LOCALES['zh-CN'], MGM_OVERLAYS['zh-CN']),
+    'zh-HK': deepMerge(BASE_LOCALES['zh-HK'], MGM_OVERLAYS['zh-HK']),
+    en: deepMerge(BASE_LOCALES.en, MGM_OVERLAYS.en),
+  }
+}
+
+const LOCALES = buildLocales()
 
 const HTML_LANG: Record<Locale, string> = {
   'zh-CN': 'zh-CN',

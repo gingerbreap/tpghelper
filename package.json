@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:msba": "PROGRAMME=msba vite",
+    "dev:mgm": "PROGRAMME=mgm vite",
     "build": "tsc -b && vite build",
+    "build:msba": "PROGRAMME=msba tsc -b && PROGRAMME=msba vite build",
+    "build:mgm": "PROGRAMME=mgm tsc -b && PROGRAMME=mgm vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },

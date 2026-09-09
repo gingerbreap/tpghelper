@@ -4,6 +4,7 @@ import { useCourses } from '../hooks/useCoursesData'
 import WeekdayStrip from '../components/WeekdayStrip'
 import StreamTagBadges from '../components/StreamTagBadges'
 import CourseOutlineViewer from '../components/CourseOutlineViewer'
+import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
 import {
   courseInstructors,
@@ -15,11 +16,6 @@ import { examSessionRowLabel, resolveExam } from '../utils/exams'
 import type { Course, ExamOrFinal, Section } from '../types'
 
 const BASE = import.meta.env.BASE_URL
-
-function TimeBadge({ bucket }: { bucket: string }) {
-  const cls = bucket === 'AM' ? 'badge-am' : bucket === 'PM' ? 'badge-pm' : 'badge-nt'
-  return <span className={`badge ${cls}`}>{bucket}</span>
-}
 
 function examBadgeClass(exam: ExamOrFinal): string {
   return exam.kind === 'presentation' || exam.kind === 'other' ? 'badge-presentation' : 'badge-exam'

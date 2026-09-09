@@ -210,7 +210,7 @@ export default function IcsExportModal({ events, onClose }: IcsExportModalProps)
     if (!canExport) return
     saveIcsTemplates(templates)
     const content = buildIcsContent(exportableEvents, templates)
-    downloadIcs(content, 'hkubs-ba-planner.ics')
+    downloadIcs(content)
     onClose()
   }
 

@@ -1,27 +1,34 @@
 import { msbaProgramme } from './msba'
+import { mgmProgramme } from './mgm'
 import type { ProgrammeConfig, ProgrammeId } from './types'
 
 export type { ProgrammeConfig, ProgrammeId, ProgrammeFeatureFlags, ProgrammeStorageKeys } from './types'
-export { msbaProgramme }
+export { msbaProgramme, mgmProgramme }
 
-const programmes: Record<ProgrammeId, ProgrammeConfig | undefined> = {
+const programmes: Record<ProgrammeId, ProgrammeConfig> = {
   msba: msbaProgramme,
-  // mgm: reserved — integrate HKUBS_MGM_CourseList pack in a later pass
-  mgm: undefined,
+  mgm: mgmProgramme,
 }
 
-/** Default programme until a programme switcher / host routing exists. */
+/** Default when PROGRAMME env / define is missing. */
 export const DEFAULT_PROGRAMME_ID: ProgrammeId = 'msba'
 
-export function getProgramme(id: ProgrammeId = DEFAULT_PROGRAMME_ID): ProgrammeConfig {
+function resolveProgrammeId(): ProgrammeId {
+  const fromDefine =
+    typeof __PROGRAMME_ID__ !== 'undefined' ? (__PROGRAMME_ID__ as string) : ''
+  if (fromDefine === 'msba' || fromDefine === 'mgm') return fromDefine
+  return DEFAULT_PROGRAMME_ID
+}
+
+export function getProgramme(id: ProgrammeId = resolveProgrammeId()): ProgrammeConfig {
   const pack = programmes[id]
   if (!pack) {
-    throw new Error(`Programme "${id}" is not registered yet`)
+    throw new Error(`Programme "${id}" is not registered`)
   }
   return pack
 }
 
-/** Active programme for this build (MSBA-only until multi-programme shell lands). */
+/** Active programme for this build (set via PROGRAMME=msba|mgm). */
 export function getActiveProgramme(): ProgrammeConfig {
-  return getProgramme(DEFAULT_PROGRAMME_ID)
+  return getProgramme(resolveProgrammeId())
 }

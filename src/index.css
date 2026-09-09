@@ -2010,3 +2010,99 @@ button.calendar-holiday-label {
 .archive-notice-body .teaching-plan-notice-text {
   margin-bottom: 12px;
 }
+
+/* ===== Multi-programme (MGM) styles ===== */
+.badge-tbc { background: #e8eaed; color: #80868b; }
+.badge-stream--esg {
+  background: #0d652d;
+  color: #fff;
+  border: 1px solid #0a5224;
+}
+.selection-group + .selection-group {
+  border-top: 1px solid var(--border);
+}
+.selection-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--border);
+}
+.selection-group-header--core {
+  background: #e8f0fe;
+  color: var(--primary);
+}
+.selection-group-header--elective {
+  background: #e6f4ea;
+  color: #137333;
+}
+.selection-group-header--capstone {
+  background: #fef7e0;
+  color: #b06000;
+}
+.selection-group-count {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.selection-group .selection-item:last-child { border-bottom: none; }
+.selection-item.dragging {
+  opacity: 0.55;
+  background: #f8f9fa;
+}
+.selection-item.drag-over {
+  box-shadow: inset 0 2px 0 0 var(--primary);
+}
+.selection-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.backup-section {
+  margin-top: 16px;
+}
+.section-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.backup-btn {
+  background: none;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.backup-btn:hover { background: #e8f0fe; }
+.backup-btn.in-backup {
+  background: #e8f0fe;
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+.promote-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.promote-btn:hover { background: #1557b0; }

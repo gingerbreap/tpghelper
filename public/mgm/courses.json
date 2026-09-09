@@ -1,0 +1,5703 @@
+[
+ {
+  "courseCode": "PMGM7001",
+  "courseTitle": "Fundamentals of Global Management",
+  "module": 1,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-07",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-14",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-28",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-05",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-07",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-14",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-28",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "C",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30 (Oct 16 afternoon occasionally)",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-J",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "D",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00 (Oct 15 evening occasionally)",
+    "meetingDays": [
+     2,
+     4,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-29",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-J",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7002",
+  "courseTitle": "Managing Across Cultures",
+  "module": 1,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7002ABCDEF2025-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Wednesday & Saturday 14:00-17:00",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-07",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-14",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Wednesday & Saturday 18:30-21:30",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-05",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-16",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-23",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-07",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-10",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-14",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-21",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7012",
+  "courseTitle": "Strategic Human Resource Management",
+  "module": 1,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7012-Syllabus-V1.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Helen ZHAO"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7012-Syllabus-V1.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7014",
+  "courseTitle": "China Business Environment",
+  "module": 1,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7014A_China-Business-Environment.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yi TANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7014A_China-Business-Environment.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Yi TANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Tuesday & Friday 18:30-21:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7014A_China-Business-Environment.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-11",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-18",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-29",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-06",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-13",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7016",
+  "courseTitle": "Company Field Trip (Info Session)",
+  "module": 1,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": null,
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yi TANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Monday 18:30-21:30",
+    "meetingDays": [
+     1
+    ],
+    "outlinePdfPath": null,
+    "meetings": [
+     {
+      "date": "2026-09-21",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7023",
+  "courseTitle": "Management Analytics",
+  "module": 1,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7023-MA-2025-Syllabus.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Helen ZHAO"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Wednesday & Saturday 9:30-12:30",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7023-MA-2025-Syllabus.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-05",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-07",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Helen ZHAO"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Wednesday & Saturday 14:00-17:00",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7023-MA-2025-Syllabus.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-07",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7045",
+  "courseTitle": "Curating a Career: The Implications of a 100-Year Life",
+  "module": 1,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M1/PMGM7045-Curating-a-Career-draft2-Dec-19-2025.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Mr. David DODWELL"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Tuesday & Friday 18:30-21:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M1/PMGM7045-Curating-a-Career-draft2-Dec-19-2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-09-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-11",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-09-29",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-06",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-13",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-16",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7004",
+  "courseTitle": "Global Management from Economics Perspectives",
+  "module": 2,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Matthias FAHN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30 (Mon/Wed occasionally)",
+    "meetingDays": [
+     1,
+     2,
+     3,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-27",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Matthias FAHN"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday, Friday & Wednesday 14:00-17:00 (Wed occasionally)",
+    "meetingDays": [
+     2,
+     3,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-27",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "C",
+    "instructors": [
+     {
+      "name": "Prof. Wen ZHOU"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-27",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "D",
+    "instructors": [
+     {
+      "name": "Prof. Matthias FAHN"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00 (Fri evening occasionally)",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-23",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-27",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-13",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-20",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "E",
+    "instructors": [
+     {
+      "name": "Prof. Michael WONG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-05",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "F",
+    "instructors": [
+     {
+      "name": "Prof. Michael WONG"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7004AB_Syllabus_2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-29",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7011",
+  "courseTitle": "Creative Global Management Problem Solving",
+  "module": 2,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M2/PMGM7011_2024-25.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30 (Tue/Wed occasionally)",
+    "meetingDays": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7011_2024-25.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-28",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-05",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00 (evenings occasionally)",
+    "meetingDays": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7011_2024-25.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-29",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-05",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7013",
+  "courseTitle": "Formulation of Global Strategy",
+  "module": 2,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M2/PMGM7013-Syllabus-2024.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Kevin ZHOU"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7013-Syllabus-2024.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-24",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-25",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-31",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-32",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Kevin ZHOU"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7013-Syllabus-2024.pdf",
+    "meetings": [
+     {
+      "date": "2026-11-07",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-08",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-14",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-15",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7017",
+  "courseTitle": "Negotiation and Conflict Management",
+  "module": 2,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M2/PMGM7017-Nego_Syllabus_KS-Tey-2025.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Kian Siong TEY"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Monday & Thursday 18:30-21:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7017-Nego_Syllabus_KS-Tey-2025.pdf",
+    "meetings": [
+     {
+      "date": "2026-10-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-26",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-29",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-05",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-16",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-23",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7030",
+  "courseTitle": "Sustainable Management and Responsible Investment",
+  "module": 2,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M2/PMGM7030_Sustainable-Management-and-Responsible-Investment_Class-AB_2025-(1).pdf",
+  "examOrFinal": {
+   "kind": "exam",
+   "date": "2026-11-30",
+   "startTime": "18:50",
+   "endTime": "21:00",
+   "venue": null,
+   "raw": "Nov 30, 2026 (Mon), 18:50-21:00, Venue will be announced before exam"
+  },
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Sammy FUNG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Tuesday & Friday 18:30-21:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M2/PMGM7030_Sustainable-Management-and-Responsible-Investment_Class-AB_2025-(1).pdf",
+    "meetings": [
+     {
+      "date": "2026-10-23",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-27",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-10-30",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-03",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-06",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-10",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-13",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-17",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-20",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-11-24",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7002",
+  "courseTitle": "Managing Across Cultures",
+  "module": 3,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7002ABCDEF2025-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "C",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00 (Fri morning occasionally)",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "D",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Tuesday & Friday 18:30-21:30 (Fri afternoon occasionally)",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-01",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-04",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-05",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "E",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Wednesday & Saturday 14:00-17:00",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "F",
+    "instructors": [
+     {
+      "name": "Prof. Yiwen ZHANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Wednesday & Saturday 18:30-21:30",
+    "meetingDays": [
+     3,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7002ABCDEF2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-05",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-16",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-06",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-09",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-13",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-20",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7001",
+  "courseTitle": "Fundamentals of Global Management",
+  "module": 3,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "E",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-07",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-14",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-07",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-14",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "F",
+    "instructors": [
+     {
+      "name": "Prof. Chun HUI"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7001_Syllabus-Class_ABCDEF-final.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7016",
+  "courseTitle": "Company Field Trip",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7016-Company-Field-Trip-syllabus.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yi TANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Dec 22 – Jan 1, 2027 (Field Trip)",
+    "meetingDays": [],
+    "outlinePdfPath": "courseOutline/M3/PMGM7016-Company-Field-Trip-syllabus.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-22",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-23",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-24",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-25",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-26",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-27",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-28",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-29",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-30",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-31",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-01",
+      "startTime": "",
+      "endTime": "",
+      "venue": "",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7025",
+  "courseTitle": "Creating an Integrative Perspective on the Understanding of Global Management: Journey to C Suite",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7025_course-outline-20252026_20251203.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Alex FONG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7025_course-outline-20252026_20251203.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-07",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-14",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-07",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-14",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7028",
+  "courseTitle": "Sustainable Capitalism",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M3/PMGM7028_Course-Outline_2025-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Shipeng YAN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7028_Course-Outline_2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-02",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-03",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-09",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-10",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7038",
+  "courseTitle": "Management of Corporate Sustainability",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M3/PMGM7038-Management-of-Corporate-Sustainability-by-Dr.-Han-SHI-2025-Fall.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Han SHI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7038-Management-of-Corporate-Sustainability-by-Dr.-Han-SHI-2025-Fall.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7039",
+  "courseTitle": "Leadership Development in the Chinese Classics",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7039-course-outline_2025-26_draft.v2-(final).pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Elizabeth LI WOO"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     2
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7039-course-outline_2025-26_draft.v2-(final).pdf",
+    "meetings": [
+     {
+      "date": "2026-12-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-05",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-05",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B2",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "ATC-B4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "ATC-B4",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7044",
+  "courseTitle": "Cultural and Creative Industry Innovation, Business Model and Value Creation",
+  "module": 3,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M3/PMGM7044-Cultural-and-Creative-Industry-Innovation.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Mr. Elvis HE"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M3/PMGM7044-Cultural-and-Creative-Industry-Innovation.pdf",
+    "meetings": [
+     {
+      "date": "2026-12-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2026-12-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7005",
+  "courseTitle": "Dynamics of Multinational Corporations",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7005-Course-Outline_Dynamics-of-Multinational-Corporations_2025-26.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Filippo Carlo WEZEL"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7005-Course-Outline_Dynamics-of-Multinational-Corporations_2025-26.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Filippo Carlo WEZEL"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7005-Course-Outline_Dynamics-of-Multinational-Corporations_2025-26.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-26",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-29",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-09",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7015",
+  "courseTitle": "The Political Economy of Global Business",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7015_2025-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Chang SUN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7015_2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-28",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7021",
+  "courseTitle": "Corporate Governance and Social Responsibility",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M4/PMGM7021_2025_26-(1).pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Sammy FUNG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Monday & Thursday 18:30-21:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7021_2025_26-(1).pdf",
+    "meetings": [
+     {
+      "date": "2027-01-25",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-28",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-01",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-11",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-18",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-25",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-01",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-04",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7022",
+  "courseTitle": "Strategy in the Digital World",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7022-Strategy-in-the-Digital-World-2025-2026-Syllabus.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Jiang BIAN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday 9:00-12:00 & 14:00-17:00",
+    "meetingDays": [
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7022-Strategy-in-the-Digital-World-2025-2026-Syllabus.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-23",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-30",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-13",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-20",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-27",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-27",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "MC-KKLG104",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Jiang BIAN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7022-Strategy-in-the-Digital-World-2025-2026-Syllabus.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-31",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-31",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-14",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-14",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-28",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-28",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7024",
+  "courseTitle": "Business Lab",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": null,
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Michal KOSINSKI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday 9:30-12:30 / 14:00-17:00 / 18:30-21:30 (occasional)",
+    "meetingDays": [
+     1
+    ],
+    "outlinePdfPath": null,
+    "meetings": [
+     {
+      "date": "2027-01-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-25",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Michal KOSINSKI"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Wednesday 9:30-12:30 / 14:00-17:00 / 18:30-21:30 (occasional)",
+    "meetingDays": [
+     3
+    ],
+    "outlinePdfPath": null,
+    "meetings": [
+     {
+      "date": "2027-01-27",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-27",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-03",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7028",
+  "courseTitle": "Sustainable Capitalism",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M4/PMGM7028_Course-Outline_2025-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Shipeng YAN"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7028_Course-Outline_2025-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-02-20",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-21",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-27",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-28",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 501",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7035",
+  "courseTitle": "ESG Reporting: Concepts and Practices",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M4/PMGM7035_MACC7024_PMAA7015--ESG-Reporting---Concepts-and-Practices-26-27.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Anson JIANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7035_MACC7024_PMAA7015--ESG-Reporting---Concepts-and-Practices-26-27.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-29",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-A205",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7036",
+  "courseTitle": "Serendipitous Forces",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7036_2026-Serendipity-Syllabus-Jan-30-to-March-10.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Mr. David DODWELL"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Tuesday & Friday 18:30-21:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7036_2026-Serendipity-Syllabus-Jan-30-to-March-10.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-26",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-29",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-16",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-23",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-26",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-02",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7040",
+  "courseTitle": "Economics of AI and Innovation",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7040-ECON6105-Economics-of-AI-and-Innovation.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yanhui WU"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:00-12:00",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7040-ECON6105-Economics-of-AI-and-Innovation.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-26",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE6",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-29",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-02",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE6",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-05",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-16",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE6",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-19",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-23",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE6",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-26",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE4",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-02",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE6",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-05",
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "venue": "MC-LE4",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7046",
+  "courseTitle": "AI-Enabled Economic Policy Research",
+  "module": 4,
+  "courseType": "Elective",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M4/PMGM7046_ECON6117_AI-Enabled-Economic-Policy-Research.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Michael WONG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M4/PMGM7046_ECON6117_AI-Enabled-Economic-Policy-Research.pdf",
+    "meetings": [
+     {
+      "date": "2027-01-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-01-28",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-02-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7003",
+  "courseTitle": "Entrepreneurship in Multinational Corporations",
+  "module": 5,
+  "courseType": "Core",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-25",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-26",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "C",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-27",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "D",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Tuesday & Friday 14:00-17:00",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-23",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-02",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-06",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-13",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-16",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-27",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-30",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "E",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday 9:30-12:30 & 14:00-17:00 (evening on Mar 20)",
+    "meetingDays": [
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-20",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-20",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-03",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-03",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-10",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-10",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-17",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-17",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-24",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-24",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "F",
+    "instructors": [
+     {
+      "name": "Prof. Simon LAM"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7003-Ent-course-Outline-Mar-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LTA",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-25",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-D",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7006",
+  "courseTitle": "Innovation and International Strategy",
+  "module": 5,
+  "courseType": "Capstone",
+  "streamTags": [],
+  "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Yanbo WANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Monday & Thursday 9:30-12:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-01",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-08",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-12",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-15",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-22",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-26",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "B",
+    "instructors": [
+     {
+      "name": "Prof. Yanbo WANG"
+     }
+    ],
+    "timeBucket": "PM",
+    "dayPattern": "Monday & Thursday 14:00-17:00",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-25",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-01",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-08",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-12",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-15",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-19",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-22",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-26",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-LT",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "C",
+    "instructors": [
+     {
+      "name": "Prof. Yanbo WANG"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Monday & Thursday 18:30-21:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-18",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-25",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-01",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-08",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-12",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-15",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-19",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-22",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-LTB",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-26",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "D",
+    "instructors": [
+     {
+      "name": "Prof. Yanbo WANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-20",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 502",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-21",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 502",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-10",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 502",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-11",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-Room 502",
+      "sessionType": "lecture"
+     }
+    ]
+   },
+   {
+    "sectionId": "E",
+    "instructors": [
+     {
+      "name": "Prof. Yanbo WANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)",
+    "meetingDays": [
+     0,
+     6
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7006-Syllabus-MGM-CapStone_2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-04-17",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-3F LTC",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-18",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-3F LTC",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-24",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-3F LTC",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-25",
+      "startTime": "09:30",
+      "endTime": "18:00",
+      "venue": "SZ-3F LTC",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7034",
+  "courseTitle": "Social Value and the Humanity of Leadership",
+  "module": 5,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M5/PMGM7034-Syllabus-Social-Value-&-Humanity-in-Leadership-2026.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Dr. Cecilia LEUNG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Sunday 9:30-12:30 & 14:00-17:00",
+    "meetingDays": [
+     0
+    ],
+    "outlinePdfPath": "courseOutline/M5/PMGM7034-Syllabus-Social-Value-&-Humanity-in-Leadership-2026.pdf",
+    "meetings": [
+     {
+      "date": "2027-03-21",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-21",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-04",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-04",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-11",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-11",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-18",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-18",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-25",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-25",
+      "startTime": "14:00",
+      "endTime": "17:00",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "MFIN7052",
+  "courseTitle": "Green Finance and ESG",
+  "module": 5,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": null,
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Dragon Yongjun TANG"
+     }
+    ],
+    "timeBucket": "AM",
+    "dayPattern": "Tuesday & Friday 9:30-12:30",
+    "meetingDays": [
+     2,
+     5
+    ],
+    "outlinePdfPath": null,
+    "meetings": [
+     {
+      "date": "2027-03-19",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-03-30",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-02",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-06",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-09",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-13",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-16",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-20",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-04-23",
+      "startTime": "09:30",
+      "endTime": "12:30",
+      "venue": "CP-H",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "courseCode": "PMGM7037",
+  "courseTitle": "Impact Investing in Sustainable Technologies",
+  "module": 6,
+  "courseType": "Elective",
+  "streamTags": [
+   "ESG"
+  ],
+  "outlinePdfPath": "courseOutline/M6/PMGM7037_Impact-Investing-for-Sustainable-Tech-2026-0425.pdf",
+  "examOrFinal": null,
+  "sections": [
+   {
+    "sectionId": "A",
+    "instructors": [
+     {
+      "name": "Prof. Poman LO"
+     },
+     {
+      "name": "Prof. Stan HO"
+     }
+    ],
+    "timeBucket": "NT",
+    "dayPattern": "Monday & Thursday 18:30-21:30",
+    "meetingDays": [
+     1,
+     4
+    ],
+    "outlinePdfPath": "courseOutline/M6/PMGM7037_Impact-Investing-for-Sustainable-Tech-2026-0425.pdf",
+    "meetings": [
+     {
+      "date": "2027-05-06",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-10",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-17",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-20",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-24",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-27",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-05-31",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-06-03",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-06-07",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     },
+     {
+      "date": "2027-06-10",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "venue": "CP-EFG",
+      "sessionType": "lecture"
+     }
+    ]
+   }
+  ]
+ }
+]
