@@ -1,5 +1,6 @@
 import { calendarEventLabel, filterEventsForIcsExport, type CalendarEvent } from './calendarEvents'
 import { examKindTypeLabel } from './exams'
+import { getActiveProgramme } from '../programmes'
 
 export interface IcsFormatTemplates {
   summary: string
@@ -8,7 +9,7 @@ export interface IcsFormatTemplates {
   finalDescription: string
 }
 
-export const ICS_FORMAT_STORAGE_KEY = 'msba-ics-export-format'
+export const ICS_FORMAT_STORAGE_KEY = getActiveProgramme().storage.icsExportFormat
 
 export const DEFAULT_ICS_TEMPLATES: IcsFormatTemplates = {
   summary: '@code (@type): @name @ @location',

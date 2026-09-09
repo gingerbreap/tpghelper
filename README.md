@@ -1,10 +1,20 @@
-# HKU MSc(BA) 选课助手
+# tpghelper (HKU TPg course planner shell)
 
-港大经管学院 MSc(BA) 2026–27 学年选课规划网站（模块制课表、冲突检查、日历与 ICS、Teaching Plan 更新提示）。
+Working tree for a **multi-programme** planner shell. Currently defaults to **HKU MSc(BA)** via `src/programmes/msba/`.
 
-**在线访问：** https://gingerbreap.github.io/HKUBS_BA_CourseList/
+This directory was renamed from `HKUBS_BA_CourseList`. It is a **fork-style working copy**:
+- Git remote `upstream` → `https://github.com/gingerbreap/HKUBS_BA_CourseList` (fetch only; push disabled)
+- No `origin` until a new Azure/GitHub repo is created — do **not** `git push` to the old Pages repo unless explicitly intended
 
-数据来自教学计划与课程大纲 PDF，仅供选课参考，以学院正式通知为准。
+**Live BA site (unchanged until redeploy):** https://gingerbreap.github.io/HKUBS_BA_CourseList/
+
+**Full backup of pre-rename state:** `/Users/gbrrrp/Workspace/HKUBS_BA_Helper` (includes `.git`; excludes `node_modules` / `dist` / `.venv`)
+
+## Programme packs
+| Pack | Path | Status |
+|------|------|--------|
+| MSBA | `src/programmes/msba/` | Active default |
+| MGM | (from `HKUBS_MGM_CourseList`) | Not integrated yet |
 
 ## 功能概览
 - **我的日历** / **我的选课**（默认可配置）/ 模块时间表 / 培养要求 / **关于**
@@ -24,4 +34,4 @@ npm install
 npm run dev
 ```
 
-构建与部署：push 到 `main` 后由 GitHub Actions 发布到 GitHub Pages。版本号形如 `1.4.8.260909 (commit)`，见关于页。
+构建仍使用 Vite `base: '/HKUBS_BA_CourseList/'` until Azure (or a new Pages repo) is wired. Version 形如 `1.4.8.260909 (commit)`，见关于页。

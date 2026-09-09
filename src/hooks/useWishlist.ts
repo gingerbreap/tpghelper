@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { SelectedSection } from '../types'
+import { getActiveProgramme } from '../programmes'
 
-const STORAGE_KEY = 'msba-planner-wishlist'
+const STORAGE_KEY = getActiveProgramme().storage.wishlist!
 
 function load(): SelectedSection[] {
   try {

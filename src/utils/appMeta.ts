@@ -1,12 +1,11 @@
-/** Programme Office sync/check timestamp (Hong Kong Time). Shared by About + footer copy. */
-export const DATA_SYNC_HKT = {
-  /** Display form used in notices / copy: 2026/09/03 17:23 */
-  display: '2026/09/03 17:23',
-  /** ISO-like instant in HKT for timezone conversion */
-  iso: '2026-09-03T17:23:00+08:00',
-} as const
+import { getActiveProgramme } from '../programmes'
 
-export const DEFAULT_LANDING_STORAGE_KEY = 'msba-default-landing'
+const programme = getActiveProgramme()
+
+/** Programme Office sync/check timestamp (Hong Kong Time). Shared by About + footer copy. */
+export const DATA_SYNC_HKT = programme.dataSync
+
+export const DEFAULT_LANDING_STORAGE_KEY = programme.storage.defaultLanding
 export type DefaultLanding = 'planner' | 'calendar'
 
 export function getAppVersion(): string {
@@ -20,7 +19,7 @@ export function getAppCommitSha(): string {
 export function getAppRepoUrl(): string {
   return typeof __APP_REPO_URL__ !== 'undefined'
     ? __APP_REPO_URL__
-    : 'https://github.com/gingerbreap/HKUBS_BA_CourseList'
+    : programme.repoUrl
 }
 
 export function getCommitUrl(sha = getAppCommitSha()): string | null {
@@ -30,7 +29,7 @@ export function getCommitUrl(sha = getAppCommitSha()): string | null {
 
 export type SyncTimezoneMode = 'HKT' | 'local'
 
-const TZ_STORAGE_KEY = 'msba-sync-tz-mode'
+const TZ_STORAGE_KEY = programme.storage.syncTzMode
 
 export function getSyncTimezoneMode(): SyncTimezoneMode {
   try {

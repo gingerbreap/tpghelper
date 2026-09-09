@@ -15,8 +15,9 @@ import {
   type IcsFormatTemplates,
 } from '../utils/icsFormat'
 import { buildIcsContent, downloadIcs } from '../utils/exportIcs'
+import { getActiveProgramme } from '../programmes'
 
-const MODULES = [1, 2, 3, 4, 5] as const
+const MODULES = getActiveProgramme().moduleNumbers
 
 const PLACEHOLDER_ROWS = [
   { keys: ['@module'], id: 'module' },
