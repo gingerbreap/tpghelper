@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useI18n } from '../i18n/context'
+import { landerProgrammesUrl } from '../session/tpgSession'
 import {
   formatDataSyncTime,
   getAppCommitSha,
@@ -77,6 +78,9 @@ export default function About() {
         <Link to="/about/default-page" className="about-menu-item">
           {t('about.menuDefaultPage')}
         </Link>
+        <a href={landerProgrammesUrl()} className="about-menu-item">
+          {t('about.menuChangeProgramme')}
+        </a>
       </nav>
     </div>
   )

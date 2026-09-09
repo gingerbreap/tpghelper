@@ -27,9 +27,17 @@ const zhCN: TranslationTree = {
     menuLabel: '关于菜单',
     menuArchive: 'Teaching Plan 更新存档',
     menuDefaultPage: '默认页选择',
+    menuChangeProgramme: '更换专业 / 课程项目',
     defaultPageTitle: '默认页选择',
     defaultPageLegend: '打开网站时默认进入',
     backToAbout: '← 返回关于',
+  },
+  mismatch: {
+    title: '这不是你当前选择的专业',
+    body: '你之前选择的是 {{preferred}}，但当前打开的是 {{current}}。',
+    returnPreferred: '返回 {{preferred}}',
+    switchHere: '改用 {{current}}',
+    pickAgain: '重新选择专业',
   },
   footer: {
     credit: '本工具由 缄默姜饼 搭建、Cursor, Google Analytics 与 Cloudflare 提供技术支持。',
@@ -237,6 +245,8 @@ const zhCN: TranslationTree = {
       '{{code2}}（Class C & D）部分讲座已取消并改期，Class C 的 Tutorial 时间有调整；{{code1}}（Class A–D）上课时间与教室已更新。日历与冲突提示可能与旧版本不同。',
     body7002_7003_7004:
       '{{code2}}（Class C & D）部分讲座已取消并改期，Tutorial 时间有调整；{{code1}}（Class A–D）上课时间与教室已更新；{{code3}} 一节 Tutorial 由 Nov 19 改至 Nov 16。可参考下方日历查看相关改动。',
+    body7002_7004:
+      '{{code1}} Class A & B 的 Oct 22 讲座已改回常规时间与教室；Class D 的 Oct 24 教室已更新。{{code2}} Class A 的 Oct 27 讲座已取消并改至 Oct 22；Class C 的 Oct 24 已改回常规时间与教室。可参考下方日历查看相关改动。',
     colCourse: '课程',
     colClass: '班',
     colItem: '调整项',

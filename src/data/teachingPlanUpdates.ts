@@ -1,6 +1,6 @@
 /**
  * Teaching Plan notices for the active programme pack
- * (`src/programmes/activePack.ts` → msba|mgm).
+ * (`activePack.ts` → msba|mgm; Vite remaps by PROGRAMME).
  */
 export {
   teachingPlanNotices,

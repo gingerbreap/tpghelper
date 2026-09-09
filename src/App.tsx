@@ -1,6 +1,7 @@
 import { Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import LanguagePicker from './components/LanguagePicker'
+import ProgrammeMismatchGate from './components/ProgrammeMismatchGate'
 import Timetable from './pages/Timetable'
 import Planner from './pages/Planner'
 import Calendar from './pages/Calendar'
@@ -10,6 +11,7 @@ import About from './pages/About'
 import TeachingPlanArchive from './pages/TeachingPlanArchive'
 import DefaultPageSettings from './pages/DefaultPageSettings'
 import { useI18n } from './i18n/context'
+import { getActiveProgramme } from './programmes'
 import { trackPageView } from './utils/analytics'
 import { defaultLandingPath } from './utils/appMeta'
 
@@ -19,6 +21,7 @@ function HomeRedirect() {
 
 function App() {
   const { t } = useI18n()
+  const programme = getActiveProgramme()
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const isInitialPageView = useRef(true)
@@ -36,6 +39,10 @@ function App() {
 
   return (
     <>
+      <ProgrammeMismatchGate
+        currentProgrammeId={programme.id}
+        currentShortName={programme.shortName}
+      />
       <nav className="navbar">
         <div className="container navbar-inner">
           <NavLink to="/" className="navbar-brand" onClick={closeMenu}>

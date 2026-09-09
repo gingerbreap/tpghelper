@@ -1,33 +1,52 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { execSync } from 'node:child_process'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
 
 const APP_VERSION_BASE = '1.4.8'
+const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
-type ProgrammeId = 'msba' | 'mgm'
+type ProgrammeId = 'msba' | 'mgm' | 'lander'
 
 const PROGRAMME_META: Record<
   ProgrammeId,
-  { base: string; analyticsId: string; htmlTitle: string; repoFallback: string }
+  {
+    base: string
+    analyticsId: string
+    htmlTitle: string
+    repoFallback: string
+    publicDir: string | false
+  }
 > = {
   msba: {
     base: '/tpghelper/msba/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU MSc(BA) 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
+    publicDir: 'public/msba',
   },
   mgm: {
     base: '/tpghelper/mgm/',
     analyticsId: 'G-P5JGQYVL02',
     htmlTitle: 'HKU MGM 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
+    publicDir: 'public/mgm',
+  },
+  lander: {
+    base: '/tpghelper/',
+    analyticsId: 'G-TGBLKX855E',
+    htmlTitle: 'HKU TPg Course Planner',
+    repoFallback: 'https://github.com/gingerbreap/tpghelper',
+    publicDir: false,
   },
 }
 
 function resolveProgrammeId(): ProgrammeId {
   const raw = (process.env.PROGRAMME || 'msba').toLowerCase()
   if (raw === 'mgm') return 'mgm'
+  if (raw === 'lander') return 'lander'
   return 'msba'
 }
 
@@ -70,14 +89,41 @@ function programmeHtmlPlugin(meta: (typeof PROGRAMME_META)[ProgrammeId]): Plugin
 const programmeId = resolveProgrammeId()
 const meta = PROGRAMME_META[programmeId]
 const appVersion = buildAppVersionInfo(meta.repoFallback)
+const behindGateway = process.env.DEV_SITE_GATEWAY === '1'
+const gatewayPort = Number(process.env.DEV_GATEWAY_PORT || 5173)
+
+/** Pack id used for Vite aliases (lander falls back to msba stubs if ever imported). */
+const packId = programmeId === 'mgm' ? 'mgm' : 'msba'
 
 export default defineConfig({
   plugins: [react(), programmeHtmlPlugin(meta)],
-  // Each programme ships its own public/ tree (courses, outlines, teaching plans)
-  publicDir: `public/${programmeId}`,
+  publicDir: meta.publicDir,
   base: meta.base,
+  resolve: {
+    alias: [
+      {
+        find: path.resolve(rootDir, 'src/programmes/activePack.ts'),
+        replacement: path.resolve(rootDir, `src/programmes/${packId}/pack.ts`),
+      },
+      {
+        find: path.resolve(rootDir, 'src/programmes/activeLocaleOverlays.ts'),
+        replacement: path.resolve(
+          rootDir,
+          packId === 'mgm'
+            ? 'src/programmes/mgm/localeOverlays.ts'
+            : 'src/programmes/emptyLocaleOverlays.ts',
+        ),
+      },
+    ],
+  },
   server: {
-    open: meta.base,
+    open: behindGateway ? false : meta.base,
+    strictPort: behindGateway,
+    hmr: behindGateway
+      ? {
+          clientPort: gatewayPort,
+        }
+      : undefined,
   },
   define: {
     __APP_VERSION__: JSON.stringify(appVersion.version),

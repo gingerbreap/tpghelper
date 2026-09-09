@@ -141,12 +141,74 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20260909-7002-7004',
+    timestamp: '2026/09/09 16:41',
+    courseRefs: '7002, 7004',
+    bodyKey: 'body7002_7004',
+    bodyParams: { code1: 'MSBA7002', code2: 'MSBA7004' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7002',
+        courseTitle: 'Business Statistics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'sessionTimeVenue',
+            itemDate: 'Oct 22',
+            sessionKind: 'LEC',
+            previous: [time('09:00-12:00'), venue('MC-MBG07')],
+            updated: [time('09:30-12:30'), venue('LT104')],
+          },
+          {
+            sectionId: 'B',
+            itemKey: 'sessionTimeVenue',
+            itemDate: 'Oct 22',
+            sessionKind: 'LEC',
+            previous: [time('18:30-21:30'), venue('Classroom J')],
+            updated: [time('14:00-17:00'), venue('LT104')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'sessionVenue',
+            itemDate: 'Oct 24',
+            sessionKind: 'LEC',
+            previous: [plain('Classroom EFG')],
+            updated: [plain('LT104')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7004',
+        courseTitle: 'Operations Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Oct 27, 2026 (Tue) 14:00-17:00'), venue('LTB')],
+            updated: [time('Oct 22, 2026 (Thu) 09:30-12:30'), venue('Classroom J')],
+          },
+          {
+            sectionId: 'C',
+            itemKey: 'sessionTimeVenue',
+            itemDate: 'Oct 24',
+            sessionKind: 'LEC',
+            previous: [time('18:30-21:30'), venue('Classroom EFG')],
+            updated: [time('09:30-12:30'), venue('LT104')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20260903-7002-7003',
     timestamp: '2026/09/03 17:23',
     courseRefs: '7002, 7003, 7004',
     bodyKey: 'body7002_7003_7004',
     bodyParams: { code1: 'MSBA7002', code2: 'MSBA7003', code3: 'MSBA7004' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7003',

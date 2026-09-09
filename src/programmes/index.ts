@@ -8,7 +8,7 @@ export const DEFAULT_PROGRAMME_ID: ProgrammeId = programme.id
 
 /**
  * Resolve a programme config for this build.
- * Only the active pack is linked via `activePack.ts` (see scripts/select-programme.mjs).
+ * Vite remaps `activePack.ts` to the PROGRAMME pack; `select-programme.mjs` keeps tsc in sync for builds.
  */
 export function getProgramme(id: ProgrammeId = programme.id): ProgrammeConfig {
   if (id !== programme.id) {
