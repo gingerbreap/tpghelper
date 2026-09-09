@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:lander": "PROGRAMME=lander vite",
     "dev:msba": "PROGRAMME=msba vite",
     "dev:mgm": "PROGRAMME=mgm vite",
     "build": "tsc -b && vite build",
+    "build:lander": "PROGRAMME=lander tsc -b && PROGRAMME=lander vite build",
     "build:msba": "PROGRAMME=msba tsc -b && PROGRAMME=msba vite build",
     "build:mgm": "PROGRAMME=mgm tsc -b && PROGRAMME=mgm vite build",
     "lint": "oxlint",

@@ -5,29 +5,45 @@ import type { Plugin } from 'vite'
 
 const APP_VERSION_BASE = '1.4.8'
 
-type ProgrammeId = 'msba' | 'mgm'
+type ProgrammeId = 'msba' | 'mgm' | 'lander'
 
 const PROGRAMME_META: Record<
   ProgrammeId,
-  { base: string; analyticsId: string; htmlTitle: string; repoFallback: string }
+  {
+    base: string
+    analyticsId: string
+    htmlTitle: string
+    repoFallback: string
+    publicDir: string | false
+  }
 > = {
   msba: {
     base: '/tpghelper/msba/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU MSc(BA) 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
+    publicDir: 'public/msba',
   },
   mgm: {
     base: '/tpghelper/mgm/',
     analyticsId: 'G-P5JGQYVL02',
     htmlTitle: 'HKU MGM 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
+    publicDir: 'public/mgm',
+  },
+  lander: {
+    base: '/tpghelper/',
+    analyticsId: 'G-TGBLKX855E',
+    htmlTitle: 'HKU TPg Course Planner',
+    repoFallback: 'https://github.com/gingerbreap/tpghelper',
+    publicDir: false,
   },
 }
 
 function resolveProgrammeId(): ProgrammeId {
   const raw = (process.env.PROGRAMME || 'msba').toLowerCase()
   if (raw === 'mgm') return 'mgm'
+  if (raw === 'lander') return 'lander'
   return 'msba'
 }
 
@@ -73,8 +89,7 @@ const appVersion = buildAppVersionInfo(meta.repoFallback)
 
 export default defineConfig({
   plugins: [react(), programmeHtmlPlugin(meta)],
-  // Each programme ships its own public/ tree (courses, outlines, teaching plans)
-  publicDir: `public/${programmeId}`,
+  publicDir: meta.publicDir,
   base: meta.base,
   server: {
     open: meta.base,
