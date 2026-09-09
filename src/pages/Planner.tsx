@@ -41,7 +41,7 @@ function compareSelectionsMsba(a: SelectedSection, b: SelectedSection): number {
 }
 
 export default function Planner() {
-  const { t, sectionLabel } = useI18n()
+  const { t, sectionLabel, locale } = useI18n()
   const programme = getActiveProgramme()
   const modules = programme.moduleNumbers
   const useBackup = programme.features.backupSelections
@@ -150,21 +150,26 @@ export default function Planner() {
       s.module,
       selections,
       enrollmentRules,
+      locale,
     )
 
     if (sameCourseBlock) {
-      const existing = selections.find(x => x.courseCode === s.courseCode)
       setDuplicateMsg(
         t('planner.duplicateWishlist', {
           code: s.courseCode,
-          section: existing?.sectionId ?? s.sectionId,
-          module: existing?.module ?? s.module,
+          section: sameCourseBlock.sectionId,
+          module: sameCourseBlock.module,
         }),
       )
       return
     }
     if (moduleConflict) {
-      setDuplicateMsg(`「${s.courseCode}」${moduleConflict.message}`)
+      setDuplicateMsg(
+        t('planner.moduleConflict', {
+          code: s.courseCode,
+          detail: moduleConflict.message,
+        }),
+      )
       return
     }
 
@@ -180,7 +185,7 @@ export default function Planner() {
         }),
       )
     }
-  }, [isSelected, removeBackup, selections, enrollmentRules, toggle, t])
+  }, [isSelected, removeBackup, selections, enrollmentRules, toggle, t, locale])
 
   const conflicts = useMemo(() => detectConflicts(selections, courses), [selections, courses])
   const calendarEvents = useMemo(() => buildCalendarEvents(selections, courses), [selections, courses])
@@ -673,9 +678,17 @@ export default function Planner() {
                         course.module,
                         selections,
                         enrollmentRules,
+                        locale,
                       )
                       blocked = !!sameCourseBlock || (!!moduleConflict && !sel)
-                      blockHint = sameCourseBlock ?? moduleConflict?.message ?? undefined
+                      blockHint = sameCourseBlock
+                        ? t('planner.duplicateHint', {
+                            section: sameCourseBlock.sectionId,
+                            module: sameCourseBlock.module,
+                          })
+                        : moduleConflict && !sel
+                          ? moduleConflict.message
+                          : undefined
                     } else {
                       const existingForCode = getForCourseCode(course.courseCode)
                       blocked = !!existingForCode && !sel

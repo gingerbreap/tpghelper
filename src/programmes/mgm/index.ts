@@ -47,6 +47,7 @@ export const mgmProgramme: ProgrammeConfig = {
     iso: '2026-09-01T17:22:00+08:00',
   },
   studyStatus: {
+    sampleCourseCode: 'PMGM7001',
     courseCodePattern: String.raw`(?:PMGM|MFIN|PMSC)\d{4}`,
   },
   ics: {

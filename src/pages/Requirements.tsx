@@ -1,6 +1,7 @@
 import { useRequirements, useCourses } from '../hooks/useCoursesData'
 import { useI18n } from '../i18n/context'
 import { getActiveProgramme } from '../programmes'
+import { formatEnrollmentRuleMessage } from '../hooks/useSelections'
 import type { Stream, StreamList } from '../types'
 
 function isFlatStream(stream: Stream): stream is Stream & { minRequired: number; courses: string[] } {
@@ -15,7 +16,7 @@ function getNestedLists(stream: Stream): StreamList[] {
 }
 
 export default function Requirements() {
-  const { t, tList } = useI18n()
+  const { t, tList, locale } = useI18n()
   const req = useRequirements()
   const { courses } = useCourses()
   const programme = getActiveProgramme()
@@ -153,7 +154,10 @@ export default function Requirements() {
                 {getNestedLists(stream).map(list => (
                   <div key={list.name}>
                     <h4 style={{ fontSize: 14, marginBottom: 8 }}>
-                      {list.name}（至少 {list.minRequired} 门）
+                      {t('requirements.listMinRequired', {
+                        name: list.name,
+                        min: list.minRequired,
+                      })}
                     </h4>
                     <ul className="course-list">
                       {list.courses.map(code => (
@@ -174,11 +178,7 @@ export default function Requirements() {
           <ul className="course-list">
             {req.enrollmentRules!.map((rule, i) => (
               <li key={i} style={{ fontSize: 13 }}>
-                {rule.messageZh ||
-                  rule.message ||
-                  (rule.type === 'allowMultiModule'
-                    ? `${rule.courseCode}（Module ${(rule.modules ?? []).join('、')}）`
-                    : `${(rule.courses ?? []).join(' / ')} (${rule.type})`)}
+                {formatEnrollmentRuleMessage(rule, locale)}
               </li>
             ))}
           </ul>

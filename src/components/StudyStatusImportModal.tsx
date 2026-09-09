@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { Course, SelectedSection } from '../types'
 import { useI18n } from '../i18n/context'
+import { getActiveProgramme } from '../programmes'
 import {
   resolveStudyStatusImport,
   type StudyStatusImportResult,
@@ -19,6 +20,7 @@ export default function StudyStatusImportModal({
   onClose,
 }: StudyStatusImportModalProps) {
   const { t } = useI18n()
+  const sampleCode = getActiveProgramme().studyStatus.sampleCourseCode
   const [text, setText] = useState('')
   const [result, setResult] = useState<StudyStatusImportResult | null>(null)
 
@@ -94,7 +96,7 @@ export default function StudyStatusImportModal({
               setText(event.target.value)
               setResult(null)
             }}
-            placeholder={'Study Status\n...\nMSBA7001\nD\n2026-2027\nModule 1\nCore\nRegistered'}
+            placeholder={t('studyStatus.placeholder', { code: sampleCode })}
             spellCheck={false}
           />
           <div className="study-status-actions">

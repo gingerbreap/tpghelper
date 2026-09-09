@@ -26,6 +26,8 @@ export interface ProgrammeStorageKeys {
 }
 
 export interface ProgrammeStudyStatusConfig {
+  /** Example course code shown in the Study Status paste placeholder. */
+  sampleCourseCode: string
   /** Regex source for course codes in Study Status paste (without flags). */
   courseCodePattern: string
 }

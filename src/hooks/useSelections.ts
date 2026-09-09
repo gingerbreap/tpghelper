@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { EnrollmentRule, SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
+import type { Locale } from '../i18n/types'
 
 const STORAGE_KEY = getActiveProgramme().storage.selections
 
@@ -9,6 +10,38 @@ export type ToggleResult = 'added' | 'removed' | 'duplicate'
 export interface ModuleConflict {
   conflictingCode: string
   message: string
+}
+
+export interface SameCourseBlock {
+  sectionId: string
+  module: number
+}
+
+function isZhLocale(locale: Locale): boolean {
+  return locale === 'zh-CN' || locale === 'zh-HK'
+}
+
+/** Pick EN/ZH copy from an enrollment rule (JSON + i18n fallbacks). */
+export function formatEnrollmentRuleMessage(
+  rule: EnrollmentRule,
+  locale: Locale,
+): string {
+  const zh = isZhLocale(locale)
+  if (zh && rule.messageZh) return rule.messageZh
+  if (!zh && rule.message) return rule.message
+  if (rule.messageZh) return rule.messageZh
+  if (rule.message) return rule.message
+
+  if (rule.type === 'allowMultiModule') {
+    const modules = (rule.modules ?? []).join(zh ? '、' : ', ')
+    return zh
+      ? `${rule.courseCode}（Module ${modules}）`
+      : `${rule.courseCode} (Module ${modules})`
+  }
+  const courses = (rule.courses ?? []).join(zh ? ' 与 ' : ' / ')
+  return zh
+    ? `同一 Module 内 ${courses} 只能选其一`
+    : `Within the same module, only one of ${courses} may be selected`
 }
 
 export function allowsMultiModuleSelection(
@@ -34,18 +67,18 @@ export function getSameCourseBlockReason(
   selections: SelectedSection[],
   rules: EnrollmentRule[] = [],
   isCurrentlySelected = false,
-): string | null {
+): SameCourseBlock | null {
   if (isCurrentlySelected) return null
 
   for (const existing of selections.filter(s => s.courseCode === courseCode)) {
     if (existing.module === module) {
       if (existing.sectionId !== sectionId) {
-        return `已选 ${existing.sectionId}班（Module ${existing.module}），请先移除`
+        return { sectionId: existing.sectionId, module: existing.module }
       }
       continue
     }
     if (!allowsMultiModuleSelection(courseCode, module, existing.module, rules)) {
-      return `已选 ${existing.sectionId}班（Module ${existing.module}），请先移除`
+      return { sectionId: existing.sectionId, module: existing.module }
     }
   }
   return null
@@ -85,6 +118,7 @@ export function getModuleConflict(
   module: number,
   selections: SelectedSection[],
   rules: EnrollmentRule[] = [],
+  locale: Locale = 'zh-CN',
 ): ModuleConflict | null {
   for (const rule of rules) {
     if (rule.type !== 'mutualExclusion' || rule.scope !== 'module') continue
@@ -96,7 +130,7 @@ export function getModuleConflict(
       if (existing) {
         return {
           conflictingCode: otherCode,
-          message: rule.messageZh ?? rule.message ?? `同一 Module 内 ${rule.courses.join(' 与 ')} 只能选其一`,
+          message: formatEnrollmentRuleMessage(rule, locale),
         }
       }
     }

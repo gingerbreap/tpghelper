@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:msba": "PROGRAMME=msba vite",
-    "dev:mgm": "PROGRAMME=mgm vite",
-    "build": "tsc -b && vite build",
-    "build:msba": "PROGRAMME=msba tsc -b && PROGRAMME=msba vite build",
-    "build:mgm": "PROGRAMME=mgm tsc -b && PROGRAMME=mgm vite build",
+    "dev": "node scripts/select-programme.mjs msba && vite",
+    "dev:msba": "node scripts/select-programme.mjs msba && PROGRAMME=msba vite",
+    "dev:mgm": "node scripts/select-programme.mjs mgm && PROGRAMME=mgm vite",
+    "build": "node scripts/select-programme.mjs msba && tsc -b && vite build",
+    "build:msba": "node scripts/select-programme.mjs msba && PROGRAMME=msba tsc -b && PROGRAMME=msba vite build",
+    "build:mgm": "node scripts/select-programme.mjs mgm && PROGRAMME=mgm tsc -b && PROGRAMME=mgm vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },

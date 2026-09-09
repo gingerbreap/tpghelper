@@ -7,9 +7,11 @@ import {
   type GroupedConflicts,
   type PairConflict,
 } from '../utils/conflicts'
+import { getActiveProgramme } from '../programmes'
 
-const TUTORIAL_DISMISS_KEY = 'msba-dismiss-tutorial-conflicts'
-const TUTORIAL_DISMISS_EVENT = 'msba:dismiss-tutorial-conflicts'
+const programme = getActiveProgramme()
+const TUTORIAL_DISMISS_KEY = `${programme.id}-dismiss-tutorial-conflicts`
+const TUTORIAL_DISMISS_EVENT = `${programme.id}:dismiss-tutorial-conflicts`
 
 interface ConflictNoticesProps {
   conflicts: GroupedConflicts

@@ -1,34 +1,23 @@
-import { msbaProgramme } from './msba'
-import { mgmProgramme } from './mgm'
+import { programme } from './activePack'
 import type { ProgrammeConfig, ProgrammeId } from './types'
 
 export type { ProgrammeConfig, ProgrammeId, ProgrammeFeatureFlags, ProgrammeStorageKeys } from './types'
-export { msbaProgramme, mgmProgramme }
 
-const programmes: Record<ProgrammeId, ProgrammeConfig> = {
-  msba: msbaProgramme,
-  mgm: mgmProgramme,
-}
+/** Default when PROGRAMME env / define is missing (matches Vite default). */
+export const DEFAULT_PROGRAMME_ID: ProgrammeId = programme.id
 
-/** Default when PROGRAMME env / define is missing. */
-export const DEFAULT_PROGRAMME_ID: ProgrammeId = 'msba'
-
-function resolveProgrammeId(): ProgrammeId {
-  const fromDefine =
-    typeof __PROGRAMME_ID__ !== 'undefined' ? (__PROGRAMME_ID__ as string) : ''
-  if (fromDefine === 'msba' || fromDefine === 'mgm') return fromDefine
-  return DEFAULT_PROGRAMME_ID
-}
-
-export function getProgramme(id: ProgrammeId = resolveProgrammeId()): ProgrammeConfig {
-  const pack = programmes[id]
-  if (!pack) {
-    throw new Error(`Programme "${id}" is not registered`)
+/**
+ * Resolve a programme config for this build.
+ * Only the active pack is linked via `activePack.ts` (see scripts/select-programme.mjs).
+ */
+export function getProgramme(id: ProgrammeId = programme.id): ProgrammeConfig {
+  if (id !== programme.id) {
+    throw new Error(`Programme "${id}" is not in this build (active: ${programme.id})`)
   }
-  return pack
+  return programme
 }
 
 /** Active programme for this build (set via PROGRAMME=msba|mgm). */
 export function getActiveProgramme(): ProgrammeConfig {
-  return getProgramme(resolveProgrammeId())
+  return programme
 }

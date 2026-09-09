@@ -13,7 +13,7 @@ This directory was renamed from `HKUBS_BA_CourseList`. It is a **fork-style work
 | MSBA (default) | `src/programmes/msba/` | `public/msba/` | `/tpghelper/msba/` |
 | MGM | `src/programmes/mgm/` | `public/mgm/` | `/tpghelper/mgm/` |
 
-Build selects one active pack via `PROGRAMME=msba|mgm` (default `msba`). Vite sets `base`, `publicDir`, analytics id, and `__PROGRAMME_ID__`.
+Build selects one active pack via `PROGRAMME=msba|mgm` (default `msba`). `scripts/select-programme.mjs` rewrites `src/programmes/activePack.ts` (and locale overlays) so only that pack is typechecked/bundled; Vite sets `base`, `publicDir`, analytics id, and `__PROGRAMME_ID__`.
 
 ## 功能概览
 - **我的日历** / **我的选课**（默认可配置）/ 模块时间表 / 培养要求 / **关于**

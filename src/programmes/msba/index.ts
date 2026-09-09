@@ -47,6 +47,7 @@ export const msbaProgramme: ProgrammeConfig = {
     iso: '2026-09-03T17:23:00+08:00',
   },
   studyStatus: {
+    sampleCourseCode: 'MSBA7001',
     courseCodePattern: String.raw`MSBA\d{4}`,
   },
   ics: {

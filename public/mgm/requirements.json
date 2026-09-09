@@ -8,9 +8,18 @@
     "PMGM7004"
   ],
   "capstoneCourses": [
-    { "courseCode": "PMGM7006", "courseTitle": "Innovation and International Strategy" },
-    { "courseCode": "PMSC7901", "courseTitle": "Business Case Analysis Capstone" },
-    { "courseCode": "PMSC7902", "courseTitle": "Business Case Analysis Capstone (Global Centres)" }
+    {
+      "courseCode": "PMGM7006",
+      "courseTitle": "Innovation and International Strategy"
+    },
+    {
+      "courseCode": "PMSC7901",
+      "courseTitle": "Business Case Analysis Capstone"
+    },
+    {
+      "courseCode": "PMSC7902",
+      "courseTitle": "Business Case Analysis Capstone (Global Centres)"
+    }
   ],
   "streams": {
     "ESG": {
@@ -34,16 +43,24 @@
   "enrollmentRules": [
     {
       "type": "mutualExclusion",
-      "courses": ["PMGM7001", "PMGM7002"],
+      "courses": [
+        "PMGM7001",
+        "PMGM7002"
+      ],
       "scope": "module",
-      "messageZh": "同一 Module 内 PMGM7001 与 PMGM7002 只能选其一"
+      "messageZh": "同一 Module 内 PMGM7001 与 PMGM7002 只能选其一",
+      "message": "Within the same module, only one of PMGM7001 / PMGM7002 may be selected"
     },
     {
       "type": "allowMultiModule",
       "courseCode": "PMGM7016",
-      "modules": [1, 3],
+      "modules": [
+        1,
+        3
+      ],
       "countsAsOneCourse": true,
-      "messageZh": "PMGM7016 的 Module 1 为 Info Session（信息说明会），可与 Module 3 实地考察同时加入规划；两部分合计计为 1 门课"
+      "messageZh": "PMGM7016 的 Module 1 为 Info Session（信息说明会），可与 Module 3 实地考察同时加入规划；两部分合计计为 1 门课",
+      "message": "PMGM7016 Module 1 is an Info Session and may be planned together with Module 3 fieldwork; both parts count as one course"
     }
   ],
   "notes": [

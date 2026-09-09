@@ -76,6 +76,7 @@ const en: TranslationTree = {
     duplicateWishlist:
       '"{{code}}" is already in your plan (Class {{section}} · Module {{module}}). Remove it before selecting from wishlist.',
     duplicateHint: 'Already selected Class {{section}} (Module {{module}}); remove first',
+    moduleConflict: '"{{code}}" {{detail}}',
   },
   timetable: {
     title: 'Module Timetable',
@@ -118,6 +119,8 @@ const en: TranslationTree = {
     listB: 'List B — AI Applications (min. 1)',
     listC: 'List C — Analytical Methods (min. 1)',
     listD: 'List D — Domain Expertise (min. 1)',
+    listMinRequired: '{{name}} (at least {{min}})',
+    enrollmentRulesTitle: 'Enrolment rules',
     planningTitle: 'Planning notes',
     notesTitle: 'Other notes',
     aiDescription:
@@ -289,6 +292,7 @@ const en: TranslationTree = {
     unmatched: 'Could not match in 2026-27 Teaching Plan: {{list}}',
     duplicates: 'Skipped duplicate course codes: {{list}}',
     item: '{{code}} Class {{section}} · Module {{module}}',
+    placeholder: 'Study Status\n...\n{{code}}\nD\n2026-2027\nModule 1\nCore\nRegistered',
   },
   ics: {
     title: 'Export .ics calendar',

@@ -76,6 +76,7 @@ const zhCN: TranslationTree = {
     duplicateWishlist:
       '「{{code}}」已在规划中（{{section}}班 · Module {{module}}），请先移除后再从备选中选择。',
     duplicateHint: '已选 {{section}}班（Module {{module}}），请先移除',
+    moduleConflict: '「{{code}}」{{detail}}',
   },
   timetable: {
     title: '模块时间表',
@@ -118,6 +119,8 @@ const zhCN: TranslationTree = {
     listB: 'List B — AI Applications（至少 1 门）',
     listC: 'List C — Analytical Methods（至少 1 门）',
     listD: 'List D — Domain Expertise（至少 1 门）',
+    listMinRequired: '{{name}}（至少 {{min}} 门）',
+    enrollmentRulesTitle: '选课限制',
     planningTitle: '学习规划建议',
     notesTitle: '其他说明',
     aiDescription:
@@ -288,6 +291,7 @@ const zhCN: TranslationTree = {
     unmatched: '无法在 2026-27 教学计划中匹配：{{list}}',
     duplicates: '重复课号已跳过：{{list}}',
     item: '{{code}} Class {{section}} · Module {{module}}',
+    placeholder: 'Study Status\n...\n{{code}}\nD\n2026-2027\nModule 1\nCore\nRegistered',
   },
   ics: {
     title: '导出 .ics 格式日历文件',
