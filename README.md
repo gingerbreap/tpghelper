@@ -34,4 +34,4 @@ npm install
 npm run dev
 ```
 
-构建仍使用 Vite `base: '/HKUBS_BA_CourseList/'` until Azure (or a new Pages repo) is wired. Version 形如 `1.4.8.260909 (commit)`，见关于页。
+构建使用 Vite `base: '/tpghelper/msba/'`（见 `src/programmes/msba`）。本地 `npm run dev` 后打开该路径。Version 形如 `1.4.8.260909 (commit)`，见关于页。

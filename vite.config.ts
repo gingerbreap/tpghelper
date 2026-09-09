@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 import { execSync } from 'node:child_process'
 
 const APP_VERSION_BASE = '1.4.8'
+/** Keep in sync with `src/programmes/msba` `viteBase` */
+const MSBA_VITE_BASE = '/tpghelper/msba/'
 
 function git(command: string): string {
   try {
@@ -21,14 +23,22 @@ function buildAppVersionInfo() {
   const repoUrl = git('git config --get remote.origin.url')
     .replace(/^git@github\.com:/, 'https://github.com/')
     .replace(/\.git$/, '')
-  return { version, sha, repoUrl: repoUrl || 'https://github.com/gingerbreap/HKUBS_BA_CourseList' }
+  return {
+    version,
+    sha,
+    repoUrl: repoUrl || 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
+  }
 }
 
 const appVersion = buildAppVersionInfo()
 
 export default defineConfig({
   plugins: [react()],
-  base: '/HKUBS_BA_CourseList/',
+  // Active programme base until multi-programme host routing exists
+  base: MSBA_VITE_BASE,
+  server: {
+    open: MSBA_VITE_BASE,
+  },
   define: {
     __APP_VERSION__: JSON.stringify(appVersion.version),
     __APP_COMMIT_SHA__: JSON.stringify(appVersion.sha),

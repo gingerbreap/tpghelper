@@ -9,7 +9,7 @@ export const msbaProgramme: ProgrammeConfig = {
   id: 'msba',
   shortName: 'MSc(BA)',
   titleStem: 'HKU MSc(BA) Course Planner',
-  viteBase: '/HKUBS_BA_CourseList/',
+  viteBase: '/tpghelper/msba/',
   repoUrl: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
   analyticsId: 'G-TGBLKX855E',
   moduleCount: 5,
