@@ -68,13 +68,13 @@ export const LANDER_PROGRAMMES: readonly LanderProgramme[] = [
   {
     id: 'mgm',
     nameKey: 'programmes.items.mgm',
-    appPath: '/tpghelper/mgm/',
+    appPath: '/mgm/',
     available: true,
   },
   {
     id: 'msba',
     nameKey: 'programmes.items.msba',
-    appPath: '/tpghelper/msba/',
+    appPath: '/msba/',
     available: true,
   },
   {

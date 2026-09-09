@@ -6,13 +6,13 @@ export const TPG_AUTH_MODE_KEY = 'tpghelper-auth-mode'
 export const TPG_PREFERRED_PROGRAMME_KEY = 'tpghelper-preferred-programme'
 
 /** Absolute site paths (Vite `base` for each entry). */
-export const LANDER_BASE = '/tpghelper/'
-export const LANDER_PROGRAMMES_URL = '/tpghelper/#/programmes'
-export const LANDER_AUTH_URL = '/tpghelper/#/'
+export const LANDER_BASE = '/'
+export const LANDER_PROGRAMMES_URL = '/#/programmes'
+export const LANDER_AUTH_URL = '/#/'
 
 export const PROGRAMME_APP_PATHS: Record<string, string> = {
-  msba: '/tpghelper/msba/',
-  mgm: '/tpghelper/mgm/',
+  msba: '/msba/',
+  mgm: '/mgm/',
 }
 
 function read(key: string): string | null {

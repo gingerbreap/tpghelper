@@ -20,7 +20,7 @@ export const mgmProgramme: ProgrammeConfig = {
   id: 'mgm',
   shortName: 'MGM',
   titleStem: 'HKU MGM Course Planner',
-  viteBase: '/tpghelper/mgm/',
+  viteBase: '/mgm/',
   repoUrl: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
   analyticsId: 'G-P5JGQYVL02',
   moduleCount: 6,

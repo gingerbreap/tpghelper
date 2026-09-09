@@ -21,21 +21,21 @@ const PROGRAMME_META: Record<
   }
 > = {
   msba: {
-    base: '/tpghelper/msba/',
+    base: '/msba/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU MSc(BA) 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
     publicDir: 'public/msba',
   },
   mgm: {
-    base: '/tpghelper/mgm/',
+    base: '/mgm/',
     analyticsId: 'G-P5JGQYVL02',
     htmlTitle: 'HKU MGM 选课助手',
     repoFallback: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
     publicDir: 'public/mgm',
   },
   lander: {
-    base: '/tpghelper/',
+    base: '/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU TPg Course Planner',
     repoFallback: 'https://github.com/gingerbreap/tpghelper',

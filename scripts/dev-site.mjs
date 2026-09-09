@@ -54,8 +54,8 @@ function run(label, programme, port) {
 }
 
 function targetFor(urlPath) {
-  if (urlPath.startsWith('/tpghelper/msba')) return `http://127.0.0.1:${MSBA_PORT}`
-  if (urlPath.startsWith('/tpghelper/mgm')) return `http://127.0.0.1:${MGM_PORT}`
+  if (urlPath.startsWith('/msba')) return `http://127.0.0.1:${MSBA_PORT}`
+  if (urlPath.startsWith('/mgm')) return `http://127.0.0.1:${MGM_PORT}`
   return `http://127.0.0.1:${LANDER_PORT}`
 }
 
@@ -88,7 +88,7 @@ server.on('upgrade', (req, socket, head) => {
 })
 
 server.listen(GATEWAY_PORT, () => {
-  console.log(`\n[gateway] http://localhost:${GATEWAY_PORT}/tpghelper/`)
-  console.log(`[gateway]   /tpghelper/msba/ → :${MSBA_PORT}`)
-  console.log(`[gateway]   /tpghelper/mgm/  → :${MGM_PORT}\n`)
+  console.log(`\n[gateway] http://localhost:${GATEWAY_PORT}/`)
+  console.log(`[gateway]   /msba/ → :${MSBA_PORT}`)
+  console.log(`[gateway]   /mgm/  → :${MGM_PORT}\n`)
 })

@@ -2107,7 +2107,7 @@ button.calendar-holiday-label {
 }
 .promote-btn:hover { background: #1557b0; }
 
-/* ========== Universal lander (/tpghelper/) ========== */
+/* ========== Universal lander (/) ========== */
 .lander-shell {
   min-height: 100vh;
   display: flex;
