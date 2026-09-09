@@ -54,6 +54,15 @@ npm run build:msba
 npm run build:mgm
 ```
 
-Deploy lander to the site root `/` and each programme build under its own subdirectory (same host / origin on `tpghelper.gbrp.top`).
+### Production site (merged tree + Express)
+```bash
+npm ci
+npm run build:site   # lander → server/public/, msba → …/msba/, mgm → …/mgm/
+npm start            # Express on PORT (default 8080)
+```
+
+`server/public/` is build output (gitignored). The server serves that tree statically and reserves `/api` (health: `GET /api/health` → `{ ok: true }`).
+
+**Azure App Service:** build step `npm ci && npm run build:site`, startup command `npm start` (App Service sets `PORT`).
 
 Version 形如 `1.4.8.260909 (commit)`，见关于页。

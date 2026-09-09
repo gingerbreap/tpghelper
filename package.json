@@ -13,10 +13,13 @@
     "build:lander": "PROGRAMME=lander tsc -b && PROGRAMME=lander vite build",
     "build:msba": "node scripts/select-programme.mjs msba && PROGRAMME=msba tsc -b && PROGRAMME=msba vite build",
     "build:mgm": "node scripts/select-programme.mjs mgm && PROGRAMME=mgm tsc -b && PROGRAMME=mgm vite build",
+    "build:site": "node scripts/build-site.mjs",
+    "start": "node server/index.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.2"
