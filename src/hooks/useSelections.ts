@@ -3,7 +3,8 @@ import type { EnrollmentRule, SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
 import type { Locale } from '../i18n/types'
 
-const STORAGE_KEY = getActiveProgramme().storage.selections
+export const SELECTIONS_STORAGE_KEY = getActiveProgramme().storage.selections
+const STORAGE_KEY = SELECTIONS_STORAGE_KEY
 
 export type ToggleResult = 'added' | 'removed' | 'duplicate'
 

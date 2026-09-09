@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 import { execSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
 
-const APP_VERSION_BASE = '1.4.8'
+const APP_VERSION_BASE = '1.5.0'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
 type ProgrammeId = 'msba' | 'mgm' | 'lander'
@@ -95,8 +96,43 @@ const gatewayPort = Number(process.env.DEV_GATEWAY_PORT || 5173)
 /** Pack id used for Vite aliases (lander falls back to msba stubs if ever imported). */
 const packId = programmeId === 'mgm' ? 'mgm' : 'msba'
 
+const pwaPlugin =
+  programmeId === 'lander'
+    ? null
+    : VitePWA({
+        registerType: 'autoUpdate',
+        // Keep locale-specific manifests in public/; do not generate a competing one.
+        manifest: false,
+        includeAssets: [
+          'favicon.ico',
+          'favicon.svg',
+          'favicon-96x96.png',
+          'apple-touch-icon.png',
+          'logo.png',
+          'site.webmanifest',
+          'site.zh-CN.webmanifest',
+          'site.zh-HK.webmanifest',
+          'web-app-manifest-192x192.png',
+          'web-app-manifest-512x512.png',
+        ],
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,webmanifest}'],
+          navigateFallback: 'index.html',
+          // workbox-build's production terser pass can hang / fail ("Unfinished hook action(s) on exit: (terser) renderChunk").
+          mode: 'development',
+          maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
+        },
+        devOptions: {
+          enabled: false,
+        },
+      })
+
 export default defineConfig({
-  plugins: [react(), programmeHtmlPlugin(meta)],
+  plugins: [
+    react(),
+    programmeHtmlPlugin(meta),
+    ...(pwaPlugin ? [pwaPlugin] : []),
+  ],
   publicDir: meta.publicDir,
   base: meta.base,
   resolve: {

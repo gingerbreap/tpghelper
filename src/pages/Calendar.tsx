@@ -34,6 +34,7 @@ export default function Calendar() {
         selections={[]}
         onImportSelections={replace}
         onCourseClick={setDetailCode}
+        eventMeta="venue"
       />
       {unreadCount > 0 && (
         <p className="calendar-unread-tp-notice">

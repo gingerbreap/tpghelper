@@ -5,6 +5,7 @@ import en from './locales/en'
 import { interpolate, resolveTranslation } from './resolve'
 import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, type Locale, type TranslationTree, type TranslationValue } from './types'
 import { programmeLocaleOverlays } from '../programmes/activeLocaleOverlays'
+import { applyAppIdentity, detectSystemLocale } from '../utils/appIdentity'
 
 function deepMerge(base: TranslationTree, overlay: TranslationTree): TranslationTree {
   const out: TranslationTree = { ...base }
@@ -65,7 +66,7 @@ function readStoredLocale(): Locale {
   } catch {
     // ignore
   }
-  return DEFAULT_LOCALE
+  return detectSystemLocale() || DEFAULT_LOCALE
 }
 
 function toStringValue(value: TranslationValue | undefined, key: string): string {
@@ -104,6 +105,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = HTML_LANG[locale]
     document.title = t('meta.title')
+    applyAppIdentity(locale)
   }, [locale, t])
 
   const value = useMemo(

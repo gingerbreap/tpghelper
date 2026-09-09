@@ -3,7 +3,11 @@ import type { SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
 
 const programme = getActiveProgramme()
-const STORAGE_KEY = programme.storage.wishlist ?? `${programme.id}-planner-wishlist-unused`
+export const WISHLIST_STORAGE_KEY =
+  programme.storage.wishlist
+  ?? programme.storage.backup
+  ?? `${programme.id}-planner-wishlist-unused`
+const STORAGE_KEY = WISHLIST_STORAGE_KEY
 
 function load(): SelectedSection[] {
   try {

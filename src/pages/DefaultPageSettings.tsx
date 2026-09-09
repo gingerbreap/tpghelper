@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import AboutBackLink from '../components/AboutBackLink'
 import { useI18n } from '../i18n/context'
 import {
   getDefaultLanding,
@@ -17,10 +17,8 @@ export default function DefaultPageSettings() {
   }
 
   return (
-    <div>
-      <p className="about-back">
-        <Link to="/about">{t('about.backToAbout')}</Link>
-      </p>
+    <div className="about-subpage">
+      <AboutBackLink />
       <h1 className="page-title">{t('about.defaultPageTitle')}</h1>
       <div className="card about-default-card">
         <fieldset className="about-default-fieldset">

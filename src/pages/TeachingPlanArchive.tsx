@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import AboutBackLink from '../components/AboutBackLink'
 import { TeachingPlanNoticeBody, buildSelectedSet } from '../components/TeachingPlanNoticeBody'
 import { teachingPlanNotices } from '../data/teachingPlanUpdates'
 import { useI18n } from '../i18n/context'
@@ -15,10 +15,8 @@ export default function TeachingPlanArchive() {
   )
 
   return (
-    <div>
-      <p className="about-back">
-        <Link to="/about">{t('about.backToAbout')}</Link>
-      </p>
+    <div className="about-subpage">
+      <AboutBackLink />
       <h1 className="page-title">{t('teachingPlan.archiveTitle')}</h1>
 
       <div className="archive-list">

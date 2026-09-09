@@ -9,7 +9,7 @@ export const DEFAULT_LANDING_STORAGE_KEY = programme.storage.defaultLanding
 export type DefaultLanding = 'planner' | 'calendar'
 
 export function getAppVersion(): string {
-  return typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.4.8'
+  return typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.5.0'
 }
 
 export function getAppCommitSha(): string {

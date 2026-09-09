@@ -2,23 +2,40 @@ import type { Course, SelectedSection } from '../types'
 import { formatSectionInstructors } from './instructors'
 import { getActiveProgramme } from '../programmes'
 
+export type StudyStatusKind = 'Registered' | 'Waiting'
+
 export interface ImportedStudyStatusItem {
   courseCode: string
   sectionId: string
   module: number
+  status: StudyStatusKind
+}
+
+export interface RecognizedStudyStatusItem {
+  selection: SelectedSection
+  status: StudyStatusKind
 }
 
 export interface StudyStatusImportResult {
+  /** Matched courses ready to import (same order as recognized). */
   selections: SelectedSection[]
+  /** Matched courses with Study Status kind for the recognition list. */
+  recognized: RecognizedStudyStatusItem[]
   parsedCount: number
   unmatched: ImportedStudyStatusItem[]
   duplicateCourseCodes: string[]
 }
 
+function detectStatus(block: string): StudyStatusKind | null {
+  if (/\bWaiting\b/i.test(block)) return 'Waiting'
+  if (/\bRegistered\b/i.test(block)) return 'Registered'
+  return null
+}
+
 /**
- * Extract registered course rows from text copied from HKU Business School's
- * Study Status page. Text outside Study Status / Study Plan is ignored, as is
- * everything after the Summary heading.
+ * Extract course rows from text copied from HKU Business School's Study Status
+ * page. Accepts Registered and Waiting. Text outside Study Status / Study Plan
+ * is ignored, as is everything after the Summary heading.
  */
 export function parseStudyStatus(text: string): ImportedStudyStatusItem[] {
   const startMatch = /(?:Study\s+Status|Study\s+Plan)\b/i.exec(text)
@@ -39,11 +56,13 @@ export function parseStudyStatus(text: string): ImportedStudyStatusItem[] {
   const items: ImportedStudyStatusItem[] = []
 
   for (const match of body.matchAll(pattern)) {
-    if (!/\bRegistered\b/i.test(match[4])) continue
+    const status = detectStatus(match[4])
+    if (!status) continue
     items.push({
       courseCode: match[1].toUpperCase(),
       sectionId: match[2].toUpperCase(),
       module: Number(match[3]),
+      status,
     })
   }
 
@@ -55,7 +74,7 @@ export function resolveStudyStatusImport(
   courses: Course[],
 ): StudyStatusImportResult {
   const parsed = parseStudyStatus(text)
-  const selections: SelectedSection[] = []
+  const recognized: RecognizedStudyStatusItem[] = []
   const unmatched: ImportedStudyStatusItem[] = []
   const allowMultiModule = getActiveProgramme().features.enrollmentRules
   const seenKeys = new Set<string>()
@@ -81,18 +100,22 @@ export function resolveStudyStatusImport(
     }
     seenKeys.add(dedupeKey)
 
-    selections.push({
-      courseCode: course.courseCode,
-      courseTitle: course.courseTitle,
-      module: course.module,
-      courseType: course.courseType,
-      sectionId: section.sectionId,
-      instructor: formatSectionInstructors(section),
+    recognized.push({
+      status: item.status,
+      selection: {
+        courseCode: course.courseCode,
+        courseTitle: course.courseTitle,
+        module: course.module,
+        courseType: course.courseType,
+        sectionId: section.sectionId,
+        instructor: formatSectionInstructors(section),
+      },
     })
   }
 
   return {
-    selections,
+    selections: recognized.map(r => r.selection),
+    recognized,
     parsedCount: parsed.length,
     unmatched,
     duplicateCourseCodes: [...new Set(duplicateCourseCodes)],

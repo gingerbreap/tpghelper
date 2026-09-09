@@ -58,6 +58,11 @@ a:hover { text-decoration: underline; }
 .navbar-links a { color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .navbar-links a:hover { color: white; text-decoration: none; }
 .navbar-links a.active { color: white; border-bottom: 2px solid white; padding-bottom: 2px; }
+.navbar-utilities {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 .navbar-mobile-controls {
   display: none;
   align-items: center;
@@ -68,16 +73,25 @@ a:hover { text-decoration: underline; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   border: none;
   border-radius: 4px;
   background: transparent;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
+}
+.navbar-icon-btn i,
+.lang-picker-btn i {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar-icon-btn:hover,
 .lang-picker-btn:hover {
@@ -874,6 +888,16 @@ a:hover { text-decoration: underline; }
 }
 .stream-card h3 { color: var(--primary); margin-bottom: 8px; }
 .stream-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+.stream-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .stream-lists {
+    grid-template-columns: 1fr;
+  }
+}
 
 .check-icon { color: var(--success); margin-right: 4px; }
 .cross-icon { color: var(--error); margin-right: 4px; }
@@ -901,31 +925,127 @@ a:hover { text-decoration: underline; }
   .teaching-plan-table td { padding: 6px 8px; }
 }
 
-/* Hamburger for mobile */
+/* Hamburger removed — mobile uses bottom nav */
 .menu-toggle {
   display: none;
 }
+.app-main {
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+.mobile-bottom-nav {
+  display: none;
+}
+
 @media (max-width: 600px) {
-  .menu-toggle { display: inline-flex; }
   .navbar-mobile-controls { display: flex; }
   .lang-picker-desktop { display: none; }
   .lang-picker-mobile { display: inline-flex; }
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 100%;
+  .navbar-links { display: none; }
+
+  .app-main {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-bottom-nav {
+    --bottom-nav-h: 56px;
+    --calendar-overflow: calc(var(--bottom-nav-h) * 0.25); /* may rise 25% above white bar */
+    display: flex;
+    position: fixed;
     left: 0;
     right: 0;
-    background: var(--primary);
-    padding: 12px 16px;
-    gap: 12px;
+    bottom: 0;
+    z-index: 150;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 2px;
+    min-height: var(--bottom-nav-h);
+    padding: 0 4px env(safe-area-inset-bottom, 0px);
+    background: #fff;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+    overflow: visible;
   }
-  .navbar-links.open { display: flex; }
-  .navbar-end { position: static; }
-  .navbar-inner { position: relative; }
+
+  .mobile-bottom-nav-item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    min-width: 0;
+    padding: 6px 2px 8px;
+    color: #9aa0a6;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.15;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-bottom-nav-item:hover {
+    text-decoration: none;
+    color: #5f6368;
+  }
+  .mobile-bottom-nav-item > i {
+    font-size: 18px;
+    line-height: 1;
+  }
+  .mobile-bottom-nav-label {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .mobile-bottom-nav-item.active {
+    color: var(--primary);
+  }
+
+  .mobile-bottom-nav-item--center {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+  }
+  /* Keep label spacing like other items (icon slot), circle is absolutely raised */
+  .mobile-bottom-nav-item--center::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .mobile-bottom-nav-center-btn {
+    position: absolute;
+    left: 50%;
+    top: calc(-1 * var(--calendar-overflow));
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.35);
+    border: 3px solid #fff;
+  }
+  .mobile-bottom-nav-center-btn i {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .mobile-bottom-nav-item--center.active {
+    color: var(--primary);
+  }
+  .mobile-bottom-nav-item--center.active .mobile-bottom-nav-center-btn {
+    background: #fff;
+    color: var(--primary);
+    box-shadow: 0 2px 10px rgba(26, 115, 232, 0.28);
+    border-color: var(--primary-light);
+  }
 }
+
 
 /* Page title */
 .page-title {
@@ -1422,7 +1542,8 @@ button.calendar-holiday-label {
 }
 .calendar-event-code { font-weight: 600; }
 .calendar-event-time,
-.calendar-event-instructor {
+.calendar-event-instructor,
+.calendar-event-venue {
   display: block;
   opacity: 0.9;
   white-space: nowrap;
@@ -1878,6 +1999,14 @@ button.calendar-holiday-label {
   text-align: center;
   padding: 28px 12px 20px;
 }
+.about-logo {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 14px;
+  object-fit: contain;
+  border-radius: 20px;
+}
 .about-tool-name {
   font-size: 22px;
   font-weight: 700;
@@ -1944,9 +2073,166 @@ button.calendar-holiday-label {
   text-decoration: none;
   color: var(--primary);
 }
+.about-subpage {
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 .about-back {
   margin: 4px 0 8px;
+}
+.about-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
   font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+.about-back-btn i {
+  font-size: 12px;
+  color: var(--primary);
+}
+.about-back-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+}
+.about-default-card {
+  max-width: none;
+  width: 100%;
+  padding: 16px;
+}
+.about-default-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.about-default-legend {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 0;
+}
+.about-default-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.about-transfer-intro {
+  max-width: none;
+  width: 100%;
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.about-transfer-card {
+  max-width: none;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.about-transfer-h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.about-transfer-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+  line-height: 1.45;
+}
+.about-transfer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.about-transfer-btn {
+  appearance: none;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+.about-transfer-btn:hover:not(:disabled) {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.about-transfer-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.about-transfer-file-input {
+  display: none;
+}
+.about-transfer-status {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.about-transfer-status--ok {
+  color: var(--success);
+}
+.about-transfer-status--error {
+  color: var(--error);
+}
+
+/* Teaching Plan archive (card layout, not yellow notice) */
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.archive-notice-card {
+  padding: 0;
+  overflow: hidden;
+}
+.archive-notice-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+.archive-notice-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.archive-notice-chevron {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+.archive-notice-body {
+  padding: 0 16px 16px;
+}
+.archive-notice-body .teaching-plan-notice-text {
+  margin-bottom: 12px;
 }
 .about-default-card {
   max-width: 520px;
@@ -2009,6 +2295,278 @@ button.calendar-holiday-label {
 }
 .archive-notice-body .teaching-plan-notice-text {
   margin-bottom: 12px;
+}
+
+/* PWA settings */
+.pwa-settings-intro {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.pwa-settings-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px auto;
+  padding: 16px 18px;
+  max-width: 420px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+}
+.pwa-settings-status i {
+  color: #188038;
+  font-size: 18px;
+}
+.pwa-settings-status-hint {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+}
+.pwa-storage-title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+.pwa-storage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  row-gap: 0;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.pwa-storage-row {
+  display: contents;
+}
+.pwa-storage-row-main {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.5em;
+  min-width: 0;
+  line-height: 1.55;
+}
+.pwa-storage-label {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.55;
+}
+.pwa-storage-size {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.55;
+}
+.pwa-storage-btn-slot {
+  display: block;
+  width: 0;
+  height: 1.55em;
+}
+.pwa-storage-btn {
+  flex-shrink: 0;
+  justify-self: end;
+  margin: 0;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  line-height: calc(1.55em - 3px);
+  height: 1.55em;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.pwa-storage-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.pwa-storage-btn--primary-outline {
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+}
+.pwa-storage-btn--primary-outline:hover:not(:disabled) {
+  background: #e8f0fe;
+}
+.pwa-storage-btn--primary-solid {
+  border: 1.5px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+.pwa-storage-btn--primary-solid:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+.pwa-storage-btn--danger-outline {
+  border: 1.5px solid #d93025;
+  color: #d93025;
+}
+.pwa-storage-btn--danger-outline:hover:not(:disabled) {
+  background: #fce8e6;
+}
+.pwa-storage-btn--danger-soft {
+  border: 1.5px solid #f6aea9;
+  color: #d93025;
+  background: #fff;
+}
+.pwa-storage-btn--danger-soft:hover:not(:disabled) {
+  background: #fce8e6;
+}
+.pwa-storage-btn--danger-solid {
+  border: 1.5px solid #a50e0e;
+  background: #a50e0e;
+  color: #fff;
+}
+.pwa-storage-btn--danger-solid:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.pwa-confirm-modal {
+  width: min(420px, 92vw);
+  max-width: 92vw;
+}
+.pwa-confirm-body {
+  padding: 28px 22px 20px;
+  text-align: center;
+}
+.pwa-confirm-title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+.pwa-confirm-title--danger {
+  color: #a50e0e;
+}
+.pwa-confirm-text {
+  margin: 0 0 22px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  text-align: center;
+}
+.pwa-confirm-text p {
+  margin: 0 0 8px;
+}
+.pwa-confirm-text p:last-child {
+  margin-bottom: 0;
+}
+.pwa-confirm-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pwa-confirm-actions .pwa-storage-btn {
+  margin-left: 0;
+  min-width: 88px;
+}
+.pwa-settings-unsupported {
+  margin: 28px 12px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.pwa-settings-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+.pwa-install-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 200px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.pwa-install-cta:hover {
+  filter: brightness(1.05);
+}
+.pwa-install-banner {
+  background: #e8f0fe;
+  border-bottom: 1px solid #c6dafc;
+}
+.pwa-install-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: var(--container-max, 1200px);
+  margin: 0 auto;
+  padding: 10px 16px;
+  box-sizing: border-box;
+}
+.pwa-install-banner-icon {
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 18px;
+}
+.pwa-install-banner-text {
+  flex: 1;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #174ea6;
+}
+.pwa-install-banner-link {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.pwa-install-banner-link:hover {
+  text-decoration: underline;
+}
+.pwa-install-banner-dismiss {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #5f6368;
+  cursor: pointer;
+}
+.pwa-install-banner-dismiss:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.navbar-links .navbar-icon-btn {
+  text-decoration: none;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.navbar-links .navbar-icon-btn:hover {
+  text-decoration: none;
 }
 
 /* ===== Multi-programme (MGM) styles ===== */

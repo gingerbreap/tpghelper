@@ -123,16 +123,20 @@ function HolidayTag({
   )
 }
 
+export type CalendarEventMeta = 'instructor' | 'venue'
+
 function EventChip({
   event,
   focused,
   onCourseClick,
   sectionLabel,
+  eventMeta = 'instructor',
 }: {
   event: CalendarEvent
   focused: boolean
   onCourseClick?: (courseCode: string) => void
   sectionLabel: (sectionId: string) => string
+  eventMeta?: CalendarEventMeta
 }) {
   const { t } = useI18n()
   const label = calendarEventLabel(event)
@@ -140,12 +144,13 @@ function EventChip({
   const isFinal = event.sessionType === 'exam' || event.sessionType === 'presentation' || event.sessionType === 'other'
   const isPrevious = event.planRevision === 'previous'
   const isUpdated = event.planRevision === 'updated'
+  const metaText = eventMeta === 'venue' ? event.venue : event.instructor
   const title = [
     label,
     event.sectionId && !isFinal ? sectionLabel(event.sectionId) : '',
-    event.instructor,
+    eventMeta === 'venue' ? event.venue : event.instructor,
     timed ? `${event.startTime}-${event.endTime}` : event.date,
-    event.venue,
+    eventMeta === 'venue' ? event.instructor : event.venue,
     isPrevious ? t('calendar.planPreviousTitle') : '',
     isUpdated ? t('calendar.planUpdatedTitle') : '',
   ].filter(Boolean).join(' · ')
@@ -179,8 +184,10 @@ function EventChip({
       )}
       <span className="calendar-event-code">{label}</span>
       {timed && <span className="calendar-event-time">{event.startTime}-{event.endTime}</span>}
-      {!isFinal && !isPrevious && event.instructor && (
-        <span className="calendar-event-instructor">{event.instructor}</span>
+      {!isPrevious && metaText && (eventMeta === 'venue' || !isFinal) && (
+        <span className={eventMeta === 'venue' ? 'calendar-event-venue' : 'calendar-event-instructor'}>
+          {metaText}
+        </span>
       )}
     </button>
   )
@@ -313,6 +320,8 @@ interface PlannerCalendarProps {
   selections: SelectedSection[]
   onImportSelections: (selections: SelectedSection[]) => void
   onCourseClick?: (courseCode: string) => void
+  /** Secondary line under time: instructor (Planner embed) or venue (My Calendar). */
+  eventMeta?: CalendarEventMeta
 }
 
 export default function PlannerCalendar({
@@ -321,6 +330,7 @@ export default function PlannerCalendar({
   selections,
   onImportSelections,
   onCourseClick,
+  eventMeta = 'instructor',
 }: PlannerCalendarProps) {
   const { t, tList, sectionLabel } = useI18n()
   const weekdays = tList('calendar.weekdays')
@@ -684,6 +694,7 @@ export default function PlannerCalendar({
                     focused={!!highlightChangeId && ev.planChangeId === highlightChangeId}
                     onCourseClick={onCourseClick}
                     sectionLabel={sectionLabel}
+                    eventMeta={eventMeta}
                   />
                 ))}
               </div>

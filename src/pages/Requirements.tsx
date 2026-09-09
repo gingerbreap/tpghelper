@@ -107,7 +107,7 @@ export default function Requirements() {
                 </ul>
               </div>
             ) : isAi || isMc ? (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div className="stream-lists">
                 {isAi && (
                   <>
                     <div>
@@ -150,7 +150,7 @@ export default function Requirements() {
                 )}
               </div>
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div className="stream-lists">
                 {getNestedLists(stream).map(list => (
                   <div key={list.name}>
                     <h4 style={{ fontSize: 14, marginBottom: 8 }}>

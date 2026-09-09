@@ -121,15 +121,21 @@ export default function StudyStatusImportModal({
           {result && (
             <div className="study-status-result">
               <strong>{summary}</strong>
-              {result.selections.length > 0 && (
+              {result.recognized.length > 0 && (
                 <ul>
-                  {result.selections.map(selection => (
+                  {result.recognized.map(({ selection, status }) => (
                     <li key={`${selection.courseCode}-${selection.module}-${selection.sectionId}`}>
-                      {t('studyStatus.item', {
-                        code: selection.courseCode,
-                        section: selection.sectionId,
-                        module: selection.module,
-                      })}
+                      {status === 'Waiting'
+                        ? t('studyStatus.itemWaiting', {
+                            code: selection.courseCode,
+                            section: selection.sectionId,
+                            module: selection.module,
+                          })
+                        : t('studyStatus.item', {
+                            code: selection.courseCode,
+                            section: selection.sectionId,
+                            module: selection.module,
+                          })}
                     </li>
                   ))}
                 </ul>
