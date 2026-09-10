@@ -75,7 +75,7 @@ npm start            # Express on PORT (default 8080)
    ```
    或在 GitHub → Settings → Secrets → Actions 里粘贴。
 3. 推送 `main` 触发 `.github/workflows/azure.yml`（`npm run build:site` 后打 zip 部署；含 `server/public` 构建产物）。
-4. App Service 启动命令：`npm start`。建议关闭门户里的 “SCM / 运行时构建”（workflow 已写入 `.deployment` 关闭 Oryx 构建）。
+4. App Service 启动命令：`npm start`。运行时选 **Node 24 LTS**。建议关闭门户里的 “SCM / 运行时构建”（workflow 已写入 `.deployment` 关闭 Oryx 构建）。
 
 当前应用：`https://tpghelper.gbrp.top`（或门户默认 `*.azurewebsites.net`）。健康检查：`/api/health`（应含 `"hasLander": true`）。
 
