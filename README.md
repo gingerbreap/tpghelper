@@ -65,6 +65,8 @@ npm start            # Express on PORT (default 8080)
 
 **Azure App Service:** startup command `npm start` (App Service sets `PORT`).
 
+**GitHub Pages：** 已停用（勿再使用 `gingerbreap.github.io/tpghelper`；生产 base 为 `/` 供 Azure / 自定义域）。
+
 **GitHub Actions → Azure（Publish Profile，避开 OIDC）：**
 1. 门户下载 `*.PublishSettings`，**不要**提交进 git。
 2. 仓库 Secrets 新增 `AZURE_WEBAPP_PUBLISH_PROFILE`（文件全文）：
@@ -72,8 +74,9 @@ npm start            # Express on PORT (default 8080)
    gh secret set AZURE_WEBAPP_PUBLISH_PROFILE < ~/Downloads/tpghelper.PublishSettings
    ```
    或在 GitHub → Settings → Secrets → Actions 里粘贴。
-3. 推送 `main` 触发 `.github/workflows/azure.yml`（`npm run build:site` 后部署到 App `tpghelper`）。
+3. 推送 `main` 触发 `.github/workflows/azure.yml`（`npm run build:site` 后打 zip 部署；含 `server/public` 构建产物）。
+4. App Service 启动命令：`npm start`。建议关闭门户里的 “SCM / 运行时构建”（workflow 已写入 `.deployment` 关闭 Oryx 构建）。
 
-当前应用默认主机名形如：`https://tpghelper-….azurewebsites.net`（以门户为准）。
+当前应用：`https://tpghelper.gbrp.top`（或门户默认 `*.azurewebsites.net`）。健康检查：`/api/health`（应含 `"hasLander": true`）。
 
 Version 形如 `1.5.0.yyMMdd (commit)`，见关于页。

@@ -33,7 +33,10 @@ function buildProgramme(id, outDir) {
     ])
   }
   run(`tsc (${id})`, bin('tsc'), ['-b'], { PROGRAMME: id })
-  run(`vite (${id} → ${outDir})`, bin('vite'), ['build', '--outDir', outDir], {
+  // Nested outDirs must not emptyOutDir the parent lander tree.
+  const viteArgs = ['build', '--outDir', outDir]
+  if (id !== 'lander') viteArgs.push('--emptyOutDir', 'false')
+  run(`vite (${id} → ${outDir})`, bin('vite'), viteArgs, {
     PROGRAMME: id,
   })
 }
