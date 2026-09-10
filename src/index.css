@@ -1095,8 +1095,36 @@ a:hover { text-decoration: underline; }
 
 /* Planner calendar */
 .planner-calendar { padding: 16px; margin-bottom: 16px; }
+.calendar-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* Main chrome ≈ top navbar + bottom nav (incl. safe area) + app-main padding */
+  min-height: calc(
+    100dvh
+    - 48px
+    - env(safe-area-inset-top, 0px)
+    - 88px
+    - env(safe-area-inset-bottom, 0px)
+    - 16px
+  );
+}
+.calendar-page > .planner-calendar--page {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 95%;
+  margin-bottom: 0;
+}
+.planner-calendar--page .calendar-grid {
+  flex: 1 1 auto;
+  align-content: start;
+}
+.planner-calendar--page .calendar-day {
+  min-height: 84px;
+}
 .calendar-unread-tp-notice {
-  margin: 0 0 16px;
+  margin: 0;
   padding: 12px 14px;
   font-size: 13px;
   font-weight: 600;
@@ -1105,6 +1133,7 @@ a:hover { text-decoration: underline; }
   background: #fff8e1;
   border: 1px solid #f9ab00;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 .calendar-unread-tp-notice a {
   color: inherit;
@@ -1122,6 +1151,9 @@ a:hover { text-decoration: underline; }
   margin-bottom: 12px;
   min-width: 0;
 }
+.calendar-header--toolbar {
+  justify-content: flex-end;
+}
 .calendar-header-text {
   min-width: 0;
   flex: 0 1 auto;
@@ -1132,7 +1164,7 @@ a:hover { text-decoration: underline; }
 .calendar-nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   gap: 8px;
   max-width: 100%;
@@ -1140,10 +1172,43 @@ a:hover { text-decoration: underline; }
   flex: 0 1 auto;
   margin-left: auto;
 }
+.calendar-action-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+.calendar-action-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  white-space: nowrap;
+}
+.calendar-action-measure-item {
+  flex-shrink: 0;
+}
+.calendar-action-cluster,
 .calendar-month-cluster {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+}
+.calendar-action-cluster {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  max-width: 100%;
+}
+.calendar-month-cluster {
   flex-shrink: 0;
 }
 .calendar-nav-btn {
@@ -1191,6 +1256,9 @@ a:hover { text-decoration: underline; }
 .calendar-legend--plan {
   margin-top: -4px;
 }
+.calendar-legend--waitlist {
+  margin-top: -4px;
+}
 .calendar-legend-item { display: inline-flex; align-items: center; gap: 6px; }
 .calendar-legend-swatch {
   display: inline-block;
@@ -1200,6 +1268,24 @@ a:hover { text-decoration: underline; }
   border: 1px solid transparent;
 }
 .calendar-legend-swatch--holiday { background: #fce8e6; border-color: #f5c6c2; }
+.calendar-legend-swatch--waitlist {
+  background: #6d4c41;
+  border-color: #5d4037;
+  position: relative;
+}
+.calendar-legend-swatch--waitlist::after {
+  content: 'W';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 12px;
+  text-align: center;
+}
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -1463,6 +1549,7 @@ button.calendar-holiday-label {
   font-family: inherit;
   appearance: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  position: relative;
 }
 .calendar-event:hover {
   filter: brightness(0.96);
@@ -1470,6 +1557,26 @@ button.calendar-holiday-label {
 .calendar-event:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 1px;
+}
+.calendar-event--waitlist {
+  overflow: hidden;
+}
+.calendar-event-waitlist-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 12px;
+  height: 12px;
+  padding: 0 2px;
+  border-radius: 0 4px 0 4px;
+  background: #6d4c41;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  pointer-events: none;
 }
 .calendar-event--lecture {
   background: #e8f0fe;
@@ -1558,7 +1665,14 @@ button.calendar-holiday-label {
   font-weight: 700;
   margin-right: 3px;
 }
-.calendar-event-code { font-weight: 600; }
+.calendar-event-code {
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
 .calendar-event-time,
 .calendar-event-instructor,
 .calendar-event-venue {
@@ -1579,10 +1693,24 @@ button.calendar-holiday-label {
   .calendar-day { min-height: 64px; }
   .calendar-event-instructor { display: none; }
   .calendar-legend { gap: 8px; }
-  .calendar-nav { justify-content: space-between; }
+  .calendar-nav {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .calendar-action-stack {
+    margin-left: auto;
+    width: auto;
+    max-width: 100%;
+  }
+  .calendar-action-cluster {
+    margin-left: auto;
+  }
   .calendar-month-cluster {
     flex: 1 0 100%;
     justify-content: flex-end;
+  }
+  .planner-calendar--page .calendar-day {
+    min-height: 76px;
   }
 }
 
@@ -1596,6 +1724,9 @@ button.calendar-holiday-label {
   align-items: center;
   justify-content: center;
   padding: 16px;
+}
+.modal-overlay--stacked {
+  z-index: 2100;
 }
 .modal-window {
   position: relative;
@@ -1913,6 +2044,94 @@ button.calendar-holiday-label {
   font-size: 14px;
 }
 .ics-export-actions .alt-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.ics-export-format-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin: 16px 0 8px;
+  padding: 12px 14px;
+  background: var(--bg, #f8f9fa);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.ics-export-format-hint {
+  margin: 0;
+  flex: 1 1 12rem;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.ics-export-modal--compact {
+  width: min(520px, 90vw);
+}
+
+/* Calendar event detail (single session) */
+.calendar-event-detail-modal {
+  width: min(440px, 92vw);
+}
+.calendar-event-detail-body {
+  padding-top: 20px;
+}
+.calendar-event-detail-badges {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.calendar-event-detail-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  padding-right: 36px;
+  line-height: 1.35;
+}
+.calendar-event-detail-when {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+.calendar-event-detail-row {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.calendar-event-detail-label {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 3.5em;
+}
+.calendar-event-detail-desc-block {
+  margin-top: 14px;
+}
+.calendar-event-detail-desc-block .calendar-event-detail-label {
+  display: block;
+  margin-bottom: 6px;
+}
+.calendar-event-detail-desc {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+.calendar-event-detail-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.calendar-event-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+.calendar-event-detail-actions .select-btn {
   padding: 8px 16px;
   font-size: 14px;
 }
@@ -2678,6 +2897,35 @@ button.calendar-holiday-label {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+.enrollment-status-btn {
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: inherit;
+}
+.enrollment-status-btn--registered {
+  background: #e6f4ea;
+  color: #5f8f6c;
+  border-color: #c8ddd0;
+  position: relative;
+  box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.45);
+}
+.enrollment-status-btn--registered:hover {
+  box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.28);
+  color: #3d6b4a;
+}
+.enrollment-status-btn--waitlist {
+  background: #efebe9;
+  color: #5d4037;
+  border-color: #a1887f;
+}
+.enrollment-status-btn--waitlist:hover {
+  background: #d7ccc8;
 }
 .backup-section {
   margin-top: 16px;

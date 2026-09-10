@@ -1,17 +1,27 @@
 import {
+  useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
   type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from 'react'
+import CalendarEventDetailModal from './CalendarEventDetailModal'
+import EventFormatModal from './EventFormatModal'
 import IcsExportModal from './IcsExportModal'
 import StudyStatusImportModal from './StudyStatusImportModal'
 import { CALENDAR_END, CALENDAR_START, holidayLabelKey, holidayLunarTag } from '../data/holidays'
+import { isSelectionWaiting, selectionItemKey } from '../hooks/useSelections'
 import { useUnreadTeachingPlanNoticeIds } from '../hooks/useUnreadTeachingPlanNoticeIds'
 import { useI18n } from '../i18n/context'
-import { calendarEventLabel, eventsByDate, type CalendarEvent } from '../utils/calendarEvents'
+import { eventsByDate, type CalendarEvent } from '../utils/calendarEvents'
+import {
+  applyIcsEventTemplates,
+  loadIcsTemplates,
+  type IcsFormatTemplates,
+} from '../utils/icsFormat'
 import {
   annotateUpdatedEvents,
   buildPlanPreviousEvents,
@@ -20,6 +30,38 @@ import {
 import type { Course, SelectedSection } from '../types'
 
 const LONG_PRESS_MS = 480
+const ACTION_GAP_PX = 8
+
+type CalendarActionId = 'import' | 'format' | 'export'
+
+function packActionRows(
+  order: CalendarActionId[],
+  widths: Record<CalendarActionId, number>,
+  available: number,
+  gap: number,
+): CalendarActionId[][] {
+  if (order.length === 0) return []
+  const fits = (ids: CalendarActionId[]) => {
+    if (ids.length === 0) return true
+    const total = ids.reduce((sum, id) => sum + widths[id], 0) + gap * Math.max(0, ids.length - 1)
+    return total <= available + 0.5
+  }
+
+  const bottom = [...order]
+  const upperRows: CalendarActionId[][] = []
+
+  while (bottom.length > 1 && !fits(bottom)) {
+    const moved = bottom.shift()!
+    const lastUpper = upperRows[upperRows.length - 1]
+    if (lastUpper && fits([...lastUpper, moved])) {
+      lastUpper.push(moved)
+    } else {
+      upperRows.push([moved])
+    }
+  }
+
+  return [...upperRows, bottom]
+}
 
 function pad(n: number) {
   return String(n).padStart(2, '0')
@@ -128,29 +170,34 @@ export type CalendarEventMeta = 'instructor' | 'venue'
 function EventChip({
   event,
   focused,
-  onCourseClick,
+  onEventClick,
   sectionLabel,
   eventMeta = 'instructor',
+  templates,
+  showWaitlistBadge = false,
 }: {
   event: CalendarEvent
   focused: boolean
-  onCourseClick?: (courseCode: string) => void
+  onEventClick?: (event: CalendarEvent) => void
   sectionLabel: (sectionId: string) => string
   eventMeta?: CalendarEventMeta
+  templates: IcsFormatTemplates
+  showWaitlistBadge?: boolean
 }) {
   const { t } = useI18n()
-  const label = calendarEventLabel(event)
+  const { summary } = applyIcsEventTemplates(templates, event)
   const timed = event.startTime && event.endTime
   const isFinal = event.sessionType === 'exam' || event.sessionType === 'presentation' || event.sessionType === 'other'
   const isPrevious = event.planRevision === 'previous'
   const isUpdated = event.planRevision === 'updated'
   const metaText = eventMeta === 'venue' ? event.venue : event.instructor
   const title = [
-    label,
+    summary,
     event.sectionId && !isFinal ? sectionLabel(event.sectionId) : '',
     eventMeta === 'venue' ? event.venue : event.instructor,
     timed ? `${event.startTime}-${event.endTime}` : event.date,
     eventMeta === 'venue' ? event.instructor : event.venue,
+    showWaitlistBadge ? t('calendar.legendWaitlist') : '',
     isPrevious ? t('calendar.planPreviousTitle') : '',
     isUpdated ? t('calendar.planUpdatedTitle') : '',
   ].filter(Boolean).join(' · ')
@@ -164,16 +211,20 @@ function EventChip({
         isPrevious && 'calendar-event--plan-previous',
         isUpdated && 'calendar-event--plan-updated',
         focused && 'calendar-event--plan-focused',
+        showWaitlistBadge && 'calendar-event--waitlist',
       ].filter(Boolean).join(' ')}
       title={title}
       onClick={e => {
         e.stopPropagation()
         if (isPrevious) return
-        onCourseClick?.(event.courseCode)
+        onEventClick?.(event)
       }}
       disabled={isPrevious}
       aria-label={title}
     >
+      {showWaitlistBadge && !isPrevious && (
+        <span className="calendar-event-waitlist-badge" aria-hidden="true">W</span>
+      )}
       {isPrevious && (
         <span className="calendar-event-plan-badge">{t('calendar.planPreviousBadge')}</span>
       )}
@@ -182,7 +233,7 @@ function EventChip({
           {t('calendar.planUpdatedBadge')}
         </span>
       )}
-      <span className="calendar-event-code">{label}</span>
+      <span className="calendar-event-code">{summary}</span>
       {timed && <span className="calendar-event-time">{event.startTime}-{event.endTime}</span>}
       {!isPrevious && metaText && (eventMeta === 'venue' || !isFinal) && (
         <span className={eventMeta === 'venue' ? 'calendar-event-venue' : 'calendar-event-instructor'}>
@@ -190,6 +241,142 @@ function EventChip({
         </span>
       )}
     </button>
+  )
+}
+
+/** Toolbar actions: wrap leftmost overflowing buttons onto row(s) above. */
+function CalendarActionToolbar({
+  importLabel,
+  importTitle,
+  onImport,
+  formatLabel,
+  formatTitle,
+  onFormat,
+  exportLabel,
+  exportTitle,
+  onExport,
+  exportDisabled,
+}: {
+  importLabel: string
+  importTitle: string
+  onImport: () => void
+  formatLabel: string
+  formatTitle: string
+  onFormat: () => void
+  exportLabel: string
+  exportTitle: string
+  onExport: () => void
+  exportDisabled: boolean
+}) {
+  const stackRef = useRef<HTMLDivElement>(null)
+  const measureRef = useRef<HTMLDivElement>(null)
+  const order = useMemo<CalendarActionId[]>(() => ['import', 'format', 'export'], [])
+  const [rows, setRows] = useState<CalendarActionId[][]>([order])
+
+  const labelsKey = `${importLabel}|${formatLabel}|${exportLabel}|${exportDisabled}`
+
+  const recompute = useCallback(() => {
+    const stack = stackRef.current
+    const measure = measureRef.current
+    if (!stack || !measure) return
+
+    const available = stack.clientWidth
+    if (available <= 0) return
+
+    const widths = {} as Record<CalendarActionId, number>
+    for (const el of Array.from(measure.children) as HTMLElement[]) {
+      const id = el.dataset.actionId as CalendarActionId | undefined
+      if (!id) continue
+      widths[id] = el.getBoundingClientRect().width
+    }
+    if (order.some(id => widths[id] == null || widths[id] <= 0)) return
+
+    const next = packActionRows(order, widths, available, ACTION_GAP_PX)
+    setRows(prev => {
+      if (
+        prev.length === next.length
+        && prev.every((row, i) => row.length === next[i].length && row.every((id, j) => id === next[i][j]))
+      ) {
+        return prev
+      }
+      return next
+    })
+  }, [order])
+
+  useLayoutEffect(() => {
+    recompute()
+  }, [recompute, labelsKey])
+
+  useEffect(() => {
+    const stack = stackRef.current
+    if (!stack || typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => recompute())
+    ro.observe(stack)
+    const parent = stack.parentElement
+    if (parent) ro.observe(parent)
+    window.addEventListener('resize', recompute)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', recompute)
+    }
+  }, [recompute])
+
+  const renderButton = (id: CalendarActionId, keyPrefix: string) => {
+    if (id === 'import') {
+      return (
+        <button
+          key={`${keyPrefix}-import`}
+          type="button"
+          className="calendar-export-btn"
+          onClick={onImport}
+          title={importTitle}
+        >
+          {importLabel}
+        </button>
+      )
+    }
+    if (id === 'format') {
+      return (
+        <button
+          key={`${keyPrefix}-format`}
+          type="button"
+          className="calendar-export-btn"
+          onClick={onFormat}
+          title={formatTitle}
+        >
+          {formatLabel}
+        </button>
+      )
+    }
+    return (
+      <button
+        key={`${keyPrefix}-export`}
+        type="button"
+        className="calendar-export-btn"
+        onClick={onExport}
+        disabled={exportDisabled}
+        title={exportTitle}
+      >
+        {exportLabel}
+      </button>
+    )
+  }
+
+  return (
+    <div className="calendar-action-stack" ref={stackRef}>
+      <div className="calendar-action-measure" ref={measureRef} aria-hidden="true">
+        {order.map(id => (
+          <div key={id} data-action-id={id} className="calendar-action-measure-item">
+            {renderButton(id, 'measure')}
+          </div>
+        ))}
+      </div>
+      {rows.map((row, rowIndex) => (
+        <div key={rowIndex} className="calendar-action-cluster">
+          {row.map(id => renderButton(id, `row${rowIndex}`))}
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -322,6 +509,11 @@ interface PlannerCalendarProps {
   onCourseClick?: (courseCode: string) => void
   /** Secondary line under time: instructor (Planner embed) or venue (My Calendar). */
   eventMeta?: CalendarEventMeta
+  /**
+   * `embedded` — Planner page (keeps card title + subtitle).
+   * `page` — My Calendar tab (no card title; taller layout).
+   */
+  variant?: 'embedded' | 'page'
 }
 
 export default function PlannerCalendar({
@@ -331,11 +523,15 @@ export default function PlannerCalendar({
   onImportSelections,
   onCourseClick,
   eventMeta = 'instructor',
+  variant = 'embedded',
 }: PlannerCalendarProps) {
   const { t, tList, sectionLabel } = useI18n()
   const weekdays = tList('calendar.weekdays')
   const [{ year, month }, setView] = useState(defaultMonth)
   const [exportOpen, setExportOpen] = useState(false)
+  const [formatOpen, setFormatOpen] = useState(false)
+  const [detailEvent, setDetailEvent] = useState<CalendarEvent | null>(null)
+  const [templates, setTemplates] = useState<IcsFormatTemplates>(loadIcsTemplates)
   const [studyStatusOpen, setStudyStatusOpen] = useState(false)
   const [activeHolidayBubble, setActiveHolidayBubble] = useState<string | null>(null)
   /** null = default (no change focused); 0 = earliest; last = latest */
@@ -355,8 +551,27 @@ export default function PlannerCalendar({
   useEffect(() => () => clearFocusHighlightTimer(), [])
 
   const unreadNoticeIds = useUnreadTeachingPlanNoticeIds()
+  /** Teaching Plan previous/ghost overlay + change nav — Planner only, not「我的日历」. */
+  const enablePlanImpact = variant === 'embedded'
+
+  const waitlistKeys = useMemo(() => {
+    if (variant !== 'embedded') return new Set<string>()
+    return new Set(
+      selections.filter(isSelectionWaiting).map(selectionItemKey),
+    )
+  }, [selections, variant])
+
+  const hasWaitlistEvents = waitlistKeys.size > 0
 
   const displayEvents = useMemo(() => {
+    if (!enablePlanImpact) {
+      return {
+        events,
+        changes: [] as PlanChange[],
+        previousCount: 0,
+        updatedCount: 0,
+      }
+    }
     const previous = buildPlanPreviousEvents(selections, courses, unreadNoticeIds)
     const { events: annotated, meta } = annotateUpdatedEvents(events, selections, unreadNoticeIds)
     const merged = [...annotated, ...previous].sort((a, b) =>
@@ -370,7 +585,7 @@ export default function PlannerCalendar({
       previousCount: previous.length,
       updatedCount: meta.updatedEventCount,
     }
-  }, [events, selections, courses, unreadNoticeIds])
+  }, [enablePlanImpact, events, selections, courses, unreadNoticeIds])
 
   // Keep focus index valid when dismiss / selection changes shrink the list
   useEffect(() => {
@@ -506,6 +721,7 @@ export default function PlannerCalendar({
     setExportOpen(true)
   }
 
+  const showHeaderText = variant === 'embedded'
   const showPlanBanner = displayEvents.previousCount > 0 || displayEvents.updatedCount > 0
   const dismissLabel = t('teachingPlan.dismissRead')
   const canPrev = focusIndex !== null && focusIndex > 0
@@ -532,35 +748,72 @@ export default function PlannerCalendar({
     clearFocusHighlight()
   }
 
+  const planBanner = showPlanBanner ? (
+    <div className="calendar-plan-banner">
+      <div className="calendar-plan-banner-text">
+        {t('calendar.planUpdateBanner', { dismiss: dismissLabel })}
+      </div>
+      <div className="calendar-plan-nav" role="group" aria-label={t('calendar.planUpdateNavGroup')}>
+        <PlanNavIconButton
+          iconClass="fas fa-angle-double-left"
+          label={t('calendar.planUpdateNavEarliest')}
+          disabled={displayEvents.changes.length === 0}
+          onNavigate={goEarliest}
+        />
+        <PlanNavIconButton
+          iconClass="fas fa-angle-left"
+          label={t('calendar.planUpdateNavPrev')}
+          disabled={!canPrev}
+          onNavigate={goPrevious}
+        />
+        <PlanNavIconButton
+          iconClass="fas fa-angle-right"
+          label={t('calendar.planUpdateNavNext')}
+          disabled={!canNext}
+          onNavigate={goNext}
+        />
+        <PlanNavIconButton
+          iconClass="fas fa-angle-double-right"
+          label={t('calendar.planUpdateNavLatest')}
+          disabled={displayEvents.changes.length === 0}
+          onNavigate={goLatest}
+        />
+      </div>
+    </div>
+  ) : null
+
   return (
-    <div className="card planner-calendar" onClick={onCalendarCardClick}>
-      <div className="calendar-header">
-        <div className="calendar-header-text">
-          <div className="calendar-title">{t('calendar.title')}</div>
-          <div className="calendar-subtitle">
-            {events.length > 0
-              ? t('calendar.subtitleCount', { total: events.length, month: monthEventCount })
-              : t('calendar.subtitleEmpty')}
+      <div
+      className={[
+        'card planner-calendar',
+        variant === 'page' && 'planner-calendar--page',
+      ].filter(Boolean).join(' ')}
+      onClick={onCalendarCardClick}
+    >
+      <div className={['calendar-header', !showHeaderText && 'calendar-header--toolbar'].filter(Boolean).join(' ')}>
+        {showHeaderText && (
+          <div className="calendar-header-text">
+            <div className="calendar-title">{t('calendar.title')}</div>
+            <div className="calendar-subtitle">
+              {events.length > 0
+                ? t('calendar.subtitleCount', { total: events.length, month: monthEventCount })
+                : t('calendar.subtitleEmpty')}
+            </div>
           </div>
-        </div>
+        )}
         <div className="calendar-nav">
-          <button
-            type="button"
-            className="calendar-export-btn"
-            onClick={handleExport}
-            disabled={events.length === 0}
-            title={events.length === 0 ? t('calendar.exportDisabled') : t('calendar.exportTitle')}
-          >
-            {t('calendar.export')}
-          </button>
-          <button
-            type="button"
-            className="calendar-export-btn"
-            onClick={() => setStudyStatusOpen(true)}
-            title={t('calendar.importTitle')}
-          >
-            {t('calendar.import')}
-          </button>
+          <CalendarActionToolbar
+            importLabel={t('calendar.import')}
+            importTitle={t('calendar.importTitle')}
+            onImport={() => setStudyStatusOpen(true)}
+            formatLabel={t('calendar.format')}
+            formatTitle={t('calendar.formatTitle')}
+            onFormat={() => setFormatOpen(true)}
+            exportLabel={t('calendar.export')}
+            exportTitle={events.length === 0 ? t('calendar.exportDisabled') : t('calendar.exportTitle')}
+            onExport={handleExport}
+            exportDisabled={events.length === 0}
+          />
           <div className="calendar-month-cluster">
             <button type="button" className="calendar-nav-btn" onClick={prevMonth} disabled={atStart} aria-label={t('calendar.prevMonth')}>
               ‹
@@ -573,40 +826,7 @@ export default function PlannerCalendar({
         </div>
       </div>
 
-      {showPlanBanner && (
-        <div className="calendar-plan-banner">
-          <div className="calendar-plan-banner-text">
-            {t('calendar.planUpdateBanner', { dismiss: dismissLabel })}
-          </div>
-          <div className="calendar-plan-nav" role="group" aria-label={t('calendar.planUpdateNavGroup')}>
-            <PlanNavIconButton
-              iconClass="fas fa-angle-double-left"
-              label={t('calendar.planUpdateNavEarliest')}
-              disabled={displayEvents.changes.length === 0}
-              onNavigate={goEarliest}
-            />
-            <PlanNavIconButton
-              iconClass="fas fa-angle-left"
-              label={t('calendar.planUpdateNavPrev')}
-              disabled={!canPrev}
-              onNavigate={goPrevious}
-            />
-            <PlanNavIconButton
-              iconClass="fas fa-angle-right"
-              label={t('calendar.planUpdateNavNext')}
-              disabled={!canNext}
-              onNavigate={goNext}
-            />
-            <PlanNavIconButton
-              iconClass="fas fa-angle-double-right"
-              label={t('calendar.planUpdateNavLatest')}
-              disabled={displayEvents.changes.length === 0}
-              onNavigate={goLatest}
-            />
-          </div>
-        </div>
-      )}
-
+      {planBanner}
       <div className="calendar-legend">
         <span className="calendar-legend-item">
           <span className="calendar-legend-swatch calendar-event--lecture" /> {t('calendar.legendLec')}
@@ -631,6 +851,13 @@ export default function PlannerCalendar({
           </span>
           <span className="calendar-legend-item">
             <span className="calendar-legend-swatch calendar-legend-swatch--plan-updated" /> {t('calendar.legendPlanUpdated')}
+          </span>
+        </div>
+      )}
+      {hasWaitlistEvents && (
+        <div className="calendar-legend calendar-legend--waitlist">
+          <span className="calendar-legend-item">
+            <span className="calendar-legend-swatch calendar-legend-swatch--waitlist" /> {t('calendar.legendWaitlist')}
           </span>
         </div>
       )}
@@ -692,9 +919,17 @@ export default function PlannerCalendar({
                     key={ev.id}
                     event={ev}
                     focused={!!highlightChangeId && ev.planChangeId === highlightChangeId}
-                    onCourseClick={onCourseClick}
+                    onEventClick={setDetailEvent}
                     sectionLabel={sectionLabel}
                     eventMeta={eventMeta}
+                    templates={templates}
+                    showWaitlistBadge={waitlistKeys.has(
+                      selectionItemKey({
+                        courseCode: ev.courseCode,
+                        module: ev.module,
+                        sectionId: ev.sectionId,
+                      }),
+                    )}
                   />
                 ))}
               </div>
@@ -733,7 +968,34 @@ export default function PlannerCalendar({
       )}
 
       {exportOpen && (
-        <IcsExportModal events={events} onClose={() => setExportOpen(false)} />
+        <IcsExportModal
+          events={events}
+          onClose={() => setExportOpen(false)}
+          onOpenFormat={() => setFormatOpen(true)}
+        />
+      )}
+      {formatOpen && (
+        <EventFormatModal
+          events={events}
+          onClose={() => setFormatOpen(false)}
+          onSaved={setTemplates}
+          lockScroll={!exportOpen}
+        />
+      )}
+      {detailEvent && (
+        <CalendarEventDetailModal
+          event={detailEvent}
+          templates={templates}
+          onClose={() => setDetailEvent(null)}
+          onViewCourse={
+            onCourseClick
+              ? code => {
+                  setDetailEvent(null)
+                  onCourseClick(code)
+                }
+              : undefined
+          }
+        />
       )}
       {studyStatusOpen && (
         <StudyStatusImportModal

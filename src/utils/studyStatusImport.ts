@@ -109,6 +109,7 @@ export function resolveStudyStatusImport(
         courseType: course.courseType,
         sectionId: section.sectionId,
         instructor: formatSectionInstructors(section),
+        enrollmentStatus: item.status === 'Waiting' ? 'waiting' : 'registered',
       },
     })
   }

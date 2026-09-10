@@ -5,19 +5,25 @@ import PlannerCalendar from '../components/PlannerCalendar'
 import { useI18n } from '../i18n/context'
 import { useCourses } from '../hooks/useCoursesData'
 import { useUnreadTeachingPlanNoticeIds } from '../hooks/useUnreadTeachingPlanNoticeIds'
-import { useSelections } from '../hooks/useSelections'
+import { isSelectionWaiting, useSelections } from '../hooks/useSelections'
 import { buildCalendarEvents } from '../utils/calendarEvents'
 
-/** Standalone calendar tab — same calendar feature as on Planner (main). */
+/** Standalone calendar tab — latest schedule only (no waitlist / no TP previous overlay). */
 export default function Calendar() {
   const { t } = useI18n()
   const { courses, loading } = useCourses()
   const { selections, replace } = useSelections()
   const unreadIds = useUnreadTeachingPlanNoticeIds()
   const [detailCode, setDetailCode] = useState<string | null>(null)
+
+  /** 「我的日历」hides Waiting courses; Planner keeps them with a W badge. */
+  const calendarSelections = useMemo(
+    () => selections.filter(s => !isSelectionWaiting(s)),
+    [selections],
+  )
   const calendarEvents = useMemo(
-    () => buildCalendarEvents(selections, courses),
-    [selections, courses],
+    () => buildCalendarEvents(calendarSelections, courses),
+    [calendarSelections, courses],
   )
   const unreadCount = unreadIds.size
 
@@ -26,21 +32,22 @@ export default function Calendar() {
   }
 
   return (
-    <div>
-      <h1 className="page-title">{t('calendar.pageTitle')}</h1>
+    <div className="calendar-page">
+      {/* Title slot: short unread tip only (not the full Planner Teaching Plan notice). */}
+      {unreadCount > 0 && (
+        <p className="calendar-unread-tp-notice" role="status">
+          <Link to="/planner">{t('calendar.unreadTeachingPlan', { count: unreadCount })}</Link>
+        </p>
+      )}
       <PlannerCalendar
+        variant="page"
         events={calendarEvents}
         courses={courses}
-        selections={[]}
+        selections={calendarSelections}
         onImportSelections={replace}
         onCourseClick={setDetailCode}
         eventMeta="venue"
       />
-      {unreadCount > 0 && (
-        <p className="calendar-unread-tp-notice">
-          <Link to="/planner">{t('calendar.unreadTeachingPlan', { count: unreadCount })}</Link>
-        </p>
-      )}
       {detailCode && (
         <CourseDetailModal
           courseCode={detailCode}

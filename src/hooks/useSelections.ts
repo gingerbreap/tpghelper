@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { EnrollmentRule, SelectedSection } from '../types'
+import type { EnrollmentRule, EnrollmentStatus, SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
 import type { Locale } from '../i18n/types'
 
@@ -16,6 +16,18 @@ export interface ModuleConflict {
 export interface SameCourseBlock {
   sectionId: string
   module: number
+}
+
+export function selectionItemKey(s: Pick<SelectedSection, 'courseCode' | 'module' | 'sectionId'>): string {
+  return `${s.courseCode}-M${s.module}-${s.sectionId}`
+}
+
+export function isSelectionWaiting(s: SelectedSection): boolean {
+  return s.enrollmentStatus === 'waiting'
+}
+
+export function selectionEnrollmentStatus(s: SelectedSection): EnrollmentStatus {
+  return s.enrollmentStatus === 'waiting' ? 'waiting' : 'registered'
 }
 
 function isZhLocale(locale: Locale): boolean {
@@ -214,5 +226,28 @@ export function useSelections(enrollmentRules: EnrollmentRule[] = []) {
     setSelections(nextSelections)
   }, [])
 
-  return { selections, toggle, isSelected, getForCourseCode, clear, replace }
+  const toggleEnrollmentStatus = useCallback((
+    courseCode: string,
+    module: number,
+    sectionId: string,
+  ) => {
+    setSelections(prev => prev.map(s => {
+      if (s.courseCode !== courseCode || s.module !== module || s.sectionId !== sectionId) {
+        return s
+      }
+      const next: EnrollmentStatus =
+        s.enrollmentStatus === 'waiting' ? 'registered' : 'waiting'
+      return { ...s, enrollmentStatus: next }
+    }))
+  }, [])
+
+  return {
+    selections,
+    toggle,
+    isSelected,
+    getForCourseCode,
+    clear,
+    replace,
+    toggleEnrollmentStatus,
+  }
 }

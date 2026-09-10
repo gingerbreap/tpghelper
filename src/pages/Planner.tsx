@@ -13,6 +13,7 @@ import {
   countEffectiveSelections,
   getModuleConflict,
   getSameCourseBlockReason,
+  isSelectionWaiting,
   sortSelectionsForDisplay,
   useSelections,
 } from '../hooks/useSelections'
@@ -52,7 +53,7 @@ export default function Planner() {
   const enrollmentRules = programme.features.enrollmentRules
     ? (requirements?.enrollmentRules ?? [])
     : []
-  const { selections, toggle, isSelected, getForCourseCode, clear, replace } =
+  const { selections, toggle, isSelected, getForCourseCode, clear, replace, toggleEnrollmentStatus } =
     useSelections(enrollmentRules)
   const {
     wishlist,
@@ -278,6 +279,7 @@ export default function Planner() {
     const sec = findSection(s.courseCode, s.module, s.sectionId)
     const course = findCourse(s.courseCode, s.module)
     const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
+    const waiting = isSelectionWaiting(s)
     return (
       <div className="selection-item" key={itemKey(s)}>
         <div
@@ -302,7 +304,20 @@ export default function Planner() {
             {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
           </div>
         </div>
-        <button className="remove-btn" onClick={() => handleToggle(s)}>{t('common.remove')}</button>
+        <div className="selection-item-actions">
+          <button
+            type="button"
+            className={[
+              'enrollment-status-btn',
+              waiting ? 'enrollment-status-btn--waitlist' : 'enrollment-status-btn--registered',
+            ].join(' ')}
+            onClick={() => toggleEnrollmentStatus(s.courseCode, s.module, s.sectionId)}
+            title={waiting ? t('planner.enrollmentWaitlistTitle') : t('planner.enrollmentRegisteredTitle')}
+          >
+            {waiting ? t('planner.enrollmentWaitlist') : t('planner.enrollmentRegistered')}
+          </button>
+          <button className="remove-btn" onClick={() => handleToggle(s)}>{t('common.remove')}</button>
+        </div>
       </div>
     )
   }

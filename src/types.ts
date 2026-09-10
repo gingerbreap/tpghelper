@@ -56,6 +56,9 @@ export interface Course {
   sections: Section[]
 }
 
+/** CES Study Status / manual enrollment flag on a selection. */
+export type EnrollmentStatus = 'registered' | 'waiting'
+
 export interface SelectedSection {
   courseCode: string
   courseTitle: string
@@ -63,6 +66,11 @@ export interface SelectedSection {
   courseType: string
   sectionId: string
   instructor: string
+  /**
+   * Registered (default when omitted) vs Waiting / waitlist.
+   * Shared by Planner calendar badges and Calendar-page filtering.
+   */
+  enrollmentStatus?: EnrollmentStatus
 }
 
 export interface StreamList {

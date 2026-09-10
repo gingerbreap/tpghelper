@@ -17,6 +17,8 @@ export interface CalendarEvent {
   sessionType: CalendarSessionType
   module: number
   examKind?: ExamKind
+  /** 1-based index within LEC or TUT meetings for this section (omitted for finals). */
+  sessionNumber?: number
   /**
    * Teaching Plan revision overlay:
    * - previous: ghost of the old session (hatch + faded)
@@ -39,9 +41,13 @@ export function buildCalendarEvents(
     if (!course || !section) continue
 
     const fallbackInstructor = formatSectionInstructors(section)
+    let lectureNo = 0
+    let tutorialNo = 0
 
     for (const meeting of section.meetings) {
       const names = meetingInstructorNames(section, meeting)
+      const sessionNumber =
+        meeting.sessionType === 'lecture' ? ++lectureNo : ++tutorialNo
       events.push({
         id: `${sel.courseCode}-M${sel.module}-${sel.sectionId}-${meeting.date}-${meeting.startTime}-${meeting.sessionType}`,
         date: meeting.date,
@@ -54,6 +60,7 @@ export function buildCalendarEvents(
         venue: meeting.venue,
         sessionType: meeting.sessionType,
         module: course.module,
+        sessionNumber,
       })
     }
 
