@@ -122,39 +122,36 @@ export default function PwaSettings() {
             <h2 className="pwa-storage-title">{t('about.pwa.storageTitle')}</h2>
             <ul className="pwa-storage-list">
               <li className="pwa-storage-row">
-                <div className="pwa-storage-row-main">
-                  <span className="pwa-storage-label">{t('about.pwa.storageApp')}</span>
-                  <span className="pwa-storage-size">{storage?.appLabel ?? '—'}</span>
-                </div>
-                <span className="pwa-storage-btn-slot" aria-hidden="true" />
+                <span className="pwa-storage-label">{t('about.pwa.storageApp')}</span>
+                <span className="pwa-storage-size">{storage?.appLabel ?? '—'}</span>
               </li>
               <li className="pwa-storage-row">
-                <div className="pwa-storage-row-main">
-                  <span className="pwa-storage-label">{t('about.pwa.storageCache')}</span>
-                  <span className="pwa-storage-size">{storage?.cacheLabel ?? '—'}</span>
-                </div>
-                <button
-                  type="button"
-                  className="pwa-storage-btn pwa-storage-btn--primary-outline"
-                  onClick={() => setDialog('cache')}
-                >
-                  {t('about.pwa.clearCache')}
-                </button>
+                <span className="pwa-storage-label">{t('about.pwa.storageCache')}</span>
+                <span className="pwa-storage-size">{storage?.cacheLabel ?? '—'}</span>
               </li>
               <li className="pwa-storage-row">
-                <div className="pwa-storage-row-main">
-                  <span className="pwa-storage-label">{t('about.pwa.storageUser')}</span>
-                  <span className="pwa-storage-size">{storage?.userDataLabel ?? '—'}</span>
-                </div>
-                <button
-                  type="button"
-                  className="pwa-storage-btn pwa-storage-btn--danger-outline"
-                  onClick={() => setDialog('reset1')}
-                >
-                  {t('about.pwa.resetData')}
-                </button>
+                <span className="pwa-storage-label">{t('about.pwa.storageUser')}</span>
+                <span className="pwa-storage-size">{storage?.userDataLabel ?? '—'}</span>
               </li>
             </ul>
+            <div className="pwa-storage-actions">
+              <button
+                type="button"
+                className="pwa-storage-action-btn pwa-storage-action-btn--primary"
+                onClick={() => setDialog('cache')}
+              >
+                <i className="fas fa-trash-alt" aria-hidden="true" />
+                <span>{t('about.pwa.clearCache')}</span>
+              </button>
+              <button
+                type="button"
+                className="pwa-storage-action-btn pwa-storage-action-btn--danger"
+                onClick={() => setDialog('reset1')}
+              >
+                <i className="fas fa-undo" aria-hidden="true" />
+                <span>{t('about.pwa.resetData')}</span>
+              </button>
+            </div>
           </>
         ) : (
           <>

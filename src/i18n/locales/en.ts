@@ -29,11 +29,7 @@ const en: TranslationTree = {
     menuImportExport: 'Import / Export',
     menuPwa: 'PWA settings',
     menuDefaultPage: 'Default page',
-    menuChangeProgramme: 'Change programme',
-    changeProgrammePwaHint:
-      'One install covers the lander, MSc(BA), and MGM. If switching programmes opens Safari, delete the old Home Screen icon and reinstall from About → PWA settings.',
-    changeProgrammePwaConfirm:
-      'Continue to the programme picker? With an up-to-date install this stays in the app. If Safari opens instead, remove the old Home Screen icon and reinstall (one install covers all programmes).',
+    menuChangeProgramme: 'Go to another programme',
     defaultPageTitle: 'Default page',
     defaultPageLegend: 'Open this site on',
     backToAbout: 'Back to About',

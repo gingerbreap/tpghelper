@@ -13,19 +13,27 @@ export default function AuthGate() {
   const { t } = useLanderI18n()
   const navigate = useNavigate()
 
-  // PWA start_url is "/": resume currentProgramme from site config (or picker).
-  useEffect(() => {
-    const auth = getAuthMode()
-    if (auth !== 'guest' && auth !== 'logged-in') return
+  const auth = getAuthMode()
+  const preferred = resolveOpenProgrammeId()
+  const resumePath =
+    auth === 'guest' || auth === 'logged-in'
+      ? preferred
+        ? programmeAppPath(preferred)
+        : null
+      : null
 
-    const preferred = resolveOpenProgrammeId()
-    const appPath = preferred ? programmeAppPath(preferred) : null
-    if (appPath) {
-      window.location.replace(appPath)
+  // PWA start_url is "/": resume currentProgramme (early HTML script usually jumps first).
+  useEffect(() => {
+    if (auth !== 'guest' && auth !== 'logged-in') return
+    if (resumePath) {
+      window.location.replace(resumePath)
       return
     }
     navigate('/programmes', { replace: true })
-  }, [navigate])
+  }, [auth, navigate, resumePath])
+
+  // Avoid painting the login lander during programme resume.
+  if (resumePath) return null
 
   return (
     <div className="lander-shell">

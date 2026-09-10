@@ -29,11 +29,7 @@ const zhHK: TranslationTree = {
     menuImportExport: '匯入 / 匯出',
     menuPwa: 'PWA 設定',
     menuDefaultPage: '預設頁選擇',
-    menuChangeProgramme: '更換專業 / 課程項目',
-    changeProgrammePwaHint:
-      '一次安裝即可覆蓋首頁、MSc(BA) 與 MGM。若切換專業後跳到 Safari，請刪除舊的主螢幕圖示，並在「關於 → PWA 設定」重新安裝。',
-    changeProgrammePwaConfirm:
-      '前往專業選擇頁？使用最新安裝時應留在本應用內。若改由 Safari 打開，請刪除舊主螢幕圖示並重新安裝（一次安裝覆蓋全部專業）。',
+    menuChangeProgramme: '前往其他專業頁面',
     defaultPageTitle: '預設頁選擇',
     defaultPageLegend: '打開網站時預設進入',
     backToAbout: '返回關於',

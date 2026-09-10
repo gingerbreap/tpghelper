@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useI18n } from '../i18n/context'
 import { landerProgrammesUrl } from '../session/tpgSession'
-import { isRunningAsInstalledPwa } from '../utils/pwaInstall'
 import {
   formatDataSyncTime,
   getAppCommitSha,
@@ -23,7 +22,6 @@ export default function About() {
   const repoUrl = getAppRepoUrl()
   const syncTime = formatDataSyncTime(tzMode)
   const tzLabel = tzMode === 'HKT' ? t('about.tzHkt') : t('about.tzLocal')
-  const inPwa = isRunningAsInstalledPwa()
 
   const toggleTz = () => {
     const next: SyncTimezoneMode = tzMode === 'HKT' ? 'local' : 'HKT'
@@ -93,25 +91,10 @@ export default function About() {
         <Link to="/about/pwa" className="about-menu-item">
           {t('about.menuPwa')}
         </Link>
-        <a
-          href={landerProgrammesUrl()}
-          className="about-menu-item"
-          onClick={event => {
-            // Same-window navigation keeps a site-scoped PWA install.
-            // Older Home Screen icons (scope /msba or /mgm only) still open Safari.
-            if (!inPwa) return
-            const ok = window.confirm(t('about.changeProgrammePwaConfirm'))
-            if (!ok) event.preventDefault()
-          }}
-        >
+        <a href={landerProgrammesUrl()} className="about-menu-item">
           {t('about.menuChangeProgramme')}
         </a>
       </nav>
-      {inPwa && (
-        <p className="about-change-programme-hint" role="note">
-          {t('about.changeProgrammePwaHint')}
-        </p>
-      )}
 
       <footer className="site-footer">
         <p className="site-footer-credit">{t('footer.credit')}</p>

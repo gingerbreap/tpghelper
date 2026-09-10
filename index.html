@@ -26,6 +26,57 @@
     </script>
   </head>
   <body>
+    <!-- Cold-start cover (PWA/Safari); removed once React mounts. -->
+    <div id="tpg-boot-splash" aria-hidden="true">
+      <img src="/logo.png" alt="" width="96" height="96" />
+    </div>
+    <style>
+      #tpg-boot-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+      }
+      #tpg-boot-splash img {
+        width: 96px;
+        height: 96px;
+        object-fit: contain;
+      }
+      #tpg-boot-splash.is-done {
+        display: none;
+      }
+    </style>
+    <!--
+      Lander start_url is "/". Jump to currentProgramme before React paints
+      so PWA launch does not flash the auth/landing UI.
+    -->
+    <script>
+      (function () {
+        try {
+          var path = location.pathname || '/'
+          if (path !== '/' && path !== '/index.html') return
+          if (/programmes/i.test(location.hash || '')) return
+          var id = null
+          try {
+            var raw = localStorage.getItem('tpghelper-site-config')
+            if (raw) {
+              var cfg = JSON.parse(raw)
+              if (cfg && typeof cfg.currentProgramme === 'string') id = cfg.currentProgramme
+            }
+          } catch (e) {}
+          if (!id) id = localStorage.getItem('tpghelper-preferred-programme')
+          if (!id) return
+          id = String(id).trim().toLowerCase()
+          var map = { msba: '/msba/', mgm: '/mgm/' }
+          if (id === 'msc(ba)' || id === 'ba') id = 'msba'
+          var target = map[id]
+          if (target) location.replace(target)
+        } catch (e) {}
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
