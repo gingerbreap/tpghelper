@@ -63,6 +63,17 @@ npm start            # Express on PORT (default 8080)
 
 `server/public/` is build output (gitignored). The server serves that tree statically and reserves `/api` (health: `GET /api/health` → `{ ok: true }`).
 
-**Azure App Service:** build step `npm ci && npm run build:site`, startup command `npm start` (App Service sets `PORT`).
+**Azure App Service:** startup command `npm start` (App Service sets `PORT`).
 
-Version 形如 `1.4.8.260909 (commit)`，见关于页。
+**GitHub Actions → Azure（Publish Profile，避开 OIDC）：**
+1. 门户下载 `*.PublishSettings`，**不要**提交进 git。
+2. 仓库 Secrets 新增 `AZURE_WEBAPP_PUBLISH_PROFILE`（文件全文）：
+   ```bash
+   gh secret set AZURE_WEBAPP_PUBLISH_PROFILE < ~/Downloads/tpghelper.PublishSettings
+   ```
+   或在 GitHub → Settings → Secrets → Actions 里粘贴。
+3. 推送 `main` 触发 `.github/workflows/azure.yml`（`npm run build:site` 后部署到 App `tpghelper`）。
+
+当前应用默认主机名形如：`https://tpghelper-….azurewebsites.net`（以门户为准）。
+
+Version 形如 `1.5.0.yyMMdd (commit)`，见关于页。

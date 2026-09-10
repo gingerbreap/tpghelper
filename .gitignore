@@ -7,3 +7,6 @@ server/public/**
 *.local
 .vite/
 tsconfig.tsbuildinfo
+.azure-cli/
+*.PublishSettings
+deploy-bundle/

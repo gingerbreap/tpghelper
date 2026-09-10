@@ -1,0 +1,41 @@
+# Deploy merged Express site to Azure App Service (publish profile auth).
+# Prerequisite (one-time): GitHub repo secret AZURE_WEBAPP_PUBLISH_PROFILE
+#   gh secret set AZURE_WEBAPP_PUBLISH_PROFILE < /path/to/tpghelper.PublishSettings
+
+name: Deploy to Azure Web App
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install and build site
+        run: |
+          npm ci
+          npm run build:site
+
+      - name: Stage production bundle
+        run: |
+          mkdir -p deploy-bundle
+          cp package.json package-lock.json deploy-bundle/
+          cp -R server deploy-bundle/server
+          cd deploy-bundle
+          npm ci --omit=dev
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: tpghelper
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: deploy-bundle
