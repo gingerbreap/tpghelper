@@ -1,3 +1,4 @@
+import { APP_REPO_URL } from '../../config/appRepo'
 import type { ProgrammeConfig } from '../types'
 import { streamTagDisplay } from './streamTags'
 
@@ -21,7 +22,7 @@ export const mgmProgramme: ProgrammeConfig = {
   shortName: 'MGM',
   titleStem: 'HKU MGM Course Planner',
   viteBase: '/mgm/',
-  repoUrl: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
+  repoUrl: APP_REPO_URL,
   analyticsId: 'G-P5JGQYVL02',
   moduleCount: 6,
   moduleNumbers: [1, 2, 3, 4, 5, 6],

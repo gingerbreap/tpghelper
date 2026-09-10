@@ -1,3 +1,4 @@
+import { APP_REPO_URL } from '../config/appRepo'
 import { getActiveProgramme } from '../programmes'
 
 const programme = getActiveProgramme()
@@ -9,7 +10,7 @@ export const DEFAULT_LANDING_STORAGE_KEY = programme.storage.defaultLanding
 export type DefaultLanding = 'planner' | 'calendar'
 
 export function getAppVersion(): string {
-  return typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.5.0'
+  return typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '2.0.1'
 }
 
 export function getAppCommitSha(): string {
@@ -17,9 +18,10 @@ export function getAppCommitSha(): string {
 }
 
 export function getAppRepoUrl(): string {
-  return typeof __APP_REPO_URL__ !== 'undefined'
-    ? __APP_REPO_URL__
-    : programme.repoUrl
+  if (typeof __APP_REPO_URL__ !== 'undefined' && __APP_REPO_URL__) {
+    return __APP_REPO_URL__
+  }
+  return programme.repoUrl || APP_REPO_URL
 }
 
 export function getCommitUrl(sha = getAppCommitSha()): string | null {

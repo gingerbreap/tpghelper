@@ -1,11 +1,31 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanderI18n } from '../i18n/context'
 import LanguagePicker from '../components/LanguagePicker'
-import { setAuthMode } from '../../session/tpgSession'
+import {
+  getAuthMode,
+  programmeAppPath,
+  setAuthMode,
+} from '../../session/tpgSession'
+import { resolveOpenProgrammeId } from '../../utils/siteConfig'
 
 export default function AuthGate() {
   const { t } = useLanderI18n()
   const navigate = useNavigate()
+
+  // PWA start_url is "/": resume currentProgramme from site config (or picker).
+  useEffect(() => {
+    const auth = getAuthMode()
+    if (auth !== 'guest' && auth !== 'logged-in') return
+
+    const preferred = resolveOpenProgrammeId()
+    const appPath = preferred ? programmeAppPath(preferred) : null
+    if (appPath) {
+      window.location.replace(appPath)
+      return
+    }
+    navigate('/programmes', { replace: true })
+  }, [navigate])
 
   return (
     <div className="lander-shell">

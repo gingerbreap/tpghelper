@@ -30,6 +30,10 @@ const en: TranslationTree = {
     menuPwa: 'PWA settings',
     menuDefaultPage: 'Default page',
     menuChangeProgramme: 'Change programme',
+    changeProgrammePwaHint:
+      'One install covers the lander, MSc(BA), and MGM. If switching programmes opens Safari, delete the old Home Screen icon and reinstall from About → PWA settings.',
+    changeProgrammePwaConfirm:
+      'Continue to the programme picker? With an up-to-date install this stays in the app. If Safari opens instead, remove the old Home Screen icon and reinstall (one install covers all programmes).',
     defaultPageTitle: 'Default page',
     defaultPageLegend: 'Open this site on',
     backToAbout: 'Back to About',
@@ -73,7 +77,7 @@ const en: TranslationTree = {
     transfer: {
       title: 'Import / Export',
       intro:
-        'Back up or restore your planner data as JSON: programme name, language, Teaching Plan read status, default page, selected courses, and wishlist (order preserved).',
+        'Back up or restore site config as JSON. Top-level currentProgramme controls which helper opens from the lander; each programme (msba, mgm, …) keeps its own nested settings, selections, and wishlist.',
       exportTitle: 'Export',
       exportDesc: 'Save a JSON file or copy JSON to the clipboard.',
       exportFile: 'Export JSON file',
@@ -82,11 +86,12 @@ const en: TranslationTree = {
       exportClipboardOk: 'JSON copied to clipboard.',
       exportFailed: 'Export failed. Please try again.',
       importTitle: 'Import',
-      importDesc: 'Load from a JSON file or paste JSON from the clipboard. This replaces current preferences and course lists.',
+      importDesc:
+        'Load from a JSON file or paste JSON from the clipboard. This replaces site config for all programmes included in the file. Legacy single-programme backups are still accepted.',
       importFile: 'Import JSON file',
       importClipboard: 'Import JSON from clipboard',
       importConfirm:
-        'Import will replace your language preference, default page, Teaching Plan read status, selected courses, and wishlist. Continue?',
+        'Import will replace language, default page, Teaching Plan read status, selected courses, and wishlist for each programme in the file, and may switch currentProgramme. Continue?',
       programmeMismatch:
         'This backup is for “{{actual}}”, but this site is “{{expected}}”. Import anyway?',
       importOk: 'Import successful. Reloading…',
@@ -112,6 +117,8 @@ const en: TranslationTree = {
     disclaimer2:
       'This tool does not represent the official position, guarantees, or commitments of the University of Hong Kong or the Faculty of Business and Economics. Schedules, assessments, times, and graduation requirements may change at any time. Users must understand that the information provided may already be outdated after the sync/verification time stated above, and should verify facts through official channels, the Teaching Plan, and the Programme Office before making enrolment decisions independently. The developer is not liable for enrolment outcomes, undetected conflicts, graduation progress, or other consequences of using this site.',
     disclaimer3:
+      'By default, this tool stores user-generated data and cookies on the local device. By using the tool, you acknowledge this. Except where you have previously agreed to other storage or export methods, cleared app data cannot be recovered.',
+    disclaimer4:
       'For tool or enrolment questions, contact the developer privately, ask in your class group, or contact the Programme Office directly.',
   },
   common: {

@@ -30,6 +30,10 @@ const zhHK: TranslationTree = {
     menuPwa: 'PWA 設定',
     menuDefaultPage: '預設頁選擇',
     menuChangeProgramme: '更換專業 / 課程項目',
+    changeProgrammePwaHint:
+      '一次安裝即可覆蓋首頁、MSc(BA) 與 MGM。若切換專業後跳到 Safari，請刪除舊的主螢幕圖示，並在「關於 → PWA 設定」重新安裝。',
+    changeProgrammePwaConfirm:
+      '前往專業選擇頁？使用最新安裝時應留在本應用內。若改由 Safari 打開，請刪除舊主螢幕圖示並重新安裝（一次安裝覆蓋全部專業）。',
     defaultPageTitle: '預設頁選擇',
     defaultPageLegend: '打開網站時預設進入',
     backToAbout: '返回關於',
@@ -71,7 +75,7 @@ const zhHK: TranslationTree = {
     transfer: {
       title: '匯入 / 匯出',
       intro:
-        '以 JSON 備份或還原本站資料：專業名、語言偏好、Teaching Plan 已閱情況、預設頁偏好、已選課程與備選課程（均保留順序）。',
+        '以 JSON 備份或還原站點設定。頂層 currentProgramme 決定從入口開啟哪個專業；各專業（msba、mgm 等）的設定、已選與備選課程分別保存在對應子物件中。',
       exportTitle: '匯出',
       exportDesc: '可下載為 JSON 檔，或複製 JSON 到剪貼簿。',
       exportFile: '匯出為 JSON 檔',
@@ -80,11 +84,12 @@ const zhHK: TranslationTree = {
       exportClipboardOk: '已複製 JSON 到剪貼簿。',
       exportFailed: '匯出失敗，請重試。',
       importTitle: '匯入',
-      importDesc: '可從 JSON 檔匯入，或從剪貼簿讀取 JSON。匯入將覆蓋目前偏好與課程列表。',
+      importDesc:
+        '可從 JSON 檔匯入，或從剪貼簿讀取 JSON。將覆蓋檔案中包含的各專業設定。仍相容舊版單專業備份。',
       importFile: '從 JSON 檔匯入',
       importClipboard: '從剪貼簿匯入 JSON',
       importConfirm:
-        '匯入將覆蓋語言偏好、預設頁、Teaching Plan 已閱狀態、已選課程與備選列表。是否繼續？',
+        '匯入將覆蓋檔案中各專業的語言偏好、預設頁、Teaching Plan 已閱狀態、已選課程與備選列表，並可能切換 currentProgramme。是否繼續？',
       programmeMismatch:
         '該備份的專業為「{{actual}}」，本站為「{{expected}}」。仍要匯入嗎？',
       importOk: '匯入成功，正在重新載入…',
@@ -110,6 +115,8 @@ const zhHK: TranslationTree = {
     disclaimer2:
       '該工具不代表香港大學或經管學院的官方立場、保證或承諾。課程安排、考核方式、時間及畢業要求可能隨時調整，用戶使用該工具時須已知所提供的資訊在上述「資訊同步與核查」時間點後可能已經過時，需透過學校官方資訊發佈渠道、Teaching Plan 和 Programme Office 的答覆完成事實核查，並獨立作出選課決定。開發者不對任何選課結果、未提示的實際時間衝突、畢業進度或因使用本網站產生的其他後果承擔責任。',
     disclaimer3:
+      '本工具預設將用戶使用該工具所產生的數據及 Cookies 儲存於本地裝置。用戶使用該工具即代表知情，除用戶事先同意過同意使用其他方式儲存或匯出數據外，應用數據清除後無法恢復。',
+    disclaimer4:
       '如有工具使用或選課疑問，可私聊開發者、在班群內詢問或直接聯絡 Programme Office。',
   },
   common: {

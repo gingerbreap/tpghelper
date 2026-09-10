@@ -1,10 +1,14 @@
 import { useI18n } from '../i18n/context'
 import {
-  getPreferredProgramme,
   landerProgrammesUrl,
   programmeAppPath,
-  setPreferredProgramme,
 } from '../session/tpgSession'
+import {
+  getProgrammeShortName,
+  resolveOpenProgrammeId,
+  syncCurrentProgramme,
+} from '../utils/siteConfig'
+import type { ProgrammeId } from '../programmes/types'
 
 interface ProgrammeMismatchGateProps {
   /** Programme id of the app currently loaded (msba | mgm). */
@@ -17,16 +21,11 @@ export default function ProgrammeMismatchGate({
   currentShortName,
 }: ProgrammeMismatchGateProps) {
   const { t } = useI18n()
-  const preferred = getPreferredProgramme()
+  const preferred = resolveOpenProgrammeId()
   if (!preferred || preferred === currentProgrammeId) return null
 
   const preferredPath = programmeAppPath(preferred)
-  const preferredLabel =
-    preferred === 'msba'
-      ? 'MSc(BA)'
-      : preferred === 'mgm'
-        ? 'MGM'
-        : preferred
+  const preferredLabel = getProgrammeShortName(preferred)
 
   return (
     <div className="programme-mismatch-overlay" role="dialog" aria-modal="true" aria-labelledby="programme-mismatch-title">
@@ -56,7 +55,7 @@ export default function ProgrammeMismatchGate({
             type="button"
             className="lander-btn lander-btn-secondary"
             onClick={() => {
-              setPreferredProgramme(currentProgrammeId)
+              syncCurrentProgramme(currentProgrammeId as ProgrammeId)
               window.location.reload()
             }}
           >

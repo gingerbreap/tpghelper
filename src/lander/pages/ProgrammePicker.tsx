@@ -2,7 +2,7 @@ import { useId, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import LanguagePicker from '../components/LanguagePicker'
 import { useLanderI18n } from '../i18n/context'
-import { setPreferredProgramme } from '../../session/tpgSession'
+import { syncCurrentProgramme } from '../../utils/siteConfig'
 import {
   LANDER_PROGRAMMES,
   getLanderProgramme,
@@ -22,7 +22,7 @@ export default function ProgrammePicker() {
 
   const goNext = () => {
     if (!selected?.available || !selected.appPath) return
-    setPreferredProgramme(selected.id)
+    syncCurrentProgramme(selected.id)
     window.location.assign(selected.appPath)
   }
 

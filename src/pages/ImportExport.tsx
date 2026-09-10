@@ -2,8 +2,9 @@ import { useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AboutBackLink from '../components/AboutBackLink'
 import { useI18n } from '../i18n/context'
+import { getActiveProgramme } from '../programmes'
+import { programmeAppPath } from '../session/tpgSession'
 import {
-  plannerProgrammeName,
   applyUserDataSnapshot,
   buildUserDataSnapshot,
   copyTextToClipboard,
@@ -66,20 +67,6 @@ export default function ImportExport() {
       return
     }
 
-    const expectedProgramme = plannerProgrammeName()
-    if (parsed.data.programme !== expectedProgramme) {
-      const proceed = window.confirm(
-        t('about.transfer.programmeMismatch', {
-          expected: expectedProgramme,
-          actual: parsed.data.programme,
-        }),
-      )
-      if (!proceed) {
-        showError(t('about.transfer.importCancelled'))
-        return
-      }
-    }
-
     const proceed = window.confirm(t('about.transfer.importConfirm'))
     if (!proceed) {
       showError(t('about.transfer.importCancelled'))
@@ -88,8 +75,16 @@ export default function ImportExport() {
 
     applyUserDataSnapshot(parsed.data)
     showOk(t('about.transfer.importOk'))
-    // Reload so locale / selections / wishlist hooks re-read storage.
+
+    const targetId = parsed.data.currentProgramme
+    const targetPath = targetId ? programmeAppPath(targetId) : null
+    const activeId = getActiveProgramme().id
+
     window.setTimeout(() => {
+      if (targetPath && targetId && targetId !== activeId) {
+        window.location.assign(targetPath)
+        return
+      }
       navigate('/about', { replace: true })
       window.location.reload()
     }, 400)

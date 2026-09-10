@@ -6,7 +6,10 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
 
-const APP_VERSION_BASE = '1.5.0'
+/** Keep in sync with `src/config/appRepo.ts`. */
+const APP_REPO_URL = 'https://github.com/gingerbreap/tpghelper'
+
+const APP_VERSION_BASE = '2.0.1'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
 type ProgrammeId = 'msba' | 'mgm' | 'lander'
@@ -17,7 +20,6 @@ const PROGRAMME_META: Record<
     base: string
     analyticsId: string
     htmlTitle: string
-    repoFallback: string
     publicDir: string | false
   }
 > = {
@@ -25,22 +27,19 @@ const PROGRAMME_META: Record<
     base: '/msba/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU MSc(BA) 选课助手',
-    repoFallback: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
     publicDir: 'public/msba',
   },
   mgm: {
     base: '/mgm/',
     analyticsId: 'G-P5JGQYVL02',
     htmlTitle: 'HKU MGM 选课助手',
-    repoFallback: 'https://github.com/gingerbreap/HKUBS_MGM_Helper',
     publicDir: 'public/mgm',
   },
   lander: {
     base: '/',
     analyticsId: 'G-TGBLKX855E',
     htmlTitle: 'HKU TPg Course Planner',
-    repoFallback: 'https://github.com/gingerbreap/tpghelper',
-    publicDir: false,
+    publicDir: 'public/lander',
   },
 }
 
@@ -59,7 +58,7 @@ function git(command: string): string {
   }
 }
 
-function buildAppVersionInfo(repoFallback: string) {
+function buildAppVersionInfo() {
   const sha = git('git rev-parse --short HEAD')
   const commitDate = git('git log -1 --format=%ci') // e.g. 2026-09-04 12:22:11 +0800
   const match = commitDate.match(/^(\d{4})-(\d{2})-(\d{2})/)
@@ -71,7 +70,8 @@ function buildAppVersionInfo(repoFallback: string) {
   return {
     version,
     sha,
-    repoUrl: repoUrl || repoFallback,
+    // Prefer live origin; fall back to the shared monorepo URL (never legacy BA/MGM forks).
+    repoUrl: repoUrl || APP_REPO_URL,
   }
 }
 
@@ -89,50 +89,54 @@ function programmeHtmlPlugin(meta: (typeof PROGRAMME_META)[ProgrammeId]): Plugin
 
 const programmeId = resolveProgrammeId()
 const meta = PROGRAMME_META[programmeId]
-const appVersion = buildAppVersionInfo(meta.repoFallback)
+const appVersion = buildAppVersionInfo()
 const behindGateway = process.env.DEV_SITE_GATEWAY === '1'
 const gatewayPort = Number(process.env.DEV_GATEWAY_PORT || 5173)
 
 /** Pack id used for Vite aliases (lander falls back to msba stubs if ever imported). */
 const packId = programmeId === 'mgm' ? 'mgm' : 'msba'
 
-const pwaPlugin =
-  programmeId === 'lander'
-    ? null
-    : VitePWA({
-        registerType: 'autoUpdate',
-        // Keep locale-specific manifests in public/; do not generate a competing one.
-        manifest: false,
-        includeAssets: [
-          'favicon.ico',
-          'favicon.svg',
-          'favicon-96x96.png',
-          'apple-touch-icon.png',
-          'logo.png',
-          'site.webmanifest',
-          'site.zh-CN.webmanifest',
-          'site.zh-HK.webmanifest',
-          'web-app-manifest-192x192.png',
-          'web-app-manifest-512x512.png',
-        ],
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,webmanifest}'],
-          navigateFallback: 'index.html',
-          // workbox-build's production terser pass can hang / fail ("Unfinished hook action(s) on exit: (terser) renderChunk").
-          mode: 'development',
-          maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
-        },
-        devOptions: {
-          enabled: false,
-        },
-      })
+/**
+ * Site-wide PWA: manifests use scope "/" so lander ↔ msba ↔ mgm stay in one install.
+ * Lander registers a root SW; programme builds keep a scoped SW for offline of that pack.
+ * Root SW must not steal /msba or /mgm navigations (see navigateFallbackDenylist).
+ */
+const pwaIncludeAssets = [
+  'favicon.ico',
+  'favicon.svg',
+  'favicon-96x96.png',
+  'apple-touch-icon.png',
+  'logo.png',
+  'site.webmanifest',
+  'site.zh-CN.webmanifest',
+  'site.zh-HK.webmanifest',
+  'web-app-manifest-192x192.png',
+  'web-app-manifest-512x512.png',
+]
+
+const pwaPlugin = VitePWA({
+  registerType: 'autoUpdate',
+  // Keep locale-specific manifests in public/; do not generate a competing one.
+  manifest: false,
+  includeAssets: pwaIncludeAssets,
+  workbox: {
+    globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,webmanifest}'],
+    navigateFallback: 'index.html',
+    navigateFallbackDenylist:
+      programmeId === 'lander'
+        ? [/^\/msba(?:\/|$)/i, /^\/mgm(?:\/|$)/i, /^\/api(?:\/|$)/i]
+        : undefined,
+    // workbox-build's production terser pass can hang / fail ("Unfinished hook action(s) on exit: (terser) renderChunk").
+    mode: 'development',
+    maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
+  },
+  devOptions: {
+    enabled: false,
+  },
+})
 
 export default defineConfig({
-  plugins: [
-    react(),
-    programmeHtmlPlugin(meta),
-    ...(pwaPlugin ? [pwaPlugin] : []),
-  ],
+  plugins: [react(), programmeHtmlPlugin(meta), pwaPlugin],
   publicDir: meta.publicDir,
   base: meta.base,
   resolve: {

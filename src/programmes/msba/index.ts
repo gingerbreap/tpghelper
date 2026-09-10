@@ -1,3 +1,4 @@
+import { APP_REPO_URL } from '../../config/appRepo'
 import type { ProgrammeConfig } from '../types'
 import { streamTagDisplay } from './streamTags'
 
@@ -21,7 +22,7 @@ export const msbaProgramme: ProgrammeConfig = {
   shortName: 'MSc(BA)',
   titleStem: 'HKU MSc(BA) Course Planner',
   viteBase: '/msba/',
-  repoUrl: 'https://github.com/gingerbreap/HKUBS_BA_CourseList',
+  repoUrl: APP_REPO_URL,
   analyticsId: 'G-TGBLKX855E',
   moduleCount: 5,
   moduleNumbers: [1, 2, 3, 4, 5],
