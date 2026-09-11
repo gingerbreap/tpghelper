@@ -120,5 +120,6 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 | `20260814` / 通知 `2026/08/18` | 7015 & 7037 |
 | `20260903` | 7002、7003；补漏 7004 TUT Nov 19→16 |
 | `20260909` | 7002 A/B Oct 22 时间+教室、D Oct 24 教室；7004 A Oct 27→22、C Oct 24 时间+教室 |
+| `20260911` | 7003 C/D：撤回 Sep 23/24、Oct 7/8 晚间补课，恢复 Sep 29、Oct 2 常规；C 的 Sep 23 TUT 改回 18:30–20:00 |
 
 维护代码入口：`src/programmes/*/teachingPlanUpdates.ts`、`TeachingPlanUpdateNotice.tsx`、`teachingPlanImpact.ts`、programme `dataSync`。

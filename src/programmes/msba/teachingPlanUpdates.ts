@@ -141,12 +141,67 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20260911-7003',
+    timestamp: '2026/09/11 18:22',
+    courseRefs: '7003',
+    bodyKey: 'body7003',
+    bodyParams: { code1: 'MSBA7003' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7003',
+        courseTitle: 'Decision Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'C',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Sep 23, 2026 (Wed) 18:30-21:30')],
+            updated: [
+              time('Sep 29, 2026 (Tue) 09:30-12:30'),
+              venue('LT104'),
+            ],
+          },
+          {
+            sectionId: 'C',
+            itemKey: 'lecTime',
+            previous: [time('Oct 7, 2026 (Wed) 18:30-21:30')],
+            updated: [time('Oct 2, 2026 (Fri) 09:30-12:30')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'lecTime',
+            previous: [time('Sep 24, 2026 (Thu) 18:30-21:30')],
+            updated: [time('Sep 29, 2026 (Tue) 14:00-17:00')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Oct 8, 2026 (Thu) 18:30-21:30')],
+            updated: [
+              time('Oct 2, 2026 (Fri) 14:00-17:00'),
+              venue('LT104'),
+            ],
+          },
+          {
+            sectionId: 'TUT',
+            itemKey: 'sessionTime',
+            itemDate: 'Sep 23',
+            sessionKind: 'TUT',
+            previous: [plain('17:00-18:30')],
+            updated: [plain('18:30-20:00')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20260909-7002-7004',
     timestamp: '2026/09/09 16:41',
     courseRefs: '7002, 7004',
     bodyKey: 'body7002_7004',
     bodyParams: { code1: 'MSBA7002', code2: 'MSBA7004' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7002',

@@ -9,7 +9,7 @@ import type { Plugin } from 'vite'
 /** Keep in sync with `src/config/appRepo.ts`. */
 const APP_REPO_URL = 'https://github.com/gingerbreap/tpghelper'
 
-const APP_VERSION_BASE = '2.0.2'
+const APP_VERSION_BASE = '2.0.3'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
 type ProgrammeId = 'msba' | 'mgm' | 'lander'
