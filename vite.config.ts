@@ -9,7 +9,7 @@ import type { Plugin } from 'vite'
 /** Keep in sync with `src/config/appRepo.ts`. */
 const APP_REPO_URL = 'https://github.com/gingerbreap/tpghelper'
 
-const APP_VERSION_BASE = '2.0.1'
+const APP_VERSION_BASE = '2.0.2'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
 type ProgrammeId = 'msba' | 'mgm' | 'lander'
@@ -122,10 +122,15 @@ const pwaPlugin = VitePWA({
   workbox: {
     globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,webmanifest}'],
     navigateFallback: 'index.html',
-    navigateFallbackDenylist:
-      programmeId === 'lander'
+    // Iframe PDF loads are navigations; without a denylist Workbox serves index.html
+    // (course outline embeds become a miniature homepage). Keep programme path denylist
+    // for the lander SW so sibling apps are not claimed.
+    navigateFallbackDenylist: [
+      /\.pdf$/i,
+      ...(programmeId === 'lander'
         ? [/^\/msba(?:\/|$)/i, /^\/mgm(?:\/|$)/i, /^\/api(?:\/|$)/i]
-        : undefined,
+        : []),
+    ],
     // workbox-build's production terser pass can hang / fail ("Unfinished hook action(s) on exit: (terser) renderChunk").
     mode: 'development',
     maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,

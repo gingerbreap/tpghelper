@@ -181,7 +181,7 @@ const zhCN: TranslationTree = {
     pdfTitle: 'Course Outline',
     pdfMobileNote: '为获得更好的阅读体验，请',
     pdfOr: '或',
-    pdfOpen: '在新标签页查看 PDF',
+    pdfOpen: '在新页面中查看 PDF',
     pdfDownload: '下载 PDF',
   },
   requirements: {

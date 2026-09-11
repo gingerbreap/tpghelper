@@ -183,7 +183,7 @@ const en: TranslationTree = {
     pdfTitle: 'Course Outline',
     pdfMobileNote: 'For better viewing experience, please',
     pdfOr: 'or',
-    pdfOpen: 'Open PDF in new tab',
+    pdfOpen: 'Open PDF in a new page',
     pdfDownload: 'Download PDF',
   },
   requirements: {
