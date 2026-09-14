@@ -56,7 +56,7 @@ export default function ImportExport() {
     }
   }
 
-  const applyImportText = (text: string) => {
+  const applyImportText = async (text: string) => {
     const parsed = parseUserDataJson(text)
     if (!parsed.ok) {
       showError(
@@ -73,7 +73,12 @@ export default function ImportExport() {
       return
     }
 
-    applyUserDataSnapshot(parsed.data)
+    try {
+      await applyUserDataSnapshot(parsed.data)
+    } catch {
+      showError(t('about.transfer.importFailed'))
+      return
+    }
     showOk(t('about.transfer.importOk'))
 
     const targetId = parsed.data.currentProgramme
@@ -98,7 +103,7 @@ export default function ImportExport() {
         showError(t('about.transfer.importEmptyClipboard'))
         return
       }
-      applyImportText(text)
+      await applyImportText(text)
     } catch {
       showError(t('about.transfer.clipboardUnavailable'))
     } finally {
@@ -117,7 +122,7 @@ export default function ImportExport() {
     setBusy(true)
     try {
       const text = await readFileAsText(file)
-      applyImportText(text)
+      await applyImportText(text)
     } catch {
       showError(t('about.transfer.importFailed'))
     } finally {

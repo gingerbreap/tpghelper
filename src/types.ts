@@ -57,7 +57,10 @@ export interface Course {
 }
 
 /** CES Study Status / manual enrollment flag on a selection. */
-export type EnrollmentStatus = 'registered' | 'waiting'
+export type CourseStatus = 'registered' | 'waitlist' | 'failed'
+
+/** @deprecated Use CourseStatus */
+export type EnrollmentStatus = CourseStatus
 
 export interface SelectedSection {
   courseCode: string
@@ -67,10 +70,10 @@ export interface SelectedSection {
   sectionId: string
   instructor: string
   /**
-   * Registered (default when omitted) vs Waiting / waitlist.
-   * Shared by Planner calendar badges and Calendar-page filtering.
+   * Required enrollment status. `failed` is reserved (not used in UI yet).
+   * Legacy `enrollmentStatus` / `waiting` are migrated on load.
    */
-  enrollmentStatus?: EnrollmentStatus
+  status: CourseStatus
 }
 
 export interface StreamList {

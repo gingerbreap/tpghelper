@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { EnrollmentRule, EnrollmentStatus, SelectedSection } from '../types'
+import type { CourseStatus, EnrollmentRule, SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
 import type { Locale } from '../i18n/types'
 
@@ -22,12 +22,45 @@ export function selectionItemKey(s: Pick<SelectedSection, 'courseCode' | 'module
   return `${s.courseCode}-M${s.module}-${s.sectionId}`
 }
 
+/** True when the selection is still on the course waitlist. */
 export function isSelectionWaiting(s: SelectedSection): boolean {
-  return s.enrollmentStatus === 'waiting'
+  return s.status === 'waitlist'
 }
 
-export function selectionEnrollmentStatus(s: SelectedSection): EnrollmentStatus {
-  return s.enrollmentStatus === 'waiting' ? 'waiting' : 'registered'
+export function selectionEnrollmentStatus(s: SelectedSection): CourseStatus {
+  return s.status === 'waitlist' ? 'waitlist' : 'registered'
+}
+
+/**
+ * Normalize legacy rows (`enrollmentStatus`, `waiting`, missing status) → required `status`.
+ * Persists on next load when any row was rewritten.
+ */
+export function normalizeSelectionStatus(raw: SelectedSection): {
+  selection: SelectedSection
+  changed: boolean
+} {
+  const row = raw as SelectedSection & { enrollmentStatus?: string; status?: CourseStatus }
+  let status: CourseStatus | undefined = row.status
+  let changed = false
+
+  if (!status) {
+    const legacy = row.enrollmentStatus
+    if (legacy === 'waiting' || legacy === 'waitlist') status = 'waitlist'
+    else if (legacy === 'failed') status = 'failed'
+    else status = 'registered'
+    changed = true
+  } else if ((status as string) === 'waiting') {
+    status = 'waitlist'
+    changed = true
+  }
+
+  if ('enrollmentStatus' in row && row.enrollmentStatus !== undefined) changed = true
+
+  const { enrollmentStatus: _drop, ...rest } = row
+  return {
+    selection: { ...rest, status },
+    changed,
+  }
 }
 
 function isZhLocale(locale: Locale): boolean {
@@ -165,7 +198,22 @@ export function sortSelectionsForDisplay(selections: SelectedSection[]): Selecte
 
 function load(): SelectedSection[] {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    if (!Array.isArray(parsed)) return []
+    let dirty = false
+    const next = parsed.map((item: SelectedSection) => {
+      const { selection, changed } = normalizeSelectionStatus(item)
+      if (changed) dirty = true
+      return selection
+    })
+    if (dirty) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+      } catch {
+        /* ignore */
+      }
+    }
+    return next
   } catch {
     return []
   }
@@ -210,7 +258,7 @@ export function useSelections(enrollmentRules: EnrollmentRule[] = []) {
       }
 
       result = 'added'
-      return [...prev, s]
+      return [...prev, { ...s, status: s.status ?? 'registered' }]
     })
     return result
   }, [effectiveRules])
@@ -235,9 +283,8 @@ export function useSelections(enrollmentRules: EnrollmentRule[] = []) {
       if (s.courseCode !== courseCode || s.module !== module || s.sectionId !== sectionId) {
         return s
       }
-      const next: EnrollmentStatus =
-        s.enrollmentStatus === 'waiting' ? 'registered' : 'waiting'
-      return { ...s, enrollmentStatus: next }
+      const next: CourseStatus = s.status === 'waitlist' ? 'registered' : 'waitlist'
+      return { ...s, status: next }
     }))
   }, [])
 

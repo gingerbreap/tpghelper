@@ -71,7 +71,7 @@ const zhHK: TranslationTree = {
     transfer: {
       title: '匯入 / 匯出',
       intro:
-        '以 JSON 備份或還原站點設定。頂層 currentProgramme 決定從入口開啟哪個專業；各專業（msba、mgm 等）的設定、已選與備選課程分別保存在對應子物件中。',
+        '以 JSON 備份或還原站點設定。頂層 currentProgramme 決定入口專業；各有資料的專業子物件保存語言、預設頁、Teaching Plan 已閱時間戳、已選/備選課程（課程代碼 + 班別 + status，保留順序）。無資料的專業不會出現在匯出中。',
       exportTitle: '匯出',
       exportDesc: '可下載為 JSON 檔，或複製 JSON 到剪貼簿。',
       exportFile: '匯出為 JSON 檔',
@@ -81,7 +81,7 @@ const zhHK: TranslationTree = {
       exportFailed: '匯出失敗，請重試。',
       importTitle: '匯入',
       importDesc:
-        '可從 JSON 檔匯入，或從剪貼簿讀取 JSON。將覆蓋檔案中包含的各專業設定。仍相容舊版單專業備份。',
+        '可從 JSON 檔匯入，或從剪貼簿讀取 JSON。將覆蓋檔案中包含的各專業設定；亦相容 BA 站點 1.5 精簡備份。',
       importFile: '從 JSON 檔匯入',
       importClipboard: '從剪貼簿匯入 JSON',
       importConfirm:

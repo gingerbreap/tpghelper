@@ -71,7 +71,7 @@ const zhCN: TranslationTree = {
     transfer: {
       title: '导入 / 导出',
       intro:
-        '以 JSON 备份或恢复站点配置。顶层 currentProgramme 决定从入口打开哪个专业；各专业（msba、mgm 等）的设置、已选与备选课程分别保存在对应子对象中。',
+        '以 JSON 备份或恢复站点配置。顶层 currentProgramme 决定入口专业；各有数据的专业子对象保存语言、默认页、Teaching Plan 已阅时间戳、已选/备选课程（课程代码 + 班别 + status，保留顺序）。无数据的专业不会出现在导出中。',
       exportTitle: '导出',
       exportDesc: '可下载为 JSON 文件，或复制 JSON 到剪贴板。',
       exportFile: '导出为 JSON 文件',
@@ -81,7 +81,7 @@ const zhCN: TranslationTree = {
       exportFailed: '导出失败，请重试。',
       importTitle: '导入',
       importDesc:
-        '可从 JSON 文件导入，或从剪贴板读取 JSON。将覆盖文件中包含的各专业配置。仍兼容旧版单专业备份。',
+        '可从 JSON 文件导入，或从剪贴板读取 JSON。将覆盖文件中包含的各专业配置；亦兼容 BA 站点 1.5 精简备份。',
       importFile: '从 JSON 文件导入',
       importClipboard: '从剪贴板导入 JSON',
       importConfirm:

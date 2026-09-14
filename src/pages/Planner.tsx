@@ -675,6 +675,7 @@ export default function Planner() {
                       courseType: course.courseType,
                       sectionId: sec.sectionId,
                       instructor: instructorLabel,
+                      status: 'registered',
                     }
 
                     let blocked = false

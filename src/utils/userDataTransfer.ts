@@ -16,8 +16,11 @@ export function plannerProgrammeName(): string {
 /** @deprecated Prefer plannerProgrammeName() — kept for backups that hard-code MSc(BA). */
 export const PLANNER_PROGRAMME = 'MSc(BA)' as const
 
-/** Site-wide schema (v2). Legacy single-programme exports remain readable. */
-export const USER_DATA_SCHEMA_VERSION = 2 as const
+/**
+ * Site-wide schema 2.1 (slim course rows).
+ * Import also accepts BA schema 1.5 flat backups — see siteConfig.ts comments.
+ */
+export const USER_DATA_SCHEMA_VERSION = 2.1 as const
 
 export type { SiteConfig }
 export type UserDataSnapshot = SiteConfig
@@ -36,9 +39,9 @@ export function parseUserDataJson(text: string): ParseUserDataResult {
   return parseSiteConfigJson(text)
 }
 
-/** Apply site config (all nested packs + currentProgramme) to localStorage. */
-export function applyUserDataSnapshot(data: SiteConfig): void {
-  applySiteConfig(data)
+/** Apply site config (hydrate slim rows via courses.json). */
+export async function applyUserDataSnapshot(data: SiteConfig): Promise<void> {
+  await applySiteConfig(data)
 }
 
 export function downloadJsonFile(json: string, filename: string): void {

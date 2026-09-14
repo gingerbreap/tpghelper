@@ -73,7 +73,7 @@ const en: TranslationTree = {
     transfer: {
       title: 'Import / Export',
       intro:
-        'Back up or restore site config as JSON. Top-level currentProgramme controls which helper opens from the lander; each programme (msba, mgm, …) keeps its own nested settings, selections, and wishlist.',
+        'Back up or restore site config as JSON. Top-level currentProgramme selects the lander programme; each programme pack with data stores locale, default page, Teaching Plan read timestamps, and slim course rows (code + section + status, order preserved). Empty programmes are omitted from exports.',
       exportTitle: 'Export',
       exportDesc: 'Save a JSON file or copy JSON to the clipboard.',
       exportFile: 'Export JSON file',
@@ -83,7 +83,7 @@ const en: TranslationTree = {
       exportFailed: 'Export failed. Please try again.',
       importTitle: 'Import',
       importDesc:
-        'Load from a JSON file or paste JSON from the clipboard. This replaces site config for all programmes included in the file. Legacy single-programme backups are still accepted.',
+        'Load from a JSON file or paste JSON from the clipboard. Replaces config for programmes in the file. BA schema 1.5 slim backups are also accepted.',
       importFile: 'Import JSON file',
       importClipboard: 'Import JSON from clipboard',
       importConfirm:
