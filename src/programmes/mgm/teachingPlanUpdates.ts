@@ -144,12 +144,41 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20260922-7001',
+    timestamp: '2026/09/22 22:50',
+    courseRefs: '7001',
+    bodyKey: 'body7001_0922',
+    bodyParams: { code1: 'PMGM7001' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'PMGM7001',
+        courseTitle: 'Fundamentals of Global Management',
+        hasTutorials: false,
+        rows: [
+          {
+            sectionId: 'C',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Sep 22, 2026 (Tue) 09:30-12:30'), venue('CP-EFG')],
+            updated: [time('Oct 16, 2026 (Fri) 14:00-17:00'), venue('CP-J')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Sep 22, 2026 (Tue) 14:00-17:00'), venue('CP-EFG')],
+            updated: [time('Oct 15, 2026 (Thu) 18:30-21:30'), venue('CP-J')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20260901-7001-7024',
     timestamp: '2026/09/01 17:22',
     courseRefs: '7001, 7024',
     bodyKey: 'body7001_7024',
     bodyParams: { code1: 'PMGM7001', code2: 'PMGM7024' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'PMGM7001',
@@ -170,18 +199,14 @@ export const teachingPlanNotices: TeachingPlanNotice[] = [
           },
           {
             sectionId: 'C',
-            itemKey: 'sessionTimeVenue',
-            itemDate: 'Oct 16',
-            sessionKind: 'LEC',
-            previous: [plain('NA')],
+            itemKey: 'lecTimeVenue',
+            previous: [time('Sep 22, 2026 (Tue) 09:30-12:30'), venue('CP-EFG')],
             updated: [time('Oct 16, 2026 (Fri) 14:00-17:00'), venue('CP-J')],
           },
           {
             sectionId: 'D',
-            itemKey: 'sessionTimeVenue',
-            itemDate: 'Oct 15',
-            sessionKind: 'LEC',
-            previous: [plain('NA')],
+            itemKey: 'lecTimeVenue',
+            previous: [time('Sep 22, 2026 (Tue) 14:00-17:00'), venue('CP-EFG')],
             updated: [time('Oct 15, 2026 (Thu) 18:30-21:30'), venue('CP-J')],
           },
         ],

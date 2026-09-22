@@ -50,8 +50,10 @@ const overlay: TranslationTree = {
     ],
   },
   teachingPlan: {
+    body7001_0922:
+      '{{code1}} (Class C & D) Sep 22 lectures cancelled and rescheduled: Class C moves to Oct 16 (14:00-17:00, CP-J); Class D moves to Oct 15 (18:30-21:30, CP-J). The calendar previously still showed Sep 22 — that is now corrected. See the calendar below for related changes.',
     body7001_7024:
-      '{{code1}} (Class A–D) gained additional make-up sessions; {{code2}} moved from TBC to a full schedule (Class A/B). Conflicts and calendar events may differ from earlier versions.',
+      '{{code1}} (Class A–B) gained additional make-up sessions; Class C/D Sep 22 lectures move to Oct 16 / Oct 15; {{code2}} moved from TBC to a full schedule (Class A/B). Conflicts and calendar events may differ from earlier versions.',
   },
 }
 

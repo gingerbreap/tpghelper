@@ -141,12 +141,53 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20260922-7003',
+    timestamp: '2026/09/22 11:26',
+    courseRefs: '7003',
+    bodyKey: 'body7003_0922',
+    bodyParams: { code1: 'MSBA7003' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7003',
+        courseTitle: 'Decision Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'C',
+            itemKey: 'lecTime',
+            previous: [time('Sep 29, 2026 (Tue) 09:30-12:30')],
+            updated: [time('Oct 7, 2026 (Wed) 18:30-21:30')],
+          },
+          {
+            sectionId: 'C',
+            itemKey: 'lecTime',
+            previous: [time('Oct 2, 2026 (Fri) 09:30-12:30')],
+            updated: [time('Oct 10, 2026 (Sat) 18:30-21:30')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'lecTime',
+            previous: [time('Sep 29, 2026 (Tue) 14:00-17:00')],
+            updated: [time('Oct 8, 2026 (Thu) 18:30-21:30')],
+          },
+          {
+            sectionId: 'D',
+            itemKey: 'lecTime',
+            previous: [time('Oct 2, 2026 (Fri) 14:00-17:00')],
+            updated: [time('Oct 12, 2026 (Mon) 18:30-21:30')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20260911-7003',
     timestamp: '2026/09/11 18:22',
     courseRefs: '7003',
     bodyKey: 'body7003',
     bodyParams: { code1: 'MSBA7003' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7003',

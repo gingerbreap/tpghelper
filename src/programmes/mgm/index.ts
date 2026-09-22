@@ -44,8 +44,8 @@ export const mgmProgramme: ProgrammeConfig = {
     enrollmentRules: true,
   },
   dataSync: {
-    display: '2026/09/01 17:22',
-    iso: '2026-09-01T17:22:00+08:00',
+    display: '2026/09/22 22:50',
+    iso: '2026-09-22T22:50:00+08:00',
   },
   studyStatus: {
     sampleCourseCode: 'PMGM7001',

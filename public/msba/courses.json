@@ -676,20 +676,6 @@
             "sessionType": "tutorial"
           },
           {
-            "date": "2026-09-29",
-            "startTime": "09:30",
-            "endTime": "12:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-10-02",
-            "startTime": "09:30",
-            "endTime": "12:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
             "date": "2026-10-03",
             "startTime": "18:30",
             "endTime": "20:00",
@@ -704,9 +690,23 @@
             "sessionType": "lecture"
           },
           {
+            "date": "2026-10-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "LT104",
+            "sessionType": "lecture"
+          },
+          {
             "date": "2026-10-09",
             "startTime": "09:30",
             "endTime": "12:30",
+            "venue": "LT104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-10",
+            "startTime": "18:30",
+            "endTime": "21:30",
             "venue": "LT104",
             "sessionType": "lecture"
           },
@@ -791,20 +791,6 @@
             "sessionType": "tutorial"
           },
           {
-            "date": "2026-09-29",
-            "startTime": "14:00",
-            "endTime": "17:00",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-10-02",
-            "startTime": "14:00",
-            "endTime": "17:00",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
             "date": "2026-10-03",
             "startTime": "20:00",
             "endTime": "21:30",
@@ -819,9 +805,23 @@
             "sessionType": "lecture"
           },
           {
+            "date": "2026-10-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "LT104",
+            "sessionType": "lecture"
+          },
+          {
             "date": "2026-10-09",
             "startTime": "14:00",
             "endTime": "17:00",
+            "venue": "LT104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-12",
+            "startTime": "18:30",
+            "endTime": "21:30",
             "venue": "LT104",
             "sessionType": "lecture"
           },

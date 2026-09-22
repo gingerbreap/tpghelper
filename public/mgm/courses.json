@@ -240,13 +240,6 @@
       "sessionType": "lecture"
      },
      {
-      "date": "2026-09-22",
-      "startTime": "09:30",
-      "endTime": "12:30",
-      "venue": "CP-EFG",
-      "sessionType": "lecture"
-     },
-     {
       "date": "2026-09-29",
       "startTime": "09:30",
       "endTime": "12:30",
@@ -329,13 +322,6 @@
      },
      {
       "date": "2026-09-18",
-      "startTime": "14:00",
-      "endTime": "17:00",
-      "venue": "CP-EFG",
-      "sessionType": "lecture"
-     },
-     {
-      "date": "2026-09-22",
       "startTime": "14:00",
       "endTime": "17:00",
       "venue": "CP-EFG",

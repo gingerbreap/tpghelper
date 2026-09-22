@@ -49,8 +49,10 @@ const overlay: TranslationTree = {
     ],
   },
   teachingPlan: {
+    body7001_0922:
+      '{{code1}}（Class C & D）Sep 22 讲座已取消并改期：Class C 改至 Oct 16（14:00-17:00，CP-J）；Class D 改至 Oct 15（18:30-21:30，CP-J）。此前课表误保留 Sep 22，现已更正。可参考下方日历查看相关改动。',
     body7001_7024:
-      '{{code1}}（Class A–D）新增补课日期；{{code2}} 已由 TBC 更新为完整上课安排（含 Class A/B）。日历与冲突提示可能与旧版本不同。',
+      '{{code1}}（Class A–B）新增补课日期；Class C/D 的 Sep 22 讲座改至 Oct 16 / Oct 15；{{code2}} 已由 TBC 更新为完整上课安排（含 Class A/B）。日历与冲突提示可能与旧版本不同。',
   },
 }
 
