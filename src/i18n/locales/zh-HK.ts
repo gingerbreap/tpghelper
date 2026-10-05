@@ -177,6 +177,8 @@ const zhHK: TranslationTree = {
     professor: '教授',
     tutShow: 'TUT ({{count}} sessions) (Show)',
     tutHide: 'TUT ({{count}} sessions) (Hide)',
+    tutShowScoped: 'TUT ({{scope}}) ({{count}} sessions) (Show)',
+    tutHideScoped: 'TUT ({{scope}}) ({{count}} sessions) (Hide)',
     modalLabel: '課程詳情',
     pdfTitle: 'Course Outline',
     pdfMobileNote: '為獲得更好的閱讀體驗，請',
@@ -324,7 +326,7 @@ const zhHK: TranslationTree = {
     body7002_7003:
       '{{code2}}（Class C & D）部分講座已取消並改期，Class C 的 Tutorial 時間有調整；{{code1}}（Class A–D）上課時間與課室已更新。日曆與衝突提示可能與舊版本不同。',
     body7002_7003_7004:
-      '{{code2}}（Class C & D）部分講座已取消並改期，Tutorial 時間有調整；{{code1}}（Class A–D）上課時間與課室已更新；{{code3}} 一節 Tutorial 由 Nov 19 改至 Nov 16。可參考下方日曆查看相關改動。',
+      '{{code2}}（Class C & D）部分講座已取消並改期，Class C 的 Tutorial 時間有調整；{{code1}}（Class A–D）上課時間與課室已更新；{{code3}} Class A & B 一節 Tutorial 由 Nov 19 改至 Nov 16。可參考下方日曆查看相關改動。',
     body7003_0922:
       '{{code1}}（Class C & D）部分講座已取消並改期：Class C 的 Sep 29、Oct 2 講座改至 Oct 7、Oct 10（18:30-21:30）；Class D 的 Sep 29、Oct 2 講座改至 Oct 8、Oct 12（18:30-21:30）。可參考下方日曆查看相關改動。',
     body7003:

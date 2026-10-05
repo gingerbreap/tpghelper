@@ -1,6 +1,8 @@
 import {
   buildDisplayRows,
+  isTutorialPlanRow,
   teachingPlanNotices,
+  teachingPlanRowAffectsUser,
   type ChangePart,
   type TeachingPlanDisplayRow,
 } from '../data/teachingPlanUpdates'
@@ -48,13 +50,11 @@ export function rowAffectsUser(
 ): boolean {
   const selectedSet = new Set(selections.map(s => selectedKey(s.courseCode, s.sectionId)))
   const selectedCourses = new Set(selections.map(s => s.courseCode))
-  if (!row.sectionId) return selectedCourses.has(row.courseCode)
-  if (row.sectionId === 'TUT') return selectedCourses.has(row.courseCode)
-  return selectedSet.has(selectedKey(row.courseCode, row.sectionId))
+  return teachingPlanRowAffectsUser(row, selectedSet, selectedCourses)
 }
 
 function inferSessionType(row: TeachingPlanDisplayRow): CalendarSessionType {
-  if (row.sessionKind === 'TUT' || row.sectionId === 'TUT' || row.itemKey.startsWith('tut')) {
+  if (isTutorialPlanRow(row)) {
     return 'tutorial'
   }
   return 'lecture'
@@ -131,6 +131,7 @@ export interface PlanChange {
   noticeId: string
   courseCode: string
   sectionId: string
+  tutorialFor?: string[]
   sessionType: CalendarSessionType
   previousDates: string[]
   updatedDates: string[]
@@ -176,6 +177,7 @@ export function buildPlanChanges(
         noticeId: notice.id,
         courseCode: row.courseCode,
         sectionId: displaySectionId(row),
+        tutorialFor: row.tutorialFor,
         sessionType: inferSessionType(row),
         previousDates,
         updatedDates,
@@ -342,11 +344,16 @@ export function annotateUpdatedEvents(
     for (const date of change.updatedDates) {
       updatedDates.add(date)
       const typeKey = `${change.courseCode}|${change.sessionType}|${date}`
-      if (change.sectionId && change.sectionId !== 'TUT') {
-        byCourseSectionTypeDate.set(
-          `${change.courseCode}|${change.sectionId}|${change.sessionType}|${date}`,
-          change.id,
-        )
+      const scopedIds = change.sessionType === 'tutorial'
+        ? (change.tutorialFor?.length ? change.tutorialFor : null)
+        : (change.sectionId && change.sectionId !== 'TUT' ? [change.sectionId] : null)
+      if (scopedIds) {
+        for (const sectionId of scopedIds) {
+          byCourseSectionTypeDate.set(
+            `${change.courseCode}|${sectionId}|${change.sessionType}|${date}`,
+            change.id,
+          )
+        }
       } else if (!byCourseTypeDate.has(typeKey)) {
         byCourseTypeDate.set(typeKey, change.id)
       }

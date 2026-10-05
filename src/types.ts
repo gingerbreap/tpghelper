@@ -15,6 +15,13 @@ export interface Meeting {
    * splits a class between instructors; otherwise the section's apply.
    */
   instructors?: string[]
+  /**
+   * Lecture subclass ids this tutorial belongs to (e.g. ["A","B"] or ["C"]).
+   * Tutorials are still duplicated onto each applicable section for calendar /
+   * conflicts; this field records the Teaching Plan grouping (shared cell vs
+   * per-class). Omit on lectures.
+   */
+  tutorialFor?: string[]
 }
 
 export type ExamKind = 'exam' | 'presentation' | 'midterm' | 'other'

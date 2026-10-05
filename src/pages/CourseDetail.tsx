@@ -13,12 +13,43 @@ import {
   sectionHasInstructor,
 } from '../utils/instructors'
 import { examSessionRowLabel, resolveExam } from '../utils/exams'
-import type { Course, ExamOrFinal, Section } from '../types'
+import type { Course, ExamOrFinal, Meeting, Section } from '../types'
+import { formatSectionScope, formatTutClassLabel } from '../utils/tutorialScope'
 
 const BASE = import.meta.env.BASE_URL
 
 function examBadgeClass(exam: ExamOrFinal): string {
   return exam.kind === 'presentation' || exam.kind === 'other' ? 'badge-presentation' : 'badge-exam'
+}
+
+function tutorialScopeForSection(section: Section, meetings: Meeting[]): string[] {
+  const fromMeetings = meetings.flatMap(m => m.tutorialFor ?? [])
+  if (fromMeetings.length > 0) return [...new Set(fromMeetings)]
+  return [section.sectionId]
+}
+
+function tutToggleLabel(
+  course: Course,
+  section: Section,
+  tutorialMeetings: Meeting[],
+  expanded: boolean,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
+  const allIds = course.sections.map(s => s.sectionId)
+  const scopeIds = tutorialScopeForSection(section, tutorialMeetings)
+  const shared = scopeIds.length > 1 || (scopeIds.length === 1 && allIds.length > 1 && scopeIds[0] !== section.sectionId)
+  const vars = {
+    count: tutorialMeetings.length,
+    scope: formatSectionScope(scopeIds, allIds),
+  }
+  if (shared) {
+    return expanded
+      ? t('courseDetail.tutHideScoped', vars)
+      : t('courseDetail.tutShowScoped', vars)
+  }
+  return expanded
+    ? t('courseDetail.tutHide', { count: tutorialMeetings.length })
+    : t('courseDetail.tutShow', { count: tutorialMeetings.length })
 }
 
 function FinalSessionRow({ exam }: { exam: ExamOrFinal }) {
@@ -193,9 +224,7 @@ export function CourseDetailContent({
                                 setTutExpandedBySectionKey(prev => ({ ...prev, [tutKey]: !prev[tutKey] }))
                               }
                             >
-                              {tutExpanded
-                                ? t('courseDetail.tutHide', { count: tutorialMeetings.length })
-                                : t('courseDetail.tutShow', { count: tutorialMeetings.length })}
+                              {tutToggleLabel(course, sec, tutorialMeetings, tutExpanded, t)}
                             </button>
                           </td>
                         </tr>
@@ -206,7 +235,12 @@ export function CourseDetailContent({
                               <td style={{ padding: '4px 8px' }}>{m.startTime}-{m.endTime}</td>
                               <td style={{ padding: '4px 8px' }}>{m.venue}</td>
                               <td style={{ padding: '4px 8px' }}>
-                                <span className="badge badge-capstone">TUT</span>
+                                <span className="badge badge-capstone">
+                                  {formatTutClassLabel(
+                                    m.tutorialFor && m.tutorialFor.length > 0 ? m.tutorialFor : [sec.sectionId],
+                                    course.sections.map(s => s.sectionId),
+                                  )}
+                                </span>
                               </td>
                               <td style={{ padding: '4px 8px', color: 'var(--text-secondary)' }}>
                                 {meetingInstructorNames(sec, m).join(' / ')}

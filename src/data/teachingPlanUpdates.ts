@@ -7,6 +7,12 @@ export {
   teachingPlanUpdates,
   buildDisplayRows,
 } from '../programmes/activePack'
+export {
+  isTutorialPlanRow,
+  planClassColumnText,
+  planRowClassKey,
+  teachingPlanRowAffectsUser,
+} from '../utils/teachingPlanRows'
 export type {
   TeachingPlanNotice,
   TeachingPlanUpdate,

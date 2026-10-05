@@ -1,3 +1,5 @@
+import { isTutorialPlanRow, planRowClassKey } from '../../utils/teachingPlanRows'
+
 export type ChangeEmoji = 'time' | 'venue'
 
 export interface ChangePart {
@@ -8,10 +10,16 @@ export interface ChangePart {
 
 export interface TeachingPlanUpdateRow {
   /**
-   * Class letter (A/B/C…) or "TUT" for tutorial-wide changes
-   * (tutorials are not bound to a lecture class).
+   * Class letter (A/B/C…) for lecture changes, or "TUT" for tutorial changes.
+   * Pair TUT rows with `tutorialFor` so the Class column can show which
+   * subclasses share that tutorial (e.g. TUT (A+B), TUT (C)).
    */
   sectionId?: string
+  /**
+   * Lecture subclass ids the tutorial applies to. Required for TUT rows
+   * whenever the Teaching Plan groups or splits tutorials by class.
+   */
+  tutorialFor?: string[]
   /**
    * i18n key under teachingPlan.items.*
    * sessionVenue / sessionTime / sessionTimeVenue use itemDate
@@ -54,6 +62,7 @@ export interface TeachingPlanDisplayRow {
   courseCode: string
   courseTitle: string
   sectionId?: string
+  tutorialFor?: string[]
   itemKey: string
   itemDate?: string
   sessionKind?: 'LEC' | 'TUT'
@@ -81,13 +90,13 @@ export function buildDisplayRows(notice: TeachingPlanNotice): TeachingPlanDispla
   for (const update of notice.updates) {
     const hasTutorials = !!update.hasTutorials
     const orderedRows = [...update.rows].sort((a, b) => {
-      const aTut = a.sectionId === 'TUT' || a.sessionKind === 'TUT' || a.itemKey.startsWith('tut') ? 1 : 0
-      const bTut = b.sectionId === 'TUT' || b.sessionKind === 'TUT' || b.itemKey.startsWith('tut') ? 1 : 0
+      const aTut = isTutorialPlanRow(a) ? 1 : 0
+      const bTut = isTutorialPlanRow(b) ? 1 : 0
       return aTut - bTut
     })
 
     for (const [index, row] of orderedRows.entries()) {
-      const section = row.sectionId ?? ''
+      const section = planRowClassKey(row)
       const itemDate = row.itemDate ?? ''
       const sessionKind = row.sessionKind ?? ''
       const itemTime = row.itemTime ?? ''
@@ -108,6 +117,7 @@ export function buildDisplayRows(notice: TeachingPlanNotice): TeachingPlanDispla
         courseCode: update.courseCode,
         courseTitle: update.courseTitle,
         sectionId: row.sectionId,
+        tutorialFor: row.tutorialFor,
         itemKey: row.itemKey,
         itemDate: row.itemDate,
         sessionKind: row.sessionKind,

@@ -2,7 +2,11 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   buildDisplayRows,
+  isTutorialPlanRow,
+  planClassColumnText,
+  planRowClassKey,
   teachingPlanNotices,
+  teachingPlanRowAffectsUser,
   type ChangePart,
   type TeachingPlanDisplayRow,
   type TeachingPlanNotice,
@@ -152,7 +156,7 @@ function reflowDisplayFlags(rows: TeachingPlanDisplayRow[]): TeachingPlanDisplay
   let prevItemTime: string | null = null
 
   return rows.map(row => {
-    const section = row.sectionId ?? ''
+    const section = planRowClassKey(row)
     const itemDate = row.itemDate ?? ''
     const sessionKind = row.sessionKind ?? ''
     const itemTime = row.itemTime ?? ''
@@ -185,9 +189,7 @@ function rowAffectsUser(
   selectedSet: Set<string>,
   selectedCourses: Set<string>,
 ): boolean {
-  if (!row.sectionId) return selectedCourses.has(row.courseCode)
-  if (row.sectionId === 'TUT') return selectedCourses.has(row.courseCode)
-  return selectedSet.has(selectedKey(row.courseCode, row.sectionId))
+  return teachingPlanRowAffectsUser(row, selectedSet, selectedCourses)
 }
 
 interface ImpactGroup {
@@ -195,6 +197,8 @@ interface ImpactGroup {
   courseCode: string
   courseTitle: string
   sectionId: string
+  classLabel: string
+  isTutorial: boolean
   changeCount: number
   personal: boolean
 }
@@ -207,7 +211,7 @@ function buildImpactGroups(
   const map = new Map<string, ImpactGroup>()
   for (const row of rows) {
     const sectionId = row.sectionId ?? '—'
-    const key = `${row.courseCode}::${sectionId}`
+    const key = `${row.courseCode}::${planRowClassKey(row) || sectionId}`
     const personal = rowAffectsUser(row, selectedSet, selectedCourses)
     const existing = map.get(key)
     if (existing) {
@@ -219,6 +223,8 @@ function buildImpactGroups(
         courseCode: row.courseCode,
         courseTitle: row.courseTitle,
         sectionId,
+        classLabel: planClassColumnText(row),
+        isTutorial: isTutorialPlanRow(row),
         changeCount: 1,
         personal,
       })
@@ -227,17 +233,17 @@ function buildImpactGroups(
   return [...map.values()].sort((a, b) => {
     if (a.personal !== b.personal) return a.personal ? -1 : 1
     if (a.courseCode !== b.courseCode) return a.courseCode.localeCompare(b.courseCode)
-    return a.sectionId.localeCompare(b.sectionId)
+    return a.classLabel.localeCompare(b.classLabel)
   })
 }
 
-function sectionLabel(
-  sectionId: string,
+function impactSectionLabel(
+  group: ImpactGroup,
   t: (key: string, vars?: Record<string, string | number>) => string,
 ): string {
-  if (sectionId === 'TUT') return t('teachingPlan.impactTut')
-  if (sectionId === '—') return ''
-  return t('teachingPlan.impactClass', { id: sectionId })
+  if (group.isTutorial) return group.classLabel || t('teachingPlan.impactTut')
+  if (group.sectionId === '—') return ''
+  return t('teachingPlan.impactClass', { id: group.sectionId })
 }
 
 function ChangeTable({
@@ -269,7 +275,7 @@ function ChangeTable({
             const isSelectedClass = !!(
               highlightSelected
               && row.sectionId
-              && row.sectionId !== 'TUT'
+              && !isTutorialPlanRow(row)
               && selectedSet.has(selectedKey(row.courseCode, row.sectionId))
             )
             return (
@@ -288,7 +294,7 @@ function ChangeTable({
                   ) : null}
                 </td>
                 <td className={isSelectedClass ? 'teaching-plan-class--selected' : undefined}>
-                  {row.showClass ? (row.sectionId ?? '') : null}
+                  {row.showClass ? planClassColumnText(row) : null}
                 </td>
                 <td>{row.showItem ? itemLabel(row, t) : null}</td>
                 <td className="teaching-plan-old-cell">
@@ -306,11 +312,11 @@ function ChangeTable({
   )
 }
 
-function impactChipClass(sectionId: string, personal: boolean): string {
+function impactChipClass(isTutorial: boolean, sectionId: string, personal: boolean): string {
   const parts = ['teaching-plan-impact-chip']
   if (personal) parts.push('teaching-plan-impact-chip--personal')
   // Deeper wash only in "affects you"; "other updates" stay white
-  if (personal && sectionId !== 'TUT' && sectionId !== '—') {
+  if (personal && !isTutorial && sectionId !== '—') {
     parts.push('teaching-plan-impact-chip--lec')
   }
   return parts.join(' ')
@@ -416,10 +422,10 @@ function NoticeCard({
             {personalGroups.length > 0 && (
               <ul className="teaching-plan-impact-list">
                 {personalGroups.map(g => (
-                  <li key={g.key} className={impactChipClass(g.sectionId, true)}>
+                  <li key={g.key} className={impactChipClass(g.isTutorial, g.sectionId, true)}>
                     <span className="teaching-plan-impact-chip-code">{g.courseCode}</span>
                     <span className="teaching-plan-impact-chip-section">
-                      {sectionLabel(g.sectionId, t)}
+                      {impactSectionLabel(g, t)}
                     </span>
                     <span
                       className="teaching-plan-impact-chip-count"
@@ -442,10 +448,10 @@ function NoticeCard({
                 </summary>
                 <ul className="teaching-plan-impact-list teaching-plan-impact-list--muted">
                   {otherGroups.map(g => (
-                    <li key={g.key} className={impactChipClass(g.sectionId, false)}>
+                    <li key={g.key} className={impactChipClass(g.isTutorial, g.sectionId, false)}>
                       <span className="teaching-plan-impact-chip-code">{g.courseCode}</span>
                       <span className="teaching-plan-impact-chip-section">
-                        {sectionLabel(g.sectionId, t)}
+                        {impactSectionLabel(g, t)}
                       </span>
                       <span
                         className="teaching-plan-impact-chip-count"

@@ -1,5 +1,7 @@
 import {
   buildDisplayRows,
+  isTutorialPlanRow,
+  planClassColumnText,
   type ChangePart,
   type TeachingPlanDisplayRow,
   type TeachingPlanNotice,
@@ -160,7 +162,7 @@ export function TeachingPlanNoticeBody({
             {displayRows.map(row => {
               const isSelectedClass = !!(
                 row.sectionId
-                && row.sectionId !== 'TUT'
+                && !isTutorialPlanRow(row)
                 && selected.has(selectedKey(row.courseCode, row.sectionId))
               )
               return (
@@ -179,7 +181,7 @@ export function TeachingPlanNoticeBody({
                     ) : null}
                   </td>
                   <td className={isSelectedClass ? 'teaching-plan-class--selected' : undefined}>
-                    {row.showClass ? (row.sectionId ?? '') : null}
+                    {row.showClass ? planClassColumnText(row) : null}
                   </td>
                   <td>{row.showItem ? itemLabel(row, t) : null}</td>
                   <td className="teaching-plan-old-cell">

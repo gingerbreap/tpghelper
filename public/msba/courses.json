@@ -415,7 +415,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-09-15",
@@ -443,7 +446,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-09-29",
@@ -464,7 +470,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-10-06",
@@ -492,7 +501,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           }
         ]
       },
@@ -530,7 +542,10 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2026-09-15",
@@ -558,7 +573,10 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2026-09-29",
@@ -579,7 +597,10 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2026-10-06",
@@ -607,7 +628,10 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           }
         ]
       },
@@ -645,7 +669,10 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C"
+            ]
           },
           {
             "date": "2026-09-15",
@@ -673,14 +700,20 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C"
+            ]
           },
           {
             "date": "2026-10-03",
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C"
+            ]
           },
           {
             "date": "2026-10-06",
@@ -722,7 +755,10 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTA",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C"
+            ]
           }
         ]
       },
@@ -760,7 +796,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "D"
+            ]
           },
           {
             "date": "2026-09-15",
@@ -788,14 +827,20 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "D"
+            ]
           },
           {
             "date": "2026-10-03",
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "D"
+            ]
           },
           {
             "date": "2026-10-06",
@@ -837,7 +882,10 @@
             "startTime": "20:00",
             "endTime": "21:30",
             "venue": "LTA",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "D"
+            ]
           }
         ]
       }
@@ -914,7 +962,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom ABC",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-02",
@@ -951,7 +1003,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-13",
@@ -978,7 +1034,11 @@
             "startTime": "17:30",
             "endTime": "19:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-19",
@@ -1005,7 +1065,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           }
         ]
       },
@@ -1064,7 +1128,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom ABC",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-01",
@@ -1111,7 +1179,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-16",
@@ -1128,7 +1200,11 @@
             "startTime": "17:30",
             "endTime": "19:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-19",
@@ -1155,7 +1231,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           }
         ]
       },
@@ -1214,7 +1294,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-04",
@@ -1251,7 +1335,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-14",
@@ -1278,7 +1366,11 @@
             "startTime": "19:30",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-21",
@@ -1305,7 +1397,11 @@
             "startTime": "12:30",
             "endTime": "14:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           }
         ]
       },
@@ -1364,7 +1460,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-04",
@@ -1401,7 +1501,11 @@
             "startTime": "18:00",
             "endTime": "20:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-14",
@@ -1428,7 +1532,11 @@
             "startTime": "19:30",
             "endTime": "21:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-21",
@@ -1455,7 +1563,11 @@
             "startTime": "12:30",
             "endTime": "14:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           }
         ]
       }
@@ -1542,7 +1654,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-05",
@@ -1569,7 +1685,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-12",
@@ -1606,7 +1726,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-23",
@@ -1623,7 +1747,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           }
         ]
       },
@@ -1692,7 +1820,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-05",
@@ -1719,7 +1851,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-12",
@@ -1756,7 +1892,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2026-11-23",
@@ -1773,7 +1913,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           }
         ]
       },
@@ -1832,7 +1976,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-04",
@@ -1859,7 +2007,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-11",
@@ -1896,7 +2048,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-21",
@@ -1923,7 +2079,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           }
         ]
       },
@@ -1982,7 +2142,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-04",
@@ -2009,7 +2173,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-11",
@@ -2046,7 +2214,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           },
           {
             "date": "2026-11-21",
@@ -2073,7 +2245,11 @@
             "startTime": "18:30",
             "endTime": "21:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "C",
+              "D"
+            ]
           }
         ]
       }
@@ -2131,7 +2307,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-12-14",
@@ -2152,7 +2331,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-12-21",
@@ -2173,7 +2355,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-01-07",
@@ -2187,7 +2372,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-01-11",
@@ -2208,7 +2396,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           }
         ]
       }
@@ -2373,7 +2564,10 @@
             "startTime": "09:30",
             "endTime": "10:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-12-10",
@@ -2394,7 +2588,10 @@
             "startTime": "09:30",
             "endTime": "10:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2026-12-17",
@@ -2429,7 +2626,10 @@
             "startTime": "09:30",
             "endTime": "10:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-01-11",
@@ -2450,7 +2650,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "LTA",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           }
         ]
       }
@@ -2883,7 +3086,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-07",
@@ -2911,7 +3119,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-17",
@@ -2946,7 +3159,12 @@
             "startTime": "10:30",
             "endTime": "12:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2027-01-11",
@@ -2967,7 +3185,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           }
         ]
       },
@@ -3005,7 +3228,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-09",
@@ -3026,7 +3254,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-16",
@@ -3061,7 +3294,12 @@
             "startTime": "10:30",
             "endTime": "12:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2027-01-09",
@@ -3082,7 +3320,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           }
         ]
       },
@@ -3120,7 +3363,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-09",
@@ -3141,7 +3389,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2026-12-16",
@@ -3176,7 +3429,12 @@
             "startTime": "10:30",
             "endTime": "12:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           },
           {
             "date": "2027-01-09",
@@ -3197,7 +3455,12 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom H",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B",
+              "C"
+            ]
           }
         ]
       }
@@ -3570,7 +3833,10 @@
             "startTime": "09:30",
             "endTime": "12:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-18",
@@ -3605,7 +3871,10 @@
             "startTime": "18:30",
             "endTime": "21:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-03-04",
@@ -3670,7 +3939,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2027-02-02",
@@ -3691,7 +3963,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2027-02-16",
@@ -3719,7 +3994,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2027-02-26",
@@ -3733,7 +4011,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           },
           {
             "date": "2027-03-02",
@@ -3747,7 +4028,10 @@
             "startTime": "18:30",
             "endTime": "19:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "B"
+            ]
           }
         ]
       }
@@ -3819,7 +4103,10 @@
             "startTime": "09:30",
             "endTime": "12:30",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-13",
@@ -3868,7 +4155,10 @@
             "startTime": "18:30",
             "endTime": "21:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           }
         ]
       }
@@ -4026,7 +4316,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-01-29",
@@ -4047,7 +4341,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-02-12",
@@ -4068,7 +4366,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-02-19",
@@ -4096,7 +4398,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-03-02",
@@ -4141,7 +4447,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-01-29",
@@ -4162,7 +4472,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-02-12",
@@ -4183,7 +4497,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-02-19",
@@ -4211,7 +4529,11 @@
             "startTime": "18:30",
             "endTime": "20:00",
             "venue": "LT104",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A",
+              "B"
+            ]
           },
           {
             "date": "2027-03-02",
@@ -4290,7 +4612,10 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-12",
@@ -4318,7 +4643,10 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-23",
@@ -4346,7 +4674,10 @@
             "startTime": "18:30",
             "endTime": "20:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           }
         ]
       }
@@ -4511,7 +4842,10 @@
             "startTime": "18:30",
             "endTime": "21:30",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-01",
@@ -4539,7 +4873,10 @@
             "startTime": "14:00",
             "endTime": "17:00",
             "venue": "LTB",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-02-18",
@@ -5508,7 +5845,10 @@
             "startTime": "14:00",
             "endTime": "16:00",
             "venue": "Classroom D",
-            "sessionType": "tutorial"
+            "sessionType": "tutorial",
+            "tutorialFor": [
+              "A"
+            ]
           },
           {
             "date": "2027-04-15",

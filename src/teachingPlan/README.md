@@ -68,8 +68,10 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 ### 班（Class）
 
 - 讲座改动：写班别字母 `A`/`B`/`C`/`D`。
-- **Tutorial 改动**：Tutorials **不绑定**某一讲座班；班列写 **`TUT`**，不要拆成 A+B 两行重复。
+- **Tutorial 改动**：`sectionId: 'TUT'`，并写 **`tutorialFor: ['A','B']`**（该格适用的讲座班）。Teaching Plan 里 A/B 或 C/D **共用一格** 就写合并后的班；各班自己的 TUT 时段则写单班。
+- 班列展示：`TUT (A–D)`（该课全部班、连续）、`TUT (A+B)` / `TUT (C+D)`（子集）、`TUT (C)`（单班）。**不要**再写无班别范围的光秃 `TUT`（除非 PDF 确实无法判断）。
 - 同一课程内：**所有 TUT 行排在该课讲座改动之后（沉底）**。
+- `dismiss` version 仍按 **course codes join**（与今日相同），不要把 `tutorialFor` 算进 version。
 
 ### 调整项（只写变了什么；**不要**再写 LEC/TUT 字样）
 
@@ -95,7 +97,7 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 
 - 摘要 chip：与已选相关优先；讲座班底色更深，TUT 更浅；计数为圆圈数字。
 - 明细表勾选「仅显示与我相关」时**不**再做行底色区分；取消勾选时已选讲座班行浅黄高亮。
-- `TUT` 行不按讲座班高亮。
+- `TUT` 行不按讲座班高亮；是否「与我相关」按 `tutorialFor` 与已选讲座班相交判断（不再视为该课任意班都相关）。
 
 ### 日历叠加注意
 
@@ -106,8 +108,8 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 
 1. 将新 PDF 拷入 `public/{programme}/teachingPlan/`，确认旧版仍在同目录。
 2. 对照旧版 + 扫新版红字，列出「课程 / 班或 TUT / 旧值 / 新值」（含邮件未点名的课）。
-3. 改 `public/{programme}/courses.json`（TUT 共用则相关 meeting 一并改）。
-4. 更新 `src/programmes/{programme}/teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` 并沉底。
+3. 改 `public/{programme}/courses.json`（TUT 共用则相关 meeting 一并改，并填写 `tutorialFor`）。
+4. 更新 `src/programmes/{programme}/teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` + `tutorialFor` 并沉底。
 5. 更新三语 i18n body（MSBA：`src/i18n/locales`；MGM：另更新 `src/programmes/mgm/locales`）；更新 programme `dataSync`。
 6. 用对应 `PROGRAMME=` 本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页。
 7. Commit（约定式提交）+ 按部署流程发布。
