@@ -151,12 +151,83 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20261005-7004-7027',
+    timestamp: '2026/10/05 19:05',
+    courseRefs: '7004, 7027',
+    bodyKey: 'body7004_7027_1005',
+    bodyParams: { code1: 'MSBA7004', code2: 'MSBA7027' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7004',
+        courseTitle: 'Operations Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['A', 'B'],
+            itemKey: 'date',
+            sessionKind: 'TUT',
+            previous: [time('Nov 2, 2026 (Mon) 18:30-21:00')],
+            updated: [plain('Cancelled')],
+          },
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['A', 'B'],
+            itemKey: 'date',
+            sessionKind: 'TUT',
+            previous: [time('Nov 11, 2026 (Wed) 18:30-21:00')],
+            updated: [plain('Cancelled')],
+          },
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['C', 'D'],
+            itemKey: 'date',
+            sessionKind: 'TUT',
+            previous: [time('Oct 31, 2026 (Sat) 18:30-21:00')],
+            updated: [plain('Cancelled')],
+          },
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['C', 'D'],
+            itemKey: 'date',
+            sessionKind: 'TUT',
+            previous: [time('Nov 10, 2026 (Tue) 18:30-21:00')],
+            updated: [plain('Cancelled')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7027',
+        courseTitle: 'Machine Learning',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'B',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Jan 9, 2027 (Sat) 18:30-21:30')],
+            updated: [
+              time('Jan 16, 2027 (Sat) 14:00-17:00'),
+              venue('LT104'),
+            ],
+          },
+          {
+            sectionId: 'C',
+            itemKey: 'lecTime',
+            previous: [time('Jan 9, 2027 (Sat) 14:00-17:00')],
+            updated: [time('Jan 16, 2027 (Sat) 09:30-12:30')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20260922-7003',
     timestamp: '2026/09/22 11:26',
     courseRefs: '7003',
     bodyKey: 'body7003_0922',
     bodyParams: { code1: 'MSBA7003' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7003',

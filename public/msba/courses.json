@@ -1650,17 +1650,6 @@
             ]
           },
           {
-            "date": "2026-11-02",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "Classroom H",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "A",
-              "B"
-            ]
-          },
-          {
             "date": "2026-11-05",
             "startTime": "09:30",
             "endTime": "12:30",
@@ -1678,17 +1667,6 @@
             "sessionType": "lecture",
             "instructors": [
               "Prof. Lin CHEN"
-            ]
-          },
-          {
-            "date": "2026-11-11",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "Classroom H",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "A",
-              "B"
             ]
           },
           {
@@ -1816,17 +1794,6 @@
             ]
           },
           {
-            "date": "2026-11-02",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "Classroom H",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "A",
-              "B"
-            ]
-          },
-          {
             "date": "2026-11-05",
             "startTime": "14:00",
             "endTime": "17:00",
@@ -1844,17 +1811,6 @@
             "sessionType": "lecture",
             "instructors": [
               "Prof. Lin CHEN"
-            ]
-          },
-          {
-            "date": "2026-11-11",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "Classroom H",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "A",
-              "B"
             ]
           },
           {
@@ -1972,17 +1928,6 @@
             ]
           },
           {
-            "date": "2026-10-31",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "LT104",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "C",
-              "D"
-            ]
-          },
-          {
             "date": "2026-11-04",
             "startTime": "09:30",
             "endTime": "12:30",
@@ -2000,17 +1945,6 @@
             "sessionType": "lecture",
             "instructors": [
               "Prof. Huiyin OUYANG"
-            ]
-          },
-          {
-            "date": "2026-11-10",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "LTB",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "C",
-              "D"
             ]
           },
           {
@@ -2138,17 +2072,6 @@
             ]
           },
           {
-            "date": "2026-10-31",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "LT104",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "C",
-              "D"
-            ]
-          },
-          {
             "date": "2026-11-04",
             "startTime": "14:00",
             "endTime": "17:00",
@@ -2166,17 +2089,6 @@
             "sessionType": "lecture",
             "instructors": [
               "Prof. Huiyin OUYANG"
-            ]
-          },
-          {
-            "date": "2026-11-10",
-            "startTime": "18:30",
-            "endTime": "21:00",
-            "venue": "LTB",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "C",
-              "D"
             ]
           },
           {
@@ -3302,17 +3214,17 @@
             ]
           },
           {
-            "date": "2027-01-09",
+            "date": "2027-01-13",
             "startTime": "18:30",
             "endTime": "21:30",
             "venue": "LTA",
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-13",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTA",
+            "date": "2027-01-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "LT104",
             "sessionType": "lecture"
           },
           {
@@ -3437,16 +3349,16 @@
             ]
           },
           {
-            "date": "2027-01-09",
+            "date": "2027-01-13",
             "startTime": "14:00",
             "endTime": "17:00",
             "venue": "LT104",
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-13",
-            "startTime": "14:00",
-            "endTime": "17:00",
+            "date": "2027-01-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
             "venue": "LT104",
             "sessionType": "lecture"
           },

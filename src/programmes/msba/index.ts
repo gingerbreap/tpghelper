@@ -44,8 +44,8 @@ export const msbaProgramme: ProgrammeConfig = {
     enrollmentRules: false,
   },
   dataSync: {
-    display: '2026/09/22 11:26',
-    iso: '2026-09-22T11:26:00+08:00',
+    display: '2026/10/05 19:05',
+    iso: '2026-10-05T19:05:00+08:00',
   },
   studyStatus: {
     sampleCourseCode: 'MSBA7001',

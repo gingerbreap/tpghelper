@@ -333,6 +333,8 @@ const zhHK: TranslationTree = {
       '{{code1}}（Class C & D）部分講座已取消並改期：Class C 的 Sep 23、Oct 7 晚間講座改回 Sep 29、Oct 2 常規時段；Class D 的 Sep 24、Oct 8 晚間講座改回 Sep 29、Oct 2 常規時段；Class C 的 Sep 23 Tutorial 時間已調整。可參考下方日曆查看相關改動。',
     body7002_7004:
       '{{code1}} Class A & B 的 Oct 22 講座已改回常規時間與課室；Class D 的 Oct 24 課室已更新。{{code2}} Class A 的 Oct 27 講座已取消並改至 Oct 22；Class C 的 Oct 24 已改回常規時間與課室。可參考下方日曆查看相關改動。',
+    body7004_7027_1005:
+      '{{code1}} Tutorial 已取消：Class A & B 取消 Nov 2、Nov 11；Class C & D 取消 Oct 31、Nov 10。{{code2}}（Class B & C）1 月 9 日講座已取消並改期：Class B 改至 1 月 16 日 14:00-17:00（LT104）；Class C 改至 1 月 16 日 09:30-12:30（LT104）。可參考下方日曆查看相關改動。',
     colCourse: '課程',
     colClass: '班',
     colItem: '調整項',
