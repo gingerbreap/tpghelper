@@ -9,10 +9,10 @@
     "examOrFinal": {
       "kind": "exam",
       "date": "2026-10-16",
-      "startTime": "09:30",
-      "endTime": "12:30",
+      "startTime": "09:40",
+      "endTime": "10:40",
       "venue": "LT104, Classroom ABC, EFG, H, J",
-      "raw": "Oct 16, 2026 (Fri), 09:30-12:30, LT104, Classroom ABC, EFG, H, J"
+      "raw": "Oct 16, 2026 (Fri), 09:40-10:40, LT104, Classroom ABC, EFG, H, J"
     },
     "sections": [
       {
@@ -376,9 +376,9 @@
       "kind": "exam",
       "date": "2026-10-20",
       "startTime": "14:00",
-      "endTime": "17:00",
+      "endTime": "16:00",
       "venue": "LT104, Classroom ABC, EFG, H, J",
-      "raw": "Oct 20, 2026 (Tue), 14:00-17:00, LT104, Classroom ABC, EFG, H, J"
+      "raw": "Oct 20, 2026 (Tue), 14:00-16:00, LT104, Classroom ABC, EFG, H, J"
     },
     "sections": [
       {

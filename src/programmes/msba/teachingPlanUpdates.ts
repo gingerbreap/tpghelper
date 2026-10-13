@@ -151,12 +151,48 @@ const plain = (text: string): ChangePart => ({ text })
 /** Newest first. */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20261012-7001-7003',
+    timestamp: '2026/10/12 18:36',
+    courseRefs: '7001, 7003',
+    bodyKey: 'body7001_7003_1012',
+    bodyParams: { code1: 'MSBA7001', code2: 'MSBA7003' },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7001',
+        courseTitle: 'Python for Data Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            itemKey: 'examFinal',
+            itemDate: 'Oct 16',
+            previous: [plain('09:30-12:30')],
+            updated: [time('09:40-10:40')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7003',
+        courseTitle: 'Decision Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            itemKey: 'examFinal',
+            itemDate: 'Oct 20',
+            previous: [plain('14:00-17:00')],
+            updated: [time('14:00-16:00')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20261005-7004-7027',
     timestamp: '2026/10/05 19:05',
     courseRefs: '7004, 7027',
     bodyKey: 'body7004_7027_1005',
     bodyParams: { code1: 'MSBA7004', code2: 'MSBA7027' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7004',
