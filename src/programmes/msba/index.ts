@@ -27,6 +27,7 @@ export const msbaProgramme: ProgrammeConfig = {
   moduleCount: 5,
   moduleNumbers: [1, 2, 3, 4, 5],
   streamIds: ['AI', 'MC'],
+  selectionTypeOrder: ['Core', 'Capstone', 'Elective'],
   coursesDataPath: 'courses.json',
   requirementsDataPath: 'requirements.json',
   storage: {
@@ -39,7 +40,7 @@ export const msbaProgramme: ProgrammeConfig = {
   },
   features: {
     wishlist: true,
-    backupSelections: false,
+    groupSelectedByType: false,
     teachingPlanImpactCalendar: true,
     enrollmentRules: false,
   },

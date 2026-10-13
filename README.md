@@ -30,6 +30,7 @@ The lander is a small HashRouter app (`#/`, `#/programmes`). Choosing an availab
 |------|------|
 | [`REQUIREMENTS.md`](REQUIREMENTS.md) | 产品需求与验收标准 |
 | [`src/teachingPlan/README.md`](src/teachingPlan/README.md) | Teaching Plan PDF 同步检查清单 |
+| [`docs/AGENT_NEW_PROGRAMME_GUIDE.md`](docs/AGENT_NEW_PROGRAMME_GUIDE.md) | **Agent / 维护者**：如何开设新项目子站（pack） |
 
 ## 本地开发
 ```bash

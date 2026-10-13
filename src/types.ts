@@ -98,14 +98,22 @@ export interface Stream {
   [key: string]: string | number | string[] | StreamList | undefined
 }
 
-export type EnrollmentRuleType = 'mutualExclusion' | 'allowMultiModule'
+export type EnrollmentRuleType =
+  | 'mutualExclusion'
+  | 'allowMultiModule'
+  | 'prerequisite'
+  | 'antirequisite'
 
 export interface EnrollmentRule {
   type: EnrollmentRuleType
   /** Courses subject to mutual exclusion (mutualExclusion). */
   courses?: string[]
-  /** Single course allowed across multiple modules (allowMultiModule). */
+  /** Target course (allowMultiModule, prerequisite, antirequisite). */
   courseCode?: string
+  /** Prerequisite codes that must be in the plan before selecting courseCode (prerequisite). */
+  requires?: string[]
+  /** If any of these codes are already selected, courseCode cannot be chosen (antirequisite). */
+  whenSelected?: string[]
   /** Module numbers that may each hold a selection (allowMultiModule). */
   modules?: number[]
   /** When true, selections across listed modules count as one course (allowMultiModule). */

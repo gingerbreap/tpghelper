@@ -129,6 +129,9 @@ const zhCN: TranslationTree = {
   planner: {
     title: '我的选课规划',
     totalSelected: '已选总数',
+    groupCore: 'Core',
+    groupCapstone: 'Capstone Core',
+    groupElective: 'Self Programme - Electives',
     streamProgress: '方向完成度',
     streamAi: 'AI 方向：',
     streamMc: 'MC 方向：',
@@ -137,7 +140,7 @@ const zhCN: TranslationTree = {
     emptySelected: '尚未选择任何课程，点击「浏览 & 添加」开始选课',
     clearAll: '清空全部',
     wishlistTitle: '备选列表 ({{count}})',
-    wishlistHint: ' · 可拖动排序；「选择」加入正式已选',
+    wishlistHint: ' · 可按类别拖动排序；「选择」加入正式已选',
     clearWishlist: '清空备选',
     emptyWishlist: '暂无备选课程，在「浏览 & 添加」中点击「加入备选」',
     dragSort: '拖动排序',
@@ -156,6 +159,8 @@ const zhCN: TranslationTree = {
     enrollmentWaitlist: 'Waitlist',
     enrollmentRegisteredTitle: '标记为 Waitlist（仍可点击切换）',
     enrollmentWaitlistTitle: '标记为已选上',
+    missingPrerequisite: '⛔️ 前置课程未满足',
+    prerequisiteBlockedHint: '前置课程未满足：{{codes}}',
   },
   timetable: {
     title: '2026-27 学年课程开设详情',

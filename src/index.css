@@ -2892,6 +2892,27 @@ button.calendar-holiday-label {
 .selection-item.drag-over {
   box-shadow: inset 0 2px 0 0 var(--primary);
 }
+.selection-item--prereq-missing .selection-item-main {
+  position: relative;
+  isolation: isolate;
+}
+.selection-item--prereq-missing .selection-item-main::after {
+  content: '';
+  position: absolute;
+  inset: -8px -12px;
+  background: rgba(60, 64, 67, 0.08);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+.prereq-missing-label {
+  color: #c5221f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  padding: 4px 0;
+}
 .selection-item-actions {
   display: flex;
   align-items: center;

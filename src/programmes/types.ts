@@ -5,19 +5,26 @@
 export type ProgrammeId = 'msba' | 'mgm'
 
 export interface ProgrammeFeatureFlags {
-  /** Planner wishlist (BA). MGM uses backup selections instead. */
+  /** Alternate / wishlist list on Planner (unified BA + MGM). */
   wishlist: boolean
-  /** Backup / alternate plan slots (MGM). */
-  backupSelections: boolean
+  /**
+   * Group the *selected* list by Core / Elective / Capstone.
+   * Wishlist grouping is always on when `wishlist` is enabled.
+   */
+  groupSelectedByType: boolean
   /** Teaching Plan impact visualization on calendar/planner. */
   teachingPlanImpactCalendar: boolean
-  /** Enrollment rules (mutual exclusion / multi-module). */
+  /**
+   * Enrollment rules from requirements.json: mutual exclusion,
+   * allowMultiModule, prerequisite, antirequisite, etc.
+   */
   enrollmentRules: boolean
 }
 
 export interface ProgrammeStorageKeys {
   selections: string
   wishlist?: string
+  /** @deprecated Legacy MGM key; useWishlist migrates into `wishlist`. */
   backup?: string
   locale: string
   defaultLanding: string
@@ -38,6 +45,8 @@ export interface ProgrammeIcsConfig {
   filename: string
 }
 
+export type ProgrammeCourseType = 'Core' | 'Elective' | 'Capstone'
+
 export interface ProgrammeConfig {
   id: ProgrammeId
   /** Short display name, e.g. MSc(BA) */
@@ -54,6 +63,11 @@ export interface ProgrammeConfig {
   moduleNumbers: readonly number[]
   /** Stream ids used in requirements.json */
   streamIds: readonly string[]
+  /**
+   * Display / grouping order for Core · Elective · Capstone on Planner
+   * (selected list when grouped + wishlist). Labels come from i18n.
+   */
+  selectionTypeOrder: readonly ProgrammeCourseType[]
   /** Public JSON paths relative to BASE_URL (programme publicDir root) */
   coursesDataPath: string
   requirementsDataPath: string

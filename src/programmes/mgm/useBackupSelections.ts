@@ -1,7 +1,9 @@
-/** Re-export for programme pack consumers; shared hook lives in src/hooks. */
+/** @deprecated Prefer `hooks/useWishlist` — backup is now the unified wishlist. */
 export {
-  useBackupSelections,
-  groupBackupByType,
+  useWishlist as useBackupSelections,
+  type WishlistToggleResult as BackupToggleResult,
+} from '../../hooks/useWishlist'
+export {
+  groupSelectionsByType as groupBackupByType,
   reorderWithinCategory,
-} from '../../hooks/useBackupSelections'
-export type { BackupToggleResult } from '../../hooks/useBackupSelections'
+} from '../../utils/selectionGroups'

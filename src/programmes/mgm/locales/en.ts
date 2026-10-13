@@ -14,14 +14,17 @@ const overlay: TranslationTree = {
   },
   planner: {
     streamEsg: 'ESG electives:',
-    wishlistTitle: 'Backup list ({{count}})',
+    groupCore: 'Core',
+    groupCapstone: 'Capstone',
+    groupElective: 'Elective',
+    wishlistTitle: 'Wishlist ({{count}})',
     wishlistHint: ' · Drag within category to reorder; use Select to add to your plan',
-    emptyWishlist: 'No backup items. Use Add to backup in Browse & Add.',
-    clearWishlist: 'Clear backup',
-    addWishlist: 'Add to backup',
-    inWishlist: 'In backup ✓',
+    emptyWishlist: 'No wishlist items. Use Add to wishlist in Browse & Add.',
+    clearWishlist: 'Clear wishlist',
+    addWishlist: 'Add to wishlist',
+    inWishlist: 'In wishlist ✓',
     duplicateWishlist:
-      '"{{code}}" is already in your plan (Class {{section}} · Module {{module}}). Remove it before selecting from backup.',
+      '"{{code}}" is already in your plan (Class {{section}} · Module {{module}}). Remove it before selecting from wishlist.',
   },
   timetable: {
     module6: 'Module 6 — May 5 ~ Jun 18, 2027',

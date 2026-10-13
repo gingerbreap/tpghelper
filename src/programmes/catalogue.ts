@@ -29,6 +29,7 @@ export const PROGRAMME_CATALOGUE: readonly ProgrammeCatalogueEntry[] = [
     aliases: ['MGM'],
     storage: {
       selections: 'mgm-planner-selections',
+      wishlist: 'mgm-planner-wishlist',
       backup: 'mgm-planner-backup',
       locale: 'mgm-locale',
       defaultLanding: 'mgm-default-landing',

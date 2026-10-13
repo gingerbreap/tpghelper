@@ -84,6 +84,19 @@ export function formatEnrollmentRuleMessage(
       ? `${rule.courseCode}（Module ${modules}）`
       : `${rule.courseCode} (Module ${modules})`
   }
+  if (rule.type === 'prerequisite') {
+    const req = (rule.requires ?? []).join(zh ? '、' : ', ')
+    return zh
+      ? `${rule.courseCode} 需先选：${req}`
+      : `${rule.courseCode} requires ${req} in your plan first`
+  }
+  if (rule.type === 'antirequisite') {
+    const y = (rule.whenSelected ?? []).join(zh ? '、' : ', ')
+    const x = rule.courseCode ?? ''
+    return zh
+      ? `${x}对已选${y}的学生不开放`
+      : `${x} cannot be selected when ${y} has been chosen`
+  }
   const courses = (rule.courses ?? []).join(zh ? ' 与 ' : ' / ')
   return zh
     ? `同一 Module 内 ${courses} 只能选其一`

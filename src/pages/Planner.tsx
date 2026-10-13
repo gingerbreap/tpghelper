@@ -8,7 +8,6 @@ import TimeBadge from '../components/TimeBadge'
 import WeekdayStrip from '../components/WeekdayStrip'
 import { useI18n } from '../i18n/context'
 import { useCourses, useRequirements } from '../hooks/useCoursesData'
-import { groupBackupByType, useBackupSelections } from '../hooks/useBackupSelections'
 import {
   countEffectiveSelections,
   getModuleConflict,
@@ -22,6 +21,16 @@ import { getActiveProgramme } from '../programmes'
 import { buildCalendarEvents } from '../utils/calendarEvents'
 import { detectConflicts } from '../utils/conflicts'
 import { formatSectionInstructors } from '../utils/instructors'
+import {
+  checkAntirequisiteForCourse,
+  formatAntirequisiteBlockMessage,
+} from '../utils/antirequisites'
+import {
+  checkPrerequisitesForCourse,
+  selectedCourseCodes,
+  selectionMissingPrerequisites,
+} from '../utils/prerequisites'
+import { groupSelectionsByType } from '../utils/selectionGroups'
 import type { Course, SelectedSection } from '../types'
 
 function itemKey(s: SelectedSection): string {
@@ -45,12 +54,13 @@ export default function Planner() {
   const { t, sectionLabel, locale } = useI18n()
   const programme = getActiveProgramme()
   const modules = programme.moduleNumbers
-  const useBackup = programme.features.backupSelections
   const useWishlistFeature = programme.features.wishlist
+  const groupSelectedByType = programme.features.groupSelectedByType
+  const useEnrollmentRules = programme.features.enrollmentRules
 
   const { courses, loading } = useCourses()
   const requirements = useRequirements()
-  const enrollmentRules = programme.features.enrollmentRules
+  const enrollmentRules = useEnrollmentRules
     ? (requirements?.enrollmentRules ?? [])
     : []
   const { selections, toggle, isSelected, getForCourseCode, clear, replace, toggleEnrollmentStatus } =
@@ -63,22 +73,13 @@ export default function Planner() {
     isInWishlist,
     clear: clearWishlist,
   } = useWishlist()
-  const {
-    backup,
-    toggle: toggleBackup,
-    remove: removeBackup,
-    isBackup,
-    reorder: reorderBackup,
-  } = useBackupSelections()
 
   const [tab, setTab] = useState<'selected' | 'browse'>('selected')
   const [duplicateMsg, setDuplicateMsg] = useState<string | null>(null)
   const [detailCode, setDetailCode] = useState<string | null>(null)
-  const [dragFrom, setDragFrom] = useState<number | null>(null)
-  const [dragOver, setDragOver] = useState<number | null>(null)
   const dragRef = useRef<{ type: string; index: number } | null>(null)
   const [dragSource, setDragSource] = useState<{ type: string; index: number } | null>(null)
-  const [backupDragOver, setBackupDragOver] = useState<{ type: string; index: number } | null>(null)
+  const [wishlistDragOver, setWishlistDragOver] = useState<{ type: string; index: number } | null>(null)
 
   useEffect(() => {
     if (!duplicateMsg) return
@@ -86,10 +87,28 @@ export default function Planner() {
     return () => window.clearTimeout(timer)
   }, [duplicateMsg])
 
+  const planCodes = useMemo(() => selectedCourseCodes(selections), [selections])
+
   const handleToggle = useCallback((s: SelectedSection) => {
+    if (!isSelected(s.courseCode, s.module, s.sectionId) && useEnrollmentRules) {
+      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!prereq.ok) {
+        setDuplicateMsg(
+          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
+        )
+        return 'duplicate' as const
+      }
+      const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!antireq.ok) {
+        setDuplicateMsg(
+          formatAntirequisiteBlockMessage(s.courseCode, antireq.blocking, locale),
+        )
+        return 'duplicate' as const
+      }
+    }
     const result = toggle(s)
     if (result === 'duplicate') {
-      if (programme.features.enrollmentRules) {
+      if (useEnrollmentRules) {
         setDuplicateMsg(
           t('planner.duplicateBrowse', {
             code: s.courseCode,
@@ -111,13 +130,87 @@ export default function Planner() {
       }
     }
     return result
-  }, [toggle, getForCourseCode, t, programme.features.enrollmentRules, selections])
+  }, [
+    toggle,
+    getForCourseCode,
+    t,
+    useEnrollmentRules,
+    useEnrollmentRules,
+    selections,
+    enrollmentRules,
+    planCodes,
+    isSelected,
+    locale,
+  ])
 
   const promoteFromWishlist = useCallback((s: SelectedSection) => {
     if (isSelected(s.courseCode, s.module, s.sectionId)) {
       removeWishlist(s)
       return
     }
+
+    if (useEnrollmentRules) {
+      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!prereq.ok) {
+        setDuplicateMsg(
+          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
+        )
+        return
+      }
+      const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!antireq.ok) {
+        setDuplicateMsg(
+          formatAntirequisiteBlockMessage(s.courseCode, antireq.blocking, locale),
+        )
+        return
+      }
+      const sameCourseBlock = getSameCourseBlockReason(
+        s.courseCode,
+        s.module,
+        s.sectionId,
+        selections,
+        enrollmentRules,
+      )
+      const moduleConflict = getModuleConflict(
+        s.courseCode,
+        s.module,
+        selections,
+        enrollmentRules,
+        locale,
+      )
+      if (sameCourseBlock) {
+        setDuplicateMsg(
+          t('planner.duplicateWishlist', {
+            code: s.courseCode,
+            section: sameCourseBlock.sectionId,
+            module: sameCourseBlock.module,
+          }),
+        )
+        return
+      }
+      if (moduleConflict) {
+        setDuplicateMsg(
+          t('planner.moduleConflict', {
+            code: s.courseCode,
+            detail: moduleConflict.message,
+          }),
+        )
+        return
+      }
+      const result = toggle(s)
+      if (result === 'added') removeWishlist(s)
+      else if (result === 'duplicate') {
+        setDuplicateMsg(
+          t('planner.duplicateWishlist', {
+            code: s.courseCode,
+            section: s.sectionId,
+            module: s.module,
+          }),
+        )
+      }
+      return
+    }
+
     const existing = getForCourseCode(s.courseCode)
     if (existing) {
       setDuplicateMsg(
@@ -131,82 +224,44 @@ export default function Planner() {
     }
     toggle(s)
     removeWishlist(s)
-  }, [isSelected, getForCourseCode, toggle, removeWishlist, t])
-
-  const promoteFromBackup = useCallback((s: SelectedSection) => {
-    if (isSelected(s.courseCode, s.module, s.sectionId)) {
-      removeBackup(s)
-      return
-    }
-
-    const sameCourseBlock = getSameCourseBlockReason(
-      s.courseCode,
-      s.module,
-      s.sectionId,
-      selections,
-      enrollmentRules,
-    )
-    const moduleConflict = getModuleConflict(
-      s.courseCode,
-      s.module,
-      selections,
-      enrollmentRules,
-      locale,
-    )
-
-    if (sameCourseBlock) {
-      setDuplicateMsg(
-        t('planner.duplicateWishlist', {
-          code: s.courseCode,
-          section: sameCourseBlock.sectionId,
-          module: sameCourseBlock.module,
-        }),
-      )
-      return
-    }
-    if (moduleConflict) {
-      setDuplicateMsg(
-        t('planner.moduleConflict', {
-          code: s.courseCode,
-          detail: moduleConflict.message,
-        }),
-      )
-      return
-    }
-
-    const result = toggle(s)
-    if (result === 'added') {
-      removeBackup(s)
-    } else if (result === 'duplicate') {
-      setDuplicateMsg(
-        t('planner.duplicateWishlist', {
-          code: s.courseCode,
-          section: s.sectionId,
-          module: s.module,
-        }),
-      )
-    }
-  }, [isSelected, removeBackup, selections, enrollmentRules, toggle, t, locale])
+  }, [
+    isSelected,
+    getForCourseCode,
+    toggle,
+    removeWishlist,
+    t,
+    useEnrollmentRules,
+    selections,
+    enrollmentRules,
+    locale,
+    planCodes,
+  ])
 
   const conflicts = useMemo(() => detectConflicts(selections, courses), [selections, courses])
   const calendarEvents = useMemo(() => buildCalendarEvents(selections, courses), [selections, courses])
 
   const sortedSelections = useMemo(
-    () => (useBackup ? sortSelectionsForDisplay(selections) : [...selections].sort(compareSelectionsMsba)),
-    [selections, useBackup],
+    () => (groupSelectedByType
+      ? sortSelectionsForDisplay(selections)
+      : [...selections].sort(compareSelectionsMsba)),
+    [selections, groupSelectedByType],
   )
 
-  const selectionsByType = useMemo(() => {
-    const order = ['Core', 'Elective', 'Capstone'] as const
-    return order
-      .map(type => ({
-        type,
-        items: sortedSelections.filter(s => s.courseType === type),
-      }))
-      .filter(group => group.items.length > 0)
-  }, [sortedSelections])
+  const selectionsByType = useMemo(
+    () => groupSelectionsByType(sortedSelections, programme.selectionTypeOrder),
+    [sortedSelections, programme.selectionTypeOrder],
+  )
 
-  const backupByType = useMemo(() => groupBackupByType(backup), [backup])
+  const wishlistByType = useMemo(
+    () => groupSelectionsByType(wishlist, programme.selectionTypeOrder),
+    [wishlist, programme.selectionTypeOrder],
+  )
+
+  const typeGroupLabel = useCallback((type: string) => {
+    if (type === 'Core') return t('planner.groupCore')
+    if (type === 'Capstone') return t('planner.groupCapstone')
+    return t('planner.groupElective')
+  }, [t])
 
   const effectiveCount = useMemo(
     () => countEffectiveSelections(selections, enrollmentRules),
@@ -214,7 +269,7 @@ export default function Planner() {
   )
 
   const stats = useMemo(() => {
-    if (useBackup) {
+    if (useEnrollmentRules) {
       const countType = (type: string) =>
         countEffectiveSelections(
           selections.filter(s => s.courseType === type),
@@ -231,7 +286,7 @@ export default function Planner() {
     const elective = selections.filter(s => s.courseType === 'Elective').length
     const capstone = selections.filter(s => s.courseType === 'Capstone').length
     return { core, elective, capstone, total: selections.length }
-  }, [selections, enrollmentRules, effectiveCount, useBackup])
+  }, [selections, enrollmentRules, effectiveCount, useEnrollmentRules])
 
   const streamCompletion = useMemo(() => {
     if (!requirements?.streams.AI || !requirements?.streams.MC) return null
@@ -267,9 +322,9 @@ export default function Planner() {
   const findSection = (courseCode: string, module: number, sectionId: string) =>
     findCourse(courseCode, module)?.sections.find(s => s.sectionId === sectionId)
 
-  const tabSelectedCount = useBackup && effectiveCount !== selections.length
+  const tabSelectedCount = useEnrollmentRules && effectiveCount !== selections.length
     ? `${effectiveCount} · ${selections.length}`
-    : useBackup
+    : useEnrollmentRules
       ? effectiveCount
       : selections.length
 
@@ -280,8 +335,15 @@ export default function Planner() {
     const course = findCourse(s.courseCode, s.module)
     const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
     const waiting = isSelectionWaiting(s)
+    const prereqCheck = useEnrollmentRules
+      ? selectionMissingPrerequisites(s, selections, enrollmentRules)
+      : { ok: true, missing: [] as string[] }
+    const missingPrereq = !prereqCheck.ok
     return (
-      <div className="selection-item" key={itemKey(s)}>
+      <div
+        className={`selection-item${missingPrereq ? ' selection-item--prereq-missing' : ''}`}
+        key={itemKey(s)}
+      >
         <div
           className="selection-item-main"
           role="button"
@@ -293,7 +355,7 @@ export default function Planner() {
             <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
             {sec && <TimeBadge bucket={sec.timeBucket} />}
             {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
-            {!useBackup && (
+            {!groupSelectedByType && (
               <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
                 {s.courseType}
               </span>
@@ -305,17 +367,26 @@ export default function Planner() {
           </div>
         </div>
         <div className="selection-item-actions">
-          <button
-            type="button"
-            className={[
-              'enrollment-status-btn',
-              waiting ? 'enrollment-status-btn--waitlist' : 'enrollment-status-btn--registered',
-            ].join(' ')}
-            onClick={() => toggleEnrollmentStatus(s.courseCode, s.module, s.sectionId)}
-            title={waiting ? t('planner.enrollmentWaitlistTitle') : t('planner.enrollmentRegisteredTitle')}
-          >
-            {waiting ? t('planner.enrollmentWaitlist') : t('planner.enrollmentRegistered')}
-          </button>
+          {missingPrereq ? (
+            <span
+              className="prereq-missing-label"
+              title={t('planner.prerequisiteBlockedHint', { codes: prereqCheck.missing.join(', ') })}
+            >
+              {t('planner.missingPrerequisite')}
+            </span>
+          ) : (
+            <button
+              type="button"
+              className={[
+                'enrollment-status-btn',
+                waiting ? 'enrollment-status-btn--waitlist' : 'enrollment-status-btn--registered',
+              ].join(' ')}
+              onClick={() => toggleEnrollmentStatus(s.courseCode, s.module, s.sectionId)}
+              title={waiting ? t('planner.enrollmentWaitlistTitle') : t('planner.enrollmentRegisteredTitle')}
+            >
+              {waiting ? t('planner.enrollmentWaitlist') : t('planner.enrollmentRegistered')}
+            </button>
+          )}
           <button className="remove-btn" onClick={() => handleToggle(s)}>{t('common.remove')}</button>
         </div>
       </div>
@@ -335,15 +406,15 @@ export default function Planner() {
         </div>
         <div className="stat-card">
           <div className="stat-number">{stats.core}</div>
-          <div className="stat-label">Core</div>
+          <div className="stat-label">{t('planner.groupCore')}</div>
         </div>
         <div className="stat-card">
           <div className="stat-number">{stats.elective}</div>
-          <div className="stat-label">Elective</div>
+          <div className="stat-label">{t('planner.groupElective')}</div>
         </div>
         <div className="stat-card">
           <div className="stat-number">{stats.capstone}</div>
-          <div className="stat-label">Capstone</div>
+          <div className="stat-label">{t('planner.groupCapstone')}</div>
         </div>
       </div>
 
@@ -418,12 +489,12 @@ export default function Planner() {
               <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
                 {t('planner.emptySelected')}
               </div>
-            ) : useBackup ? (
+            ) : groupSelectedByType ? (
               <>
                 {selectionsByType.map(group => (
                   <div className="selection-group" key={group.type}>
                     <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
-                      <span>{group.type}</span>
+                      <span>{typeGroupLabel(group.type)}</span>
                       <span className="selection-group-count">{group.items.length}</span>
                     </div>
                     {group.items.map(renderSelectionRow)}
@@ -460,97 +531,10 @@ export default function Planner() {
                     {t('planner.emptyWishlist')}
                   </div>
                 ) : (
-                  wishlist.map((s, index) => {
-                    const sec = findSection(s.courseCode, s.module, s.sectionId)
-                    const course = findCourse(s.courseCode, s.module)
-                    const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
-                    return (
-                      <div
-                        className={`selection-item wishlist-item ${dragFrom === index ? 'dragging' : ''} ${dragOver === index ? 'drag-over' : ''}`}
-                        key={itemKey(s)}
-                        onDragOver={e => {
-                          e.preventDefault()
-                          if (dragOver !== index) setDragOver(index)
-                        }}
-                        onDrop={e => {
-                          e.preventDefault()
-                          if (dragFrom !== null && dragFrom !== index) reorder(dragFrom, index)
-                          setDragFrom(null)
-                          setDragOver(null)
-                        }}
-                        onDragEnd={() => {
-                          setDragFrom(null)
-                          setDragOver(null)
-                        }}
-                      >
-                        <div className="wishlist-actions">
-                          <span
-                            className="drag-handle"
-                            title={t('planner.dragSort')}
-                            draggable
-                            onDragStart={e => {
-                              setDragFrom(index)
-                              e.dataTransfer.effectAllowed = 'move'
-                              e.dataTransfer.setData('text/plain', String(index))
-                            }}
-                            onClick={e => e.stopPropagation()}
-                          >
-                            ⋮⋮
-                          </span>
-                          <button
-                            className="select-btn"
-                            onClick={() => promoteFromWishlist(s)}
-                          >
-                            {t('planner.select')}
-                          </button>
-                        </div>
-                        <div
-                          className="selection-item-main"
-                          role="button"
-                          tabIndex={0}
-                          onClick={() => setDetailCode(s.courseCode)}
-                          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDetailCode(s.courseCode) } }}
-                        >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
-                            <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
-                            {sec && <TimeBadge bucket={sec.timeBucket} />}
-                            {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
-                            <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
-                              {s.courseType}
-                            </span>
-                            {course && <StreamTagBadges tags={course.streamTags} />}
-                          </div>
-                          <div style={{ fontSize: 13, color: '#5f6368' }}>
-                            {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
-                          </div>
-                        </div>
-                        <button className="remove-btn" onClick={() => removeWishlist(s)}>{t('common.remove')}</button>
-                      </div>
-                    )
-                  })
-                )}
-              </div>
-            </div>
-          )}
-
-          {useBackup && (
-            <div className="backup-section">
-              <div className="wishlist-header">
-                <span>
-                  {t('planner.wishlistTitle', { count: backup.length })}
-                  <span className="wishlist-hint">{t('planner.wishlistHint')}</span>
-                </span>
-              </div>
-              <div className="card" style={{ padding: 0 }}>
-                {backup.length === 0 ? (
-                  <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
-                    {t('planner.emptyWishlist')}
-                  </div>
-                ) : (
-                  backupByType.map(group => (
-                    <div className="selection-group" key={`backup-${group.type}`}>
+                  wishlistByType.map(group => (
+                    <div className="selection-group" key={`wishlist-${group.type}`}>
                       <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
-                        <span>{group.type}</span>
+                        <span>{typeGroupLabel(group.type)}</span>
                         <span className="selection-group-count">{group.items.length}</span>
                       </div>
                       {group.items.map((s, index) => {
@@ -560,11 +544,19 @@ export default function Planner() {
                         const isDragging =
                           dragSource?.type === group.type && dragSource?.index === index
                         const isDragOver =
-                          backupDragOver?.type === group.type && backupDragOver?.index === index
+                          wishlistDragOver?.type === group.type && wishlistDragOver?.index === index
+                        const wishlistAntireq =
+                          useEnrollmentRules
+                            ? checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
+                            : { ok: true, blocking: [] as string[] }
+                        const wishlistBlocked = useEnrollmentRules && !wishlistAntireq.ok
+                        const wishlistBlockHint = wishlistBlocked
+                          ? formatAntirequisiteBlockMessage(s.courseCode, wishlistAntireq.blocking, locale)
+                          : undefined
                         return (
                           <div
-                            className={`selection-item${isDragging ? ' dragging' : ''}${isDragOver ? ' drag-over' : ''}`}
-                            key={`backup-${itemKey(s)}`}
+                            className={`selection-item wishlist-item${isDragging ? ' dragging' : ''}${isDragOver ? ' drag-over' : ''}${wishlistBlocked ? ' selection-item--prereq-missing' : ''}`}
+                            key={`wishlist-${itemKey(s)}`}
                             draggable
                             onDragStart={e => {
                               const src = { type: group.type, index }
@@ -576,37 +568,46 @@ export default function Planner() {
                             onDragEnd={() => {
                               dragRef.current = null
                               setDragSource(null)
-                              setBackupDragOver(null)
+                              setWishlistDragOver(null)
                             }}
                             onDragOver={e => {
                               e.preventDefault()
                               e.dataTransfer.dropEffect = 'move'
                               if (dragRef.current?.type !== group.type) return
-                              setBackupDragOver({ type: group.type, index })
+                              setWishlistDragOver({ type: group.type, index })
                             }}
                             onDragLeave={() => {
-                              setBackupDragOver(prev =>
+                              setWishlistDragOver(prev =>
                                 prev?.type === group.type && prev.index === index ? null : prev,
                               )
                             }}
                             onDrop={e => {
                               e.preventDefault()
                               const from = dragRef.current
-                              setBackupDragOver(null)
+                              setWishlistDragOver(null)
                               setDragSource(null)
                               dragRef.current = null
                               if (!from || from.type !== group.type) return
-                              reorderBackup(group.type, from.index, index)
+                              reorder(group.type, from.index, index)
                             }}
                           >
-                            <span
-                              className="drag-handle"
-                              title={t('planner.dragSort')}
-                              aria-label={t('planner.dragSort')}
-                              onClick={e => e.stopPropagation()}
-                            >
-                              ⠿
-                            </span>
+                            <div className="wishlist-actions">
+                              <span
+                                className="drag-handle"
+                                title={t('planner.dragSort')}
+                                onClick={e => e.stopPropagation()}
+                              >
+                                ⋮⋮
+                              </span>
+                              <button
+                                className={`select-btn${wishlistBlocked ? ' disabled' : ''}`}
+                                disabled={wishlistBlocked}
+                                title={wishlistBlockHint}
+                                onClick={() => promoteFromWishlist(s)}
+                              >
+                                {wishlistBlocked ? t('planner.blocked') : t('planner.select')}
+                              </button>
+                            </div>
                             <div
                               className="selection-item-main"
                               role="button"
@@ -616,6 +617,9 @@ export default function Planner() {
                             >
                               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontWeight: 600, fontSize: 14 }}>
                                 <span>{s.courseCode} {sectionLabel(s.sectionId)}</span>
+                                {wishlistBlockHint && (
+                                  <span className="duplicate-hint">{wishlistBlockHint}</span>
+                                )}
                                 {sec && <TimeBadge bucket={sec.timeBucket} />}
                                 {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
                                 {course && <StreamTagBadges tags={course.streamTags} />}
@@ -624,14 +628,7 @@ export default function Planner() {
                                 {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
                               </div>
                             </div>
-                            <div className="selection-item-actions">
-                              <button className="promote-btn" onClick={() => promoteFromBackup(s)}>
-                                {t('planner.select')}
-                              </button>
-                              <button className="remove-btn" onClick={() => removeBackup(s)}>
-                                {t('common.remove')}
-                              </button>
-                            </div>
+                            <button className="remove-btn" onClick={() => removeWishlist(s)}>{t('common.remove')}</button>
                           </div>
                         )
                       })}
@@ -680,7 +677,7 @@ export default function Planner() {
 
                     let blocked = false
                     let blockHint: string | undefined
-                    if (programme.features.enrollmentRules) {
+                    if (useEnrollmentRules) {
                       const sameCourseBlock = getSameCourseBlockReason(
                         course.courseCode,
                         course.module,
@@ -716,9 +713,36 @@ export default function Planner() {
                         : undefined
                     }
 
-                    const inAlt = useBackup
-                      ? isBackup(course.courseCode, course.module, sec.sectionId)
-                      : isInWishlist(course.courseCode, course.module, sec.sectionId)
+                    if (!sel && useEnrollmentRules) {
+                      const prereq = checkPrerequisitesForCourse(
+                        course.courseCode,
+                        planCodes,
+                        enrollmentRules,
+                      )
+                      if (!prereq.ok) {
+                        blocked = true
+                        blockHint = t('planner.prerequisiteBlockedHint', {
+                          codes: prereq.missing.join(', '),
+                        })
+                      }
+                      if (!blocked) {
+                        const antireq = checkAntirequisiteForCourse(
+                          course.courseCode,
+                          planCodes,
+                          enrollmentRules,
+                        )
+                        if (!antireq.ok) {
+                          blocked = true
+                          blockHint = formatAntirequisiteBlockMessage(
+                            course.courseCode,
+                            antireq.blocking,
+                            locale,
+                          )
+                        }
+                      }
+                    }
+
+                    const inAlt = isInWishlist(course.courseCode, course.module, sec.sectionId)
 
                     return (
                       <div key={sec.sectionId} className="section-row" style={{ justifyContent: 'space-between' }}>
@@ -738,7 +762,7 @@ export default function Planner() {
                             <span className="duplicate-hint">{blockHint}</span>
                           )}
                         </div>
-                        <div className={useBackup ? 'section-row-actions' : 'section-actions'}>
+                        <div className="section-row-actions">
                           <button
                             className={`select-btn ${sel ? 'selected' : ''} ${blocked ? 'disabled' : ''}`}
                             disabled={blocked}
@@ -747,14 +771,7 @@ export default function Planner() {
                           >
                             {sel ? t('planner.selected') : blocked ? t('planner.blocked') : t('planner.select')}
                           </button>
-                          {useBackup ? (
-                            <button
-                              className={`backup-btn ${inAlt ? 'in-backup' : ''}`}
-                              onClick={() => toggleBackup(candidate)}
-                            >
-                              {inAlt ? t('planner.inWishlist') : t('planner.addWishlist')}
-                            </button>
-                          ) : (
+                          {useWishlistFeature && (
                             <button
                               className={`alt-btn ${inAlt ? 'in-wishlist' : ''}`}
                               onClick={() => toggleWishlist(candidate)}

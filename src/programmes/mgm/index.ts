@@ -27,10 +27,13 @@ export const mgmProgramme: ProgrammeConfig = {
   moduleCount: 6,
   moduleNumbers: [1, 2, 3, 4, 5, 6],
   streamIds: ['ESG'],
+  selectionTypeOrder: ['Core', 'Elective', 'Capstone'],
   coursesDataPath: 'courses.json',
   requirementsDataPath: 'requirements.json',
   storage: {
     selections: 'mgm-planner-selections',
+    wishlist: 'mgm-planner-wishlist',
+    /** Legacy key; migrated into wishlist on first load. */
     backup: 'mgm-planner-backup',
     locale: 'mgm-locale',
     defaultLanding: 'mgm-default-landing',
@@ -38,8 +41,8 @@ export const mgmProgramme: ProgrammeConfig = {
     icsExportFormat: 'mgm-ics-export-format',
   },
   features: {
-    wishlist: false,
-    backupSelections: true,
+    wishlist: true,
+    groupSelectedByType: true,
     teachingPlanImpactCalendar: true,
     enrollmentRules: true,
   },

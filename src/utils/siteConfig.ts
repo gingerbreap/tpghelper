@@ -47,7 +47,7 @@ export interface ProgrammeUserConfig {
   /** Dismissed notices: publish timestamp → true */
   teachingPlanRead: Record<string, true>
   selections: UserDataCourseEntry[]
-  /** Wishlist (MSBA) or backup selections (MGM). */
+  /** Alternate / wishlist list (unified BA + MGM). */
   wishlist: UserDataCourseEntry[]
 }
 

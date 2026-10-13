@@ -13,6 +13,9 @@ const overlay: TranslationTree = {
   },
   planner: {
     streamEsg: 'ESG 选修：',
+    groupCore: 'Core',
+    groupCapstone: 'Capstone',
+    groupElective: 'Elective',
     wishlistTitle: '备选列表 ({{count}})',
     wishlistHint: ' · 可按类别拖动排序；「选择」加入正式已选',
     emptyWishlist: '暂无备选。可在「浏览添加」中加入备选。',

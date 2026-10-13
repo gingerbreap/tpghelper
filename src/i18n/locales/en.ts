@@ -131,6 +131,9 @@ const en: TranslationTree = {
   planner: {
     title: 'My Course Plan',
     totalSelected: 'Selected',
+    groupCore: 'Core',
+    groupCapstone: 'Capstone Core',
+    groupElective: 'Self Programme - Electives',
     streamProgress: 'Stream progress',
     streamAi: 'AI stream:',
     streamMc: 'MC stream:',
@@ -139,7 +142,7 @@ const en: TranslationTree = {
     emptySelected: 'No courses selected yet. Go to Browse & Add to start.',
     clearAll: 'Clear all',
     wishlistTitle: 'Wishlist ({{count}})',
-    wishlistHint: ' · Drag to reorder; use Select to add to your plan',
+    wishlistHint: ' · Drag within category to reorder; use Select to add to your plan',
     clearWishlist: 'Clear wishlist',
     emptyWishlist: 'No wishlist items. Use Add to wishlist in Browse & Add.',
     dragSort: 'Drag to reorder',
@@ -158,6 +161,8 @@ const en: TranslationTree = {
     enrollmentWaitlist: 'Waitlist',
     enrollmentRegisteredTitle: 'Mark as Waitlist (click to toggle)',
     enrollmentWaitlistTitle: 'Mark as Registered',
+    missingPrerequisite: '⛔️ Missing Prerequisite',
+    prerequisiteBlockedHint: 'Prerequisites not met: {{codes}}',
   },
   timetable: {
     title: 'AY 2026-27 Available Course Details',

@@ -1,17 +1,37 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { SelectedSection } from '../types'
 import { getActiveProgramme } from '../programmes'
+import { reorderWithinCategory } from '../utils/selectionGroups'
 
 const programme = getActiveProgramme()
-export const WISHLIST_STORAGE_KEY =
+const PRIMARY_KEY =
   programme.storage.wishlist
-  ?? programme.storage.backup
-  ?? `${programme.id}-planner-wishlist-unused`
-const STORAGE_KEY = WISHLIST_STORAGE_KEY
+  ?? `${programme.id}-planner-wishlist`
+/** Legacy MGM backup key — read once and migrate into PRIMARY_KEY. */
+const LEGACY_BACKUP_KEY = programme.storage.backup
+
+export const WISHLIST_STORAGE_KEY = PRIMARY_KEY
+
+export type WishlistToggleResult = 'added' | 'removed'
 
 function load(): SelectedSection[] {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    const primary = localStorage.getItem(PRIMARY_KEY)
+    if (primary) {
+      const parsed = JSON.parse(primary)
+      return Array.isArray(parsed) ? parsed : []
+    }
+    if (LEGACY_BACKUP_KEY) {
+      const legacy = localStorage.getItem(LEGACY_BACKUP_KEY)
+      if (legacy) {
+        const parsed = JSON.parse(legacy)
+        if (Array.isArray(parsed)) {
+          localStorage.setItem(PRIMARY_KEY, JSON.stringify(parsed))
+          return parsed
+        }
+      }
+    }
+    return []
   } catch {
     return []
   }
@@ -25,7 +45,7 @@ export function useWishlist() {
   const [wishlist, setWishlist] = useState<SelectedSection[]>(load)
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(wishlist))
+    localStorage.setItem(PRIMARY_KEY, JSON.stringify(wishlist))
   }, [wishlist])
 
   const isInWishlist = useCallback((courseCode: string, module: number, sectionId: string) => {
@@ -45,31 +65,22 @@ export function useWishlist() {
     setWishlist(prev => prev.filter(p => itemKey(p) !== itemKey(s)))
   }, [])
 
-  const toggle = useCallback((s: SelectedSection) => {
+  const toggle = useCallback((s: SelectedSection): WishlistToggleResult => {
+    let result: WishlistToggleResult = 'added'
     setWishlist(prev => {
       if (prev.some(p => itemKey(p) === itemKey(s))) {
+        result = 'removed'
         return prev.filter(p => itemKey(p) !== itemKey(s))
       }
+      result = 'added'
       return [...prev, s]
     })
+    return result
   }, [])
 
-  const reorder = useCallback((fromIndex: number, toIndex: number) => {
-    setWishlist(prev => {
-      if (
-        fromIndex < 0 ||
-        toIndex < 0 ||
-        fromIndex >= prev.length ||
-        toIndex >= prev.length ||
-        fromIndex === toIndex
-      ) {
-        return prev
-      }
-      const next = [...prev]
-      const [item] = next.splice(fromIndex, 1)
-      next.splice(toIndex, 0, item)
-      return next
-    })
+  /** Reorder within one courseType group. */
+  const reorder = useCallback((courseType: string, fromIndex: number, toIndex: number) => {
+    setWishlist(prev => reorderWithinCategory(prev, courseType, fromIndex, toIndex))
   }, [])
 
   const clear = useCallback(() => setWishlist([]), [])
