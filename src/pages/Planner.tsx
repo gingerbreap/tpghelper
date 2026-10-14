@@ -33,8 +33,10 @@ import {
   defaultSelectionType,
   getMeconCourseView,
   isMeconDualStreamCapstone,
+  isMeconStreamCoreForStream,
+  meconRetypeOptions,
 } from '../utils/meconCourseView'
-import { formatModuleLabel } from '../utils/moduleLabel'
+import { formatModuleLabel, formatModuleLabelCompact } from '../utils/moduleLabel'
 import {
   checkPrerequisitesForCourse,
   selectedCourseCodes,
@@ -83,8 +85,16 @@ export default function Planner() {
   const enrollmentRules = useEnrollmentRules
     ? (requirements?.enrollmentRules ?? [])
     : []
-  const { selections, toggle, isSelected, getForCourseCode, clear, replace, toggleEnrollmentStatus } =
-    useSelections(enrollmentRules)
+  const {
+    selections,
+    toggle,
+    isSelected,
+    getForCourseCode,
+    clear,
+    replace,
+    toggleEnrollmentStatus,
+    retype: retypeSelection,
+  } = useSelections(enrollmentRules)
   const {
     wishlist,
     toggle: toggleWishlist,
@@ -102,6 +112,8 @@ export default function Planner() {
   const dragRef = useRef<{ type: string; index: number } | null>(null)
   const [dragSource, setDragSource] = useState<{ type: string; index: number } | null>(null)
   const [wishlistDragOver, setWishlistDragOver] = useState<{ type: string; index: number } | null>(null)
+  /** Keys of selections auto-restored from Elective → Stream Core when SC ≤ 3. */
+  const [autoResetKeys, setAutoResetKeys] = useState<Set<string>>(() => new Set())
   const needsStream = requireStream && !stream
 
   useEffect(() => {
@@ -364,6 +376,79 @@ export default function Planner() {
     [isMecon, requirements, stream],
   )
 
+  const streamCoreRequired = meconTargets?.streamCore ?? 3
+  const streamCoreOverflow = isMecon && stats.streamCore > streamCoreRequired
+  const streamCoreUnderfill = isMecon && stats.streamCore < streamCoreRequired
+
+  /** Electives that can count as Stream Core for the active stream. */
+  const electiveStreamCoreCandidates = useMemo(() => {
+    if (!isMecon || !stream) return [] as SelectedSection[]
+    return selections.filter(s => {
+      if (s.courseType !== 'Elective') return false
+      if (excludeIncomplete6067 && s.courseCode === 'ECON6067') return false
+      const course = courses.find(c => c.courseCode === s.courseCode && c.module === s.module)
+      return !!course && isMeconStreamCoreForStream(course, stream)
+    })
+  }, [isMecon, stream, selections, courses, excludeIncomplete6067])
+
+  const streamCoreMoveBanner = useMemo(() => {
+    if (!streamCoreUnderfill || electiveStreamCoreCandidates.length <= 1) return null
+    const need = streamCoreRequired - stats.streamCore
+    if (need <= 0) return null
+    const codes = [...new Set(electiveStreamCoreCandidates.map(s => s.courseCode))]
+    return { codes: codes.join('/'), need }
+  }, [
+    streamCoreUnderfill,
+    electiveStreamCoreCandidates,
+    streamCoreRequired,
+    stats.streamCore,
+  ])
+
+  /** Drop auto-reset notices for removed rows. */
+  useEffect(() => {
+    const alive = new Set(selections.map(itemKey))
+    setAutoResetKeys(prev => {
+      let changed = false
+      const next = new Set<string>()
+      for (const k of prev) {
+        if (alive.has(k)) next.add(k)
+        else changed = true
+      }
+      return changed ? next : prev
+    })
+  }, [selections])
+
+  /**
+   * When STM Core < required and Electives has exactly one course that can be
+   * Stream Core for this stream, auto-restore it.
+   */
+  useEffect(() => {
+    if (!isMecon || !stream || loading) return
+    if (!streamCoreUnderfill) return
+    if (electiveStreamCoreCandidates.length !== 1) return
+
+    const only = electiveStreamCoreCandidates[0]
+    const key = itemKey(only)
+    replace(
+      selections.map(s =>
+        itemKey(s) === key ? { ...s, courseType: 'Stream Core' } : s,
+      ),
+    )
+    setAutoResetKeys(prev => {
+      const next = new Set(prev)
+      next.add(key)
+      return next
+    })
+  }, [
+    isMecon,
+    stream,
+    loading,
+    streamCoreUnderfill,
+    electiveStreamCoreCandidates,
+    selections,
+    replace,
+  ])
+
   const meconStreamName = useMemo(() => {
     if (!isMecon || !stream) return null
     const labelKey = MECON_STREAM_LABEL_KEY[stream]
@@ -387,11 +472,15 @@ export default function Planner() {
   const findSection = (courseCode: string, module: number, sectionId: string) =>
     findCourse(courseCode, module)?.sections.find(s => s.sectionId === sectionId)
 
-  const tabSelectedCount = useEnrollmentRules && effectiveCount !== selections.length
-    ? `${effectiveCount} · ${selections.length}`
-    : useEnrollmentRules
-      ? effectiveCount
-      : selections.length
+  // Mecon: show only effective course count (incomplete ECON6067 parts excluded).
+  // Other programmes: when multi-module courses collapse, show "effective · raw".
+  const tabSelectedCount = isMecon
+    ? stats.total
+    : useEnrollmentRules && effectiveCount !== selections.length
+      ? `${effectiveCount} · ${selections.length}`
+      : useEnrollmentRules
+        ? effectiveCount
+        : selections.length
 
   if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
 
@@ -399,6 +488,27 @@ export default function Planner() {
     const sec = findSection(s.courseCode, s.module, s.sectionId)
     const course = findCourse(s.courseCode, s.module)
     const meconView = isMecon && course ? getMeconCourseView(course, stream) : null
+    const allowScOverflowRetype =
+      streamCoreOverflow
+      && s.courseType === 'Stream Core'
+      && !!course
+      && isMeconStreamCoreForStream(course, stream)
+    const allowScUnderfillRetype =
+      !!streamCoreMoveBanner
+      && s.courseType === 'Elective'
+      && !!course
+      && isMeconStreamCoreForStream(course, stream)
+    const retypeOptions = isMecon && course
+      ? meconRetypeOptions(
+          course,
+          stream,
+          s.courseType,
+          allowScOverflowRetype,
+          allowScUnderfillRetype,
+        )
+      : []
+    const showAutoResetNotice =
+      autoResetKeys.has(itemKey(s)) && retypeOptions.length === 0
     const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
     const waiting = isSelectionWaiting(s)
     const prereqCheck = useEnrollmentRules
@@ -433,10 +543,41 @@ export default function Planner() {
             )}
           </div>
           <div style={{ fontSize: 13, color: '#5f6368' }}>
-            {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+            {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {formatModuleLabelCompact(s.module, t)}
           </div>
         </div>
         <div className="selection-item-actions">
+          {showAutoResetNotice ? (
+            <span className="category-retype-notice">{t('planner.retypeAutoReset')}</span>
+          ) : retypeOptions.length > 0 ? (
+            <select
+              className="category-retype-select"
+              value=""
+              aria-label={t('planner.retypeAsOther')}
+              onClick={e => e.stopPropagation()}
+              onChange={e => {
+                const next = e.target.value
+                e.target.value = ''
+                if (!next) return
+                setAutoResetKeys(prev => {
+                  if (!prev.has(itemKey(s))) return prev
+                  const copy = new Set(prev)
+                  copy.delete(itemKey(s))
+                  return copy
+                })
+                retypeSelection(s, next)
+              }}
+            >
+              <option value="" disabled>
+                {t('planner.retypeAsOther')}
+              </option>
+              {retypeOptions.map(role => (
+                <option key={role} value={role}>
+                  {typeGroupLabel(role)}
+                </option>
+              ))}
+            </select>
+          ) : null}
           {missingPrereq ? (
             <span
               className="prereq-missing-label"
@@ -592,11 +733,20 @@ export default function Planner() {
           {t('planner.econ6067PartWarn', { part: econ6067MissingPart })}
         </div>
       )}
+      {streamCoreMoveBanner && (
+        <div className="planner-warn-banner" role="status">
+          {t('planner.streamCoreMoveBanner', {
+            codes: streamCoreMoveBanner.codes,
+            n: streamCoreMoveBanner.need,
+          })}
+        </div>
+      )}
 
       <PlannerCalendar
         events={calendarEvents}
         courses={courses}
         selections={selections}
+        stream={isMecon ? stream : null}
         onImportSelections={replace}
         onCourseClick={setDetailCode}
       />
@@ -784,7 +934,7 @@ export default function Planner() {
                                 )}
                               </div>
                               <div style={{ fontSize: 13, color: '#5f6368' }}>
-                                {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
+                                {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {formatModuleLabelCompact(s.module, t)}
                               </div>
                             </div>
                             <button className="remove-btn" onClick={() => removeWishlist(s)}>{t('common.remove')}</button>

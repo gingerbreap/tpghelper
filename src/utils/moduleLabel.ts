@@ -21,3 +21,25 @@ export function formatModuleLabel(
   }
   return t('common.module', { module })
 }
+
+/**
+ * Compact label for selection rows / import lists (no date ranges).
+ * Mecon: Bootcamp / Semester 1 (M1-2) / Semester 2 (M4-5) / Module N.
+ */
+export function formatModuleLabelCompact(
+  module: number,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
+  const programme = getActiveProgramme()
+  if (programme.id === 'mecon') {
+    if (module === 0) {
+      const labelled = t('timetable.module0')
+      return labelled !== 'timetable.module0' ? labelled : 'Bootcamp'
+    }
+    if (module === 11) return 'Semester 1 (M1-2)'
+    if (module === 12) return 'Semester 2 (M4-5)'
+  }
+  const full = formatModuleLabel(module, t)
+  const stripped = full.replace(/\s*[—–]\s*.+$/u, '').trim()
+  return stripped || full
+}

@@ -47,6 +47,10 @@ const overlay: TranslationTree = {
       'ECON 6067 Part {{part}} is not selected; it does not count toward graduation requirements yet',
     wishlistHint:
       ' · Drag to reorder by category; courses that satisfy multiple categories can be dragged between matching groups',
+    retypeAsOther: 'Count toward another category…',
+    retypeAutoReset: 'Reset to Stream Core because STM Core is under the required count',
+    streamCoreMoveBanner:
+      'Please move {{n}} of {{codes}} into the Stream Core category',
   },
   timetable: {
     module0: 'Bootcamp',

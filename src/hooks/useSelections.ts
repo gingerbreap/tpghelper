@@ -306,6 +306,17 @@ export function useSelections(enrollmentRules: EnrollmentRule[] = []) {
     }))
   }, [])
 
+  /** Move a selection into another courseType group (e.g. Stream Core ↔ Capstone). */
+  const retype = useCallback((s: SelectedSection, courseType: string) => {
+    setSelections(prev =>
+      prev.map(p =>
+        p.courseCode === s.courseCode && p.module === s.module && p.sectionId === s.sectionId
+          ? { ...p, courseType }
+          : p,
+      ),
+    )
+  }, [])
+
   return {
     selections,
     toggle,
@@ -314,5 +325,6 @@ export function useSelections(enrollmentRules: EnrollmentRule[] = []) {
     clear,
     replace,
     toggleEnrollmentStatus,
+    retype,
   }
 }

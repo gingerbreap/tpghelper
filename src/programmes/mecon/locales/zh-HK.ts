@@ -42,6 +42,9 @@ const overlay: TranslationTree = {
     econ6067PartWarn:
       'ECON 6067 未選擇 Part {{part}}，暫不計入畢業要求計數',
     wishlistHint: ' · 可按類別拖動排序，可滿足多類課程要求的課程可在符合的類別間拖曳',
+    retypeAsOther: '作為其他類別計入…',
+    retypeAutoReset: '因 STM Core 不足，已自動重置該課程屬性',
+    streamCoreMoveBanner: '請將{{codes}}中{{n}}門移動至Stream Core類別',
   },
   timetable: {
     module0: 'Bootcamp',

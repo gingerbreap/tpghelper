@@ -228,3 +228,51 @@ export function defaultSelectionType(course: Course, stream: MeconStreamId | nul
   }
   return view.effectiveType
 }
+
+/**
+ * Other planner categories this course may count as for the active stream
+ * (e.g. Stream Core ↔ Capstone for dual-role courses).
+ * - `allowElectiveOverflow`: SC > 3 → every Stream Core also offers Elective
+ * - `allowStreamCoreUnderfill`: SC < 3 with multiple Elective candidates → offer Stream Core
+ */
+export function meconRetypeOptions(
+  course: Course,
+  stream: MeconStreamId | null,
+  currentType: string,
+  allowElectiveOverflow = false,
+  allowStreamCoreUnderfill = false,
+): MeconRole[] {
+  const view = getMeconCourseView(course, stream)
+  if (!view) return []
+  const roles = new Set(view.ownRoles.filter(r => r !== currentType))
+  if (
+    allowElectiveOverflow
+    && currentType === 'Stream Core'
+    && view.ownRoles.includes('Stream Core')
+  ) {
+    roles.add('Elective')
+  }
+  if (
+    allowStreamCoreUnderfill
+    && currentType === 'Elective'
+    && view.ownRoles.includes('Stream Core')
+  ) {
+    roles.add('Stream Core')
+  }
+  if (roles.size === 0) return []
+  if (view.ownRoles.length <= 1 && !allowElectiveOverflow && !allowStreamCoreUnderfill) {
+    return []
+  }
+  const order: MeconRole[] = ['Core', 'Stream Core', 'Capstone', 'Elective']
+  return order.filter(r => roles.has(r))
+}
+
+/** True when this course can count as Stream Core for the active stream. */
+export function isMeconStreamCoreForStream(
+  course: Course,
+  stream: MeconStreamId | null,
+): boolean {
+  if (!stream) return false
+  const view = getMeconCourseView(course, stream)
+  return !!view?.ownRoles.includes('Stream Core')
+}

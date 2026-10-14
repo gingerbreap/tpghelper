@@ -26,6 +26,7 @@ jobs:
           test -f server/public/index.html
           test -f server/public/msba/index.html
           test -f server/public/mgm/index.html
+          test -f server/public/mecon/index.html
           ls -la server/public | head -20
 
       - name: Stage production zip (include built public/)
@@ -45,7 +46,7 @@ jobs:
           zip -r -q ../release.zip .
           cd ..
           unzip -l release.zip | head -40
-          unzip -l release.zip | grep -E 'server/public/index.html|server/public/msba/index.html' 
+          unzip -l release.zip | grep -E 'server/public/index.html|server/public/msba/index.html|server/public/mecon/index.html'
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3

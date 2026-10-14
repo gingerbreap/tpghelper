@@ -3,26 +3,39 @@ import { createPortal } from 'react-dom'
 import type { Course, SelectedSection } from '../types'
 import { useI18n } from '../i18n/context'
 import { getActiveProgramme } from '../programmes'
+import type { MeconStreamId } from '../programmes/mecon/streamTags'
+import { formatModuleLabelCompact } from '../utils/moduleLabel'
 import {
+  applyMeconStudyStatusAnswers,
   resolveStudyStatusImport,
+  type MeconBootcampChoice,
   type StudyStatusImportResult,
 } from '../utils/studyStatusImport'
 
 interface StudyStatusImportModalProps {
   courses: Course[]
+  /** Mecon: active stream for type resolution and follow-up prompts. */
+  stream?: MeconStreamId | null
   onImport: (selections: SelectedSection[]) => void
   onClose: () => void
 }
 
 export default function StudyStatusImportModal({
   courses,
+  stream = null,
   onImport,
   onClose,
 }: StudyStatusImportModalProps) {
   const { t } = useI18n()
-  const sampleCode = getActiveProgramme().studyStatus.sampleCourseCode
+  const programme = getActiveProgramme()
+  const isMecon = programme.id === 'mecon'
+  const sampleCode = programme.studyStatus.sampleCourseCode
   const [text, setText] = useState('')
   const [result, setResult] = useState<StudyStatusImportResult | null>(null)
+  const [bootcamp, setBootcamp] = useState<MeconBootcampChoice>('none')
+  const [streamCoreTypes, setStreamCoreTypes] = useState<
+    Record<string, 'Stream Core' | 'Elective'>
+  >({})
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow
@@ -46,13 +59,34 @@ export default function StudyStatusImportModal({
     })
   }, [result, t])
 
+  const meconChoicesReady = useMemo(() => {
+    if (!result || !isMecon) return true
+    const choices = result.meconStreamCoreChoices ?? []
+    return choices.every(c => {
+      const key = `${c.courseCode}-${c.module}-${c.sectionId}`
+      return streamCoreTypes[key] === 'Stream Core' || streamCoreTypes[key] === 'Elective'
+    })
+  }, [result, isMecon, streamCoreTypes])
+
   const handleAnalyze = () => {
-    setResult(resolveStudyStatusImport(text, courses))
+    const next = resolveStudyStatusImport(text, courses, isMecon ? stream : null)
+    setResult(next)
+    setBootcamp('none')
+    const defaults: Record<string, 'Stream Core' | 'Elective'> = {}
+    for (const c of next.meconStreamCoreChoices ?? []) {
+      defaults[`${c.courseCode}-${c.module}-${c.sectionId}`] = c.defaultType
+    }
+    setStreamCoreTypes(defaults)
   }
 
   const handleImport = () => {
     if (!result || !result.selections.length) return
-    onImport(result.selections)
+    if (isMecon) {
+      if (!meconChoicesReady) return
+      onImport(applyMeconStudyStatusAnswers(result, courses, bootcamp, streamCoreTypes))
+    } else {
+      onImport(result.selections)
+    }
     onClose()
   }
 
@@ -112,7 +146,7 @@ export default function StudyStatusImportModal({
               type="button"
               className="select-btn"
               onClick={handleImport}
-              disabled={!hasRecognizedSelections}
+              disabled={!hasRecognizedSelections || !meconChoicesReady}
             >
               {t('studyStatus.import')}
             </button>
@@ -129,12 +163,12 @@ export default function StudyStatusImportModal({
                         ? t('studyStatus.itemWaiting', {
                             code: selection.courseCode,
                             section: selection.sectionId,
-                            module: selection.module,
+                            module: formatModuleLabelCompact(selection.module, t),
                           })
                         : t('studyStatus.item', {
                             code: selection.courseCode,
                             section: selection.sectionId,
-                            module: selection.module,
+                            module: formatModuleLabelCompact(selection.module, t),
                           })}
                     </li>
                   ))}
@@ -147,7 +181,7 @@ export default function StudyStatusImportModal({
                 <p className="study-status-warning">
                   {t('studyStatus.unmatched', {
                     list: result.unmatched
-                      .map(item => `${item.courseCode} Class ${item.sectionId} (M${item.module})`)
+                      .map(item => `${item.courseCode} Class ${item.sectionId} (${formatModuleLabelCompact(item.module, t)})`)
                       .join('、'),
                   })}
                 </p>
@@ -156,6 +190,60 @@ export default function StudyStatusImportModal({
                 <p className="study-status-warning">
                   {t('studyStatus.duplicates', { list: result.duplicateCourseCodes.join('、') })}
                 </p>
+              )}
+
+              {isMecon && result.meconNeedsBootcampPrompt && (
+                <div className="study-status-followup">
+                  <label className="study-status-followup-label" htmlFor="mecon-bootcamp-choice">
+                    {t('studyStatus.meconBootcampPrompt')}
+                  </label>
+                  <select
+                    id="mecon-bootcamp-choice"
+                    className="study-status-followup-select"
+                    value={bootcamp}
+                    onChange={e => setBootcamp(e.target.value as MeconBootcampChoice)}
+                  >
+                    <option value="none">{t('studyStatus.meconBootcampNone')}</option>
+                    <option value="A">{t('studyStatus.meconBootcampClassA')}</option>
+                    <option value="B">{t('studyStatus.meconBootcampClassB')}</option>
+                  </select>
+                </div>
+              )}
+
+              {isMecon && (result.meconStreamCoreChoices?.length ?? 0) > 0 && (
+                <div className="study-status-followup">
+                  <div className="study-status-followup-label">
+                    {t('studyStatus.meconStreamCorePrompt')}
+                  </div>
+                  <ul className="study-status-choice-list">
+                    {result.meconStreamCoreChoices!.map(c => {
+                      const key = `${c.courseCode}-${c.module}-${c.sectionId}`
+                      return (
+                        <li key={key} className="study-status-choice-row">
+                          <div className="study-status-choice-meta">
+                            <strong>{c.courseCode}</strong>
+                            {' '}
+                            {c.courseTitle}
+                            <span className="study-status-choice-period">
+                              {formatModuleLabelCompact(c.module, t)}
+                            </span>
+                          </div>
+                          <select
+                            className="study-status-followup-select"
+                            value={streamCoreTypes[key] ?? c.defaultType}
+                            onChange={e => {
+                              const value = e.target.value as 'Stream Core' | 'Elective'
+                              setStreamCoreTypes(prev => ({ ...prev, [key]: value }))
+                            }}
+                          >
+                            <option value="Stream Core">{t('planner.groupStreamCore')}</option>
+                            <option value="Elective">{t('planner.groupElective')}</option>
+                          </select>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
               )}
             </div>
           )}

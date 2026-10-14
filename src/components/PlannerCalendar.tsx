@@ -28,6 +28,7 @@ import {
   type PlanChange,
 } from '../utils/teachingPlanImpact'
 import type { Course, SelectedSection } from '../types'
+import type { MeconStreamId } from '../programmes/mecon/streamTags'
 
 const LONG_PRESS_MS = 480
 const ACTION_GAP_PX = 8
@@ -507,6 +508,8 @@ interface PlannerCalendarProps {
   selections: SelectedSection[]
   onImportSelections: (selections: SelectedSection[]) => void
   onCourseClick?: (courseCode: string) => void
+  /** Mecon: selected stream for Study Status type resolution. */
+  stream?: MeconStreamId | null
   /** Secondary line under time: instructor (Planner embed) or venue (My Calendar). */
   eventMeta?: CalendarEventMeta
   /**
@@ -522,6 +525,7 @@ export default function PlannerCalendar({
   selections,
   onImportSelections,
   onCourseClick,
+  stream = null,
   eventMeta = 'instructor',
   variant = 'embedded',
 }: PlannerCalendarProps) {
@@ -1014,6 +1018,7 @@ export default function PlannerCalendar({
       {studyStatusOpen && (
         <StudyStatusImportModal
           courses={courses}
+          stream={stream}
           onImport={onImportSelections}
           onClose={() => setStudyStatusOpen(false)}
         />

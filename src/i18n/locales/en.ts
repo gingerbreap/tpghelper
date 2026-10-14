@@ -401,9 +401,15 @@ const en: TranslationTree = {
       'No Registered or Waiting courses found. Ensure the paste includes the Study Status or Study Plan heading and course rows, or that it includes courses offered or allowed by this programme.',
     unmatched: 'Could not match in 2026-27 Teaching Plan: {{list}}',
     duplicates: 'Skipped duplicate course codes: {{list}}',
-    item: '{{code}} Class {{section}} · Module {{module}}',
-    itemWaiting: '{{code}} Class {{section}} · Module {{module}} (Waiting)',
+    item: '{{code}} Class {{section}} · {{module}}',
+    itemWaiting: '{{code}} Class {{section}} · {{module}} (Waiting)',
     placeholder: 'Study Status\n...\n{{code}}\nD\n2026-2027\nModule 1\nCore\nRegistered',
+    meconBootcampPrompt:
+      'ECON6067 Module 1 was found. Did you take the Bootcamp (Part I)?',
+    meconBootcampNone: 'No',
+    meconBootcampClassA: 'Yes, Class A',
+    meconBootcampClassB: 'Yes, Class B',
+    meconStreamCorePrompt: 'Count each course below as Stream Core or Elective:',
   },
   ics: {
     title: 'Export .ics calendar',
