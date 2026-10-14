@@ -199,7 +199,12 @@ export function getModuleConflict(
 
 /** Display order: Core → Elective → Capstone, then course code, then module. */
 export function sortSelectionsForDisplay(selections: SelectedSection[]): SelectedSection[] {
-  const typeOrder: Record<string, number> = { Core: 0, Elective: 1, Capstone: 2 }
+  const typeOrder: Record<string, number> = {
+    Core: 0,
+    'Stream Core': 1,
+    Elective: 2,
+    Capstone: 3,
+  }
   return [...selections].sort((a, b) => {
     const byType = (typeOrder[a.courseType] ?? 99) - (typeOrder[b.courseType] ?? 99)
     if (byType !== 0) return byType

@@ -1,0 +1,328 @@
+{
+  "totalCourses": 10,
+  "totalCredits": 60,
+  "creditsPerCourse": 6,
+  "coreRequired": 3,
+  "streamCoreRequired": 3,
+  "capstoneRequired": 1,
+  "electiveCount": 3,
+  "coreCourses": [
+    "ECON6001",
+    "ECON6005",
+    "ECON6011",
+    "ECON6012",
+    "ECON6021",
+    "ECON6022",
+    "ECON6092",
+    "ECON6093",
+    "ECON6113"
+  ],
+  "coreTracks": [
+    {
+      "label": "Advanced Research Stream / Theory Stream",
+      "streams": ["ARS", "THY"],
+      "groups": [
+        {
+          "name": "Microeconomics",
+          "options": ["ECON6011", "ECON6092"]
+        },
+        {
+          "name": "Macroeconomics",
+          "options": ["ECON6012", "ECON6093"]
+        },
+        {
+          "name": "Econometrics",
+          "options": ["ECON6001", "ECON6005", "ECON6113"]
+        }
+      ]
+    },
+    {
+      "label": "Data Analysis Stream / Policy Analysis Stream",
+      "streams": ["DA", "PL"],
+      "groups": [
+        {
+          "name": "Microeconomics",
+          "options": ["ECON6021", "ECON6011"]
+        },
+        {
+          "name": "Macroeconomics",
+          "options": ["ECON6022", "ECON6012"]
+        },
+        {
+          "name": "Econometrics",
+          "options": ["ECON6001", "ECON6005", "ECON6113"]
+        }
+      ]
+    }
+  ],
+  "capstoneCourses": [],
+  "capstoneByStream": {
+    "ARS": [
+      {
+        "courseCode": "ECON6080",
+        "courseTitle": "Research Thesis",
+        "credits": 12
+      }
+    ],
+    "THY": [
+      {
+        "courseCode": "ECON6077",
+        "courseTitle": "Topics in Economic Research I",
+        "credits": 6
+      },
+      {
+        "courseCode": "ECON6078",
+        "courseTitle": "Topics in Economic Research II",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7901",
+        "courseTitle": "Business Case Analysis Capstone",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7902",
+        "courseTitle": "Business Case Analysis Capstone (Global Centres)",
+        "credits": 6
+      }
+    ],
+    "DA": [
+      {
+        "courseCode": "ECON6116",
+        "courseTitle": "Advanced Topics in Applied Economics: Data and Policy",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7901",
+        "courseTitle": "Business Case Analysis Capstone",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7902",
+        "courseTitle": "Business Case Analysis Capstone (Global Centres)",
+        "credits": 6
+      }
+    ],
+    "PL": [
+      {
+        "courseCode": "ECON6116",
+        "courseTitle": "Advanced Topics in Applied Economics: Data and Policy",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7901",
+        "courseTitle": "Business Case Analysis Capstone",
+        "credits": 6
+      },
+      {
+        "courseCode": "PMSC7902",
+        "courseTitle": "Business Case Analysis Capstone (Global Centres)",
+        "credits": 6
+      }
+    ]
+  },
+  "streams": {
+    "ARS": {
+      "name": "Advanced Research Stream",
+      "description": "",
+      "minRequired": 3,
+      "courses": [
+        "ECON6002",
+        "ECON6010",
+        "ECON6036",
+        "ECON6052",
+        "ECON6056",
+        "ECON6059",
+        "ECON6077",
+        "ECON6078",
+        "ECON6081",
+        "ECON6098",
+        "ECON6110",
+        "ECON6120"
+      ]
+    },
+    "THY": {
+      "name": "Theory Stream",
+      "description": "",
+      "minRequired": 3,
+      "courses": [
+        "ECON6002",
+        "ECON6010",
+        "ECON6036",
+        "ECON6052",
+        "ECON6056",
+        "ECON6059",
+        "ECON6077",
+        "ECON6078",
+        "ECON6081",
+        "ECON6098",
+        "ECON6110",
+        "ECON6120"
+      ]
+    },
+    "DA": {
+      "name": "Data Analysis Stream",
+      "description": "",
+      "minRequired": 3,
+      "courses": [
+        "ECON6067",
+        "ECON6074",
+        "ECON6082",
+        "ECON6083",
+        "ECON6086",
+        "ECON6087",
+        "ECON6106",
+        "ECON6111"
+      ]
+    },
+    "PL": {
+      "name": "Policy Analysis Stream",
+      "description": "",
+      "minRequired": 3,
+      "courses": [
+        "ECON6008",
+        "ECON6032",
+        "ECON6034",
+        "ECON6075",
+        "ECON6076",
+        "ECON6095",
+        "ECON6097",
+        "ECON6104",
+        "ECON6105",
+        "ECON6114",
+        "ECON6120"
+      ]
+    }
+  },
+  "enrollmentRules": [
+    {
+      "type": "allowMultiModule",
+      "courseCode": "ECON6067",
+      "modules": [0, 1],
+      "countsAsOneCourse": true,
+      "messageZh": "ECON6067 Part I（Bootcamp）与 Part II（Module 1）可同时加入规划，合计计为 1 门课",
+      "message": "ECON6067 Part I (Bootcamp) and Part II (Module 1) may both be planned and count as one course"
+    },
+    {
+      "type": "mutualExclusion",
+      "courses": ["ECON6021", "ECON6022"],
+      "scope": "module",
+      "messageZh": "同一 Module 内 ECON6021 与 ECON6022 只能选其一",
+      "message": "Within the same module, only one of ECON6021 / ECON6022 may be selected"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6092",
+      "whenSelected": ["ECON6011"],
+      "messageZh": "ECON6092对已选ECON6011的学生不开放",
+      "message": "ECON6092 cannot be selected when ECON6011 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6011",
+      "whenSelected": ["ECON6092"],
+      "messageZh": "ECON6011对已选ECON6092的学生不开放",
+      "message": "ECON6011 cannot be selected when ECON6092 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6093",
+      "whenSelected": ["ECON6012"],
+      "messageZh": "ECON6093对已选ECON6012的学生不开放",
+      "message": "ECON6093 cannot be selected when ECON6012 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6012",
+      "whenSelected": ["ECON6093"],
+      "messageZh": "ECON6012对已选ECON6093的学生不开放",
+      "message": "ECON6012 cannot be selected when ECON6093 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6021",
+      "whenSelected": ["ECON6011"],
+      "messageZh": "ECON6021对已选ECON6011的学生不开放",
+      "message": "ECON6021 cannot be selected when ECON6011 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6011",
+      "whenSelected": ["ECON6021"],
+      "messageZh": "ECON6011对已选ECON6021的学生不开放",
+      "message": "ECON6011 cannot be selected when ECON6021 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6022",
+      "whenSelected": ["ECON6012"],
+      "messageZh": "ECON6022对已选ECON6012的学生不开放",
+      "message": "ECON6022 cannot be selected when ECON6012 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6012",
+      "whenSelected": ["ECON6022"],
+      "messageZh": "ECON6012对已选ECON6022的学生不开放",
+      "message": "ECON6012 cannot be selected when ECON6022 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6001",
+      "whenSelected": ["ECON6005", "ECON6113"],
+      "messageZh": "ECON6001对已选ECON6005或ECON6113的学生不开放",
+      "message": "ECON6001 cannot be selected when ECON6005 or ECON6113 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6005",
+      "whenSelected": ["ECON6001", "ECON6113"],
+      "messageZh": "ECON6005对已选ECON6001或ECON6113的学生不开放",
+      "message": "ECON6005 cannot be selected when ECON6001 or ECON6113 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6113",
+      "whenSelected": ["ECON6001", "ECON6005"],
+      "messageZh": "ECON6113对已选ECON6001或ECON6005的学生不开放",
+      "message": "ECON6113 cannot be selected when ECON6001 or ECON6005 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6105",
+      "whenSelected": ["PMGM7040"],
+      "messageZh": "ECON6105对已选PMGM7040的学生不开放",
+      "message": "ECON6105 cannot be selected when PMGM7040 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6117",
+      "whenSelected": ["PMGM7046"],
+      "messageZh": "ECON6117对已选PMGM7046的学生不开放",
+      "message": "ECON6117 cannot be selected when PMGM7046 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6090",
+      "whenSelected": ["MSMK7027", "PMGM7015"],
+      "messageZh": "ECON6090对已选MSMK7027或PMGM7015的学生不开放",
+      "message": "ECON6090 cannot be selected when MSMK7027 or PMGM7015 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6103",
+      "whenSelected": ["PMGM7036"],
+      "messageZh": "ECON6103对已选PMGM7036的学生不开放",
+      "message": "ECON6103 cannot be selected when PMGM7036 has been chosen"
+    }
+  ],
+  "notes": [
+    "Candidates must take a total of ten 6-credit courses, or eight 6-credit courses and one 12-credit course.",
+    "Each candidate concentrates in one stream: Advanced Research, Data Analysis, Policy Analysis, or Theory.",
+    "Up to two electives may be taken from other Faculty of Business and Economics TPg curricula with approval.",
+    "Core courses can be taken as electives to fulfil graduation requirements provided that they are not counted as core courses.",
+    "Interdisciplinary Track (optional): +5 courses (30 credits) from another specialised master's programme.",
+    "Not all courses listed will necessarily be offered each academic year."
+  ],
+  "planningRules": []
+}

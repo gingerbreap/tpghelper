@@ -14,6 +14,7 @@ import { formatSectionInstructors } from './instructors'
 import { teachingPlanNotices as msbaNotices } from '../programmes/msba/teachingPlanUpdates'
 import type { TeachingPlanNotice } from '../programmes/msba/teachingPlanUpdates'
 import { teachingPlanNotices as mgmNotices } from '../programmes/mgm/teachingPlanUpdates'
+import { teachingPlanNotices as meconNotices } from '../programmes/mecon/teachingPlanUpdates'
 
 function teachingPlanDismissVersion(notice: TeachingPlanNotice): string {
   return notice.updates.map(u => u.courseCode).join('+')
@@ -59,6 +60,7 @@ export interface SiteConfig {
   /** Omitted from export when the pack has no user data. */
   msba?: ProgrammeUserConfig
   mgm?: ProgrammeUserConfig
+  mecon?: ProgrammeUserConfig
 }
 
 export const COURSE_STATUS_REGISTERED = 'registered' as const
@@ -70,7 +72,9 @@ export const COURSE_STATUS_WISHLIST = 'wishlist' as const
 const TIMESTAMP_KEY_RE = /^\d{4}\/\d{2}\/\d{2}/
 
 function noticesFor(id: ProgrammeId): TeachingPlanNotice[] {
-  return id === 'mgm' ? mgmNotices : msbaNotices
+  if (id === 'mgm') return mgmNotices
+  if (id === 'mecon') return meconNotices
+  return msbaNotices
 }
 
 function dismissStorageKey(entryId: ProgrammeId, noticeId: string): string {
@@ -356,6 +360,7 @@ export function parseSiteConfigJson(text: string): ParseSiteConfigResult {
     'currentProgramme' in obj
     || (obj.msba != null && typeof obj.msba === 'object')
     || (obj.mgm != null && typeof obj.mgm === 'object')
+    || (obj.mecon != null && typeof obj.mecon === 'object')
 
   if (looksNested) {
     let currentProgramme: ProgrammeId | null = null
@@ -421,7 +426,7 @@ export function parseSiteConfigJson(text: string): ParseSiteConfigResult {
 }
 
 async function fetchCoursesCatalog(id: ProgrammeId): Promise<Course[]> {
-  const base = id === 'mgm' ? '/mgm/' : '/msba/'
+  const base = `/${id}/`
   const res = await fetch(`${base}courses.json`)
   if (!res.ok) throw new Error('coursesFetchFailed')
   const data: unknown = await res.json()

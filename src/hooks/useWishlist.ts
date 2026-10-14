@@ -83,7 +83,14 @@ export function useWishlist() {
     setWishlist(prev => reorderWithinCategory(prev, courseType, fromIndex, toIndex))
   }, [])
 
+  /** Move an item into another courseType group (e.g. Stream Core ↔ Capstone). */
+  const retype = useCallback((s: SelectedSection, courseType: string) => {
+    setWishlist(prev =>
+      prev.map(p => (itemKey(p) === itemKey(s) ? { ...p, courseType } : p)),
+    )
+  }, [])
+
   const clear = useCallback(() => setWishlist([]), [])
 
-  return { wishlist, add, remove, toggle, reorder, isInWishlist, clear }
+  return { wishlist, add, remove, toggle, reorder, retype, isInWishlist, clear }
 }

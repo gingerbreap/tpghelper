@@ -120,6 +120,8 @@ const en: TranslationTree = {
   common: {
     loading: 'Loading...',
     close: 'Close',
+    cancel: 'Cancel',
+    save: 'Save',
     remove: 'Remove',
     dismiss: 'Got it',
     sectionSuffix: 'Class {{section}}',
@@ -132,6 +134,7 @@ const en: TranslationTree = {
     title: 'My Course Plan',
     totalSelected: 'Selected',
     groupCore: 'Core',
+    groupStreamCore: 'Stream Core',
     groupCapstone: 'Capstone Core',
     groupElective: 'Self Programme - Electives',
     streamProgress: 'Stream progress',

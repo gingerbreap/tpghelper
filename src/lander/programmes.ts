@@ -44,8 +44,8 @@ export const LANDER_PROGRAMMES: readonly LanderProgramme[] = [
   {
     id: 'mecon',
     nameKey: 'programmes.items.mecon',
-    appPath: null,
-    available: false,
+    appPath: '/mecon/',
+    available: true,
   },
   {
     id: 'mfwm',

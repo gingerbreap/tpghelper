@@ -2,7 +2,8 @@
 
 > **读者**：负责「在本仓新增一个专业 pack → 接 lander → 构建部署」的 Agent / 维护者。  
 > **仓库**：[`tpghelper`](https://github.com/gingerbreap/tpghelper)（多专业 shell，Azure 同源部署）。  
-> **已有 pack**：`msba`（MSc(BA)）、`mgm`（MGM）；根入口 `lander`。  
+> **已有 pack**：`msba`（MSc(BA)）、`mgm`（MGM）、`mecon`（MEcon）；根入口 `lander`。  
+> **MEcon 分析备忘**：[`docs/mecon/ANALYSIS.md`](./mecon/ANALYSIS.md)。  
 > **历史背景**：早期曾建议「fork 独立仓库」；整合完成后，**默认路径是在本仓加 pack**，不再为每个专业另开 GitHub Pages 仓。
 
 本文件是**新子站搭建总览**。日常 Teaching Plan 同步仍以 [`src/teachingPlan/README.md`](../src/teachingPlan/README.md) 为准；产品行为以 [`REQUIREMENTS.md`](../REQUIREMENTS.md) 为准（部分条文仍带 BA 历史表述，以代码与本指南为准）。
@@ -25,9 +26,9 @@
 | **共享壳** | `src/pages/*`、`src/components/*`、`src/hooks/*`、`src/utils/*`、基础 i18n |
 | **专业 pack** | `src/programmes/{id}/`（配置、TP notices、stream 标签、可选 locale 覆盖） |
 | **专业静态资源** | `public/{id}/`（`courses.json`、`requirements.json`、大纲 PDF、TP PDF、manifest、logo） |
-| **用户状态** | 专业前缀 localStorage（如 `msba-*` / `mgm-*`）+ 站点级 `tpghelper-*` |
-| **备份** | Site config schema **2.1**：顶层 `currentProgramme` + 嵌套 `{ msba?, mgm?, … }` 瘦身课表行 |
-| **生产部署** | `npm run build:site` → `server/public/{lander,msba,mgm,…}` → Express → Azure（`push main`） |
+| **用户状态** | 专业前缀 localStorage（如 `msba-*` / `mgm-*` / `mecon-*`）+ 站点级 `tpghelper-*` |
+| **备份** | Site config schema **2.1**：顶层 `currentProgramme` + 嵌套 `{ msba?, mgm?, mecon?, … }` 瘦身课表行 |
+| **生产部署** | `npm run build:site` → `server/public/{lander,msba,mgm,mecon,…}` → Express → Azure（`push main`） |
 
 迁移时：**壳代码尽量不动**；**成套新增「pack 配置 + public 数据 + 接线清单」**，保证 storage 前缀、备份 `programme` id、Vite `base` 三者一致。
 

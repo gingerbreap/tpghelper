@@ -1,8 +1,8 @@
 /**
  * Thin multi-programme shell contract.
- * Build selects one active pack via PROGRAMME=msba|mgm.
+ * Build selects one active pack via PROGRAMME=msba|mgm|mecon.
  */
-export type ProgrammeId = 'msba' | 'mgm'
+export type ProgrammeId = 'msba' | 'mgm' | 'mecon'
 
 export interface ProgrammeFeatureFlags {
   /** Alternate / wishlist list on Planner (unified BA + MGM). */
@@ -19,6 +19,11 @@ export interface ProgrammeFeatureFlags {
    * allowMultiModule, prerequisite, antirequisite, etc.
    */
   enrollmentRules: boolean
+  /**
+   * MEcon: student must pick a stream before planner calendar / lists unlock.
+   * Omit or false for programmes without forced stream selection.
+   */
+  requireStreamSelection?: boolean
 }
 
 export interface ProgrammeStorageKeys {
@@ -30,6 +35,8 @@ export interface ProgrammeStorageKeys {
   defaultLanding: string
   syncTzMode: string
   icsExportFormat: string
+  /** Forced stream id (e.g. mecon ARS/THY/DA/PL). */
+  selectedStream?: string
 }
 
 export interface ProgrammeStudyStatusConfig {
@@ -45,7 +52,8 @@ export interface ProgrammeIcsConfig {
   filename: string
 }
 
-export type ProgrammeCourseType = 'Core' | 'Elective' | 'Capstone'
+/** Planner grouping / badge types. MEcon also uses Stream Core. */
+export type ProgrammeCourseType = 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
 
 export interface ProgrammeConfig {
   id: ProgrammeId

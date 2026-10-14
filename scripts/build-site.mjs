@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Production site merge: lander → msba → mgm into server/public/.
+ * Production site merge: lander → msba → mgm → mecon into server/public/.
  * Each Vite build uses a dedicated outDir so artefacts do not clobber each other.
  */
 import { spawnSync } from 'node:child_process'
@@ -47,6 +47,7 @@ fs.mkdirSync(publicDir, { recursive: true })
 buildProgramme('lander', 'server/public')
 buildProgramme('msba', 'server/public/msba')
 buildProgramme('mgm', 'server/public/mgm')
+buildProgramme('mecon', 'server/public/mecon')
 
 // Leave shared re-exports on the default pack for local/dev consistency.
 run('select msba (reset)', process.execPath, [

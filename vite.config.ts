@@ -12,7 +12,7 @@ const APP_REPO_URL = 'https://github.com/gingerbreap/tpghelper'
 const APP_VERSION_BASE = '2.0.5'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
-type ProgrammeId = 'msba' | 'mgm' | 'lander'
+type ProgrammeId = 'msba' | 'mgm' | 'mecon' | 'lander'
 
 const PROGRAMME_META: Record<
   ProgrammeId,
@@ -35,6 +35,12 @@ const PROGRAMME_META: Record<
     htmlTitle: 'HKU MGM 选课助手',
     publicDir: 'public/mgm',
   },
+  mecon: {
+    base: '/mecon/',
+    analyticsId: 'G-H1NZELQQ9L',
+    htmlTitle: 'HKU MEcon 选课助手',
+    publicDir: 'public/mecon',
+  },
   lander: {
     base: '/',
     analyticsId: 'G-TGBLKX855E',
@@ -46,6 +52,7 @@ const PROGRAMME_META: Record<
 function resolveProgrammeId(): ProgrammeId {
   const raw = (process.env.PROGRAMME || 'msba').toLowerCase()
   if (raw === 'mgm') return 'mgm'
+  if (raw === 'mecon') return 'mecon'
   if (raw === 'lander') return 'lander'
   return 'msba'
 }
@@ -94,12 +101,13 @@ const behindGateway = process.env.DEV_SITE_GATEWAY === '1'
 const gatewayPort = Number(process.env.DEV_GATEWAY_PORT || 5173)
 
 /** Pack id used for Vite aliases (lander falls back to msba stubs if ever imported). */
-const packId = programmeId === 'mgm' ? 'mgm' : 'msba'
+const packId =
+  programmeId === 'mgm' || programmeId === 'mecon' ? programmeId : 'msba'
 
 /**
- * Site-wide PWA: manifests use scope "/" so lander ↔ msba ↔ mgm stay in one install.
+ * Site-wide PWA: manifests use scope "/" so lander ↔ programme apps stay in one install.
  * Lander registers a root SW; programme builds keep a scoped SW for offline of that pack.
- * Root SW must not steal /msba or /mgm navigations (see navigateFallbackDenylist).
+ * Root SW must not steal /msba|/mgm|/mecon navigations (see navigateFallbackDenylist).
  */
 const pwaIncludeAssets = [
   'favicon.ico',
@@ -128,7 +136,12 @@ const pwaPlugin = VitePWA({
     navigateFallbackDenylist: [
       /\.pdf$/i,
       ...(programmeId === 'lander'
-        ? [/^\/msba(?:\/|$)/i, /^\/mgm(?:\/|$)/i, /^\/api(?:\/|$)/i]
+        ? [
+            /^\/msba(?:\/|$)/i,
+            /^\/mgm(?:\/|$)/i,
+            /^\/mecon(?:\/|$)/i,
+            /^\/api(?:\/|$)/i,
+          ]
         : []),
     ],
     // workbox-build's production terser pass can hang / fail ("Unfinished hook action(s) on exit: (terser) renderChunk").
@@ -156,7 +169,9 @@ export default defineConfig({
           rootDir,
           packId === 'mgm'
             ? 'src/programmes/mgm/localeOverlays.ts'
-            : 'src/programmes/emptyLocaleOverlays.ts',
+            : packId === 'mecon'
+              ? 'src/programmes/mecon/localeOverlays.ts'
+              : 'src/programmes/emptyLocaleOverlays.ts',
         ),
       },
     ],

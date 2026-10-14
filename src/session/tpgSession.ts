@@ -13,6 +13,7 @@ export const LANDER_AUTH_URL = '/#/'
 export const PROGRAMME_APP_PATHS: Record<string, string> = {
   msba: '/msba/',
   mgm: '/mgm/',
+  mecon: '/mecon/',
 }
 
 function read(key: string): string | null {

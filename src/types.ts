@@ -40,6 +40,11 @@ export interface Section {
   sectionId: string
   /** A class may be taught by one or several instructors. */
   instructors: Instructor[]
+  /**
+   * Part id for multi-part courses (e.g. "I" / "II" for ECON6067).
+   * Detail tabs may show "Part I: Dr. …".
+   */
+  part?: string
   timeBucket: 'AM' | 'PM' | 'NT' | 'TBC'
   /** "Class Day & Time" as printed in the teaching plan. */
   dayPattern: string
@@ -55,8 +60,42 @@ export interface Course {
   courseCode: string
   courseTitle: string
   module: number
-  courseType: 'Core' | 'Elective' | 'Capstone'
+  courseType: 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
+  /**
+   * Extra type badges when a course can satisfy more than one category
+   * (e.g. Theory Stream ECON6077/6078 → Stream Core + Capstone).
+   * Primary grouping uses `courseType`.
+   */
+  courseTypes?: Array<'Core' | 'Stream Core' | 'Elective' | 'Capstone'>
   streamTags: string[]
+  /**
+   * Streams for which this course is Core / Stream Core / Capstone in the TP.
+   * Empty or omitted = not stream-gated (typical Elective / "for all" Core).
+   * Values: ARS | THY | DA | PL (MEcon).
+   */
+  offeredToStreams?: string[]
+  /**
+   * Streams for which this course counts as Capstone.
+   * When omitted and courseType/courseTypes include Capstone, falls back to
+   * `offeredToStreams` (or all streams if that is empty).
+   */
+  capstoneForStreams?: string[]
+  /**
+   * Streams for which this course counts as Stream Core (dual-role courses).
+   * When omitted and type includes Stream Core, falls back to `offeredToStreams`.
+   */
+  streamCoreForStreams?: string[]
+  /**
+   * Streams for which this course counts as Fundamental Core.
+   * When omitted and courseType is Core, falls back to `offeredToStreams`
+   * (empty offeredToStreams = Core for all).
+   */
+  coreForStreams?: string[]
+  /**
+   * Multi-part courses (e.g. ECON6067 Part I / II). Sections may also carry
+   * `part` for tab labels.
+   */
+  parts?: Array<{ id: string; label: string }>
   /** Null when instructors have their own per-class outlines (see Section). */
   outlinePdfPath: string | null
   examOrFinal: ExamOrFinal | null
@@ -123,11 +162,37 @@ export interface EnrollmentRule {
   messageZh?: string
 }
 
+export interface CoreOptionGroup {
+  name: string
+  options: string[]
+}
+
+export interface CoreTrack {
+  label: string
+  streams: string[]
+  groups: CoreOptionGroup[]
+}
+
+export interface CapstoneOption {
+  courseCode: string
+  courseTitle: string
+  credits?: number
+}
+
 export interface Requirements {
   totalCourses: number
   creditsPerCourse: number
+  /** Programme total credits (e.g. MEcon 60). */
+  totalCredits?: number
+  coreRequired?: number
+  streamCoreRequired?: number
+  capstoneRequired?: number
   coreCourses: string[]
-  capstoneCourses: { courseCode: string; courseTitle: string }[]
+  /** MEcon: Fundamental Core choices grouped by stream track. */
+  coreTracks?: CoreTrack[]
+  capstoneCourses: CapstoneOption[]
+  /** MEcon: Capstone options per stream id. */
+  capstoneByStream?: Record<string, CapstoneOption[]>
   streams: Record<string, Stream>
   electiveCount: number
   enrollmentRules?: EnrollmentRule[]

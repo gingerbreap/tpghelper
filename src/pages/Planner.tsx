@@ -1,13 +1,16 @@
 import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import ConflictNotices from '../components/ConflictNotices'
 import CourseDetailModal from '../components/CourseDetailModal'
+import MeconRoleBadges from '../components/MeconRoleBadges'
 import PlannerCalendar from '../components/PlannerCalendar'
+import StreamSwitchModal from '../components/StreamSwitchModal'
 import StreamTagBadges from '../components/StreamTagBadges'
 import TeachingPlanUpdateNotice from '../components/TeachingPlanUpdateNotice'
 import TimeBadge from '../components/TimeBadge'
 import WeekdayStrip from '../components/WeekdayStrip'
 import { useI18n } from '../i18n/context'
 import { useCourses, useRequirements } from '../hooks/useCoursesData'
+import { useSelectedStream } from '../hooks/useSelectedStream'
 import {
   countEffectiveSelections,
   getModuleConflict,
@@ -18,6 +21,7 @@ import {
 } from '../hooks/useSelections'
 import { useWishlist } from '../hooks/useWishlist'
 import { getActiveProgramme } from '../programmes'
+import { MECON_STREAMS } from '../programmes/mecon/streamTags'
 import { buildCalendarEvents } from '../utils/calendarEvents'
 import { detectConflicts } from '../utils/conflicts'
 import { formatSectionInstructors } from '../utils/instructors'
@@ -26,12 +30,26 @@ import {
   formatAntirequisiteBlockMessage,
 } from '../utils/antirequisites'
 import {
+  defaultSelectionType,
+  getMeconCourseView,
+  isMeconDualStreamCapstone,
+} from '../utils/meconCourseView'
+import { formatModuleLabel } from '../utils/moduleLabel'
+import {
   checkPrerequisitesForCourse,
   selectedCourseCodes,
   selectionMissingPrerequisites,
 } from '../utils/prerequisites'
 import { groupSelectionsByType } from '../utils/selectionGroups'
+import { getMeconRequirementTargets } from '../utils/meconRequirements'
 import type { Course, SelectedSection } from '../types'
+
+const MECON_STREAM_LABEL_KEY: Record<string, string> = {
+  ARS: 'planner.streamArs',
+  THY: 'planner.streamThy',
+  DA: 'planner.streamDa',
+  PL: 'planner.streamPl',
+}
 
 function itemKey(s: SelectedSection): string {
   return `${s.courseCode}-M${s.module}-${s.sectionId}`
@@ -53,10 +71,12 @@ function compareSelectionsMsba(a: SelectedSection, b: SelectedSection): number {
 export default function Planner() {
   const { t, sectionLabel, locale } = useI18n()
   const programme = getActiveProgramme()
+  const isMecon = programme.id === 'mecon'
   const modules = programme.moduleNumbers
   const useWishlistFeature = programme.features.wishlist
   const groupSelectedByType = programme.features.groupSelectedByType
   const useEnrollmentRules = programme.features.enrollmentRules
+  const { stream, setStream, required: requireStream } = useSelectedStream()
 
   const { courses, loading } = useCourses()
   const requirements = useRequirements()
@@ -70,6 +90,7 @@ export default function Planner() {
     toggle: toggleWishlist,
     remove: removeWishlist,
     reorder,
+    retype,
     isInWishlist,
     clear: clearWishlist,
   } = useWishlist()
@@ -77,9 +98,11 @@ export default function Planner() {
   const [tab, setTab] = useState<'selected' | 'browse'>('selected')
   const [duplicateMsg, setDuplicateMsg] = useState<string | null>(null)
   const [detailCode, setDetailCode] = useState<string | null>(null)
+  const [streamModal, setStreamModal] = useState<null | 'select' | 'switch'>(null)
   const dragRef = useRef<{ type: string; index: number } | null>(null)
   const [dragSource, setDragSource] = useState<{ type: string; index: number } | null>(null)
   const [wishlistDragOver, setWishlistDragOver] = useState<{ type: string; index: number } | null>(null)
+  const needsStream = requireStream && !stream
 
   useEffect(() => {
     if (!duplicateMsg) return
@@ -259,6 +282,7 @@ export default function Planner() {
 
   const typeGroupLabel = useCallback((type: string) => {
     if (type === 'Core') return t('planner.groupCore')
+    if (type === 'Stream Core') return t('planner.groupStreamCore')
     if (type === 'Capstone') return t('planner.groupCapstone')
     return t('planner.groupElective')
   }, [t])
@@ -268,28 +292,53 @@ export default function Planner() {
     [selections, enrollmentRules],
   )
 
+  /** ECON6067 needs both module 0 (Part I) and module 1 (Part II) to count. */
+  const econ6067MissingPart = useMemo((): 'I' | 'II' | null => {
+    if (!isMecon) return null
+    const parts = selections.filter(s => s.courseCode === 'ECON6067')
+    if (parts.length === 0) return null
+    const mods = new Set(parts.map(s => s.module))
+    const partI = mods.has(0)
+    const partII = mods.has(1)
+    if (partI && partII) return null
+    if (partI && !partII) return 'II'
+    if (!partI && partII) return 'I'
+    return null
+  }, [isMecon, selections])
+
+  const excludeIncomplete6067 = !!econ6067MissingPart
+
   const stats = useMemo(() => {
+    const skipIncomplete6067 = (s: SelectedSection) =>
+      !(excludeIncomplete6067 && s.courseCode === 'ECON6067')
+
     if (useEnrollmentRules) {
+      const eligible = selections.filter(skipIncomplete6067)
       const countType = (type: string) =>
         countEffectiveSelections(
-          selections.filter(s => s.courseType === type),
+          eligible.filter(s => s.courseType === type),
           enrollmentRules,
         )
       return {
         core: countType('Core'),
+        streamCore: isMecon ? countType('Stream Core') : 0,
         elective: countType('Elective'),
         capstone: countType('Capstone'),
-        total: effectiveCount,
+        total: countEffectiveSelections(eligible, enrollmentRules),
       }
     }
-    const core = selections.filter(s => s.courseType === 'Core').length
-    const elective = selections.filter(s => s.courseType === 'Elective').length
-    const capstone = selections.filter(s => s.courseType === 'Capstone').length
-    return { core, elective, capstone, total: selections.length }
-  }, [selections, enrollmentRules, effectiveCount, useEnrollmentRules])
+    const eligible = selections.filter(skipIncomplete6067)
+    const core = eligible.filter(s => s.courseType === 'Core').length
+    const streamCore = isMecon
+      ? eligible.filter(s => s.courseType === 'Stream Core').length
+      : 0
+    const elective = eligible.filter(s => s.courseType === 'Elective').length
+    const capstone = eligible.filter(s => s.courseType === 'Capstone').length
+    return { core, streamCore, elective, capstone, total: eligible.length }
+  }, [selections, enrollmentRules, useEnrollmentRules, isMecon, excludeIncomplete6067])
 
   const streamCompletion = useMemo(() => {
-    if (!requirements?.streams.AI || !requirements?.streams.MC) return null
+    if (isMecon || !requirements?.streams.AI || !requirements?.streams.MC) return null
     const codes = new Set(selections.map(s => s.courseCode))
     const ai = requirements.streams.AI
     const mc = requirements.streams.MC
@@ -298,17 +347,33 @@ export default function Planner() {
     const listC = (mc.listC as { courses: string[] }).courses.filter(c => codes.has(c)).length
     const listD = (mc.listD as { courses: string[] }).courses.filter(c => codes.has(c)).length
     return { listA, listB, listC, listD }
-  }, [selections, requirements])
+  }, [selections, requirements, isMecon])
 
   const esgCompletion = useMemo(() => {
-    if (!requirements?.streams.ESG) return null
+    if (isMecon || !requirements?.streams.ESG) return null
     const esg = requirements.streams.ESG
     const esgCourses = esg.courses ?? []
     const minRequired = esg.minRequired ?? 3
     const codes = new Set(selections.map(s => s.courseCode))
     const count = esgCourses.filter(c => codes.has(c)).length
     return { count, minRequired }
-  }, [selections, requirements])
+  }, [selections, requirements, isMecon])
+
+  const meconTargets = useMemo(
+    () => (isMecon ? getMeconRequirementTargets(requirements, stream) : null),
+    [isMecon, requirements, stream],
+  )
+
+  const meconStreamName = useMemo(() => {
+    if (!isMecon || !stream) return null
+    const labelKey = MECON_STREAM_LABEL_KEY[stream]
+    if (labelKey) return t(labelKey)
+    return (
+      requirements?.streams[stream]?.name
+      ?? MECON_STREAMS.find(s => s.id === stream)?.name
+      ?? stream
+    )
+  }, [isMecon, stream, requirements, t])
 
   const grouped = useMemo(() => {
     const map: Record<number, Course[]> = {}
@@ -333,6 +398,7 @@ export default function Planner() {
   const renderSelectionRow = (s: SelectedSection) => {
     const sec = findSection(s.courseCode, s.module, s.sectionId)
     const course = findCourse(s.courseCode, s.module)
+    const meconView = isMecon && course ? getMeconCourseView(course, stream) : null
     const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
     const waiting = isSelectionWaiting(s)
     const prereqCheck = useEnrollmentRules
@@ -360,7 +426,11 @@ export default function Planner() {
                 {s.courseType}
               </span>
             )}
-            {course && <StreamTagBadges tags={course.streamTags} />}
+            {meconView ? (
+              <MeconRoleBadges badges={meconView.badges} />
+            ) : (
+              course && <StreamTagBadges tags={course.streamTags} />
+            )}
           </div>
           <div style={{ fontSize: 13, color: '#5f6368' }}>
             {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
@@ -399,24 +469,76 @@ export default function Planner() {
 
       <h1 className="page-title">{t('planner.title')}</h1>
 
-      <div className="planner-stats">
-        <div className="stat-card">
-          <div className="stat-number">{stats.total}</div>
-          <div className="stat-label">{t('planner.totalSelected')}</div>
+      {!needsStream && (
+        <div className="planner-stats">
+          {(isMecon && meconTargets
+            ? ([
+                ['total', stats.total, meconTargets.total, t('planner.totalSelected')],
+                ['core', stats.core, meconTargets.core, t('planner.groupCore')],
+                ['streamCore', stats.streamCore, meconTargets.streamCore, t('planner.groupStreamCore')],
+                ['capstone', stats.capstone, meconTargets.capstone, t('planner.groupCapstone')],
+                ['elective', stats.elective, meconTargets.elective, t('planner.groupElective')],
+              ] as const)
+            : ([
+                ['total', stats.total, null, t('planner.totalSelected')],
+                ['core', stats.core, null, t('planner.groupCore')],
+                ['elective', stats.elective, null, t('planner.groupElective')],
+                ['capstone', stats.capstone, null, t('planner.groupCapstone')],
+              ] as const)
+          ).map(([key, current, required, label]) => {
+            const met = required != null && current >= required
+            return (
+              <div className="stat-card" key={key}>
+                <div className="stat-number-row">
+                  <span className="stat-number">{current}</span>
+                  {required != null && (
+                    <span className="stat-number-total">/{required}</span>
+                  )}
+                  {met && (
+                    <span className="check-icon stat-check" aria-label="done">✓</span>
+                  )}
+                </div>
+                <div className="stat-label">{label}</div>
+              </div>
+            )
+          })}
         </div>
-        <div className="stat-card">
-          <div className="stat-number">{stats.core}</div>
-          <div className="stat-label">{t('planner.groupCore')}</div>
+      )}
+
+      {isMecon && (
+        <div className="card" style={{ marginBottom: 16 }}>
+          <div className="stream-progress-card-header">
+            <div className="stream-progress-title">{t('planner.currentStream')}</div>
+            {stream ? (
+              <button
+                type="button"
+                className="select-btn stream-switch-btn"
+                onClick={() => setStreamModal('switch')}
+              >
+                {t('planner.switchStream')}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="select-btn stream-switch-btn"
+                onClick={() => setStreamModal('select')}
+              >
+                {t('planner.streamSwitchTitle')}
+              </button>
+            )}
+          </div>
+          {needsStream ? (
+            <div className="planner-stream-gate">{t('planner.streamSelectHint')}</div>
+          ) : meconStreamName ? (
+            <div style={{ fontSize: 14 }}>
+              <strong>{stream}</strong>
+              <span style={{ color: 'var(--text-secondary)', marginLeft: 8 }}>
+                {meconStreamName}
+              </span>
+            </div>
+          ) : null}
         </div>
-        <div className="stat-card">
-          <div className="stat-number">{stats.elective}</div>
-          <div className="stat-label">{t('planner.groupElective')}</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-number">{stats.capstone}</div>
-          <div className="stat-label">{t('planner.groupCapstone')}</div>
-        </div>
-      </div>
+      )}
 
       {esgCompletion && (
         <div className="card" style={{ marginBottom: 16 }}>
@@ -463,6 +585,14 @@ export default function Planner() {
         <div className="planner-toast" role="status">{duplicateMsg}</div>
       )}
 
+      {!needsStream && (
+        <>
+      {econ6067MissingPart && (
+        <div className="planner-warn-banner" role="status">
+          {t('planner.econ6067PartWarn', { part: econ6067MissingPart })}
+        </div>
+      )}
+
       <PlannerCalendar
         events={calendarEvents}
         courses={courses}
@@ -493,7 +623,7 @@ export default function Planner() {
               <>
                 {selectionsByType.map(group => (
                   <div className="selection-group" key={group.type}>
-                    <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
+                    <div className={`selection-group-header selection-group-header--${group.type.replace(/\s+/g, '-').toLowerCase()}`}>
                       <span>{typeGroupLabel(group.type)}</span>
                       <span className="selection-group-count">{group.items.length}</span>
                     </div>
@@ -533,13 +663,14 @@ export default function Planner() {
                 ) : (
                   wishlistByType.map(group => (
                     <div className="selection-group" key={`wishlist-${group.type}`}>
-                      <div className={`selection-group-header selection-group-header--${group.type.toLowerCase()}`}>
+                      <div className={`selection-group-header selection-group-header--${group.type.replace(/\s+/g, '-').toLowerCase()}`}>
                         <span>{typeGroupLabel(group.type)}</span>
                         <span className="selection-group-count">{group.items.length}</span>
                       </div>
                       {group.items.map((s, index) => {
                         const sec = findSection(s.courseCode, s.module, s.sectionId)
                         const course = findCourse(s.courseCode, s.module)
+                        const meconView = isMecon && course ? getMeconCourseView(course, stream) : null
                         const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
                         const isDragging =
                           dragSource?.type === group.type && dragSource?.index === index
@@ -553,6 +684,15 @@ export default function Planner() {
                         const wishlistBlockHint = wishlistBlocked
                           ? formatAntirequisiteBlockMessage(s.courseCode, wishlistAntireq.blocking, locale)
                           : undefined
+                        const canCrossRetype = (fromType: string, toType: string, item: SelectedSection) => {
+                          if (!isMecon) return false
+                          if (
+                            (fromType !== 'Stream Core' && fromType !== 'Capstone')
+                            || (toType !== 'Stream Core' && toType !== 'Capstone')
+                          ) return false
+                          const c = findCourse(item.courseCode, item.module)
+                          return !!c && isMeconDualStreamCapstone(c)
+                        }
                         return (
                           <div
                             className={`selection-item wishlist-item${isDragging ? ' dragging' : ''}${isDragOver ? ' drag-over' : ''}${wishlistBlocked ? ' selection-item--prereq-missing' : ''}`}
@@ -573,7 +713,15 @@ export default function Planner() {
                             onDragOver={e => {
                               e.preventDefault()
                               e.dataTransfer.dropEffect = 'move'
-                              if (dragRef.current?.type !== group.type) return
+                              const from = dragRef.current
+                              if (!from) return
+                              if (from.type === group.type) {
+                                setWishlistDragOver({ type: group.type, index })
+                                return
+                              }
+                              const fromGroup = wishlistByType.find(g => g.type === from.type)
+                              const item = fromGroup?.items[from.index]
+                              if (!item || !canCrossRetype(from.type, group.type, item)) return
                               setWishlistDragOver({ type: group.type, index })
                             }}
                             onDragLeave={() => {
@@ -587,8 +735,15 @@ export default function Planner() {
                               setWishlistDragOver(null)
                               setDragSource(null)
                               dragRef.current = null
-                              if (!from || from.type !== group.type) return
-                              reorder(group.type, from.index, index)
+                              if (!from) return
+                              if (from.type === group.type) {
+                                reorder(group.type, from.index, index)
+                                return
+                              }
+                              const fromGroup = wishlistByType.find(g => g.type === from.type)
+                              const item = fromGroup?.items[from.index]
+                              if (!item || !canCrossRetype(from.type, group.type, item)) return
+                              retype(item, group.type)
                             }}
                           >
                             <div className="wishlist-actions">
@@ -622,7 +777,11 @@ export default function Planner() {
                                 )}
                                 {sec && <TimeBadge bucket={sec.timeBucket} />}
                                 {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
-                                {course && <StreamTagBadges tags={course.streamTags} />}
+                                {meconView ? (
+                                  <MeconRoleBadges badges={meconView.badges} />
+                                ) : (
+                                  course && <StreamTagBadges tags={course.streamTags} />
+                                )}
                               </div>
                               <div style={{ fontSize: 13, color: '#5f6368' }}>
                                 {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {t('common.module', { module: s.module })}
@@ -643,10 +802,18 @@ export default function Planner() {
 
       {tab === 'browse' && (
         <div>
-          {modules.map(mod => (
+          {modules.map(mod => {
+            const moduleCourses = (grouped[mod] || []).flatMap(course => {
+              if (!isMecon) return [{ course, view: null as ReturnType<typeof getMeconCourseView> }]
+              const view = getMeconCourseView(course, stream)
+              if (!view) return []
+              return [{ course, view }]
+            })
+            if (moduleCourses.length === 0) return null
+            return (
             <div key={mod}>
-              <div className="module-header">Module {mod}</div>
-              {(grouped[mod] || []).map(course => (
+              <div className="module-header">{formatModuleLabel(mod, t)}</div>
+              {moduleCourses.map(({ course, view }) => (
                 <div className="card" key={`${course.courseCode}-${course.module}`}>
                   <div
                     className="planner-course-header"
@@ -657,10 +824,18 @@ export default function Planner() {
                     style={{ fontWeight: 600, fontSize: 14, marginBottom: 8 }}
                   >
                     {course.courseCode} {course.courseTitle}
-                    <span className={`badge ${course.courseType === 'Core' ? 'badge-core' : course.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`} style={{ marginLeft: 8 }}>
-                      {course.courseType}
-                    </span>
-                    <StreamTagBadges tags={course.streamTags} />
+                    {view ? (
+                      <span style={{ marginLeft: 8 }}>
+                        <MeconRoleBadges badges={view.badges} />
+                      </span>
+                    ) : (
+                      <>
+                        <span className={`badge ${course.courseType === 'Core' ? 'badge-core' : course.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`} style={{ marginLeft: 8 }}>
+                          {course.courseType}
+                        </span>
+                        <StreamTagBadges tags={course.streamTags} />
+                      </>
+                    )}
                   </div>
                   {course.sections.map(sec => {
                     const sel = isSelected(course.courseCode, course.module, sec.sectionId)
@@ -669,7 +844,9 @@ export default function Planner() {
                       courseCode: course.courseCode,
                       courseTitle: course.courseTitle,
                       module: course.module,
-                      courseType: course.courseType,
+                      courseType: isMecon
+                        ? defaultSelectionType(course, stream)
+                        : course.courseType,
                       sectionId: sec.sectionId,
                       instructor: instructorLabel,
                       status: 'registered',
@@ -786,12 +963,31 @@ export default function Planner() {
                 </div>
               ))}
             </div>
-          ))}
+            )
+          })}
         </div>
+      )}
+        </>
       )}
 
       {detailCode && (
         <CourseDetailModal courseCode={detailCode} onClose={() => setDetailCode(null)} />
+      )}
+
+      {isMecon && (
+        <StreamSwitchModal
+          open={streamModal !== null}
+          mode={streamModal ?? 'select'}
+          currentStream={stream}
+          courses={courses}
+          selections={selections}
+          onClose={() => setStreamModal(null)}
+          onConfirm={(nextStream, nextSelections) => {
+            setStream(nextStream)
+            replace(nextSelections)
+            setStreamModal(null)
+          }}
+        />
       )}
     </div>
   )

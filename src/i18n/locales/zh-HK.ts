@@ -118,6 +118,8 @@ const zhHK: TranslationTree = {
   common: {
     loading: '載入中...',
     close: '關閉',
+    cancel: '取消',
+    save: '儲存',
     remove: '移除',
     dismiss: '我知道了',
     sectionSuffix: '{{section}}班',
@@ -130,6 +132,7 @@ const zhHK: TranslationTree = {
     title: '我的選課規劃',
     totalSelected: '已選總數',
     groupCore: 'Core',
+    groupStreamCore: 'Stream Core',
     groupCapstone: 'Capstone Core',
     groupElective: 'Self Programme - Electives',
     streamProgress: '方向完成度',

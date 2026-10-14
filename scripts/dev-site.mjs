@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Local site gateway: lander + msba + mgm on one origin (default port 5173).
- * Child Vite servers: lander 5174, msba 5175, mgm 5176.
+ * Local site gateway: lander + msba + mgm + mecon on one origin (default port 5173).
+ * Child Vite servers: lander 5174, msba 5175, mgm 5176, mecon 5177.
  *
  * Programme packs are selected per Vite process via resolve.alias + PROGRAMME
  * (no shared select-programme.mjs race).
@@ -17,6 +17,7 @@ const GATEWAY_PORT = Number(process.env.DEV_GATEWAY_PORT || 5173)
 const LANDER_PORT = 5174
 const MSBA_PORT = 5175
 const MGM_PORT = 5176
+const MECON_PORT = 5177
 
 const children = []
 const proxy = httpProxy.createProxyServer({ ws: true, xfwd: true })
@@ -56,6 +57,7 @@ function run(label, programme, port) {
 function targetFor(urlPath) {
   if (urlPath.startsWith('/msba')) return `http://127.0.0.1:${MSBA_PORT}`
   if (urlPath.startsWith('/mgm')) return `http://127.0.0.1:${MGM_PORT}`
+  if (urlPath.startsWith('/mecon')) return `http://127.0.0.1:${MECON_PORT}`
   return `http://127.0.0.1:${LANDER_PORT}`
 }
 
@@ -76,6 +78,7 @@ process.on('SIGTERM', () => shutdown(0))
 run('lander', 'lander', LANDER_PORT)
 run('msba', 'msba', MSBA_PORT)
 run('mgm', 'mgm', MGM_PORT)
+run('mecon', 'mecon', MECON_PORT)
 
 const server = http.createServer((req, res) => {
   const urlPath = req.url || '/'
@@ -89,6 +92,7 @@ server.on('upgrade', (req, socket, head) => {
 
 server.listen(GATEWAY_PORT, () => {
   console.log(`\n[gateway] http://localhost:${GATEWAY_PORT}/`)
-  console.log(`[gateway]   /msba/ → :${MSBA_PORT}`)
-  console.log(`[gateway]   /mgm/  → :${MGM_PORT}\n`)
+  console.log(`[gateway]   /msba/  → :${MSBA_PORT}`)
+  console.log(`[gateway]   /mgm/   → :${MGM_PORT}`)
+  console.log(`[gateway]   /mecon/ → :${MECON_PORT}\n`)
 })

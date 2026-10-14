@@ -1,0 +1,6938 @@
+[
+  {
+    "courseCode": "ECON6067",
+    "courseTitle": "Quantitative Tools for Economic Analysis: From Math to AI",
+    "module": 0,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Xiaoting MAI"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "6:30pm to 9:30pm",
+        "meetingDays": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-08-24",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-25",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-26",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-28",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-29",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          }
+        ],
+        "part": "I"
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Dr. Xiaoting MAI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "2:00pm to 5:00pm (Except 26 August 9:30am to 12:30pm)",
+        "meetingDays": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-08-24",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-08-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          }
+        ],
+        "part": "I"
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ],
+    "parts": [
+      {
+        "id": "I",
+        "label": "Part I"
+      },
+      {
+        "id": "II",
+        "label": "Part II"
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6005",
+    "courseTitle": "Econometric Theory I",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ping YU"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tuesday 2:00pm to 5:00pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-20",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-27",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-03",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-10",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6011",
+    "courseTitle": "Microeconomic Theory",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Chen ZHAO"
+          },
+          {
+            "name": "Prof. Wing SUEN"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Wednesday 2:00pm to 5:00pm",
+        "meetingDays": [
+          3
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - MW-325",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6012",
+    "courseTitle": "Macroeconomic Theory",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Yulei LUO"
+          },
+          {
+            "name": "Prof. Jinglun YAO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday 9:00am to 12:00nn",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-20",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-27",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-03",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-10",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6036",
+    "courseTitle": "Game Theory and Applications",
+    "module": 11,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Carl HEESE"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Monday 2:00pm to 5:00pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6092",
+    "courseTitle": "Advanced Microeconomics",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Masaki MIYASHITA"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Wednesday 2:00pm to 5:00pm",
+        "meetingDays": [
+          3
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "ATC: B13",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "ATC: B12",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "ATC: B13",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "ATC: B13",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus: KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "coreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6113",
+    "courseTitle": "Advanced Econometrics",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Liang ZHONG"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday 9:00am to 12:00pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-20",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-27",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-03",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-10",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MWT6",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "coreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6093",
+    "courseTitle": "Advanced Macroeconomics",
+    "module": 11,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Anson ZHOU"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Monday 6:30pm to 9:30pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-12",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "coreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6098",
+    "courseTitle": "Advanced Topics in Labour Economics",
+    "module": 11,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xinyao QIU"
+          },
+          {
+            "name": "Prof. Naijia GUO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Monday 9:30am to 12:30pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6099",
+    "courseTitle": "Topics in Growth and Development",
+    "module": 11,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xiaodong ZHU"
+          },
+          {
+            "name": "Prof. Xiaomei SUI"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday 9:00am to 12:00pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-20",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-27",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-03",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-10",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-17",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - KKL 315",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6001",
+    "courseTitle": "Applied Econometrics",
+    "module": 1,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Gedeon LIM"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-17",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom ABC",
+          "raw": "Final Exam: 17-Oct"
+        }
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Gedeon LIM"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Tue+Fri 6:30pm to 9:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-17",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 17-Oct"
+        }
+      },
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Juan PANTANO"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-17",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom H",
+          "raw": "Final Exam: 17-Oct"
+        }
+      },
+      {
+        "sectionId": "D",
+        "instructors": [
+          {
+            "name": "Prof. Juan PANTANO"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Tue+Fri 6:30pm to 9:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom H",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-17",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom H",
+          "raw": "Final Exam: 17-Oct"
+        }
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6021",
+    "courseTitle": "Microeconomic Analysis",
+    "module": 1,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Balazs SZENTES"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-10",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: Main Campus - MWT3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-17",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: Main Campus - MWT3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-24",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: Main Campus - MWT3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-08",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: Main Campus - MWT3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus - MWT5",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-20",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Mondays: Main Campus - MWT5",
+          "raw": "Final Exam: 20-Oct"
+        }
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Balazs SZENTES"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-10",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-17",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-24",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-20",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 20-Oct"
+        }
+      }
+    ],
+    "offeredToStreams": [
+      "DA",
+      "PL"
+    ],
+    "coreForStreams": [
+      "DA",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6022",
+    "courseTitle": "Macroeconomic Analysis",
+    "module": 1,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Steven Alan Barnett"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tue+Fri 9:30am to 12:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-21",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 21-Oct"
+        }
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Steven Alan Barnett"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-10-21",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom D",
+          "raw": "Final Exam: 21-Oct"
+        }
+      }
+    ],
+    "offeredToStreams": [
+      "DA",
+      "PL"
+    ],
+    "coreForStreams": [
+      "DA",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6067",
+    "courseTitle": "Quantitative Tools for Economic Analysis: From Math to AI",
+    "module": 1,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Yan Xiong"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Wednesday 6:30pm to 9:30pm",
+        "meetingDays": [
+          3
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-16",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-23",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-30",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "part": "II"
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Yan Xiong"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Mondays 6:30pm to 9:30pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-09-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-21",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-09-28",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-05",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "part": "II"
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ],
+    "parts": [
+      {
+        "id": "I",
+        "label": "Part I"
+      },
+      {
+        "id": "II",
+        "label": "Part II"
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6008",
+    "courseTitle": "International Macroeconomics and Finance",
+    "module": 2,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xiaomei SUI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Wed+Sat 2:00pm to 5:00pm",
+        "meetingDays": [
+          3,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-24",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Saturday: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Wednesday: KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-31",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Saturday: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Wednesday: KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Saturday: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Wednesday: KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Saturday: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Wednesday: KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Saturday: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Wednesday: KKLG104",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6021",
+    "courseTitle": "Microeconomic Analysis",
+    "module": 2,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Hongsong ZHANG"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-29",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-11-29",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 29-Nov"
+        }
+      },
+      {
+        "sectionId": "D",
+        "instructors": [
+          {
+            "name": "Prof. Hongsong ZHANG"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom ABC",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-11-29",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom ABC",
+          "raw": "Final Exam: 29-Nov"
+        }
+      }
+    ],
+    "offeredToStreams": [
+      "DA",
+      "PL"
+    ],
+    "coreForStreams": [
+      "DA",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6022",
+    "courseTitle": "Macroeconomic Analysis",
+    "module": 2,
+    "courseType": "Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Jinglun YAO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Wed+Sat 9:30am to 12:30pm",
+        "meetingDays": [
+          3,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-24",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-31",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-21",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-11-29",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 29-Nov"
+        }
+      },
+      {
+        "sectionId": "D",
+        "instructors": [
+          {
+            "name": "Prof. Jinglun YAO"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Wed+Sat 2:00pm to 5:00pm",
+        "meetingDays": [
+          3,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-24",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-31",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ],
+        "examOrFinal": {
+          "kind": "exam",
+          "date": "2026-11-29",
+          "startTime": null,
+          "endTime": null,
+          "venue": "Cyberport Classroom J",
+          "raw": "Final Exam: 29-Nov"
+        }
+      }
+    ],
+    "offeredToStreams": [
+      "DA",
+      "PL"
+    ],
+    "coreForStreams": [
+      "DA",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6101",
+    "courseTitle": "Introduction to Nudging and A/B Testing",
+    "module": 2,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Si CHEN"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-27",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-03",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-10",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-17",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-20",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-24",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-27",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6097",
+    "courseTitle": "Economic Growth and Development",
+    "module": 2,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xiaodong Zhu"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus: MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-29",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus: MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus: MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus: MWT5",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Thursdays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Mondays: Main Campus: MWT5",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Xiaodong Zhu"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Thursdays: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Mondays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-10-29",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Thursdays: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Mondays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Thursdays: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Mondays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Thursdays: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Mondays: KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Thursdays: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Mondays: KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6086",
+    "courseTitle": "Digital Economy and Big Data Analysis",
+    "module": 2,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ping YU"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Sundays 9:00am to 5:00pm",
+        "meetingDays": [
+          0
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-10-25",
+            "startTime": "09:00",
+            "endTime": "17:00",
+            "venue": "KKLG102",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-01",
+            "startTime": "09:00",
+            "endTime": "17:00",
+            "venue": "KKLG102",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-08",
+            "startTime": "09:00",
+            "endTime": "17:00",
+            "venue": "KKLG102",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-11-15",
+            "startTime": "09:00",
+            "endTime": "17:00",
+            "venue": "KKLG102",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6119",
+    "courseTitle": "Political Economy of Development in China",
+    "module": 3,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ying BAI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6104",
+    "courseTitle": "Introduction to Housing Markets",
+    "module": 3,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Derek HUO"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CPD2.58",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6033",
+    "courseTitle": "Corporate Finance",
+    "module": 3,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Keith WONG"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Mon+Thu 6:30pm to 9:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-03",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-10",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-17",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-21",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-04",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-11",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYPP3",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Keith WONG"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Tuesdays: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Fridays: KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Tuesdays: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Fridays: KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Tuesdays: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Fridays: KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Tuesdays: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Fridays: KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Tuesdays: CYPP3",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Fridays: KB223",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Keith WONG"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Tue+Fri 6:30pm to 9:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CYCP1",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6074",
+    "courseTitle": "Causal Inference",
+    "module": 3,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Bingjing LI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Bingjing LI"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-03",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-10",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-17",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-21",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Bingjing LI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-03",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-10",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-17",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6087",
+    "courseTitle": "Textual Analysis for Economists",
+    "module": 3,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ruiqi Sun"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Mon+Thu 6:30pm to 9:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-03",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Thursdays: Main Campus - CPD-2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Mondays: Main Campus - CBA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-10",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Thursdays: Main Campus - CPD-2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Mondays: Main Campus - CBA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-17",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Thursdays: Main Campus - CPD-2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-21",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Mondays: Main Campus - CBA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-04",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Mondays: Main Campus - CBA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Thursdays: Main Campus - CPD-2.58",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-11",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Mondays: Main Campus - CBA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-14",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Thursdays: Main Campus - CPD-2.58",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6112",
+    "courseTitle": "The Economics of Valuation",
+    "module": 3,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Yifei ZHANG"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Wed+Sat 6:30pm to 9:30pm",
+        "meetingDays": [
+          3,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-05",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-12",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-16",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-19",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-06",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-13",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus: CPD-G.02",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6075",
+    "courseTitle": "Economic Policy I",
+    "module": 3,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Richard WONG"
+          },
+          {
+            "name": "Prof. Hongbin CAI"
+          },
+          {
+            "name": "Prof. Heiwai TANG"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tue+Fri 9:30am to 12:45pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2026-12-01",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-04",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-08",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-11",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-15",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2026-12-18",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-05",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-08",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-12",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-15",
+            "startTime": "09:30",
+            "endTime": "12:45",
+            "venue": "Main Campus - KB223",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6002",
+    "courseTitle": "Selected Topics in Microeconomics I",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Balazs SZENTES"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday 9:30am to 12:30pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6052",
+    "courseTitle": "Selected Topics in Macroeconomics",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Yulei LUO"
+          },
+          {
+            "name": "Prof. Henry CHEN"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tuesday 2:00pm to 5:00pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL 301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6059",
+    "courseTitle": "Selected Topics in Macroeconomics II",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xaiodong ZHU"
+          },
+          {
+            "name": "Prof. Xiaomei SUI"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Friday 9:30am to 12:30pm",
+        "meetingDays": [
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-29",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6116",
+    "courseTitle": "Advanced Topics in Applied Economics: Data and Policy",
+    "module": 12,
+    "courseType": "Capstone",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Chicheng MA"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Friday 9:30am to 12:30pm",
+        "meetingDays": [
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-29",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-05",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKLG104",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Chicheng MA"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday 9:00am to 12:00pm",
+        "meetingDays": [
+          2
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-26",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-02",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-16",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-23",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-02",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-09",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus - MB217",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "C",
+        "instructors": [
+          {
+            "name": "Prof. Heng CHEN"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Monday 9:00am to 12:00pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-08",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Main Campus: KK101",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "D",
+        "instructors": [
+          {
+            "name": "Prof. Heng CHEN"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Monday 2:00pm to 5:00pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA",
+      "PL"
+    ],
+    "capstoneForStreams": [
+      "DA",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6078",
+    "courseTitle": "Topics in Economic Research II",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Wing SUEN"
+          },
+          {
+            "name": "Prof. Henry CHEN"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Thursday 2:00pm to 5:00pm",
+        "meetingDays": [
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "courseTypes": [
+      "Stream Core",
+      "Capstone"
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ],
+    "capstoneForStreams": [
+      "THY"
+    ]
+  },
+  {
+    "courseCode": "ECON6096",
+    "courseTitle": "Computational Methods in Economics",
+    "module": 12,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Naijia GUO"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Monday 2:00pm to 5:00pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6081",
+    "courseTitle": "Quantitative Macroeconomics: Data, Model and Policy",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Lichen ZHANG"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Thursday 9:30am to 12:30pm",
+        "meetingDays": [
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL 315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6110",
+    "courseTitle": "Advanced Topics in Labour Economics II",
+    "module": 12,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Uta Schonberg"
+          },
+          {
+            "name": "Prof. Naijia GUO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Monday 9:30am to 12:30pm",
+        "meetingDays": [
+          1
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-08",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - KKL315",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS"
+    ]
+  },
+  {
+    "courseCode": "ECON6008",
+    "courseTitle": "International Macroeconomics and Finance",
+    "module": 4,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Wataru MIYAMOTO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Wed+Sat 9:30am to 12:30pm",
+        "meetingDays": [
+          3,
+          6
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-27",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-30",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-03",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-13",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-17",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-20",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-24",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-27",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-03",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6105",
+    "courseTitle": "Economics of AI and Innovation",
+    "module": 4,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Yanhui WU"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tue+Fri 9:00am to 12:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-26",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Tuesdays: Main Campus -LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-29",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Fridays: Main Campus - LE4",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-02",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Tuesdays: Main Campus -LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-05",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Fridays: Main Campus - LE4",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-16",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Tuesdays: Main Campus -LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-19",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Fridays: Main Campus - LE4",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-23",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Tuesdays: Main Campus -LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-26",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Fridays: Main Campus - LE4",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-02",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Tuesdays: Main Campus -LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-05",
+            "startTime": "09:00",
+            "endTime": "12:00",
+            "venue": "Fridays: Main Campus - LE4",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6057",
+    "courseTitle": "China in Global Economy",
+    "module": 4,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Harry LI"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Sunday Block Mode 9:30am to 12:30pm & 2:00pm to 5:00pm",
+        "meetingDays": [
+          0
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-31",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-31",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - CYCP1",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6107",
+    "courseTitle": "Financial Economics and Investment",
+    "module": 4,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Xiyue CAO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Sunday Block Mode 9:30am to 12:30pm & 2:00pm to 5:00pm",
+        "meetingDays": [
+          0
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-31",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-31",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE9",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6086",
+    "courseTitle": "Digital Economy and Big Data Analysis",
+    "module": 4,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ping YU"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Sunday Block Mode 9:30am to 12:30pm & 2:00pm to 5:00pm",
+        "meetingDays": [
+          0
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-31",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-31",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-07",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Main Campus - LE6",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6117",
+    "courseTitle": "AI-Enabled Economic Policy Research",
+    "module": 4,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Michael Wong"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport - LTA",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6120",
+    "courseTitle": "Game Theory and Artificial Intelligence",
+    "module": 4,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Balazs SZENTES"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "THY",
+      "ARS",
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "THY",
+      "ARS",
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6090",
+    "courseTitle": "The Political Economy of Global Business",
+    "module": 4,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof Chang SUN"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-28",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-11",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6103",
+    "courseTitle": "Serendipitous Forces",
+    "module": 4,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Mr David DODWELL"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Tue+Fri 6:30pm to 9:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-01-22",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-26",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-01-29",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-05",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-16",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-19",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-23",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-02-26",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom EFG",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6076",
+    "courseTitle": "Economic Policy II",
+    "module": 5,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Tim HAU"
+          },
+          {
+            "name": "Dr. Qingyuan Xue"
+          },
+          {
+            "name": "Mr. Gerald O'Connor"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Tue+Fri 6:30pm to 9:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-19",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-20",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-23",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6063",
+    "courseTitle": "Environmental Economics",
+    "module": 5,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Guojun HE"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Mon+Thu 9:30am to 12:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-18",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-15",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-22",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6121",
+    "courseTitle": "Topics in Digital Economics",
+    "module": 5,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Qingyuan YANG"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6114",
+    "courseTitle": "Economic Policy III",
+    "module": 5,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Xiyue CAO"
+          },
+          {
+            "name": "Prof. Naijia GUO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tue+Fri 9:30am to 12:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-20",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6083",
+    "courseTitle": "Applied Machine Learning",
+    "module": 5,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Jasmine HAO"
+          }
+        ],
+        "timeBucket": "AM",
+        "dayPattern": "Tue+Fri 9:30am to 12:30pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-19",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-20",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-23",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      },
+      {
+        "sectionId": "B",
+        "instructors": [
+          {
+            "name": "Prof. Bingjing LI"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-20",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport LTB",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "DA"
+    ],
+    "streamCoreForStreams": [
+      "DA"
+    ]
+  },
+  {
+    "courseCode": "ECON6065",
+    "courseTitle": "Money and Banking",
+    "module": 5,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Dr. Xin Zhang"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Mon+Thu 2:00pm to 5:00pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-15",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom LTB",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-22",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom D",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom LTB",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6118",
+    "courseTitle": "Government and Regulation",
+    "module": 5,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Ruixue Jia"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-19",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-30",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-02",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-06",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-09",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-13",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-16",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-20",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-23",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseCode": "ECON6095",
+    "courseTitle": "Programme Evaluation for Policy Makers",
+    "module": 5,
+    "courseType": "Stream Core",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Juan PANTANO"
+          }
+        ],
+        "timeBucket": "NT",
+        "dayPattern": "Mon+Thu 6:30pm to 9:30pm",
+        "meetingDays": [
+          1,
+          4
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-03-18",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-22",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-03-25",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-01",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-08",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-12",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-15",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-19",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-22",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-04-26",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "Main Campus - KKL301",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ],
+    "offeredToStreams": [
+      "PL"
+    ],
+    "streamCoreForStreams": [
+      "PL"
+    ]
+  },
+  {
+    "courseCode": "ECON6060",
+    "courseTitle": "Development Economics",
+    "module": 6,
+    "courseType": "Elective",
+    "streamTags": [],
+    "outlinePdfPath": null,
+    "examOrFinal": null,
+    "sections": [
+      {
+        "sectionId": "A",
+        "instructors": [
+          {
+            "name": "Prof. Gedeon LIM"
+          }
+        ],
+        "timeBucket": "PM",
+        "dayPattern": "Tue+Fri 2:00pm to 5:00pm",
+        "meetingDays": [
+          2,
+          5
+        ],
+        "outlinePdfPath": null,
+        "meetings": [
+          {
+            "date": "2027-05-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-05-14",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-05-18",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-05-21",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-05-25",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-05-28",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-06-01",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-06-04",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-06-08",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          },
+          {
+            "date": "2027-06-11",
+            "startTime": "14:00",
+            "endTime": "17:00",
+            "venue": "Cyberport Classroom J",
+            "sessionType": "lecture"
+          }
+        ]
+      }
+    ]
+  }
+]

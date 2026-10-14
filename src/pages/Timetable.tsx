@@ -1,18 +1,30 @@
 import { Fragment, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCourses } from '../hooks/useCoursesData'
+import { useSelectedStream } from '../hooks/useSelectedStream'
 import WeekdayStrip from '../components/WeekdayStrip'
+import MeconRoleBadges from '../components/MeconRoleBadges'
 import StreamTagBadges from '../components/StreamTagBadges'
 import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
 import { getActiveProgramme } from '../programmes'
 import { formatSectionInstructors } from '../utils/instructors'
 import { timetableExamLine } from '../utils/exams'
+import { formatModuleLabel } from '../utils/moduleLabel'
+import { getMeconCourseView } from '../utils/meconCourseView'
 import type { Course, Section } from '../types'
 
 function TypeBadge({ type }: { type: string }) {
-  const cls = type === 'Core' ? 'badge-core' : type === 'Capstone' ? 'badge-capstone' : 'badge-elective'
-  return <span className={`badge ${cls}`}>{type}</span>
+  const cls =
+    type === 'Core'
+      ? 'badge-core'
+      : type === 'Stream Core'
+        ? 'badge-mecon badge-mecon--stream-core'
+        : type === 'Capstone'
+          ? 'badge-capstone'
+          : 'badge-elective'
+  const label = type === 'Stream Core' ? 'STM CORE' : type === 'Elective' ? 'ELECTIVES' : type
+  return <span className={`badge ${cls}`}>{label}</span>
 }
 
 function summarizeDates(section: Section, formatSessionCount: (count: number) => string): string {
@@ -48,12 +60,22 @@ function TimetableInstructor({ section }: { section: Section }) {
   )
 }
 
-function CourseCard({ course, sectionLabel, formatSessionCount }: {
+function CourseCard({
+  course,
+  sectionLabel,
+  formatSessionCount,
+  isMecon,
+  stream,
+}: {
   course: Course
   sectionLabel: (id: string) => string
   formatSessionCount: (count: number) => string
+  isMecon: boolean
+  stream: ReturnType<typeof useSelectedStream>['stream']
 }) {
   const navigate = useNavigate()
+  const view = isMecon ? getMeconCourseView(course, stream) : null
+  if (isMecon && view === null) return null
 
   return (
     <div className="card card-clickable course-card" onClick={() => navigate(`/course/${course.courseCode}`)}>
@@ -62,14 +84,23 @@ function CourseCard({ course, sectionLabel, formatSessionCount }: {
           <span className="course-code">{course.courseCode}</span>
           <span className="course-title" style={{ marginLeft: 8 }}>{course.courseTitle}</span>
         </div>
-        <div style={{ display: 'flex', gap: 4, flexShrink: 0 }}>
-          <TypeBadge type={course.courseType} />
-          <StreamTagBadges tags={course.streamTags} />
+        <div style={{ display: 'flex', gap: 4, flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          {view ? (
+            <MeconRoleBadges badges={view.badges} />
+          ) : (
+            <>
+              <TypeBadge type={course.courseType} />
+              <StreamTagBadges tags={course.streamTags} />
+            </>
+          )}
         </div>
       </div>
       {course.sections.map(sec => (
         <div className="section-row" key={sec.sectionId}>
-          <span className="section-id">{sectionLabel(sec.sectionId)}</span>
+          <span className="section-id">
+            {sec.part ? `Part ${sec.part} · ` : ''}
+            {sectionLabel(sec.sectionId)}
+          </span>
           <TimeBadge bucket={sec.timeBucket} />
           <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />
           <TimetableInstructor section={sec} />
@@ -94,15 +125,22 @@ function CourseCard({ course, sectionLabel, formatSessionCount }: {
 export default function Timetable() {
   const { t, sectionLabel } = useI18n()
   const { courses, loading } = useCourses()
-  const modules = getActiveProgramme().moduleNumbers
+  const programme = getActiveProgramme()
+  const modules = programme.moduleNumbers
+  const isMecon = programme.id === 'mecon'
+  const { stream } = useSelectedStream()
 
   const grouped = useMemo(() => {
     const map: Record<number, Course[]> = {}
     for (const c of courses) {
+      if (isMecon) {
+        const view = getMeconCourseView(c, stream)
+        if (!view) continue
+      }
       ;(map[c.module] ||= []).push(c)
     }
     return map
-  }, [courses])
+  }, [courses, isMecon, stream])
 
   if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
 
@@ -111,19 +149,25 @@ export default function Timetable() {
   return (
     <div>
       <h1 className="page-title">{t('timetable.title')}</h1>
-      {modules.map(mod => (
-        <div key={mod}>
-          <div className="module-header">{t(`timetable.module${mod}`)}</div>
-          {(grouped[mod] || []).map(c => (
-            <CourseCard
-              key={`${c.courseCode}-${c.module}`}
-              course={c}
-              sectionLabel={sectionLabel}
-              formatSessionCount={formatSessionCount}
-            />
-          ))}
-        </div>
-      ))}
+      {modules.map(mod => {
+        const list = grouped[mod] || []
+        if (list.length === 0) return null
+        return (
+          <div key={mod}>
+            <div className="module-header">{formatModuleLabel(mod, t)}</div>
+            {list.map(c => (
+              <CourseCard
+                key={`${c.courseCode}-${c.module}`}
+                course={c}
+                sectionLabel={sectionLabel}
+                formatSessionCount={formatSessionCount}
+                isMecon={isMecon}
+                stream={stream}
+              />
+            ))}
+          </div>
+        )
+      })}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import type { SelectedSection } from '../types'
 
-export type SelectionCourseType = 'Core' | 'Elective' | 'Capstone'
+export type SelectionCourseType = 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
 
 export const DEFAULT_SELECTION_TYPE_ORDER: readonly SelectionCourseType[] = [
   'Core',

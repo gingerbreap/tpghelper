@@ -70,7 +70,7 @@
           if (!id) id = localStorage.getItem('tpghelper-preferred-programme')
           if (!id) return
           id = String(id).trim().toLowerCase()
-          var map = { msba: '/msba/', mgm: '/mgm/' }
+          var map = { msba: '/msba/', mgm: '/mgm/', mecon: '/mecon/' }
           if (id === 'msc(ba)' || id === 'ba') id = 'msba'
           var target = map[id]
           if (target) location.replace(target)

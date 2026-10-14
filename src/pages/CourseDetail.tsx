@@ -2,10 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCourses } from '../hooks/useCoursesData'
 import WeekdayStrip from '../components/WeekdayStrip'
+import MeconRoleBadges from '../components/MeconRoleBadges'
 import StreamTagBadges from '../components/StreamTagBadges'
 import CourseOutlineViewer from '../components/CourseOutlineViewer'
 import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
+import { useSelectedStream } from '../hooks/useSelectedStream'
+import { getActiveProgramme } from '../programmes'
 import {
   courseInstructors,
   formatSectionInstructors,
@@ -13,6 +16,8 @@ import {
   sectionHasInstructor,
 } from '../utils/instructors'
 import { examSessionRowLabel, resolveExam } from '../utils/exams'
+import { formatModuleLabel } from '../utils/moduleLabel'
+import { getMeconCourseView } from '../utils/meconCourseView'
 import type { Course, ExamOrFinal, Meeting, Section } from '../types'
 import { formatSectionScope, formatTutClassLabel } from '../utils/tutorialScope'
 
@@ -78,13 +83,37 @@ export function CourseDetailContent({
 }) {
   const { t, sectionLabel } = useI18n()
   const { courses, loading } = useCourses()
+  const programme = getActiveProgramme()
+  const { stream } = useSelectedStream()
 
   const matchedCourses = useMemo(
     () => courses.filter(c => c.courseCode === courseCode),
     [courses, courseCode],
   )
 
-  const instructors = useMemo(() => courseInstructors(matchedCourses), [matchedCourses])
+  const instructors = useMemo(() => {
+    const base = courseInstructors(matchedCourses)
+    return base.map(inst => {
+      const parts = new Set<string>()
+      for (const course of matchedCourses) {
+        for (const section of course.sections) {
+          if (section.part && sectionHasInstructor(section, inst.name)) {
+            parts.add(section.part)
+          }
+        }
+      }
+      if (parts.size === 1) {
+        const part = [...parts][0]
+        return { ...inst, note: inst.note ?? `Part ${part}` }
+      }
+      return inst
+    })
+  }, [matchedCourses])
+
+  const meconView = useMemo(() => {
+    if (programme.id !== 'mecon' || matchedCourses.length === 0) return null
+    return getMeconCourseView(matchedCourses[0], stream)
+  }, [programme.id, matchedCourses, stream])
 
   const [selectedInstructor, setSelectedInstructor] = useState<string | null>(null)
   useEffect(() => {
@@ -107,7 +136,17 @@ export function CourseDetailContent({
       ? course.sections.filter(s => sectionHasInstructor(s, activeInstructor))
       : course.sections
 
-  const coursesForInstructor = matchedCourses.filter(c => sectionsOf(c).length > 0)
+  const moduleOrder = programme.moduleNumbers
+  const coursesForInstructor = matchedCourses
+    .filter(c => sectionsOf(c).length > 0)
+    .slice()
+    .sort((a, b) => {
+      const ia = moduleOrder.indexOf(a.module)
+      const ib = moduleOrder.indexOf(b.module)
+      const ra = ia === -1 ? Number.POSITIVE_INFINITY : ia
+      const rb = ib === -1 ? Number.POSITIVE_INFINITY : ib
+      return ra - rb || a.module - b.module
+    })
 
   const pdfPath =
     coursesForInstructor
@@ -122,18 +161,26 @@ export function CourseDetailContent({
       <div className="detail-header">
         <h1>{matchedCourses[0].courseCode} {matchedCourses[0].courseTitle}</h1>
         <div className="detail-meta">
-          <span
-            className={`badge ${
-              matchedCourses[0].courseType === 'Core'
-                ? 'badge-core'
-                : matchedCourses[0].courseType === 'Capstone'
-                  ? 'badge-capstone'
-                  : 'badge-elective'
-            }`}
-          >
-            {matchedCourses[0].courseType}
-          </span>
-          <StreamTagBadges tags={matchedCourses[0].streamTags} />
+          {meconView ? (
+            <MeconRoleBadges badges={meconView.badges} />
+          ) : (
+            <>
+              <span
+                className={`badge ${
+                  matchedCourses[0].courseType === 'Core'
+                    ? 'badge-core'
+                    : matchedCourses[0].courseType === 'Stream Core'
+                      ? 'badge-mecon badge-mecon--stream-core'
+                      : matchedCourses[0].courseType === 'Capstone'
+                        ? 'badge-capstone'
+                        : 'badge-elective'
+                }`}
+              >
+                {matchedCourses[0].courseType === 'Stream Core' ? 'STM CORE' : matchedCourses[0].courseType}
+              </span>
+              <StreamTagBadges tags={matchedCourses[0].streamTags} />
+            </>
+          )}
         </div>
       </div>
 
@@ -143,17 +190,26 @@ export function CourseDetailContent({
           <div className="tabs">
             {instructors.map(inst => (
               <button
-                key={inst.name}
+                key={`${inst.note ?? ''}-${inst.name}`}
                 type="button"
                 className={`tab ${inst.name === activeInstructor ? 'active' : ''}`}
                 onClick={() => setSelectedInstructor(inst.name)}
               >
-                {inst.name}
-                {inst.note && (
-                  <span style={{ fontSize: 11, color: 'var(--text-secondary)', marginLeft: 6 }}>
-                    ({inst.note})
-                  </span>
-                )}
+                {inst.note?.startsWith('Part ')
+                  ? t('courseDetail.partTab', {
+                      part: inst.note.replace(/^Part\s+/i, ''),
+                      name: inst.name,
+                    })
+                  : (
+                      <>
+                        {inst.name}
+                        {inst.note && (
+                          <span style={{ fontSize: 11, color: 'var(--text-secondary)', marginLeft: 6 }}>
+                            ({inst.note})
+                          </span>
+                        )}
+                      </>
+                    )}
               </button>
             ))}
           </div>
@@ -164,7 +220,7 @@ export function CourseDetailContent({
         const secs = sectionsOf(course)
         return (
           <div key={course.module} style={{ marginBottom: 24 }}>
-            <div className="module-header" style={{ fontSize: 14 }}>{t('common.module', { module: course.module })}</div>
+            <div className="module-header" style={{ fontSize: 14 }}>{formatModuleLabel(course.module, t)}</div>
 
             {secs.map(sec => {
               const exam = resolveExam(course, sec)

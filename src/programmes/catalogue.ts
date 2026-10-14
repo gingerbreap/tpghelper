@@ -37,6 +37,20 @@ export const PROGRAMME_CATALOGUE: readonly ProgrammeCatalogueEntry[] = [
       icsExportFormat: 'mgm-ics-export-format',
     },
   },
+  {
+    id: 'mecon',
+    shortName: 'MEcon',
+    aliases: ['MEcon', 'MECON', 'Master of Economics'],
+    storage: {
+      selections: 'mecon-planner-selections',
+      wishlist: 'mecon-planner-wishlist',
+      locale: 'mecon-locale',
+      defaultLanding: 'mecon-default-landing',
+      syncTzMode: 'mecon-sync-tz-mode',
+      icsExportFormat: 'mecon-ics-export-format',
+      selectedStream: 'mecon-selected-stream',
+    },
+  },
 ] as const
 
 export function getCatalogueEntry(id: string): ProgrammeCatalogueEntry | undefined {
