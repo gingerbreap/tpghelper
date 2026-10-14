@@ -255,7 +255,7 @@ const zhHK: TranslationTree = {
     legendTut: '導修 (TUT)',
     legendExam: '期末考試',
     legendPresentation: 'Presentation',
-    legendHoliday: '假日（僅日曆顯示）',
+    legendHoliday: '假日',
     legendWaitlist: '仍在Waitlist',
     legendPlanPrevious: '改期前場次',
     legendPlanUpdated: '改期後場次',

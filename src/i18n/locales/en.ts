@@ -257,7 +257,7 @@ const en: TranslationTree = {
     legendTut: 'Tutorial (TUT)',
     legendExam: 'Final exam',
     legendPresentation: 'Presentation',
-    legendHoliday: 'Holiday (calendar only)',
+    legendHoliday: 'Holiday',
     legendWaitlist: 'Still on waitlist',
     legendPlanPrevious: 'Before reschedule',
     legendPlanUpdated: 'After reschedule',

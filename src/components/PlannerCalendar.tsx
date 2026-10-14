@@ -16,7 +16,7 @@ import { CALENDAR_END, CALENDAR_START, holidayLabelKey, holidayLunarTag } from '
 import { isSelectionWaiting, selectionItemKey } from '../hooks/useSelections'
 import { useUnreadTeachingPlanNoticeIds } from '../hooks/useUnreadTeachingPlanNoticeIds'
 import { useI18n } from '../i18n/context'
-import { eventsByDate, type CalendarEvent } from '../utils/calendarEvents'
+import { eventsByDate, type CalendarEvent, type CalendarSessionType } from '../utils/calendarEvents'
 import {
   applyIcsEventTemplates,
   loadIcsTemplates,
@@ -563,6 +563,12 @@ export default function PlannerCalendar({
 
   const hasWaitlistEvents = waitlistKeys.size > 0
 
+  const calendarSessionTypes = useMemo(() => {
+    const types = new Set<CalendarSessionType>()
+    for (const ev of events) types.add(ev.sessionType)
+    return types
+  }, [events])
+
   const displayEvents = useMemo(() => {
     if (!enablePlanImpact) {
       return {
@@ -828,18 +834,26 @@ export default function PlannerCalendar({
 
       {planBanner}
       <div className="calendar-legend">
-        <span className="calendar-legend-item">
-          <span className="calendar-legend-swatch calendar-event--lecture" /> {t('calendar.legendLec')}
-        </span>
-        <span className="calendar-legend-item">
-          <span className="calendar-legend-swatch calendar-event--tutorial" /> {t('calendar.legendTut')}
-        </span>
-        <span className="calendar-legend-item">
-          <span className="calendar-legend-swatch calendar-event--exam" /> {t('calendar.legendExam')}
-        </span>
-        <span className="calendar-legend-item">
-          <span className="calendar-legend-swatch calendar-event--presentation" /> {t('calendar.legendPresentation')}
-        </span>
+        {calendarSessionTypes.has('lecture') && (
+          <span className="calendar-legend-item">
+            <span className="calendar-legend-swatch calendar-event--lecture" /> {t('calendar.legendLec')}
+          </span>
+        )}
+        {calendarSessionTypes.has('tutorial') && (
+          <span className="calendar-legend-item">
+            <span className="calendar-legend-swatch calendar-event--tutorial" /> {t('calendar.legendTut')}
+          </span>
+        )}
+        {calendarSessionTypes.has('exam') && (
+          <span className="calendar-legend-item">
+            <span className="calendar-legend-swatch calendar-event--exam" /> {t('calendar.legendExam')}
+          </span>
+        )}
+        {(calendarSessionTypes.has('presentation') || calendarSessionTypes.has('other')) && (
+          <span className="calendar-legend-item">
+            <span className="calendar-legend-swatch calendar-event--presentation" /> {t('calendar.legendPresentation')}
+          </span>
+        )}
         <span className="calendar-legend-item">
           <span className="calendar-legend-swatch calendar-legend-swatch--holiday" /> {t('calendar.legendHoliday')}
         </span>
