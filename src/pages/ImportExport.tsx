@@ -33,20 +33,23 @@ export default function ImportExport() {
   const showOk = (message: string) => setStatus({ kind: 'ok', message })
   const showError = (message: string) => setStatus({ kind: 'error', message })
 
-  const handleExportFile = () => {
+  const handleExportFile = async () => {
+    setBusy(true)
     try {
-      const json = snapshotToJson(buildUserDataSnapshot())
+      const json = snapshotToJson(await buildUserDataSnapshot())
       downloadJsonFile(json, defaultExportFilename())
       showOk(t('about.transfer.exportFileOk'))
     } catch {
       showError(t('about.transfer.exportFailed'))
+    } finally {
+      setBusy(false)
     }
   }
 
   const handleExportClipboard = async () => {
     setBusy(true)
     try {
-      const json = snapshotToJson(buildUserDataSnapshot())
+      const json = snapshotToJson(await buildUserDataSnapshot())
       await copyTextToClipboard(json)
       showOk(t('about.transfer.exportClipboardOk'))
     } catch {

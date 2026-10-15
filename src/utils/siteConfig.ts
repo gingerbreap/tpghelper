@@ -11,10 +11,8 @@ import {
 } from '../programmes/catalogue'
 import { TPG_PREFERRED_PROGRAMME_KEY } from '../session/tpgSession'
 import { formatSectionInstructors } from './instructors'
-import { teachingPlanNotices as msbaNotices } from '../programmes/msba/teachingPlanUpdates'
 import type { TeachingPlanNotice } from '../programmes/msba/teachingPlanUpdates'
-import { teachingPlanNotices as mgmNotices } from '../programmes/mgm/teachingPlanUpdates'
-import { teachingPlanNotices as meconNotices } from '../programmes/mecon/teachingPlanUpdates'
+import { loadProgrammeNoticesCatalog } from '../data/teachingPlanNoticesStore'
 
 function teachingPlanDismissVersion(notice: TeachingPlanNotice): string {
   return notice.updates.map(u => u.courseCode).join('+')
@@ -71,10 +69,22 @@ export const COURSE_STATUS_WISHLIST = 'wishlist' as const
 
 const TIMESTAMP_KEY_RE = /^\d{4}\/\d{2}\/\d{2}/
 
+/** Sync snapshot; call `warmNoticesCatalog` before export/import when possible. */
+const noticesByProgramme = new Map<ProgrammeId, TeachingPlanNotice[]>()
+
 function noticesFor(id: ProgrammeId): TeachingPlanNotice[] {
-  if (id === 'mgm') return mgmNotices
-  if (id === 'mecon') return meconNotices
-  return msbaNotices
+  return noticesByProgramme.get(id) ?? []
+}
+
+export async function warmNoticesCatalog(
+  ids: ProgrammeId[] = PROGRAMME_CATALOGUE.map(e => e.id),
+): Promise<void> {
+  await Promise.all(
+    ids.map(async id => {
+      const list = await loadProgrammeNoticesCatalog(id)
+      noticesByProgramme.set(id, list)
+    }),
+  )
 }
 
 function dismissStorageKey(entryId: ProgrammeId, noticeId: string): string {
@@ -315,7 +325,8 @@ function parseProgrammeUserConfig(
 }
 
 /** Build live site config from localStorage (+ preferred programme). Empty packs omitted. */
-export function buildSiteConfig(): SiteConfig {
+export async function buildSiteConfig(): Promise<SiteConfig> {
+  await warmNoticesCatalog()
   const current = resolveProgrammeId(readPreferredRaw())
 
   const config: SiteConfig = {
@@ -506,6 +517,7 @@ async function applyProgrammeUserConfig(
 
 /** Write nested packs + currentProgramme into localStorage (hydrates slim rows via courses.json). */
 export async function applySiteConfig(config: SiteConfig): Promise<void> {
+  await warmNoticesCatalog()
   for (const entry of PROGRAMME_CATALOGUE) {
     const pack = config[entry.id]
     if (pack) await applyProgrammeUserConfig(entry, pack)
@@ -516,7 +528,7 @@ export async function applySiteConfig(config: SiteConfig): Promise<void> {
   }
 
   try {
-    localStorage.setItem(SITE_CONFIG_STORAGE_KEY, siteConfigToJson(buildSiteConfig()))
+    localStorage.setItem(SITE_CONFIG_STORAGE_KEY, siteConfigToJson(await buildSiteConfig()))
   } catch {
     /* ignore */
   }
@@ -527,13 +539,14 @@ export function syncCurrentProgramme(id: ProgrammeId | string): void {
   const resolved = resolveProgrammeId(id)
   if (!resolved) return
   writePreferred(resolved)
-  try {
-    const live = buildSiteConfig()
-    live.currentProgramme = resolved
-    localStorage.setItem(SITE_CONFIG_STORAGE_KEY, siteConfigToJson(live))
-  } catch {
-    /* ignore */
-  }
+  void buildSiteConfig()
+    .then(live => {
+      live.currentProgramme = resolved
+      localStorage.setItem(SITE_CONFIG_STORAGE_KEY, siteConfigToJson(live))
+    })
+    .catch(() => {
+      /* ignore */
+    })
 }
 
 export function readStoredSiteConfig(): SiteConfig | null {

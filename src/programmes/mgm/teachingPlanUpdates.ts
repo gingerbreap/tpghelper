@@ -151,7 +151,13 @@ const time = (text: string): ChangePart => ({ text, emoji: 'time' })
 const venue = (text: string): ChangePart => ({ text, emoji: 'venue' })
 const plain = (text: string): ChangePart => ({ text })
 
-/** Newest first. */
+/**
+ * Seed / offline fallback. Canonical runtime source is Azure SQL
+ * (`TeachingPlanNotice`) via API + `public/mgm/teachingPlanNotices.json`.
+ * After editing: `npm run db:export-notices && npm run db:import-notices`.
+ *
+ * Newest first.
+ */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
     id: '20260922-7001',

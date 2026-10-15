@@ -21,6 +21,8 @@
     "build:site": "node scripts/build-site.mjs",
     "start": "node server/index.js",
     "db:import-courses": "node scripts/import-courses-from-public.mjs",
+    "db:export-notices": "node scripts/export-teaching-plan-notices.mjs",
+    "db:import-notices": "node scripts/import-notices-from-public.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },

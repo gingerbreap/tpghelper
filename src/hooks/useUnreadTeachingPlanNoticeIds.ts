@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { teachingPlanNotices } from '../data/teachingPlanUpdates'
+import { useTeachingPlanNotices } from './useTeachingPlanNotices'
 import {
   teachingPlanDismissEventName,
   unreadTeachingPlanNoticeIds,
@@ -7,6 +7,7 @@ import {
 
 /** Reactive set of Teaching Plan notice ids that are not yet dismissed. */
 export function useUnreadTeachingPlanNoticeIds(): Set<string> {
+  const teachingPlanNotices = useTeachingPlanNotices()
   const [epoch, setEpoch] = useState(0)
 
   useEffect(() => {
@@ -18,7 +19,10 @@ export function useUnreadTeachingPlanNoticeIds(): Set<string> {
       for (const name of names) window.removeEventListener(name, bump)
       window.removeEventListener('storage', bump)
     }
-  }, [])
+  }, [teachingPlanNotices])
 
-  return useMemo(() => unreadTeachingPlanNoticeIds(), [epoch])
+return useMemo(() => {
+    void teachingPlanNotices
+    return unreadTeachingPlanNoticeIds()
+  }, [epoch, teachingPlanNotices])
 }

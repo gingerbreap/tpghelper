@@ -5,13 +5,13 @@ import {
   isTutorialPlanRow,
   planClassColumnText,
   planRowClassKey,
-  teachingPlanNotices,
   teachingPlanRowAffectsUser,
   type ChangePart,
   type TeachingPlanDisplayRow,
   type TeachingPlanNotice,
 } from '../data/teachingPlanUpdates'
 import { usePersistentDismiss } from '../hooks/usePersistentDismiss'
+import { useTeachingPlanNotices } from '../hooks/useTeachingPlanNotices'
 import { useUnreadTeachingPlanNoticeIds } from '../hooks/useUnreadTeachingPlanNoticeIds'
 import { useI18n } from '../i18n/context'
 import type { SelectedSection } from '../types'
@@ -511,6 +511,7 @@ export default function TeachingPlanUpdateNotice({
   selections: SelectedSection[]
 }) {
   const { t } = useI18n()
+  const teachingPlanNotices = useTeachingPlanNotices()
   const unreadIds = useUnreadTeachingPlanNoticeIds()
   const selectedSet = useMemo(() => buildSelectedSet(selections), [selections])
   const selectedCourses = useMemo(() => buildSelectedCourses(selections), [selections])

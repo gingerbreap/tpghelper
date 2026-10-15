@@ -1,0 +1,200 @@
+[
+  {
+    "id": "20260922-7001",
+    "timestamp": "2026/09/22 22:50",
+    "courseRefs": "7001",
+    "bodyKey": "body7001_0922",
+    "bodyParams": {
+      "code1": "PMGM7001"
+    },
+    "defaultExpanded": true,
+    "updates": [
+      {
+        "courseCode": "PMGM7001",
+        "courseTitle": "Fundamentals of Global Management",
+        "hasTutorials": false,
+        "rows": [
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 22, 2026 (Tue) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-EFG",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 16, 2026 (Fri) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-J",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 22, 2026 (Tue) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-EFG",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 15, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-J",
+                "emoji": "venue"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260901-7001-7024",
+    "timestamp": "2026/09/01 17:22",
+    "courseRefs": "7001, 7024",
+    "bodyKey": "body7001_7024",
+    "bodyParams": {
+      "code1": "PMGM7001",
+      "code2": "PMGM7024"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "PMGM7001",
+        "courseTitle": "Fundamentals of Global Management",
+        "hasTutorials": false,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "dates",
+            "previous": [
+              {
+                "text": "Sep 7, 10, 14, 17, 21, 24, 28; Oct 5, 8, 12, 2026"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 7, 10, 14, 17, 21, 24, 28; Oct 5, 8, 12, 15, 2026"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "dates",
+            "previous": [
+              {
+                "text": "Sep 7, 10, 14, 17, 21, 24, 28; Oct 5, 8, 12, 2026"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 7, 10, 14, 17, 21, 24, 28; Oct 5, 8, 12, 15, 2026"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 22, 2026 (Tue) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-EFG",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 16, 2026 (Fri) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-J",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 22, 2026 (Tue) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-EFG",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 15, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "CP-J",
+                "emoji": "venue"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "PMGM7024",
+        "courseTitle": "Business Lab",
+        "hasTutorials": false,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "timeVenue",
+            "previous": [
+              {
+                "text": "TBC"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Mon AM/PM/NT (occasional): Jan 25, Feb 1/15/22, Mar 1/8, 2027; CP-LTB (Mar 8 in CP-D)"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "timeVenue",
+            "previous": [
+              {
+                "text": "NA"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Wed AM/PM/NT (occasional): Jan 27, Feb 3/17/24, Mar 10, 2027; CP-D (Feb 3 & Mar 10 in CP-LTB)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

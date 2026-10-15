@@ -1,12 +1,9 @@
 /**
- * Teaching Plan notices for the active programme pack
- * (`activePack.ts` → msba|mgm; Vite remaps by PROGRAMME).
+ * Teaching Plan types + helpers for the active programme.
+ * Notice *data* is loaded at runtime via teachingPlanNoticesStore
+ * (Azure SQL API → public JSON → pack fallback).
  */
-export {
-  teachingPlanNotices,
-  teachingPlanUpdates,
-  buildDisplayRows,
-} from '../programmes/activePack'
+export { buildDisplayRows } from '../programmes/activePack'
 export {
   isTutorialPlanRow,
   planClassColumnText,
@@ -21,3 +18,9 @@ export type {
   ChangePart,
   ChangeEmoji,
 } from '../programmes/activePack'
+
+export {
+  getTeachingPlanNotices,
+  loadTeachingPlanNotices,
+  loadProgrammeNoticesCatalog,
+} from './teachingPlanNoticesStore'

@@ -46,7 +46,7 @@ SELECT name FROM sys.tables ORDER BY name;
    `https://<帐户>.blob.core.windows.net/course-outlines`。
 3. 上传脚本用本机密钥；密钥不要放进 App Service。
 
-## 本机导入课表
+## 本机导入课表与 TP 通知
 
 ```bash
 # 需要已 az login（Entra）且防火墙已放行本机 IP
@@ -54,10 +54,17 @@ export SQL_SERVER=你的服务器.database.windows.net
 export SQL_DATABASE=tpghelper
 export SQL_AUTH=entra
 export ACADEMIC_YEAR=26-27
+
+# Schema (once): run sql/001_schema.sql, 002_app_identity.sql, 003_teaching_plan_notices.sql in Query editor
+
 npm run db:import-courses
+npm run db:export-notices   # pack TS → public/{id}/teachingPlanNotices.json
+npm run db:import-notices   # JSON → Azure SQL
 ```
 
-未配置 `SQL_SERVER` 时，网站 API 会回退读取 `public/{msba,mgm,mecon}/courses.json`，本地开发不依赖数据库。
+未配置 `SQL_SERVER` 时，网站 API 会回退读取 `public/{id}/courses.json` 与 `teachingPlanNotices.json`。
+
+改 TP 通知且不想发整站：改 pack TS（或直接改 JSON）→ `db:export-notices` → `db:import-notices`。生产读 SQL，无需 `build:site`。
 
 ## 你需要告诉维护者的非秘密信息
 

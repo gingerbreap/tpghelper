@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { academicYearDefault, sqlConfigured } from './db.js'
 import { getProgrammeCourses, isProgrammeId } from './catalogue.js'
+import { getProgrammeNotices } from './notices.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDir = path.join(__dirname, 'public')
@@ -39,6 +40,27 @@ app.get('/api/programmes/:programmeId/courses', async (req, res) => {
     console.error('[api] courses', programmeId, err)
     res.status(status).json({
       error: err.message || 'courses_unavailable',
+      programmeId,
+    })
+  }
+})
+
+app.get('/api/programmes/:programmeId/notices', async (req, res) => {
+  const { programmeId } = req.params
+  if (!isProgrammeId(programmeId)) {
+    res.status(404).json({ error: 'unknown_programme' })
+    return
+  }
+  const year = typeof req.query.year === 'string' && req.query.year ? req.query.year : academicYearDefault()
+  try {
+    const { notices, source, year: y } = await getProgrammeNotices(programmeId, year)
+    res.setHeader('Cache-Control', 'public, max-age=60')
+    res.json({ programmeId, academicYear: y, source, notices })
+  } catch (err) {
+    const status = err.status || 500
+    console.error('[api] notices', programmeId, err)
+    res.status(status).json({
+      error: err.message || 'notices_unavailable',
       programmeId,
     })
   }

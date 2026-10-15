@@ -25,7 +25,7 @@ export const USER_DATA_SCHEMA_VERSION = 2.1 as const
 export type { SiteConfig }
 export type UserDataSnapshot = SiteConfig
 
-export function buildUserDataSnapshot(): SiteConfig {
+export async function buildUserDataSnapshot(): Promise<SiteConfig> {
   return buildSiteConfig()
 }
 

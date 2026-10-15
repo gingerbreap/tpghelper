@@ -11,5 +11,7 @@ server/public/**
 .vite/
 tsconfig.tsbuildinfo
 .azure-cli/
+.azure-cli-session/
+.azure-cli-tmp/
 *.PublishSettings
 deploy-bundle/

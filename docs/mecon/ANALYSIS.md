@@ -4,7 +4,7 @@
 数据源：
 
 - Teaching Plan：`public/mecon/teachingPlan/MEcon_teaching_plan_2026-27_20260812.pdf`
-- Regulations & Syllabuses：`src/MEcon_Regulations___Syllabuses_2026-27.pdf`（Curriculum Structure ≈ 第 4–6 页 / 文内页码 1–3 of Syllabuses）
+- Regulations & Syllabuses：`public/mecon/MEcon_Regulations___Syllabuses_2026-27.pdf`（Curriculum Structure ≈ 第 4–6 页 / 文内页码 1–3 of Syllabuses）
 
 `courses.json` 已由 `scripts/generate-mecon-courses.mjs` 生成（53 门课对象）。产品规则按 2026-10-14 确认落地。
 

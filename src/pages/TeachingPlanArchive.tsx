@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import AboutBackLink from '../components/AboutBackLink'
 import { TeachingPlanNoticeBody, buildSelectedSet } from '../components/TeachingPlanNoticeBody'
-import { teachingPlanNotices } from '../data/teachingPlanUpdates'
+import { useTeachingPlanNotices } from '../hooks/useTeachingPlanNotices'
 import { useI18n } from '../i18n/context'
 import { useSelections } from '../hooks/useSelections'
 import { archiveCourseNumbers } from '../utils/appMeta'
@@ -9,10 +9,19 @@ import { archiveCourseNumbers } from '../utils/appMeta'
 export default function TeachingPlanArchive() {
   const { t } = useI18n()
   const { selections } = useSelections()
+  const teachingPlanNotices = useTeachingPlanNotices()
   const selectedSet = useMemo(() => buildSelectedSet(selections), [selections])
-  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(teachingPlanNotices.map(n => [n.id, true])),
-  )
+  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({})
+
+  useEffect(() => {
+    setExpandedIds(prev => {
+      const next = { ...prev }
+      for (const n of teachingPlanNotices) {
+        if (next[n.id] === undefined) next[n.id] = true
+      }
+      return next
+    })
+  }, [teachingPlanNotices])
 
   return (
     <div className="about-subpage">

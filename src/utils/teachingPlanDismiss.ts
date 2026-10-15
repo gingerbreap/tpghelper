@@ -1,5 +1,5 @@
 import {
-  teachingPlanNotices,
+  getTeachingPlanNotices,
   type TeachingPlanNotice,
 } from '../data/teachingPlanUpdates'
 import { getActiveProgramme } from '../programmes'
@@ -35,7 +35,7 @@ export function isTeachingPlanNoticeDismissed(notice: TeachingPlanNotice): boole
 
 /** Notices the user has not yet dismissed via 「已读」 / Mark as read. */
 export function listUnreadTeachingPlanNotices(): TeachingPlanNotice[] {
-  return teachingPlanNotices.filter(n => !isTeachingPlanNoticeDismissed(n))
+  return getTeachingPlanNotices().filter(n => !isTeachingPlanNoticeDismissed(n))
 }
 
 export function unreadTeachingPlanNoticeIds(): Set<string> {
@@ -44,7 +44,7 @@ export function unreadTeachingPlanNoticeIds(): Set<string> {
 
 /** Dismiss every currently unread Teaching Plan notice in one shot (no sequential UI). */
 export function dismissAllTeachingPlanNotices(): void {
-  for (const notice of teachingPlanNotices) {
+  for (const notice of getTeachingPlanNotices()) {
     if (isTeachingPlanNoticeDismissed(notice)) continue
     const version = teachingPlanDismissVersion(notice)
     if (!version) continue

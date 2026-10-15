@@ -148,7 +148,14 @@ const time = (text: string): ChangePart => ({ text, emoji: 'time' })
 const venue = (text: string): ChangePart => ({ text, emoji: 'venue' })
 const plain = (text: string): ChangePart => ({ text })
 
-/** Newest first. */
+/**
+ * Seed / offline fallback. Canonical runtime source is Azure SQL
+ * (`TeachingPlanNotice`) via `GET /api/programmes/msba/notices`, with
+ * `public/msba/teachingPlanNotices.json` as filesystem fallback.
+ * After editing here, run `npm run db:export-notices` then `npm run db:import-notices`.
+ *
+ * Newest first.
+ */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
     id: '20261012-7001-7003',

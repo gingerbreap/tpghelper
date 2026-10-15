@@ -1,0 +1,1056 @@
+[
+  {
+    "id": "20261012-7001-7003",
+    "timestamp": "2026/10/12 18:36",
+    "courseRefs": "7001, 7003",
+    "bodyKey": "body7001_7003_1012",
+    "bodyParams": {
+      "code1": "MSBA7001",
+      "code2": "MSBA7003"
+    },
+    "defaultExpanded": true,
+    "updates": [
+      {
+        "courseCode": "MSBA7001",
+        "courseTitle": "Python for Data Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "itemKey": "examFinal",
+            "itemDate": "Oct 16",
+            "previous": [
+              {
+                "text": "09:30-12:30"
+              }
+            ],
+            "updated": [
+              {
+                "text": "09:40-10:40",
+                "emoji": "time"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "itemKey": "examFinal",
+            "itemDate": "Oct 20",
+            "previous": [
+              {
+                "text": "14:00-17:00"
+              }
+            ],
+            "updated": [
+              {
+                "text": "14:00-16:00",
+                "emoji": "time"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20261005-7004-7027",
+    "timestamp": "2026/10/05 19:05",
+    "courseRefs": "7004, 7027",
+    "bodyKey": "body7004_7027_1005",
+    "bodyParams": {
+      "code1": "MSBA7004",
+      "code2": "MSBA7027"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "A",
+              "B"
+            ],
+            "itemKey": "date",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "Nov 2, 2026 (Mon) 18:30-21:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Cancelled"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "A",
+              "B"
+            ],
+            "itemKey": "date",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "Nov 11, 2026 (Wed) 18:30-21:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Cancelled"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "C",
+              "D"
+            ],
+            "itemKey": "date",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "Oct 31, 2026 (Sat) 18:30-21:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Cancelled"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "C",
+              "D"
+            ],
+            "itemKey": "date",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "Nov 10, 2026 (Tue) 18:30-21:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Cancelled"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7027",
+        "courseTitle": "Machine Learning",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "B",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Jan 9, 2027 (Sat) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Jan 16, 2027 (Sat) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Jan 9, 2027 (Sat) 14:00-17:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Jan 16, 2027 (Sat) 09:30-12:30",
+                "emoji": "time"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260922-7003",
+    "timestamp": "2026/09/22 11:26",
+    "courseRefs": "7003",
+    "bodyKey": "body7003_0922",
+    "bodyParams": {
+      "code1": "MSBA7003"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "C",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Sep 29, 2026 (Tue) 09:30-12:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 7, 2026 (Wed) 18:30-21:30",
+                "emoji": "time"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Oct 2, 2026 (Fri) 09:30-12:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 10, 2026 (Sat) 18:30-21:30",
+                "emoji": "time"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Sep 29, 2026 (Tue) 14:00-17:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 8, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Oct 2, 2026 (Fri) 14:00-17:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 12, 2026 (Mon) 18:30-21:30",
+                "emoji": "time"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260911-7003",
+    "timestamp": "2026/09/11 18:22",
+    "courseRefs": "7003",
+    "bodyKey": "body7003",
+    "bodyParams": {
+      "code1": "MSBA7003"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 23, 2026 (Wed) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 29, 2026 (Tue) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Oct 7, 2026 (Wed) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 2, 2026 (Fri) 09:30-12:30",
+                "emoji": "time"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTime",
+            "previous": [
+              {
+                "text": "Sep 24, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 29, 2026 (Tue) 14:00-17:00",
+                "emoji": "time"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 8, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 2, 2026 (Fri) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "C"
+            ],
+            "itemKey": "sessionTime",
+            "itemDate": "Sep 23",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "17:00-18:30"
+              }
+            ],
+            "updated": [
+              {
+                "text": "18:30-20:00"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260909-7002-7004",
+    "timestamp": "2026/09/09 16:41",
+    "courseRefs": "7002, 7004",
+    "bodyKey": "body7002_7004",
+    "bodyParams": {
+      "code1": "MSBA7002",
+      "code2": "MSBA7004"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "sessionTimeVenue",
+            "itemDate": "Oct 22",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "09:00-12:00",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-MBG07",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "sessionTimeVenue",
+            "itemDate": "Oct 22",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom J",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "sessionVenue",
+            "itemDate": "Oct 24",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "Classroom EFG"
+              }
+            ],
+            "updated": [
+              {
+                "text": "LT104"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 27, 2026 (Tue) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "LTB",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 22, 2026 (Thu) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom J",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "sessionTimeVenue",
+            "itemDate": "Oct 24",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom EFG",
+                "emoji": "venue"
+              }
+            ],
+            "updated": [
+              {
+                "text": "09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260903-7002-7003",
+    "timestamp": "2026/09/03 17:23",
+    "courseRefs": "7002, 7003, 7004",
+    "bodyKey": "body7002_7003_7004",
+    "bodyParams": {
+      "code1": "MSBA7002",
+      "code2": "MSBA7003",
+      "code3": "MSBA7004"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 29, 2026 (Tue)",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 23, 2026 (Wed) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom EFG",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 2, 2026 (Fri)",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 7, 2026 (Wed) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Sep 29, 2026 (Tue)",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Sep 24, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 2, 2026 (Fri)",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 8, 2026 (Thu) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom J",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "C"
+            ],
+            "itemKey": "sessionTime",
+            "itemDate": "Sep 23",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "18:30-20:00"
+              }
+            ],
+            "updated": [
+              {
+                "text": "17:00-18:30"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 24, 2026 (Sat) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 22, 2026 (Thu) 09:00-12:00",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-MBG07",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "A",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 7, 2026 (Sat) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 6, 2026 (Fri) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-LE6",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "A",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 14, 2026 (Sat) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 13, 2026 (Fri) 18:30-21:30",
+                "emoji": "time"
+              },
+              {
+                "text": "LT104",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 25, 2026 (Sun) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 1, 2026 (Sun) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom ABC",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 2, 2026 (Mon) 14:00-17:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 1, 2026 (Sun) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom ABC",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "B",
+            "itemKey": "sessionVenue",
+            "itemDate": "Nov 9",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "Classroom H"
+              }
+            ],
+            "updated": [
+              {
+                "text": "LT104"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 24, 2026 (Tue) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 25, 2026 (Wed) 09:30-12:30",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-KKLG109",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "sessionVenue",
+            "itemDate": "Nov 7",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "Classroom H"
+              }
+            ],
+            "updated": [
+              {
+                "text": "MC-KKLG109"
+              }
+            ]
+          },
+          {
+            "sectionId": "C",
+            "itemKey": "sessionVenue",
+            "itemDate": "Nov 14",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "Classroom H"
+              }
+            ],
+            "updated": [
+              {
+                "text": "MC-KKLG109"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Oct 27, 2026 (Tue) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Oct 24, 2026 (Sat) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "Classroom EFG",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 6, 2026 (Fri) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 7, 2026 (Sat) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-MB201",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "lecTimeVenue",
+            "previous": [
+              {
+                "text": "Nov 17, 2026 (Tue) 18:30-21:30",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 14, 2026 (Sat) 14:00-17:00",
+                "emoji": "time"
+              },
+              {
+                "text": "MC-MB201",
+                "emoji": "venue"
+              }
+            ]
+          },
+          {
+            "sectionId": "D",
+            "itemKey": "sessionVenue",
+            "itemDate": "Nov 25",
+            "sessionKind": "LEC",
+            "previous": [
+              {
+                "text": "LT104"
+              }
+            ],
+            "updated": [
+              {
+                "text": "MC-MB237"
+              }
+            ]
+          },
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "A",
+              "B"
+            ],
+            "itemKey": "sessionVenue",
+            "itemDate": "Oct 30",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "LT104"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Classroom ABC"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics",
+        "hasTutorials": true,
+        "rows": [
+          {
+            "sectionId": "TUT",
+            "tutorialFor": [
+              "A",
+              "B"
+            ],
+            "itemKey": "tutTime",
+            "sessionKind": "TUT",
+            "previous": [
+              {
+                "text": "Nov 19, 2026 (Thu) 18:30-21:00",
+                "emoji": "time"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Nov 16, 2026 (Mon) 18:30-21:00",
+                "emoji": "time"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20260818-7015-7037",
+    "timestamp": "2026/08/18 17:10",
+    "courseRefs": "7015, 7037",
+    "bodyKey": "body7015_7037",
+    "bodyParams": {
+      "code1": "MSBA7015",
+      "code2": "MSBA7037"
+    },
+    "defaultExpanded": false,
+    "updates": [
+      {
+        "courseCode": "MSBA7015",
+        "courseTitle": "Service Operations Management",
+        "hasTutorials": false,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "time",
+            "previous": [
+              {
+                "text": "Wednesday & Saturday 18:30-21:30"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Saturday & Sunday 9:30-18:00 (incl. 1 hr lunch break)"
+              }
+            ]
+          },
+          {
+            "sectionId": "A",
+            "itemKey": "dates",
+            "previous": [
+              {
+                "text": "Mar 20, 24, 31; Apr 3, 7, 10, 14, 17, 21, 24, 2027"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Apr 10, 11, 17, 18, 2027"
+              }
+            ]
+          },
+          {
+            "sectionId": "A",
+            "itemKey": "venue",
+            "previous": [
+              {
+                "text": "LT104"
+              }
+            ],
+            "updated": [
+              {
+                "text": "HKU Shenzhen"
+              }
+            ]
+          },
+          {
+            "sectionId": "A",
+            "itemKey": "examFinal",
+            "previous": [
+              {
+                "text": "Final Presentation: May 3, 2027 (Mon) 09:30-12:30, Classroom ABC, D"
+              }
+            ],
+            "updated": [
+              {
+                "text": "NA"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "courseCode": "MSBA7037",
+        "courseTitle": "A/B Testing in Product Management",
+        "hasTutorials": false,
+        "rows": [
+          {
+            "sectionId": "A",
+            "itemKey": "dates",
+            "previous": [
+              {
+                "text": "Mar 20, 21, 2027; Apr 27, 28, 2027"
+              }
+            ],
+            "updated": [
+              {
+                "text": "Mar 20, 21, 2027; Apr 3, 4, 2027"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

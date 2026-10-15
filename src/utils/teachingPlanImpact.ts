@@ -1,7 +1,7 @@
 import {
   buildDisplayRows,
   isTutorialPlanRow,
-  teachingPlanNotices,
+  getTeachingPlanNotices,
   teachingPlanRowAffectsUser,
   type ChangePart,
   type TeachingPlanDisplayRow,
@@ -150,6 +150,7 @@ export interface PlanImpactMeta {
 }
 
 function noticesToScan(unreadNoticeIds?: Set<string>) {
+  const teachingPlanNotices = getTeachingPlanNotices()
   if (!unreadNoticeIds) return teachingPlanNotices
   return teachingPlanNotices.filter(n => unreadNoticeIds.has(n.id))
 }
