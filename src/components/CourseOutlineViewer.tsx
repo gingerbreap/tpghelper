@@ -7,6 +7,17 @@ interface CourseOutlineViewerProps {
   compact?: boolean
 }
 
+function resolveOutlineUrl(baseUrl: string, pdfPath: string): string {
+  if (
+    pdfPath.startsWith('http://') ||
+    pdfPath.startsWith('https://') ||
+    pdfPath.startsWith('/')
+  ) {
+    return pdfPath
+  }
+  return `${baseUrl}${pdfPath}`
+}
+
 export default function CourseOutlineViewer({
   pdfPath,
   baseUrl,
@@ -14,7 +25,7 @@ export default function CourseOutlineViewer({
 }: CourseOutlineViewerProps) {
   const { t } = useI18n()
   const isMobile = useIsMobile()
-  const url = `${baseUrl}${pdfPath}`
+  const url = resolveOutlineUrl(baseUrl, pdfPath)
   const filename = pdfPath.split('/').pop() ?? 'course-outline.pdf'
 
   if (isMobile) {

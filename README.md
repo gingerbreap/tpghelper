@@ -31,6 +31,12 @@ The lander is a small HashRouter app (`#/`, `#/programmes`). Choosing an availab
 | [`REQUIREMENTS.md`](REQUIREMENTS.md) | 产品需求与验收标准 |
 | [`src/teachingPlan/README.md`](src/teachingPlan/README.md) | Teaching Plan PDF 同步检查清单 |
 | [`docs/AGENT_NEW_PROGRAMME_GUIDE.md`](docs/AGENT_NEW_PROGRAMME_GUIDE.md) | **Agent / 维护者**：如何开设新项目子站（pack） |
+| [`docs/azure/SETUP_ENTRA.md`](docs/azure/SETUP_ENTRA.md) | Azure SQL（仅 Entra）+ 课表导入；门户查询编辑器步骤 |
+
+### 课表 API（v2 雏形）
+- `GET /api/programmes/:id/courses` → `{ programmeId, academicYear, source, courses }`
+- 配置了 `SQL_SERVER` 时从 Azure SQL 读；否则回退 `public/{id}/courses.json`
+- 导入：`npm run db:import-courses`（见 `docs/azure/SETUP_ENTRA.md`）
 
 ## 本地开发
 ```bash

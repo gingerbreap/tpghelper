@@ -4,6 +4,9 @@ server/public/**
 !server/public/.gitkeep
 .DS_Store
 .venv/
+.env
+.env.*
+!.env.example
 *.local
 .vite/
 tsconfig.tsbuildinfo
