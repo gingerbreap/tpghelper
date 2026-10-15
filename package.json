@@ -20,12 +20,15 @@
     "build:mecon": "node scripts/select-programme.mjs mecon && PROGRAMME=mecon tsc -b && PROGRAMME=mecon vite build",
     "build:site": "node scripts/build-site.mjs",
     "start": "node server/index.js",
+    "db:import-courses": "node scripts/import-courses-from-public.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@azure/identity": "^4.14.0",
     "@khmyznikov/pwa-install": "^0.6.4",
     "express": "^5.2.1",
+    "mssql": "^12.7.7",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.2"

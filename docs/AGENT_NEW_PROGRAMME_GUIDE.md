@@ -29,6 +29,7 @@
 | **用户状态** | 专业前缀 localStorage（如 `msba-*` / `mgm-*` / `mecon-*`）+ 站点级 `tpghelper-*` |
 | **备份** | Site config schema **2.1**：顶层 `currentProgramme` + 嵌套 `{ msba?, mgm?, mecon?, … }` 瘦身课表行 |
 | **生产部署** | `npm run build:site` → `server/public/{lander,msba,mgm,mecon,…}` → Express → Azure（`push main`） |
+| **课表目录（v2）** | Azure SQL + `GET /api/programmes/{id}/courses`；未配库时回退 `public/{id}/courses.json`。见 [`docs/azure/SETUP_ENTRA.md`](./azure/SETUP_ENTRA.md) |
 
 迁移时：**壳代码尽量不动**；**成套新增「pack 配置 + public 数据 + 接线清单」**，保证 storage 前缀、备份 `programme` id、Vite `base` 三者一致。
 

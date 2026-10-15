@@ -34,7 +34,11 @@ jobs:
           rm -rf deploy-bundle release.zip
           mkdir -p deploy-bundle/server
           cp package.json package-lock.json deploy-bundle/
-          cp server/index.js deploy-bundle/server/index.js
+          # Express entry + catalogue/SQL helpers (index imports ./db.js + ./catalogue.js)
+          cp server/*.js deploy-bundle/server/
+          test -f deploy-bundle/server/index.js
+          test -f deploy-bundle/server/db.js
+          test -f deploy-bundle/server/catalogue.js
           # Force-copy built assets (gitignored; must not rely on git archive)
           cp -a server/public deploy-bundle/server/public
           test -f deploy-bundle/server/public/index.html
@@ -46,7 +50,7 @@ jobs:
           zip -r -q ../release.zip .
           cd ..
           unzip -l release.zip | head -40
-          unzip -l release.zip | grep -E 'server/public/index.html|server/public/msba/index.html|server/public/mecon/index.html'
+          unzip -l release.zip | grep -E 'server/index.js|server/db.js|server/catalogue.js|server/public/index.html|server/public/msba/index.html|server/public/mecon/index.html'
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
