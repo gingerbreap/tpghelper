@@ -63,12 +63,7 @@ function siteRootOutline(hostProgramme, relativeOrAbsolute) {
 
 async function loadFromSql(programmeId, year) {
   const pool = await getPool()
-  const result = await pool
-    .request()
-    .input('programmeId', sql.NVarChar(16), programmeId)
-    .input('year', sql.NVarChar(10), year)
-    .query(`
-      SELECT
+  const baseSelect = `
         pc.CourseCode,
         c.CourseTitle,
         pc.Module,
@@ -99,7 +94,8 @@ async function loadFromSql(programmeId, year) {
         m.Venue,
         m.SessionType,
         m.InstructorsJson AS MeetingInstructorsJson,
-        m.TutorialForJson
+        m.TutorialForJson`
+  const fromWhere = `
       FROM dbo.ProgrammeCourse pc
       INNER JOIN dbo.Course c
         ON c.AcademicYear = pc.AcademicYear AND c.CourseCode = pc.CourseCode
@@ -111,8 +107,38 @@ async function loadFromSql(programmeId, year) {
       LEFT JOIN dbo.Outline ol ON ol.OutlineId = s.OutlineId
       LEFT JOIN dbo.Meeting m ON m.SectionRowId = s.SectionRowId
       WHERE pc.ProgrammeId = @programmeId AND pc.AcademicYear = @year
-      ORDER BY pc.CourseCode, pc.Module, s.SectionId, m.MeetingDate, m.StartTime
+      ORDER BY pc.CourseCode, pc.Module, s.SectionId, m.MeetingDate, m.StartTime`
+
+  let result
+  try {
+    result = await pool
+      .request()
+      .input('programmeId', sql.NVarChar(16), programmeId)
+      .input('year', sql.NVarChar(10), year)
+      .query(`
+      SELECT
+        ${baseSelect},
+        pc.CommonElective,
+        pc.OtherRequirementsJson,
+        pc.CrossListJson
+      ${fromWhere}
     `)
+  } catch (err) {
+    // Pre-migration DBs without sql/004 columns
+    console.warn('[catalogue] CE columns missing; falling back', err?.message || err)
+    result = await pool
+      .request()
+      .input('programmeId', sql.NVarChar(16), programmeId)
+      .input('year', sql.NVarChar(10), year)
+      .query(`
+      SELECT
+        ${baseSelect},
+        CAST(0 AS BIT) AS CommonElective,
+        CAST(NULL AS NVARCHAR(MAX)) AS OtherRequirementsJson,
+        CAST(NULL AS NVARCHAR(MAX)) AS CrossListJson
+      ${fromWhere}
+    `)
+  }
 
   /** @type {Map<string, any>} */
   const courses = new Map()
@@ -123,6 +149,8 @@ async function loadFromSql(programmeId, year) {
     const courseKey = `${row.CourseCode}::${row.Module}`
     let course = courses.get(courseKey)
     if (!course) {
+      const commonElective =
+        !!row.CommonElective || row.CourseType === 'Common Elective'
       course = {
         courseCode: row.CourseCode,
         courseTitle: row.CourseTitle,
@@ -135,6 +163,10 @@ async function loadFromSql(programmeId, year) {
         streamCoreForStreams: parseJson(row.StreamCoreForStreamsJson, undefined),
         coreForStreams: parseJson(row.CoreForStreamsJson, undefined),
         parts: parseJson(row.PartsJson, undefined),
+        commonElective: commonElective || undefined,
+        hostProgramme: commonElective ? row.HostProgramme : undefined,
+        otherRequirements: parseJson(row.OtherRequirementsJson, undefined),
+        crossList: parseJson(row.CrossListJson, undefined),
         outlinePdfPath: null,
         examOrFinal: parseJson(row.OfferingExamJson, null),
         sections: [],
@@ -193,6 +225,10 @@ async function loadFromSql(programmeId, year) {
     if (rest.streamCoreForStreams == null) delete rest.streamCoreForStreams
     if (rest.coreForStreams == null) delete rest.coreForStreams
     if (rest.parts == null) delete rest.parts
+    if (!rest.commonElective) delete rest.commonElective
+    if (rest.hostProgramme == null) delete rest.hostProgramme
+    if (rest.otherRequirements == null) delete rest.otherRequirements
+    if (rest.crossList == null) delete rest.crossList
     return rest
   })
 }

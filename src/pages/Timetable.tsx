@@ -22,8 +22,17 @@ function TypeBadge({ type }: { type: string }) {
         ? 'badge-mecon badge-mecon--stream-core'
         : type === 'Capstone'
           ? 'badge-capstone'
-          : 'badge-elective'
-  const label = type === 'Stream Core' ? 'STM CORE' : type === 'Elective' ? 'ELECTIVES' : type
+          : type === 'Common Elective'
+            ? 'badge-common-elective'
+            : 'badge-elective'
+  const label =
+    type === 'Stream Core'
+      ? 'STM CORE'
+      : type === 'Elective'
+        ? 'ELECTIVES'
+        : type === 'Common Elective'
+          ? 'Common Elective'
+          : type
   return <span className={`badge ${cls}`}>{label}</span>
 }
 
@@ -85,7 +94,9 @@ function CourseCard({
           <span className="course-title" style={{ marginLeft: 8 }}>{course.courseTitle}</span>
         </div>
         <div style={{ display: 'flex', gap: 4, flexShrink: 0, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-          {view ? (
+          {course.commonElective || course.courseType === 'Common Elective' ? (
+            <TypeBadge type="Common Elective" />
+          ) : view ? (
             <MeconRoleBadges badges={view.badges} />
           ) : (
             <>

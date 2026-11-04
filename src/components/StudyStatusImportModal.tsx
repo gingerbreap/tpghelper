@@ -238,6 +238,7 @@ export default function StudyStatusImportModal({
                           >
                             <option value="Stream Core">{t('planner.groupStreamCore')}</option>
                             <option value="Elective">{t('planner.groupElective')}</option>
+                            <option value="Common Elective">{t('planner.groupCommonElective')}</option>
                           </select>
                         </li>
                       )

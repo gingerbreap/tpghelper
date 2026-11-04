@@ -1,11 +1,17 @@
 import type { SelectedSection } from '../types'
 
-export type SelectionCourseType = 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
+export type SelectionCourseType =
+  | 'Core'
+  | 'Stream Core'
+  | 'Elective'
+  | 'Capstone'
+  | 'Common Elective'
 
 export const DEFAULT_SELECTION_TYPE_ORDER: readonly SelectionCourseType[] = [
   'Core',
   'Elective',
   'Capstone',
+  'Common Elective',
 ]
 
 /** Group items by courseType, preserving relative order within each group. */

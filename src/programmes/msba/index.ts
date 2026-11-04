@@ -24,10 +24,10 @@ export const msbaProgramme: ProgrammeConfig = {
   viteBase: '/msba/',
   repoUrl: APP_REPO_URL,
   analyticsId: 'G-TGBLKX855E',
-  moduleCount: 5,
-  moduleNumbers: [1, 2, 3, 4, 5],
+  moduleCount: 6,
+  moduleNumbers: [1, 2, 3, 4, 5, 6],
   streamIds: ['AI', 'MC'],
-  selectionTypeOrder: ['Core', 'Capstone', 'Elective'],
+  selectionTypeOrder: ['Core', 'Capstone', 'Elective', 'Common Elective'],
   coursesDataPath: 'courses.json',
   requirementsDataPath: 'requirements.json',
   storage: {
@@ -40,17 +40,14 @@ export const msbaProgramme: ProgrammeConfig = {
   },
   features: {
     wishlist: true,
-    groupSelectedByType: false,
+    groupSelectedByType: true,
     teachingPlanImpactCalendar: true,
-    enrollmentRules: false,
+    enrollmentRules: true,
   },
-  dataSync: {
-    display: '2026/10/12 18:36',
-    iso: '2026-10-12T18:36:00+08:00',
-  },
+  dataSync: '2026/11/04 17:32',
   studyStatus: {
     sampleCourseCode: 'MSBA7001',
-    courseCodePattern: String.raw`MSBA\d{4}`,
+    courseCodePattern: String.raw`(?:MSBA|PMGM|ECON|PMBA|IMBA|MACC|MAIB|MFIN|MSMK|PMWM|PMAA|MSAF|PMSC)\d{4}`,
   },
   ics: {
     prodId: '-//HKUBS MSc(BA) Course Planner//CN',

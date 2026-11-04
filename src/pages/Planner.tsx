@@ -3,6 +3,7 @@ import ConflictNotices from '../components/ConflictNotices'
 import CourseDetailModal from '../components/CourseDetailModal'
 import MeconRoleBadges from '../components/MeconRoleBadges'
 import PlannerCalendar from '../components/PlannerCalendar'
+import OtherRequirementsConfirmModal from '../components/OtherRequirementsConfirmModal'
 import StreamSwitchModal from '../components/StreamSwitchModal'
 import StreamTagBadges from '../components/StreamTagBadges'
 import TeachingPlanUpdateNotice from '../components/TeachingPlanUpdateNotice'
@@ -44,6 +45,7 @@ import {
 } from '../utils/prerequisites'
 import { groupSelectionsByType } from '../utils/selectionGroups'
 import { getMeconRequirementTargets } from '../utils/meconRequirements'
+import { isCommonElectiveCapBlocked } from '../utils/commonElectiveLimit'
 import type { Course, SelectedSection } from '../types'
 
 const MECON_STREAM_LABEL_KEY: Record<string, string> = {
@@ -124,23 +126,27 @@ export default function Planner() {
 
   const planCodes = useMemo(() => selectedCourseCodes(selections), [selections])
 
-  const handleToggle = useCallback((s: SelectedSection) => {
-    if (!isSelected(s.courseCode, s.module, s.sectionId) && useEnrollmentRules) {
-      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
-      if (!prereq.ok) {
-        setDuplicateMsg(
-          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
-        )
-        return 'duplicate' as const
-      }
-      const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
-      if (!antireq.ok) {
-        setDuplicateMsg(
-          formatAntirequisiteBlockMessage(s.courseCode, antireq.blocking, locale),
-        )
-        return 'duplicate' as const
-      }
-    }
+  const [pendingConfirm, setPendingConfirm] = useState<{
+    selection: SelectedSection
+    mode: 'toggle' | 'wishlist'
+  } | null>(null)
+
+  const findCourseRequirements = useCallback(
+    (courseCode: string, module: number) => {
+      const hit =
+        courses.find(c => c.courseCode === courseCode && c.module === module) ||
+        courses.find(c => c.courseCode === courseCode)
+      return hit?.otherRequirements?.length
+        ? {
+            requirements: hit.otherRequirements,
+            requirementsZh: hit.otherRequirementsZh,
+          }
+        : null
+    },
+    [courses],
+  )
+
+  const commitToggle = useCallback((s: SelectedSection) => {
     const result = toggle(s)
     if (result === 'duplicate') {
       if (useEnrollmentRules) {
@@ -165,23 +171,135 @@ export default function Planner() {
       }
     }
     return result
+  }, [toggle, getForCourseCode, t, useEnrollmentRules, selections])
+
+  const handleToggle = useCallback((s: SelectedSection) => {
+    const adding = !isSelected(s.courseCode, s.module, s.sectionId)
+    if (
+      adding
+      && isCommonElectiveCapBlocked(s, selections, {
+        alreadySelected: false,
+        enrollmentRules,
+        useEnrollmentRules,
+      })
+    ) {
+      setDuplicateMsg(t('planner.commonElectiveCapHint'))
+      return 'duplicate' as const
+    }
+    if (adding && useEnrollmentRules) {
+      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!prereq.ok) {
+        setDuplicateMsg(
+          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
+        )
+        return 'duplicate' as const
+      }
+      const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
+      if (!antireq.ok) {
+        setDuplicateMsg(
+          formatAntirequisiteBlockMessage(s.courseCode, antireq.blocking, locale),
+        )
+        return 'duplicate' as const
+      }
+    }
+    if (adding) {
+      const req = findCourseRequirements(s.courseCode, s.module)
+      if (req) {
+        setPendingConfirm({ selection: s, mode: 'toggle' })
+        return 'duplicate' as const
+      }
+    }
+    return commitToggle(s)
   }, [
-    toggle,
-    getForCourseCode,
+    commitToggle,
+    findCourseRequirements,
     t,
     useEnrollmentRules,
-    useEnrollmentRules,
-    selections,
     enrollmentRules,
     planCodes,
     isSelected,
     locale,
+    selections,
   ])
 
   const promoteFromWishlist = useCallback((s: SelectedSection) => {
     if (isSelected(s.courseCode, s.module, s.sectionId)) {
       removeWishlist(s)
       return
+    }
+
+    const runPromote = () => {
+      if (
+        isCommonElectiveCapBlocked(s, selections, {
+          alreadySelected: false,
+          enrollmentRules,
+          useEnrollmentRules,
+        })
+      ) {
+        setDuplicateMsg(t('planner.commonElectiveCapHint'))
+        return
+      }
+      if (useEnrollmentRules) {
+        const sameCourseBlock = getSameCourseBlockReason(
+          s.courseCode,
+          s.module,
+          s.sectionId,
+          selections,
+          enrollmentRules,
+        )
+        const moduleConflict = getModuleConflict(
+          s.courseCode,
+          s.module,
+          selections,
+          enrollmentRules,
+          locale,
+        )
+        if (sameCourseBlock) {
+          setDuplicateMsg(
+            t('planner.duplicateWishlist', {
+              code: s.courseCode,
+              section: sameCourseBlock.sectionId,
+              module: sameCourseBlock.module,
+            }),
+          )
+          return
+        }
+        if (moduleConflict) {
+          setDuplicateMsg(
+            t('planner.moduleConflict', {
+              code: s.courseCode,
+              detail: moduleConflict.message,
+            }),
+          )
+          return
+        }
+        const result = toggle(s)
+        if (result === 'added') removeWishlist(s)
+        else if (result === 'duplicate') {
+          setDuplicateMsg(
+            t('planner.duplicateWishlist', {
+              code: s.courseCode,
+              section: s.sectionId,
+              module: s.module,
+            }),
+          )
+        }
+        return
+      }
+
+      const existing = getForCourseCode(s.courseCode)
+      if (existing) {
+        setDuplicateMsg(
+          t('planner.duplicateWishlist', {
+            code: s.courseCode,
+            section: existing.sectionId,
+            module: existing.module,
+          }),
+        )
+        return
+      }
+      toggle(s)
+      removeWishlist(s)
     }
 
     if (useEnrollmentRules) {
@@ -199,66 +317,14 @@ export default function Planner() {
         )
         return
       }
-      const sameCourseBlock = getSameCourseBlockReason(
-        s.courseCode,
-        s.module,
-        s.sectionId,
-        selections,
-        enrollmentRules,
-      )
-      const moduleConflict = getModuleConflict(
-        s.courseCode,
-        s.module,
-        selections,
-        enrollmentRules,
-        locale,
-      )
-      if (sameCourseBlock) {
-        setDuplicateMsg(
-          t('planner.duplicateWishlist', {
-            code: s.courseCode,
-            section: sameCourseBlock.sectionId,
-            module: sameCourseBlock.module,
-          }),
-        )
-        return
-      }
-      if (moduleConflict) {
-        setDuplicateMsg(
-          t('planner.moduleConflict', {
-            code: s.courseCode,
-            detail: moduleConflict.message,
-          }),
-        )
-        return
-      }
-      const result = toggle(s)
-      if (result === 'added') removeWishlist(s)
-      else if (result === 'duplicate') {
-        setDuplicateMsg(
-          t('planner.duplicateWishlist', {
-            code: s.courseCode,
-            section: s.sectionId,
-            module: s.module,
-          }),
-        )
-      }
-      return
     }
 
-    const existing = getForCourseCode(s.courseCode)
-    if (existing) {
-      setDuplicateMsg(
-        t('planner.duplicateWishlist', {
-          code: s.courseCode,
-          section: existing.sectionId,
-          module: existing.module,
-        }),
-      )
+    const req = findCourseRequirements(s.courseCode, s.module)
+    if (req) {
+      setPendingConfirm({ selection: s, mode: 'wishlist' })
       return
     }
-    toggle(s)
-    removeWishlist(s)
+    runPromote()
   }, [
     isSelected,
     getForCourseCode,
@@ -270,6 +336,7 @@ export default function Planner() {
     enrollmentRules,
     locale,
     planCodes,
+    findCourseRequirements,
   ])
 
   const conflicts = useMemo(() => detectConflicts(selections, courses), [selections, courses])
@@ -296,6 +363,7 @@ export default function Planner() {
     if (type === 'Core') return t('planner.groupCore')
     if (type === 'Stream Core') return t('planner.groupStreamCore')
     if (type === 'Capstone') return t('planner.groupCapstone')
+    if (type === 'Common Elective') return t('planner.groupCommonElective')
     return t('planner.groupElective')
   }, [t])
 
@@ -331,10 +399,12 @@ export default function Planner() {
           eligible.filter(s => s.courseType === type),
           enrollmentRules,
         )
+      const elective =
+        countType('Elective') + countType('Common Elective')
       return {
         core: countType('Core'),
         streamCore: isMecon ? countType('Stream Core') : 0,
-        elective: countType('Elective'),
+        elective,
         capstone: countType('Capstone'),
         total: countEffectiveSelections(eligible, enrollmentRules),
       }
@@ -344,7 +414,9 @@ export default function Planner() {
     const streamCore = isMecon
       ? eligible.filter(s => s.courseType === 'Stream Core').length
       : 0
-    const elective = eligible.filter(s => s.courseType === 'Elective').length
+    const elective = eligible.filter(
+      s => s.courseType === 'Elective' || s.courseType === 'Common Elective',
+    ).length
     const capstone = eligible.filter(s => s.courseType === 'Capstone').length
     return { core, streamCore, elective, capstone, total: eligible.length }
   }, [selections, enrollmentRules, useEnrollmentRules, isMecon, excludeIncomplete6067])
@@ -375,6 +447,17 @@ export default function Planner() {
     () => (isMecon ? getMeconRequirementTargets(requirements, stream) : null),
     [isMecon, requirements, stream],
   )
+
+  /** MSBA / MGM denominators from requirements.json (total + by category). */
+  const standardTargets = useMemo(() => {
+    if (isMecon || !requirements) return null
+    return {
+      total: requirements.totalCourses,
+      core: requirements.coreRequired ?? requirements.coreCourses.length,
+      elective: requirements.electiveCount,
+      capstone: requirements.capstoneRequired ?? 1,
+    }
+  }, [isMecon, requirements])
 
   const streamCoreRequired = meconTargets?.streamCore ?? 3
   const streamCoreOverflow = isMecon && stats.streamCore > streamCoreRequired
@@ -532,8 +615,8 @@ export default function Planner() {
             {sec && <TimeBadge bucket={sec.timeBucket} />}
             {sec && <WeekdayStrip days={sec.meetingDays} title={sec.dayPattern} />}
             {!groupSelectedByType && (
-              <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : 'badge-elective'}`}>
-                {s.courseType}
+              <span className={`badge ${s.courseType === 'Core' ? 'badge-core' : s.courseType === 'Capstone' ? 'badge-capstone' : s.courseType === 'Common Elective' ? 'badge-common-elective' : 'badge-elective'}`}>
+                {s.courseType === 'Common Elective' ? t('planner.commonElectiveBadge') : s.courseType}
               </span>
             )}
             {meconView ? (
@@ -620,12 +703,19 @@ export default function Planner() {
                 ['capstone', stats.capstone, meconTargets.capstone, t('planner.groupCapstone')],
                 ['elective', stats.elective, meconTargets.elective, t('planner.groupElective')],
               ] as const)
-            : ([
-                ['total', stats.total, null, t('planner.totalSelected')],
-                ['core', stats.core, null, t('planner.groupCore')],
-                ['elective', stats.elective, null, t('planner.groupElective')],
-                ['capstone', stats.capstone, null, t('planner.groupCapstone')],
-              ] as const)
+            : standardTargets
+              ? ([
+                  ['total', stats.total, standardTargets.total, t('planner.totalSelected')],
+                  ['core', stats.core, standardTargets.core, t('planner.groupCore')],
+                  ['elective', stats.elective, standardTargets.elective, t('planner.groupElective')],
+                  ['capstone', stats.capstone, standardTargets.capstone, t('planner.groupCapstone')],
+                ] as const)
+              : ([
+                  ['total', stats.total, null, t('planner.totalSelected')],
+                  ['core', stats.core, null, t('planner.groupCore')],
+                  ['elective', stats.elective, null, t('planner.groupElective')],
+                  ['capstone', stats.capstone, null, t('planner.groupCapstone')],
+                ] as const)
           ).map(([key, current, required, label]) => {
             const met = required != null && current >= required
             return (
@@ -635,11 +725,13 @@ export default function Planner() {
                   {required != null && (
                     <span className="stat-number-total">/{required}</span>
                   )}
+                </div>
+                <div className="stat-label">
+                  {label}
                   {met && (
                     <span className="check-icon stat-check" aria-label="done">✓</span>
                   )}
                 </div>
-                <div className="stat-label">{label}</div>
               </div>
             )
           })}
@@ -830,10 +922,23 @@ export default function Planner() {
                           useEnrollmentRules
                             ? checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
                             : { ok: true, blocking: [] as string[] }
-                        const wishlistBlocked = useEnrollmentRules && !wishlistAntireq.ok
-                        const wishlistBlockHint = wishlistBlocked
-                          ? formatAntirequisiteBlockMessage(s.courseCode, wishlistAntireq.blocking, locale)
-                          : undefined
+                        const wishlistCeCap = isCommonElectiveCapBlocked(s, selections, {
+                          alreadySelected: false,
+                          enrollmentRules,
+                          useEnrollmentRules,
+                        })
+                        const wishlistBlocked =
+                          wishlistCeCap
+                          || (useEnrollmentRules && !wishlistAntireq.ok)
+                        const wishlistBlockHint = wishlistCeCap
+                          ? t('planner.commonElectiveCapHint')
+                          : useEnrollmentRules && !wishlistAntireq.ok
+                            ? formatAntirequisiteBlockMessage(
+                                s.courseCode,
+                                wishlistAntireq.blocking,
+                                locale,
+                              )
+                            : undefined
                         const canCrossRetype = (fromType: string, toType: string, item: SelectedSection) => {
                           if (!isMecon) return false
                           if (
@@ -974,7 +1079,11 @@ export default function Planner() {
                     style={{ fontWeight: 600, fontSize: 14, marginBottom: 8 }}
                   >
                     {course.courseCode} {course.courseTitle}
-                    {view ? (
+                    {course.commonElective || course.courseType === 'Common Elective' ? (
+                      <span className="badge badge-common-elective" style={{ marginLeft: 8 }}>
+                        {t('planner.commonElectiveBadge')}
+                      </span>
+                    ) : view ? (
                       <span style={{ marginLeft: 8 }}>
                         <MeconRoleBadges badges={view.badges} />
                       </span>
@@ -1038,6 +1147,18 @@ export default function Planner() {
                             module: existingForCode.module,
                           })
                         : undefined
+                    }
+
+                    if (
+                      !blocked
+                      && isCommonElectiveCapBlocked(candidate, selections, {
+                        alreadySelected: sel,
+                        enrollmentRules,
+                        useEnrollmentRules,
+                      })
+                    ) {
+                      blocked = true
+                      blockHint = t('planner.commonElectiveCapHint')
                     }
 
                     if (!sel && useEnrollmentRules) {
@@ -1123,6 +1244,38 @@ export default function Planner() {
       {detailCode && (
         <CourseDetailModal courseCode={detailCode} onClose={() => setDetailCode(null)} />
       )}
+
+      <OtherRequirementsConfirmModal
+        open={!!pendingConfirm}
+        requirements={
+          pendingConfirm
+            ? findCourseRequirements(
+                pendingConfirm.selection.courseCode,
+                pendingConfirm.selection.module,
+              )?.requirements ?? []
+            : []
+        }
+        requirementsZh={
+          pendingConfirm
+            ? findCourseRequirements(
+                pendingConfirm.selection.courseCode,
+                pendingConfirm.selection.module,
+              )?.requirementsZh
+            : undefined
+        }
+        onCancel={() => setPendingConfirm(null)}
+        onConfirm={() => {
+          if (!pendingConfirm) return
+          const { selection, mode } = pendingConfirm
+          setPendingConfirm(null)
+          if (mode === 'wishlist') {
+            const result = toggle(selection)
+            if (result === 'added') removeWishlist(selection)
+            return
+          }
+          commitToggle(selection)
+        }}
+      />
 
       {isMecon && (
         <StreamSwitchModal

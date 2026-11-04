@@ -27,7 +27,7 @@ export const mgmProgramme: ProgrammeConfig = {
   moduleCount: 6,
   moduleNumbers: [1, 2, 3, 4, 5, 6],
   streamIds: ['ESG'],
-  selectionTypeOrder: ['Core', 'Elective', 'Capstone'],
+  selectionTypeOrder: ['Core', 'Elective', 'Capstone', 'Common Elective'],
   coursesDataPath: 'courses.json',
   requirementsDataPath: 'requirements.json',
   storage: {
@@ -46,13 +46,10 @@ export const mgmProgramme: ProgrammeConfig = {
     teachingPlanImpactCalendar: true,
     enrollmentRules: true,
   },
-  dataSync: {
-    display: '2026/09/22 22:50',
-    iso: '2026-09-22T22:50:00+08:00',
-  },
+  dataSync: '2026/11/04 17:32',
   studyStatus: {
     sampleCourseCode: 'PMGM7001',
-    courseCodePattern: String.raw`(?:PMGM|MFIN|PMSC)\d{4}`,
+    courseCodePattern: String.raw`(?:PMGM|MFIN|PMSC|MSBA|ECON|PMBA|IMBA|MACC|MAIB|MSMK|PMWM|PMAA|MSAF)\d{4}`,
   },
   ics: {
     prodId: '-//HKUBS MGM Course Planner//CN',

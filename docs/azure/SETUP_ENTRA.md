@@ -55,16 +55,19 @@ export SQL_DATABASE=tpghelper
 export SQL_AUTH=entra
 export ACADEMIC_YEAR=26-27
 
-# Schema (once): run sql/001_schema.sql, 002_app_identity.sql, 003_teaching_plan_notices.sql in Query editor
+# Schema (once): run sql/001…005_*.sql in Query editor (incl. 005_programme_meta.sql)
 
 npm run db:import-courses
 npm run db:export-notices   # pack TS → public/{id}/teachingPlanNotices.json
 npm run db:import-notices   # JSON → Azure SQL
+npm run db:import-meta      # public/*/meta.json → ProgrammeMeta
 ```
 
-未配置 `SQL_SERVER` 时，网站 API 会回退读取 `public/{id}/courses.json` 与 `teachingPlanNotices.json`。
+未配置 `SQL_SERVER` 时，网站 API 会回退读取 `public/{id}/courses.json`、`teachingPlanNotices.json` 与 `meta.json`。
 
 改 TP 通知且不想发整站：改 pack TS（或直接改 JSON）→ `db:export-notices` → `db:import-notices`。生产读 SQL，无需 `build:site`。
+
+改数据同步时间：改 `public/{id}/meta.json`（可同步 pack `dataSync`）→ `npm run db:import-meta`。
 
 ## 你需要告诉维护者的非秘密信息
 

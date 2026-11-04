@@ -1,0 +1,5884 @@
+{
+  "courses": [
+    {
+      "courseCode": "IMBA6111",
+      "courseTitle": "Data-Driven Strategic Decision Making",
+      "hostProgramme": "imba",
+      "hostLabel": "IMBA",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "",
+      "meetingRaw": "March 18-21, 2027\n\n Thur to Sun\n\n 9:00-12:30; 14:00-17:30",
+      "venueRaw": "Shanghai Centre",
+      "instructors": [
+        {
+          "name": "Prof Zhixi WAN"
+        }
+      ],
+      "prerequisites": [
+        {
+          "courseCode": "IMBA6050",
+          "title": "Business Analytics"
+        }
+      ],
+      "otherRequirements": [
+        "Work Experience: 2 years or more"
+      ],
+      "remarks": "Grade release is based on the\n IMBA graduation schedule for the 2027 November/December Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/IMBA/IMBA6111_Data_Driven_Strategic_Decision_Making_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/IMBA6111_Data_Driven_Strategic_Decision_Making_reference_only.pdf",
+      "outlineFile": "IMBA6111_Data_Driven_Strategic_Decision_Making_reference_only.pdf",
+      "outlineSafe": "IMBA6111_Data_Driven_Strategic_Decision_Making_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Thur to Sun 09:00-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-18",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-18",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-19",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-19",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-20",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-20",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-21",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-21",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "IMBA6116",
+      "courseTitle": "Manage Black Swan",
+      "hostProgramme": "imba",
+      "hostLabel": "IMBA",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "",
+      "meetingRaw": "April 8-11, 2027\n\n Thur to Sun\n\n 9:00-12:30; 14:00-17:30",
+      "venueRaw": "Shanghai Centre",
+      "instructors": [
+        {
+          "name": "Prof Pingyang GAO"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "Work Experience: 2 years or more"
+      ],
+      "remarks": "NOT eligible for students taking\n PMBA6110 Managing Black Swans\n\n Grade release is based on the IMBA graduation schedule\n for the 2027 November/December Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [
+        "PMBA6110"
+      ],
+      "crossList": [
+        "PMBA6110"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/IMBA/IMBA6116_Manage_Black_Swan_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/IMBA6116_Manage_Black_Swan_reference_only.pdf",
+      "outlineFile": "IMBA6116_Manage_Black_Swan_reference_only.pdf",
+      "outlineSafe": "IMBA6116_Manage_Black_Swan_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Thur to Sun 09:00-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-04-08",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-08",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-10",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-10",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "IMBA6067",
+      "courseTitle": "Branding and Communications",
+      "hostProgramme": "imba",
+      "hostLabel": "IMBA",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "",
+      "meetingRaw": "April 22-25, 2027\n\n Thur to Sun\n\n 9:00-12:30; 14:00-17:30",
+      "venueRaw": "Shanghai Centre",
+      "instructors": [
+        {
+          "name": "Dr Royce YUEN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "Work Experience: 2 years or more"
+      ],
+      "remarks": "NOT eligible for students taking\n Dr. Royce Yuen's PMBA6100 Decoding Branding in the New Era or MSMK7013\n Branding Strategy\n\n Grade release is based on the IMBA graduation schedule\n for the 2027 November/December Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [
+        "PMBA6100",
+        "MSMK7013"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/IMBA/IMBA6067_Branding_and_Communications_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/IMBA6067_Branding_and_Communications_reference_only.pdf",
+      "outlineFile": "IMBA6067_Branding_and_Communications_reference_only.pdf",
+      "outlineSafe": "IMBA6067_Branding_and_Communications_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Thur to Sun 09:00-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-04-22",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-22",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-24",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-24",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "IMBA6068",
+      "courseTitle": "Knowledge and Innovation Management",
+      "hostProgramme": "imba",
+      "hostLabel": "IMBA",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "",
+      "meetingRaw": "June 24-27, 2027\n\n Thur to Sun\n\n 9:00-12:30; 14:00-17:30",
+      "venueRaw": "Shanghai Centre",
+      "instructors": [
+        {
+          "name": "Prof Zhepeng LI"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "Work Experience: 2 years or more"
+      ],
+      "remarks": "Grade release is based on the\n IMBA graduation schedule for the 2027 November/December Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/IMBA/IMBA6068_Knowledge_and_Innovation_Management_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/IMBA6068_Knowledge_and_Innovation_Management_reference_only.pdf",
+      "outlineFile": "IMBA6068_Knowledge_and_Innovation_Management_reference_only.pdf",
+      "outlineSafe": "IMBA6068_Knowledge_and_Innovation_Management_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Thur to Sun 09:00-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-06-24",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-24",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-25",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-25",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-26",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-26",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-27",
+          "startTime": "09:00",
+          "endTime": "12:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-27",
+          "startTime": "14:00",
+          "endTime": "17:30",
+          "venue": "Shanghai Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6089",
+      "courseTitle": "Big Data Consumer Analytics",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Jan 9, 16, 23, 30, Feb 13, 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)",
+      "venueRaw": "Admiralty Town Centre & Main Campus",
+      "instructors": [
+        {
+          "name": "Prof. Tuan Q. PHAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "NOT eligible for students taking\n IMBA6114 Big Data Consumer Analytics & MSMK7021 Big Data Consumer\n Analytics",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [
+        "IMBA6114",
+        "MSMK7021"
+      ],
+      "crossList": [
+        "MSMK7021",
+        "IMBA6114"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6089_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6089_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlineFile": "PMBA6089_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlineSafe": "PMBA6089_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-09",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Main Campus",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6036",
+      "courseTitle": "Advanced Corporate Finance",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Jan 9, 16, 23, 30, Feb 13, 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Dr. Maurice TSE"
+        }
+      ],
+      "prerequisites": [
+        {
+          "courseCode": "PMBA6003",
+          "title": "Corporate Finance"
+        }
+      ],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6036_Advanced_Corporate_Finance_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6036_Advanced_Corporate_Finance_2526_reference_only.pdf",
+      "outlineFile": "PMBA6036_Advanced_Corporate_Finance_2526_reference_only.pdf",
+      "outlineSafe": "PMBA6036_Advanced_Corporate_Finance_2526_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-09",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6134",
+      "courseTitle": "AI in Financial Services: Leading Change in the Digital Era",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Jan 9, 16, 23, 30, Feb 13, 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Mr. Alain Le Couedic"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6134_AI_in_Financial_Services_Leading_Change_in_the_Digital_Era_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6134_AI_in_Financial_Services_Leading_Change_in_the_Digital_Era_2526_reference_only.pdf",
+      "outlineFile": "PMBA6134_AI_in_Financial_Services_Leading_Change_in_the_Digital_Era_2526_reference_only.pdf",
+      "outlineSafe": "PMBA6134_AI_in_Financial_Services_Leading_Change_in_the_Digital_Era_2526_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-09",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6076",
+      "courseTitle": "AI and Investment Banking: M&A, Valuation, and LBOs",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Jan 16, 23, 30, Feb 20, 2027",
+      "meetingRaw": "Sat (9:30am - 6:30pm)",
+      "venueRaw": "Main Campus",
+      "instructors": [
+        {
+          "name": "Prof. Matthias BUEHLMAIER"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6076_AI_and_Investment_Banking_M_and_A_Valuation_and_LBOs_2627_Tentative.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6076_AI_and_Investment_Banking_M_and_A_Valuation_and_LBOs_2627_Tentative.pdf",
+      "outlineFile": "PMBA6076_AI_and_Investment_Banking_M_and_A_Valuation_and_LBOs_2627_Tentative.pdf",
+      "outlineSafe": "PMBA6076_AI_and_Investment_Banking_M_and_A_Valuation_and_LBOs_2627_Tentative.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 6:30pm) 09:30-18:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-16",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6119",
+      "courseTitle": "Leadership Development in the Chinese Classics in the AI Era",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Feb 20, 21, 27, 28 & Mar 14,\n 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)\n\n Sun (9:30am - 5:00pm)",
+      "venueRaw": "Admiralty Town Centre& Cyberport",
+      "instructors": [
+        {
+          "name": "Dr. Elizabeth WOO LI"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "NOT eligible for students taking\n PMGM7039 Leadership Development in the Chinese Classics",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [
+        "PMGM7039"
+      ],
+      "crossList": [
+        "PMGM7039"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6119_Leadership_Development_in_the_Chinese_Classics_in_the_%20AI_Era_2627_Tentative.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6119_Leadership_Development_in_the_Chinese_Classics_in_the__AI_Era_2627_Tentative.pdf",
+      "outlineFile": "PMBA6119_Leadership_Development_in_the_Chinese_Classics_in_the_ AI_Era_2627_Tentative.pdf",
+      "outlineSafe": "PMBA6119_Leadership_Development_in_the_Chinese_Classics_in_the__AI_Era_2627_Tentative.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-02-20",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre& Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-21",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre& Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre& Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-28",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre& Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-14",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre& Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6117",
+      "courseTitle": "Digital Marketing Strategy",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Apr 17, 24, May 8 , 15, 22, 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)",
+      "venueRaw": "TBC",
+      "instructors": [
+        {
+          "name": "Prof. Jayson JIA"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "Students who choose this course\n will not be eligible to join the 2027 Summer/August Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6117_Digital_Marketing_Strategy_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6117_Digital_Marketing_Strategy_2526_reference_only.pdf",
+      "outlineFile": "PMBA6117_Digital_Marketing_Strategy_2526_reference_only.pdf",
+      "outlineSafe": "PMBA6117_Digital_Marketing_Strategy_2526_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-04-17",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-24",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-08",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-15",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-22",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6138",
+      "courseTitle": "Mentality Management and Decision Making (A)",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Apr 17, 18, 24, 25, 2027",
+      "meetingRaw": "Sat (9:30am - 6:30pm)\n\n Sun (9:30am - 6:30pm)",
+      "venueRaw": "TBC",
+      "instructors": [
+        {
+          "name": "Prof. Tao WANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "Students who choose this course\n will not be eligible to join the 2027 Summer/August Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6138_Mentality_Management_and_Decision_Making_2627_Tentative.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6138_Mentality_Management_and_Decision_Making_2627_Tentative.pdf",
+      "outlineFile": "PMBA6138_Mentality_Management_and_Decision_Making_2627_Tentative.pdf",
+      "outlineSafe": "PMBA6138_Mentality_Management_and_Decision_Making_2627_Tentative.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 6:30pm) 09:30-18:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-04-17",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-18",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-24",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "09:30",
+          "endTime": "18:30",
+          "venue": "TBC",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMBA6023",
+      "courseTitle": "Risk Management",
+      "hostProgramme": "mba",
+      "hostLabel": "MBA",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "May 29, June 5, 12, 19, 26, 2027",
+      "meetingRaw": "Sat (9:30am - 5:00pm)",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Dr. Maurice TSE"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "2 years of work experience and English proficiency"
+      ],
+      "remarks": "NOT eligible for students taking\n IMBA6034 Risk Management \n\n Students who choose this course will not be eligible to join the 2027\n Summer/August Congregation.",
+      "notOpenTo": [],
+      "notOpenToLabels": [],
+      "remarkAntirequisites": [
+        "IMBA6034"
+      ],
+      "crossList": [
+        "IMBA6034"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MBA/PMBA6023_Risk_Management_2425_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMBA6023_Risk_Management_2425_reference_only.pdf",
+      "outlineFile": "PMBA6023_Risk_Management_2425_reference_only.pdf",
+      "outlineSafe": "PMBA6023_Risk_Management_2425_reference_only.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Sat (9:30am - 5:00pm) 09:30-17:00",
+      "timeBucket": "AM",
+      "meetingDays": [
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-29",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-05",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-12",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-19",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-26",
+          "startTime": "09:30",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMAA7024",
+      "courseTitle": "Financial Statement Analysis: A Data Analytic Approach",
+      "hostProgramme": "maa",
+      "hostLabel": "MAA",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "Module 6\n\n May 5 , 2026 to Jun 18, 2027",
+      "meetingRaw": "Jun 5, 6, Jun 12 & 13,\n 2027\n\n \n\n Sat & Sun\n\n 9:15am - 12:45pm &\n\n 2:00pm - 6:00pm",
+      "venueRaw": "Shenzhen Centre",
+      "instructors": [
+        {
+          "name": "Dr. Nafis RAHMAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAA students as\n common elective",
+      "notOpenTo": [
+        "maa"
+      ],
+      "notOpenToLabels": [
+        "MAA"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMAA7024_Financial_Statement_Analysis_A_Data_Analytic_Approach_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMAA7024_Financial_Statement_Analysis_A_Data_Analytic_Approach_2627.pdf",
+      "outlineFile": "PMAA7024_Financial_Statement_Analysis_A_Data_Analytic_Approach_2627.pdf",
+      "outlineSafe": "PMAA7024_Financial_Statement_Analysis_A_Data_Analytic_Approach_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Sat & Sun 09:15-12:45",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-06-05",
+          "startTime": "09:15",
+          "endTime": "12:45",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-05",
+          "startTime": "14:00",
+          "endTime": "18:00",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-06",
+          "startTime": "09:15",
+          "endTime": "12:45",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-06",
+          "startTime": "14:00",
+          "endTime": "18:00",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-12",
+          "startTime": "09:15",
+          "endTime": "12:45",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-12",
+          "startTime": "14:00",
+          "endTime": "18:00",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-13",
+          "startTime": "09:15",
+          "endTime": "12:45",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-13",
+          "startTime": "14:00",
+          "endTime": "18:00",
+          "venue": "Shenzhen Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MACC7013",
+      "courseTitle": "International Tax and Transfer Pricing",
+      "hostProgramme": "macct",
+      "hostLabel": "MAcct",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 23, 27, 30\n\n Feb 3, 13, 17, 20, 24, 27 \n\n Mar 3\n\n \n\n Wed & Sat\n\n 2:00pm - 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Travis CHOW"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAcct and MSAF\n students as common elective;\n\n *Not open to students who have taken or are taking MSAF7026",
+      "notOpenTo": [
+        "macct",
+        "msaf"
+      ],
+      "notOpenToLabels": [
+        "MAcct",
+        "MSAF"
+      ],
+      "remarkAntirequisites": [
+        "MSAF7026"
+      ],
+      "crossList": [
+        "MSAF7026"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MACC7013_International_Tax_and_Transfer_Pricing_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MACC7013_International_Tax_and_Transfer_Pricing_2627.pdf",
+      "outlineFile": "MACC7013_International_Tax_and_Transfer_Pricing_2627.pdf",
+      "outlineSafe": "MACC7013_International_Tax_and_Transfer_Pricing_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wed & Sat 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MACC7027",
+      "courseTitle": "Special Topics in Financial Reporting",
+      "hostProgramme": "macct",
+      "hostLabel": "MAcct",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 23, 27, 30\n\n Feb 3, 13, 17, 20, 24, 27 \n\n Mar 3\n\n \n\n Wed & Sat\n\n 2:00pm - 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Winnie LEUNG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAcct students as\n common elective",
+      "notOpenTo": [
+        "macct"
+      ],
+      "notOpenToLabels": [
+        "MAcct"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MACC7027_Special_Topics_in_Financial_Reporting_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MACC7027_Special_Topics_in_Financial_Reporting_2627.pdf",
+      "outlineFile": "MACC7027_Special_Topics_in_Financial_Reporting_2627.pdf",
+      "outlineSafe": "MACC7027_Special_Topics_in_Financial_Reporting_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wed & Sat 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MACC7011",
+      "courseTitle": "Financial Markets Regulations and Compliance",
+      "hostProgramme": "macct",
+      "hostLabel": "MAcct",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 19, 23, 30\n\n Apr 2, 6, 9, 13, 16, 20, 23\n\n \n\n Tue & Fri\n\n 2:00pm - 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Jessie FOK"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAcct, MGM and MSAF\n students as common elective;\n\n *Not open to students who have taken or are taking PMGM7021/MSAF7008",
+      "notOpenTo": [
+        "macct",
+        "mgm",
+        "msaf"
+      ],
+      "notOpenToLabels": [
+        "MAcct",
+        "MGM",
+        "MSAF"
+      ],
+      "remarkAntirequisites": [
+        "PMGM7021",
+        "MSAF7008"
+      ],
+      "crossList": [
+        "PMGM7021",
+        "MSAF7008"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MACC7011_Financial_Markets_Regulations_and_Compliance_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MACC7011_Financial_Markets_Regulations_and_Compliance_2627.pdf",
+      "outlineFile": "MACC7011_Financial_Markets_Regulations_and_Compliance_2627.pdf",
+      "outlineSafe": "MACC7011_Financial_Markets_Regulations_and_Compliance_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tue & Fri 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-30",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MACC7014",
+      "courseTitle": "ESG, Risk Management and Advanced Corporate Control",
+      "hostProgramme": "macct",
+      "hostLabel": "MAcct",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 18, 22, 25\n\n Apr 1, 8, 12, 15, 19, 22, 26\n\n \n\n Mon & Thu\n\n 9:30am-12:30pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Derrald STICE"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAcct students as\n common elective",
+      "notOpenTo": [
+        "macct"
+      ],
+      "notOpenToLabels": [
+        "MAcct"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MACC7014_ESG_Risk_Management_and_Advanced_Corporate_Control_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MACC7014_ESG_Risk_Management_and_Advanced_Corporate_Control_2627.pdf",
+      "outlineFile": "MACC7014_ESG_Risk_Management_and_Advanced_Corporate_Control_2627.pdf",
+      "outlineSafe": "MACC7014_ESG_Risk_Management_and_Advanced_Corporate_Control_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Mon & Thu 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-18",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-25",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-01",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-08",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-12",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-15",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-19",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-26",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MAIB7013",
+      "courseTitle": "Smart Manufacturing and Operations Management",
+      "hostProgramme": "maib",
+      "hostLabel": "MAIB",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 1, 4, 8 & 15, 2026 \n\n Tentative Company site visit\n\n Jan 5, 8, 12 & 15, 2027\n\n \n\n Tue &Fri\n\n 9:30am - 12:30pm\n\n Except Jan 15, 2027 (Fri): 6:30pm - 9:30pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Zhixi WAN"
+        },
+        {
+          "name": "Prof. Huiyin OUYANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAIB students as\n common elective",
+      "notOpenTo": [
+        "maib"
+      ],
+      "notOpenToLabels": [
+        "MAIB"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MAIB7013_Smart_Manufacturing_and_Operations_Management_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MAIB7013_Smart_Manufacturing_and_Operations_Management_2627.pdf",
+      "outlineFile": "MAIB7013_Smart_Manufacturing_and_Operations_Management_2627.pdf",
+      "outlineSafe": "MAIB7013_Smart_Manufacturing_and_Operations_Management_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tue &Fri 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-01",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN"
+          ]
+        },
+        {
+          "date": "2026-12-04",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN"
+          ]
+        },
+        {
+          "date": "2026-12-08",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN"
+          ]
+        },
+        {
+          "date": "2026-12-15",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN"
+          ]
+        },
+        {
+          "date": "2026-12-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Company site visit (tentative)",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN",
+            "Prof. Huiyin OUYANG"
+          ]
+        },
+        {
+          "date": "2026-12-29",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Company site visit (tentative)",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Zhixi WAN",
+            "Prof. Huiyin OUYANG"
+          ]
+        },
+        {
+          "date": "2027-01-05",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Huiyin OUYANG"
+          ]
+        },
+        {
+          "date": "2027-01-08",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Huiyin OUYANG"
+          ]
+        },
+        {
+          "date": "2027-01-12",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Huiyin OUYANG"
+          ]
+        },
+        {
+          "date": "2027-01-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture",
+          "instructors": [
+            "Prof. Huiyin OUYANG"
+          ]
+        }
+      ]
+    },
+    {
+      "courseCode": "MAIB7007",
+      "courseTitle": "Accounting and Audit Automation",
+      "hostProgramme": "maib",
+      "hostLabel": "MAIB",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22, 2027 to Mar 10, 2027",
+      "meetingRaw": "Jan 22, 26 & 29, 2027\n\n Feb 2, 12, 16, 19, 23 & 26, 2027\n\n Mar 2, 2027\n\n \n\n Tue &Fri\n\n 9:30am - 12:30pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Peeyush TAORI"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAIB students as\n common elective",
+      "notOpenTo": [
+        "maib"
+      ],
+      "notOpenToLabels": [
+        "MAIB"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MAIB7007_Accounting_and_Audit_Automation_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MAIB7007_Accounting_and_Audit_Automation_2627.pdf",
+      "outlineFile": "MAIB7007_Accounting_and_Audit_Automation_2627.pdf",
+      "outlineSafe": "MAIB7007_Accounting_and_Audit_Automation_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tue &Fri 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-12",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-19",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-26",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MAIB7008",
+      "courseTitle": "Strategic Management and Leadership in the AI Era",
+      "hostProgramme": "maib",
+      "hostLabel": "MAIB",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22, 2027 to Mar 10, 2027",
+      "meetingRaw": "Jan 22, 26 & 29, 2027\n\n Feb 2, 12, 16, 19, 23 & 26, 2027\n\n Mar 2, 2027\n\n \n\n Tue &Fri\n\n 2:00pm - 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Matthias FAHN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAIB students as\n common elective",
+      "notOpenTo": [
+        "maib"
+      ],
+      "notOpenToLabels": [
+        "MAIB"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MAIB7008_Strategic_Management_and_Leadership_in_the_AI_Era_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MAIB7008_Strategic_Management_and_Leadership_in_the_AI_Era_2627.pdf",
+      "outlineFile": "MAIB7008_Strategic_Management_and_Leadership_in_the_AI_Era_2627.pdf",
+      "outlineSafe": "MAIB7008_Strategic_Management_and_Leadership_in_the_AI_Era_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tue &Fri 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-26",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MAIB7014",
+      "courseTitle": "Human-AI Interaction and Collaboration",
+      "hostProgramme": "maib",
+      "hostLabel": "MAIB",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18, 2027 to May 4, 2027",
+      "meetingRaw": "Mar 22, 24 & 31, 2027\n\n Apr 7, 12, 14, 19, 21 & 30, 2027\n\n May 3, 2027\n\n \n\n Mon, Wed\n\n 6:30pm - 9:30pm\n\n Except Apr 30 (Fri): 6:30pm - 9:30pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Jack JIANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MAIB students as\n common elective",
+      "notOpenTo": [
+        "maib"
+      ],
+      "notOpenToLabels": [
+        "MAIB"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MAIB7014_Human_AI_Interaction_and_Collaboration_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MAIB7014_Human_AI_Interaction_and_Collaboration_2627.pdf",
+      "outlineFile": "MAIB7014_Human_AI_Interaction_and_Collaboration_2627.pdf",
+      "outlineSafe": "MAIB7014_Human_AI_Interaction_and_Collaboration_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Mon, Wed 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        1,
+        3,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-24",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-31",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-07",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-12",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-14",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-19",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-21",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-30",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-03",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "ECON6074",
+      "courseTitle": "Causal Inference",
+      "hostProgramme": "mecon",
+      "hostLabel": "MEcon",
+      "module": 3,
+      "sectionId": "C",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "3-Dec, 7-Dec, 10-Dec, 14-Dec,\n 17-Dec, 21-Dec, 2026 \n\n 4-Jan, 7-Jan, 11-Jan, 14-Jan, 2027\n\n \n\n Monday & Thursday\n\n 2:00pm to 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Bingjing LI"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MEcon students as\n common elective",
+      "notOpenTo": [
+        "mecon"
+      ],
+      "notOpenToLabels": [
+        "MEcon"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/ECON6074_Causal_Inference_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/ECON6074_Causal_Inference_2627.pdf",
+      "outlineFile": "ECON6074_Causal_Inference_2627.pdf",
+      "outlineSafe": "ECON6074_Causal_Inference_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-07",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-07",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "ECON6114",
+      "courseTitle": "Economic Policy III",
+      "hostProgramme": "mecon",
+      "hostLabel": "MEcon",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "19-Mar, 23-Mar, 30-Mar, 2-Apr,\n 6-Apr, 9-Apr, 13-Apr, 16-Apr, 20-Apr, 23-Apr, 2027\n\n \n\n Tuesday & Friday\n\n 9:30am to 12:30pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Dr. Xiyue CAO"
+        },
+        {
+          "name": "Prof. Naijia GUO"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MEcon students as\n common elective",
+      "notOpenTo": [
+        "mecon"
+      ],
+      "notOpenToLabels": [
+        "MEcon"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/ECON6114_Economic_Policy_III_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/ECON6114_Economic_Policy_III_2526_reference_only.pdf",
+      "outlineFile": "ECON6114_Economic_Policy_III_2526_reference_only.pdf",
+      "outlineSafe": "ECON6114_Economic_Policy_III_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-19",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-30",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-06",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-13",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-16",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-20",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "ECON6118",
+      "courseTitle": "Government and Regulation",
+      "hostProgramme": "mecon",
+      "hostLabel": "MEcon",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "19-Mar, 23-Mar, 30-Mar, 2-Apr,\n 6-Apr, 9-Apr, 13-Apr, 16-Apr, 20-Apr, 23-Apr, 2027\n\n \n\n Tuesday & Friday\n\n 2:00pm to 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Ruixue JIA"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MEcon students as\n common elective",
+      "notOpenTo": [
+        "mecon"
+      ],
+      "notOpenToLabels": [
+        "MEcon"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/ECON6118_Government_and_Regulation_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/ECON6118_Government_and_Regulation_2627.pdf",
+      "outlineFile": "ECON6118_Government_and_Regulation_2627.pdf",
+      "outlineSafe": "ECON6118_Government_and_Regulation_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-30",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "ECON6060",
+      "courseTitle": "Development Economics",
+      "hostProgramme": "mecon",
+      "hostLabel": "MEcon",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "11-May, 14-May, 18-May, 21-May,\n 25-May, 28-May, 1-Jun, 4-Jun, 8-Jun, 11-Jun, 2027\n\n \n\n Tuesday & Friday\n\n 2:00pm to 5:00pm",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Gedeon LIM"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MEcon students as\n common elective",
+      "notOpenTo": [
+        "mecon"
+      ],
+      "notOpenToLabels": [
+        "MEcon"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/ECON6060_Development_Economics_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/ECON6060_Development_Economics_2526_reference_only.pdf",
+      "outlineFile": "ECON6060_Development_Economics_2526_reference_only.pdf",
+      "outlineSafe": "ECON6060_Development_Economics_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-28",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-01",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MFIN7068",
+      "courseTitle": "Crypto Finance",
+      "hostProgramme": "mffintech",
+      "hostLabel": "MFFinTech",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 18, 22, 25\n\n Apr 1, 8, 12, 15, 19, 22, 26, 2027\n\n \n\n Monday & Thursday\n\n 14:00-17:00\n\n Occasionally on Thursday \n\n 18:30-21:30 (Apr 22)",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Ms. Gracy CHEN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MFFinTech and MAA\n students as common elective;\n\n Not open to MFWM students for enrolment this round;\n\n *Not open to students who have taken or are taking PMAA7008",
+      "notOpenTo": [
+        "mffintech",
+        "maa",
+        "mwm"
+      ],
+      "notOpenToLabels": [
+        "MFFinTech",
+        "MAA",
+        "MFWM"
+      ],
+      "remarkAntirequisites": [
+        "PMAA7008"
+      ],
+      "crossList": [
+        "PMAA7008"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MFIN7068_Crypto_Finance_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MFIN7068_Crypto_Finance_2627.pdf",
+      "outlineFile": "MFIN7068_Crypto_Finance_2627.pdf",
+      "outlineSafe": "MFIN7068_Crypto_Finance_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-01",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-26",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MFIN7053",
+      "courseTitle": "Fundamentals of Banking Institutions",
+      "hostProgramme": "mfin",
+      "hostLabel": "MFin",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 22, 26, 29,\n\n Feb 2, 12, 16, 19, 23, 26, 2027\n\n (9 Sessions Only)\n\n \n\n Tuesday & Friday\n\n 13:40-17:00\n\n (9 Sessions only)",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Jing LI"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MFin, MAA and MAcct\n students as common elective;\n\n *Not open to students who have taken or are taking MACC7023/PMAA7022",
+      "notOpenTo": [
+        "mfin",
+        "maa",
+        "macct"
+      ],
+      "notOpenToLabels": [
+        "MFin",
+        "MAA",
+        "MAcct"
+      ],
+      "remarkAntirequisites": [
+        "MACC7023",
+        "PMAA7022"
+      ],
+      "crossList": [
+        "MACC7023",
+        "PMAA7022"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MFIN7053_Fundamentals_of_Banking_Insitutions_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MFIN7053_Fundamentals_of_Banking_Insitutions_2526_reference_only.pdf",
+      "outlineFile": "MFIN7053_Fundamentals_of_Banking_Insitutions_2526_reference_only.pdf",
+      "outlineSafe": "MFIN7053_Fundamentals_of_Banking_Insitutions_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 13:40-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-22",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-12",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-19",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-23",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-26",
+          "startTime": "13:40",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MFIN7055",
+      "courseTitle": "Hedge Fund and its Strategy",
+      "hostProgramme": "mfin",
+      "hostLabel": "MFin",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 23, 27, 30,\n\n Feb 3, 13, 17, 20, 24, 27, \n\n Mar 3, 2027\n\n \n\n Wednesday & Saturday\n\n 9:30-12:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Dr. Frank WANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MFin students as\n common elective",
+      "notOpenTo": [
+        "mfin"
+      ],
+      "notOpenToLabels": [
+        "MFin"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MFIN7055_Hedge_Fund_and_its_Strategy_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MFIN7055_Hedge_Fund_and_its_Strategy_2526_reference_only.pdf",
+      "outlineFile": "MFIN7055_Hedge_Fund_and_its_Strategy_2526_reference_only.pdf",
+      "outlineSafe": "MFIN7055_Hedge_Fund_and_its_Strategy_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-24",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MFIN7064",
+      "courseTitle": "Entrepreneurship in Finance",
+      "hostProgramme": "mfin",
+      "hostLabel": "MFin",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "May 6, 10, 14 (Morning), 17, 24,\n 27, 28 (Morning), 31, \n\n June 3, 4 (Morning), 2027\n\n \n\n Monday & Thursday\n\n 14:00-17:00\n\n Occasionally on Friday Morning 09:30-12:30 \n\n on May 14, May 28 and June 4",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Anthony YANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MFin students as\n common elective",
+      "notOpenTo": [
+        "mfin"
+      ],
+      "notOpenToLabels": [
+        "MFin"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MFIN7064_Entrepreneurship_in_Finance_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MFIN7064_Entrepreneurship_in_Finance_2526_reference_only.pdf",
+      "outlineFile": "MFIN7064_Entrepreneurship_in_Finance_2526_reference_only.pdf",
+      "outlineSafe": "MFIN7064_Entrepreneurship_in_Finance_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-28",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-31",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMGM7005",
+      "courseTitle": "Dynamics of Multinational Corporations",
+      "hostProgramme": "mgm",
+      "hostLabel": "MGM",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 22, 26, 29, 2027\n\n Feb 2, 12, 16, 19, 23, 2027\n\n Mar 2, 9, 2027\n\n \n\n Tuesday & Friday\n\n 09:30-12:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Filippo Carlo WEZEL"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MGM students as\n common elective",
+      "notOpenTo": [
+        "mgm"
+      ],
+      "notOpenToLabels": [
+        "MGM"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMGM7005_Dynamics_of_Multinational_Corporations_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMGM7005_Dynamics_of_Multinational_Corporations_2526_reference_only.pdf",
+      "outlineFile": "PMGM7005_Dynamics_of_Multinational_Corporations_2526_reference_only.pdf",
+      "outlineSafe": "PMGM7005_Dynamics_of_Multinational_Corporations_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-12",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-19",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-09",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMGM7021",
+      "courseTitle": "Corporate Governance and Social Responsibility",
+      "hostProgramme": "mgm",
+      "hostLabel": "MGM",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 25, 28, 2027\n\n Feb 1, 11, 15, 18, 22, 25, 2027\n\n Mar 1, 4, 2027\n\n \n\n Monday & Thursday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Dr. Sammy FUNG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MGM, MAcct and MSAF\n students as common elective;\n\n *Not open to students who have taken or are taking MSAF7008/MACC7011",
+      "notOpenTo": [
+        "mgm",
+        "macct",
+        "msaf"
+      ],
+      "notOpenToLabels": [
+        "MGM",
+        "MAcct",
+        "MSAF"
+      ],
+      "remarkAntirequisites": [
+        "MSAF7008",
+        "MACC7011"
+      ],
+      "crossList": [
+        "MACC7011",
+        "MSAF7008"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMGM7021_Corporate_Governance_and_Social_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMGM7021_Corporate_Governance_and_Social_2526_reference_only.pdf",
+      "outlineFile": "PMGM7021_Corporate_Governance_and_Social_2526_reference_only.pdf",
+      "outlineSafe": "PMGM7021_Corporate_Governance_and_Social_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-25",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-28",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-11",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-18",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-25",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-04",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMGM7034",
+      "courseTitle": "Social Value and the Humanity of Leadership",
+      "hostProgramme": "mgm",
+      "hostLabel": "MGM",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 21, 2027\n\n Apr 4, 11, 18, 25, 2027\n\n \n\n Sunday block\n\n 09:30-12:30\n\n 14:00-17:00",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Dr. Cecilia LEUNG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MGM students as\n common elective",
+      "notOpenTo": [
+        "mgm"
+      ],
+      "notOpenToLabels": [
+        "MGM"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMGM7034_Social_Value_and_Humanity_in_Leadership_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMGM7034_Social_Value_and_Humanity_in_Leadership_2526_reference_only.pdf",
+      "outlineFile": "PMGM7034_Social_Value_and_Humanity_in_Leadership_2526_reference_only.pdf",
+      "outlineSafe": "PMGM7034_Social_Value_and_Humanity_in_Leadership_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Sunday block 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-21",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-04",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-18",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMGM7037",
+      "courseTitle": "Impact Investing in Sustainable Technologies",
+      "hostProgramme": "mgm",
+      "hostLabel": "MGM",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "May 6, 10, 17, 20, 24, 27, 31,\n 2027\n\n Jun 3, 7, 10, 2027\n\n \n\n Monday & Thursday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Stan HO and Prof. Poman LO"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MGM students as\n common elective",
+      "notOpenTo": [
+        "mgm"
+      ],
+      "notOpenToLabels": [
+        "MGM"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMGM7037_Impact_Investing_in_Sustainable_Technologies_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMGM7037_Impact_Investing_in_Sustainable_Technologies_2526_reference_only.pdf",
+      "outlineFile": "PMGM7037_Impact_Investing_in_Sustainable_Technologies_2526_reference_only.pdf",
+      "outlineSafe": "PMGM7037_Impact_Investing_in_Sustainable_Technologies_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-06",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-10",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-17",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-20",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-24",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-27",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-31",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-03",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-07",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-10",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSAF7008",
+      "courseTitle": "Corporate Governance and Social Responsibility",
+      "hostProgramme": "msaf",
+      "hostLabel": "MSAF",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 18, 22, 25,\n\n Apr 1, 8, 12, 15, 19, 22, 26, 2027\n\n \n\n Monday & Thursday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Shipeng YAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSAF, MAcct and MGM\n students as common elective;\n\n *Not open to students who have taken or are taking\n MACC7011/PMGM7021/PMGM7028",
+      "notOpenTo": [
+        "msaf",
+        "macct",
+        "mgm"
+      ],
+      "notOpenToLabels": [
+        "MSAF",
+        "MAcct",
+        "MGM"
+      ],
+      "remarkAntirequisites": [
+        "MACC7011",
+        "PMGM7021",
+        "PMGM7028"
+      ],
+      "crossList": [
+        "MACC7011",
+        "PMGM7021",
+        "PMGM7028"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSAF7008_Corporate_Governance_and_Social_Responsibility_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSAF7008_Corporate_Governance_and_Social_Responsibility_2526_reference_only.pdf",
+      "outlineFile": "MSAF7008_Corporate_Governance_and_Social_Responsibility_2526_reference_only.pdf",
+      "outlineSafe": "MSAF7008_Corporate_Governance_and_Social_Responsibility_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-18",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-25",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-08",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-12",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-19",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-26",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSBA7023",
+      "courseTitle": "Geospatial and Business Analytics",
+      "hostProgramme": "msba",
+      "hostLabel": "MSc(BA)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 1, 4, 8, 11, 15, 18,\n 2026\n\n Jan 5, 8, 12, 15, 2027\n\n \n\n Tuesday & Friday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Zhixi WAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(BA) students as\n common elective",
+      "notOpenTo": [
+        "msba"
+      ],
+      "notOpenToLabels": [
+        "MSc(BA)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSBA7023_Geospatial_and_Business_Analytics_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSBA7023_Geospatial_and_Business_Analytics_2627.pdf",
+      "outlineFile": "MSBA7023_Geospatial_and_Business_Analytics_2627.pdf",
+      "outlineSafe": "MSBA7023_Geospatial_and_Business_Analytics_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-04",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-08",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-11",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-18",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-05",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-08",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-12",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSBA7030",
+      "courseTitle": "Digital Innovation",
+      "hostProgramme": "msba",
+      "hostLabel": "MSc(BA)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 1, 2 (Wed:18:30-21:30), 3\n (Thu:18:30-21:30), 4, 6 (Sun:18:30-21:30), 7 (Mon:18:30-21:30), 8, 9 (Wed),\n 11, 19 (Sat: 18:30-21:30), 2026\n\n \n\n Tuesday & Friday\n\n 9:30-12:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Zhenhui Jack JIANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(BA) students as\n common elective",
+      "notOpenTo": [
+        "msba"
+      ],
+      "notOpenToLabels": [
+        "MSc(BA)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSBA7030_Digital_Innovation_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSBA7030_Digital_Innovation_2627.pdf",
+      "outlineFile": "MSBA7030_Digital_Innovation_2627.pdf",
+      "outlineSafe": "MSBA7030_Digital_Innovation_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-02",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-03",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-04",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-06",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-07",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-08",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-09",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-11",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-19",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSBA7021",
+      "courseTitle": "Optimization and Reinforcement Learning",
+      "hostProgramme": "msba",
+      "hostLabel": "MSc(BA)",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22, 2027 to Mar 10, 2027",
+      "meetingRaw": "Jan 23, 27, 30, 2027\n\n Feb 3, 13, 17, 20, 24, 27, 2027\n\n Mar 3, 2027\n\n \n\n Wednesday & Saturday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Wei ZHANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [
+        "calculus & linear algebra; probability & statistics; Python coding"
+      ],
+      "remarks": "Not open to MSc(BA) students as\n common elective",
+      "notOpenTo": [
+        "msba"
+      ],
+      "notOpenToLabels": [
+        "MSc(BA)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSBA7021_Optimization_and_Reinforcement_Learning_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSBA7021_Optimization_and_Reinforcement_Learning_2627.pdf",
+      "outlineFile": "MSBA7021_Optimization_and_Reinforcement_Learning_2627.pdf",
+      "outlineSafe": "MSBA7021_Optimization_and_Reinforcement_Learning_2627.pdf",
+      "confirmOnSelect": true,
+      "dayPattern": "Wednesday & Saturday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-23",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-17",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-24",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSBA7036",
+      "courseTitle": "Ethics in Artificial Intelligence",
+      "hostProgramme": "msba",
+      "hostLabel": "MSc(BA)",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22, 2027 to Mar 10, 2027",
+      "meetingRaw": "Jan 25, 28, 2027\n\n Feb 1, 11, 15, 18, 22, 25, 2027\n\n Mar 1, 4, 2027\n\n \n\n Monday & Thursday\n\n 14:00-17:00",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Rachel STERKEN &"
+        },
+        {
+          "name": "Prof. Boris BABIC"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(BA) students as\n common elective",
+      "notOpenTo": [
+        "msba"
+      ],
+      "notOpenToLabels": [
+        "MSc(BA)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSBA7036_Ethics_in_Artificial_Intelligence_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSBA7036_Ethics_in_Artificial_Intelligence_2627.pdf",
+      "outlineFile": "MSBA7036_Ethics_in_Artificial_Intelligence_2627.pdf",
+      "outlineSafe": "MSBA7036_Ethics_in_Artificial_Intelligence_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-28",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-01",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-01",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSBA7040",
+      "courseTitle": "Sports Analytics",
+      "hostProgramme": "msba",
+      "hostLabel": "MSc(BA)",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22, 2027 to Mar 10, 2027",
+      "meetingRaw": "Jan 22, 26, 29, 2027\n\n Feb 2, 12, 16, 19, 23, 26, 2027\n\n Mar 2, 2027\n\n \n\n Tuesday & Friday\n\n 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Minje PARK"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(BA) students as\n common elective",
+      "notOpenTo": [
+        "msba"
+      ],
+      "notOpenToLabels": [
+        "MSc(BA)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSBA7040_Sports_Analytics_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSBA7040_Sports_Analytics_2526_reference_only.pdf",
+      "outlineFile": "MSBA7040_Sports_Analytics_2526_reference_only.pdf",
+      "outlineSafe": "MSBA7040_Sports_Analytics_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-26",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-29",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-02",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-12",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-16",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-19",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-23",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-26",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-02",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7011",
+      "courseTitle": "Service Marketing and Management",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 3,
+      "sectionId": "B",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 2, 5, 9, 12, 16, 19,\n 2026\n\n Jan 2, 6, 9, 13, 2027\n\n \n\n Wednesday & Saturday\n\n 14:00pm - 17:00pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Dr. Buston CHU"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7011_Services_Marketing_Management_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7011_Services_Marketing_Management_2627.pdf",
+      "outlineFile": "MSMK7011_Services_Marketing_Management_2627.pdf",
+      "outlineSafe": "MSMK7011_Services_Marketing_Management_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-05",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7024",
+      "courseTitle": "ESG and Marketing for Social Impact",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 3, 7, 10, 14, 17, 21,\n 2026\n\n Jan 4, 7, 11, 14, 2027\n\n \n\n Monday & Thursday\n\n 09:30am - 12:30pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Dr. Sean RACH"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7024_ESG_and_Marketing_for_Social_Impact_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7024_ESG_and_Marketing_for_Social_Impact_2526_reference_only.pdf",
+      "outlineFile": "MSMK7024_ESG_and_Marketing_for_Social_Impact_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7024_ESG_and_Marketing_for_Social_Impact_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-07",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-10",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-14",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-17",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-21",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-04",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-07",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-11",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7026",
+      "courseTitle": "Data and AI Transformation",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 2, 5, 9, 12, 16, 19,\n 2026\n\n Jan 6, 9, 13, 16, 2027\n\n \n\n Wednesday & Saturday\n\n 18:30pm - 21:30pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Mr. Kevin CHEUNG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7026_Data_and_AI_Transformation_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7026_Data_and_AI_Transformation_2627.pdf",
+      "outlineFile": "MSMK7026_Data_and_AI_Transformation_2627.pdf",
+      "outlineSafe": "MSMK7026_Data_and_AI_Transformation_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-02",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-05",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-09",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-12",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-16",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-19",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-06",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-09",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-13",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-16",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7031",
+      "courseTitle": "Pricing Strategies and Tactics",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 3, 7, 10, 14, 17, 21,\n 2026\n\n Jan 4, 7, 11, 14, 2027\n\n \n\n Monday & Thursday\n\n 09:30am - 12:30pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Jinzhao DU"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7031_Pricing_Strategies_and_Tactics_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7031_Pricing_Strategies_and_Tactics_2526_reference_only.pdf",
+      "outlineFile": "MSMK7031_Pricing_Strategies_and_Tactics_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7031_Pricing_Strategies_and_Tactics_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-07",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-10",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-14",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-17",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-21",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-04",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-07",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-11",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-14",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7037",
+      "courseTitle": "Corporate Communications",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 4, 6\n (Sun, 14:00pm-17:00pm), 8, 11, 15 (18:45pm-21:45pm), 18, 2026\n\n Jan 5, 8, 12, 15, 2027\n\n \n\n Tuesday & Friday\n\n 18:30pm - 21:30pm",
+      "venueRaw": "Admiralty Town Centre & Cyberport",
+      "instructors": [
+        {
+          "name": "Ms. Clara SHEK"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7037_Corporate_Communications_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7037_Corporate_Communications_2526_reference_only.pdf",
+      "outlineFile": "MSMK7037_Corporate_Communications_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7037_Corporate_Communications_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        0,
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-05",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7045",
+      "courseTitle": "Retail-Driven Marketing Innovation",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 23, 27, 30, 2027\n\n Feb 3, 13, 20, 24, 27, 2027\n\n Mar 3, 6, 2027\n\n \n\n Wednesday & Saturday\n\n 09:30am - 12:30pm",
+      "venueRaw": "Admiralty Town Centre & Cyberport",
+      "instructors": [
+        {
+          "name": "Ms. Gigi CHEUNG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7045_Retail_Driven_Marketing_Innovation_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7045_Retail_Driven_Marketing_Innovation_2627.pdf",
+      "outlineFile": "MSMK7045_Retail_Driven_Marketing_Innovation_2627.pdf",
+      "outlineSafe": "MSMK7045_Retail_Driven_Marketing_Innovation_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-27",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-30",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-13",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-20",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-24",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-27",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-03",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-06",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre & Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7016",
+      "courseTitle": "Global Marketing",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 5,
+      "sectionId": "B",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 18, 22, 25, 2027\n\n Apr 1, 8, 12, 15, 19, 22, 26, 2027\n\n \n\n Monday & Thursday\n\n 14:00pm - 17:00pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Michael JIA"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7016_Global_Marketing_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7016_Global_Marketing_2526_reference_only.pdf",
+      "outlineFile": "MSMK7016_Global_Marketing_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7016_Global_Marketing_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-01",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-26",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7021",
+      "courseTitle": "Big Data Consumer Analytics",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 19, 23, 30, 2027\n\n Apr 2, 6, 9, 13, 16, 20, 23, 2027\n\n \n\n Tuesday & Friday\n\n 09:30am - 12:30pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Tuan PHAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [
+        "PMBA6089",
+        "IMBA6114"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7021_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7021_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlineFile": "MSMK7021_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7021_Big_Data_Consumer_Analytics_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-19",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-30",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-02",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-06",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-13",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-16",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-20",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7042",
+      "courseTitle": "Sports Marketing and Business Collaboration",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 19, 23, 30, 2027\n\n Apr 2, 6, 9, 13, 16, 20, 23, 2027\n\n \n\n Tuesday & Friday\n\n 14:00pm - 17:00pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Ms. Rainnie IP"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7042_Sports_Marketing_and_Business_Collaboration_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7042_Sports_Marketing_and_Business_Collaboration_2627.pdf",
+      "outlineFile": "MSMK7042_Sports_Marketing_and_Business_Collaboration_2627.pdf",
+      "outlineSafe": "MSMK7042_Sports_Marketing_and_Business_Collaboration_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Tuesday & Friday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        5
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-30",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-23",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7046",
+      "courseTitle": "AI for Business Decisions",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 20, 24, 31, 2027\n\n Apr 3, 7, 10, 14, 17, 21, 24, 2027\n\n \n\n Wednesday & Saturday\n\n 14:00pm - 17:00pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Shan HUANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7046_AI_for_Business_Decisions_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7046_AI_for_Business_Decisions_2627.pdf",
+      "outlineFile": "MSMK7046_AI_for_Business_Decisions_2627.pdf",
+      "outlineSafe": "MSMK7046_AI_for_Business_Decisions_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-31",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-07",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7012",
+      "courseTitle": "New Product Strategies",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Block",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "May 17, 18, 21, 22, 2027\n\n \n\n Monday & Tuesday\n\n Friday & Saturday\n\n 09:30am - 12:30pm & 13:30pm - 18:00pm\n\n (8 sessions only)",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Michael JIA"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7012_New_Product_Strategies_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7012_New_Product_Strategies_2526_reference_only.pdf",
+      "outlineFile": "MSMK7012_New_Product_Strategies_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7012_New_Product_Strategies_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Tuesday 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-17",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-17",
+          "startTime": "13:30",
+          "endTime": "18:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-18",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-18",
+          "startTime": "13:30",
+          "endTime": "18:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-21",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-21",
+          "startTime": "13:30",
+          "endTime": "18:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-22",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-22",
+          "startTime": "13:30",
+          "endTime": "18:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "MSMK7043",
+      "courseTitle": "Marketing in Entertainment Business and Creative Industries",
+      "hostProgramme": "msmkt",
+      "hostLabel": "MSc(Mktg)",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "May 6, 10, 17, 20, 24, 27, 31,\n 2027\n\n Jun 3, 7, 10, 2027\n\n \n\n Monday & Thursday\n\n 14:00pm - 17:00pm",
+      "venueRaw": "Admiralty Town Centre",
+      "instructors": [
+        {
+          "name": "Prof. Tingting FAN"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MSc(Mktg) students\n as common elective",
+      "notOpenTo": [
+        "msmkt"
+      ],
+      "notOpenToLabels": [
+        "MSc(Mktg)"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/MSMK7043_Marketing_in_Entertainment_Business_and_Creative_Industries_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/MSMK7043_Marketing_in_Entertainment_Business_and_Creative_Industries_2526_reference_only.pdf",
+      "outlineFile": "MSMK7043_Marketing_in_Entertainment_Business_and_Creative_Industries_2526_reference_only.pdf",
+      "outlineSafe": "MSMK7043_Marketing_in_Entertainment_Business_and_Creative_Industries_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Monday & Thursday 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-17",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-20",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-24",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-27",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-31",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-03",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-07",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-10",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Admiralty Town Centre",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMWM7016",
+      "courseTitle": "Alternative Investments",
+      "hostProgramme": "mwm",
+      "hostLabel": "MWM",
+      "module": 3,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 3\n\n Dec 1, 2026 to Jan 21, 2027",
+      "meetingRaw": "Dec 2, 5, 9, 14, 16, 21,\n 2026,\n\n Jan 2, 6, 9, 13, 2027\n\n \n\n Wednesday & Saturday 14:00-17:00\n\n Occasionally on Monday night 18:30-21:30 (Dec 14, 21)",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Ms. Joy WANG"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MWM and MSAF\n students as common elective;\n\n *Not open to students who have taken or are taking MSAF7017",
+      "notOpenTo": [
+        "mwm",
+        "msaf"
+      ],
+      "notOpenToLabels": [
+        "MWM",
+        "MSAF"
+      ],
+      "remarkAntirequisites": [
+        "MSAF7017"
+      ],
+      "crossList": [
+        "MSAF7017"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMWM7016_Alternative_Investments_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMWM7016_Alternative_Investments_2526_reference_only.pdf",
+      "outlineFile": "PMWM7016_Alternative_Investments_2526_reference_only.pdf",
+      "outlineSafe": "PMWM7016_Alternative_Investments_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 14:00-17:00 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        1,
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2026-12-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-05",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-14",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-16",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2026-12-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-06",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-09",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-13",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMWM7020",
+      "courseTitle": "Family Office",
+      "hostProgramme": "mwm",
+      "hostLabel": "MWM",
+      "module": 4,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 4\n\n Jan 22 to Mar 10, 2027",
+      "meetingRaw": "Jan 25, 28,\n\n Feb 1, 11, 15, 18, 22, 25,\n\n Mar 1, 4, 2027\n\n \n\n Mon & Thu 18:30-21:30",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Eric POON and Prof. Chris"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MWM students as\n common elective",
+      "notOpenTo": [
+        "mwm"
+      ],
+      "notOpenToLabels": [
+        "MWM"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMWM7020_Family_Office_2627.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMWM7020_Family_Office_2627.pdf",
+      "outlineFile": "PMWM7020_Family_Office_2627.pdf",
+      "outlineSafe": "PMWM7020_Family_Office_2627.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Mon & Thu 18:30-21:30 18:30-21:30",
+      "timeBucket": "NT",
+      "meetingDays": [
+        1,
+        4
+      ],
+      "meetings": [
+        {
+          "date": "2027-01-25",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-01-28",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-11",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-15",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-18",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-22",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-02-25",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-01",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-04",
+          "startTime": "18:30",
+          "endTime": "21:30",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMWM7013",
+      "courseTitle": "Tax Planning",
+      "hostProgramme": "mwm",
+      "hostLabel": "MWM",
+      "module": 5,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 5\n\n Mar 18 to May 4, 2027",
+      "meetingRaw": "Mar 21,\n\n Apr 4, 11, 18, 25, 2027\n\n \n\n Sunday-Block Mode\n\n 9:30-12:30 & 14:00-17:00",
+      "venueRaw": "Main Campus",
+      "instructors": [
+        {
+          "name": "Prof. Berry HSU"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MWM students as\n common elective",
+      "notOpenTo": [
+        "mwm"
+      ],
+      "notOpenToLabels": [
+        "MWM"
+      ],
+      "remarkAntirequisites": [],
+      "crossList": [],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMWM7013_Tax_Planning_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMWM7013_Tax_Planning_2526_reference_only.pdf",
+      "outlineFile": "PMWM7013_Tax_Planning_2526_reference_only.pdf",
+      "outlineSafe": "PMWM7013_Tax_Planning_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Sunday-Block Mode 09:30-12:30",
+      "timeBucket": "AM",
+      "meetingDays": [
+        0
+      ],
+      "meetings": [
+        {
+          "date": "2027-03-21",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-03-21",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-04",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-04",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-11",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-18",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-18",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "09:30",
+          "endTime": "12:30",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-04-25",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Main Campus",
+          "sessionType": "lecture"
+        }
+      ]
+    },
+    {
+      "courseCode": "PMWM7017",
+      "courseTitle": "Current Topics in Asset Management",
+      "hostProgramme": "mwm",
+      "hostLabel": "MWM",
+      "module": 6,
+      "sectionId": "A",
+      "offerMode": "Modular",
+      "offerDateRaw": "Module 6\n\n May 5 to Jun 18, 2027",
+      "meetingRaw": "May 5, 8, 12, 15, 19, 22, 26,\n 29,\n\n Jun 2, 5, 2027\n\n \n\n Wednesday & Saturday 14:00-17:00\n\n Occasionally on Saturday night 18:30-21:30 (May 15,\n 22, 29)",
+      "venueRaw": "Cyberport",
+      "instructors": [
+        {
+          "name": "Prof. Eric POON"
+        },
+        {
+          "name": "Mr. Mark CHENG"
+        },
+        {
+          "name": "Mr. Fred CHAK"
+        }
+      ],
+      "prerequisites": [],
+      "otherRequirements": [],
+      "remarks": "Not open to MWM and MSAF\n students as common elective;\n\n *Not open to students who have taken or are taking MSAF7019",
+      "notOpenTo": [
+        "mwm",
+        "msaf"
+      ],
+      "notOpenToLabels": [
+        "MWM",
+        "MSAF"
+      ],
+      "remarkAntirequisites": [
+        "MSAF7019"
+      ],
+      "crossList": [
+        "MSAF7019"
+      ],
+      "outlineSourceUrl": "https://www.fbeitt.hku.hk/webform/msc/2026-11-common-elective-course-enrollment-26-27/doc/MSc/PMWM7017%20Current_Topics_in_Asset_Management_2526_reference_only.pdf",
+      "outlinePdfPath": "common-electives/26-27/outlines/PMWM7017_Current_Topics_in_Asset_Management_2526_reference_only.pdf",
+      "outlineFile": "PMWM7017 Current_Topics_in_Asset_Management_2526_reference_only.pdf",
+      "outlineSafe": "PMWM7017_Current_Topics_in_Asset_Management_2526_reference_only.pdf",
+      "confirmOnSelect": false,
+      "dayPattern": "Wednesday & Saturday 14:00-17:00 14:00-17:00",
+      "timeBucket": "PM",
+      "meetingDays": [
+        2,
+        3,
+        6
+      ],
+      "meetings": [
+        {
+          "date": "2027-05-05",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-08",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-12",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-15",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-19",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-26",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-05-29",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-02",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-05",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        },
+        {
+          "date": "2027-06-22",
+          "startTime": "14:00",
+          "endTime": "17:00",
+          "venue": "Cyberport",
+          "sessionType": "lecture"
+        }
+      ]
+    }
+  ],
+  "prerequisiteIndex": [
+    {
+      "courseCode": "IMBA6050",
+      "title": "Business Analytics",
+      "kind": "prerequisite-index"
+    },
+    {
+      "courseCode": "PMBA6003",
+      "title": "Corporate Finance",
+      "kind": "prerequisite-index"
+    }
+  ],
+  "generatedAt": "2026-11-04T10:42:48.384Z",
+  "source": "2026-11-common-elective"
+}

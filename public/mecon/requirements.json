@@ -20,37 +20,63 @@
   "coreTracks": [
     {
       "label": "Advanced Research Stream / Theory Stream",
-      "streams": ["ARS", "THY"],
+      "streams": [
+        "ARS",
+        "THY"
+      ],
       "groups": [
         {
           "name": "Microeconomics",
-          "options": ["ECON6011", "ECON6092"]
+          "options": [
+            "ECON6011",
+            "ECON6092"
+          ]
         },
         {
           "name": "Macroeconomics",
-          "options": ["ECON6012", "ECON6093"]
+          "options": [
+            "ECON6012",
+            "ECON6093"
+          ]
         },
         {
           "name": "Econometrics",
-          "options": ["ECON6001", "ECON6005", "ECON6113"]
+          "options": [
+            "ECON6001",
+            "ECON6005",
+            "ECON6113"
+          ]
         }
       ]
     },
     {
       "label": "Data Analysis Stream / Policy Analysis Stream",
-      "streams": ["DA", "PL"],
+      "streams": [
+        "DA",
+        "PL"
+      ],
       "groups": [
         {
           "name": "Microeconomics",
-          "options": ["ECON6021", "ECON6011"]
+          "options": [
+            "ECON6021",
+            "ECON6011"
+          ]
         },
         {
           "name": "Macroeconomics",
-          "options": ["ECON6022", "ECON6012"]
+          "options": [
+            "ECON6022",
+            "ECON6012"
+          ]
         },
         {
           "name": "Econometrics",
-          "options": ["ECON6001", "ECON6005", "ECON6113"]
+          "options": [
+            "ECON6001",
+            "ECON6005",
+            "ECON6113"
+          ]
         }
       ]
     }
@@ -198,14 +224,20 @@
     {
       "type": "allowMultiModule",
       "courseCode": "ECON6067",
-      "modules": [0, 1],
+      "modules": [
+        0,
+        1
+      ],
       "countsAsOneCourse": true,
       "messageZh": "ECON6067 Part I（Bootcamp）与 Part II（Module 1）可同时加入规划，合计计为 1 门课",
       "message": "ECON6067 Part I (Bootcamp) and Part II (Module 1) may both be planned and count as one course"
     },
     {
       "type": "mutualExclusion",
-      "courses": ["ECON6021", "ECON6022"],
+      "courses": [
+        "ECON6021",
+        "ECON6022"
+      ],
       "scope": "module",
       "messageZh": "同一 Module 内 ECON6021 与 ECON6022 只能选其一",
       "message": "Within the same module, only one of ECON6021 / ECON6022 may be selected"
@@ -213,107 +245,528 @@
     {
       "type": "antirequisite",
       "courseCode": "ECON6092",
-      "whenSelected": ["ECON6011"],
+      "whenSelected": [
+        "ECON6011"
+      ],
       "messageZh": "ECON6092对已选ECON6011的学生不开放",
       "message": "ECON6092 cannot be selected when ECON6011 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6011",
-      "whenSelected": ["ECON6092"],
+      "whenSelected": [
+        "ECON6092"
+      ],
       "messageZh": "ECON6011对已选ECON6092的学生不开放",
       "message": "ECON6011 cannot be selected when ECON6092 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6093",
-      "whenSelected": ["ECON6012"],
+      "whenSelected": [
+        "ECON6012"
+      ],
       "messageZh": "ECON6093对已选ECON6012的学生不开放",
       "message": "ECON6093 cannot be selected when ECON6012 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6012",
-      "whenSelected": ["ECON6093"],
+      "whenSelected": [
+        "ECON6093"
+      ],
       "messageZh": "ECON6012对已选ECON6093的学生不开放",
       "message": "ECON6012 cannot be selected when ECON6093 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6021",
-      "whenSelected": ["ECON6011"],
+      "whenSelected": [
+        "ECON6011"
+      ],
       "messageZh": "ECON6021对已选ECON6011的学生不开放",
       "message": "ECON6021 cannot be selected when ECON6011 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6011",
-      "whenSelected": ["ECON6021"],
+      "whenSelected": [
+        "ECON6021"
+      ],
       "messageZh": "ECON6011对已选ECON6021的学生不开放",
       "message": "ECON6011 cannot be selected when ECON6021 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6022",
-      "whenSelected": ["ECON6012"],
+      "whenSelected": [
+        "ECON6012"
+      ],
       "messageZh": "ECON6022对已选ECON6012的学生不开放",
       "message": "ECON6022 cannot be selected when ECON6012 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6012",
-      "whenSelected": ["ECON6022"],
+      "whenSelected": [
+        "ECON6022"
+      ],
       "messageZh": "ECON6012对已选ECON6022的学生不开放",
       "message": "ECON6012 cannot be selected when ECON6022 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6001",
-      "whenSelected": ["ECON6005", "ECON6113"],
+      "whenSelected": [
+        "ECON6005",
+        "ECON6113"
+      ],
       "messageZh": "ECON6001对已选ECON6005或ECON6113的学生不开放",
       "message": "ECON6001 cannot be selected when ECON6005 or ECON6113 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6005",
-      "whenSelected": ["ECON6001", "ECON6113"],
+      "whenSelected": [
+        "ECON6001",
+        "ECON6113"
+      ],
       "messageZh": "ECON6005对已选ECON6001或ECON6113的学生不开放",
       "message": "ECON6005 cannot be selected when ECON6001 or ECON6113 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6113",
-      "whenSelected": ["ECON6001", "ECON6005"],
+      "whenSelected": [
+        "ECON6001",
+        "ECON6005"
+      ],
       "messageZh": "ECON6113对已选ECON6001或ECON6005的学生不开放",
       "message": "ECON6113 cannot be selected when ECON6001 or ECON6005 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6105",
-      "whenSelected": ["PMGM7040"],
+      "whenSelected": [
+        "PMGM7040"
+      ],
       "messageZh": "ECON6105对已选PMGM7040的学生不开放",
       "message": "ECON6105 cannot be selected when PMGM7040 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6117",
-      "whenSelected": ["PMGM7046"],
+      "whenSelected": [
+        "PMGM7046"
+      ],
       "messageZh": "ECON6117对已选PMGM7046的学生不开放",
       "message": "ECON6117 cannot be selected when PMGM7046 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6090",
-      "whenSelected": ["MSMK7027", "PMGM7015"],
+      "whenSelected": [
+        "MSMK7027",
+        "PMGM7015"
+      ],
       "messageZh": "ECON6090对已选MSMK7027或PMGM7015的学生不开放",
       "message": "ECON6090 cannot be selected when MSMK7027 or PMGM7015 has been chosen"
     },
     {
       "type": "antirequisite",
       "courseCode": "ECON6103",
-      "whenSelected": ["PMGM7036"],
+      "whenSelected": [
+        "PMGM7036"
+      ],
       "messageZh": "ECON6103对已选PMGM7036的学生不开放",
       "message": "ECON6103 cannot be selected when PMGM7036 has been chosen"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "IMBA6111",
+      "requires": [
+        "IMBA6050"
+      ],
+      "messageZh": "IMBA6111 需先满足先修：IMBA6050",
+      "message": "IMBA6111 requires IMBA6050 first"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6116",
+      "whenSelected": [
+        "PMBA6110"
+      ],
+      "messageZh": "IMBA6116对已选PMBA6110的学生不开放",
+      "message": "IMBA6116 cannot be selected when PMBA6110 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6110",
+      "whenSelected": [
+        "IMBA6116"
+      ],
+      "messageZh": "PMBA6110对已选IMBA6116的学生不开放",
+      "message": "PMBA6110 cannot be selected when IMBA6116 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6089",
+      "whenSelected": [
+        "IMBA6114"
+      ],
+      "messageZh": "PMBA6089对已选IMBA6114的学生不开放",
+      "message": "PMBA6089 cannot be selected when IMBA6114 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6114",
+      "whenSelected": [
+        "PMBA6089"
+      ],
+      "messageZh": "IMBA6114对已选PMBA6089的学生不开放",
+      "message": "IMBA6114 cannot be selected when PMBA6089 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6089",
+      "whenSelected": [
+        "MSMK7021"
+      ],
+      "messageZh": "PMBA6089对已选MSMK7021的学生不开放",
+      "message": "PMBA6089 cannot be selected when MSMK7021 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSMK7021",
+      "whenSelected": [
+        "PMBA6089"
+      ],
+      "messageZh": "MSMK7021对已选PMBA6089的学生不开放",
+      "message": "MSMK7021 cannot be selected when PMBA6089 has been chosen"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "PMBA6036",
+      "requires": [
+        "PMBA6003"
+      ],
+      "messageZh": "PMBA6036 需先满足先修：PMBA6003",
+      "message": "PMBA6036 requires PMBA6003 first"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6119",
+      "whenSelected": [
+        "PMGM7039"
+      ],
+      "messageZh": "PMBA6119对已选PMGM7039的学生不开放",
+      "message": "PMBA6119 cannot be selected when PMGM7039 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7039",
+      "whenSelected": [
+        "PMBA6119"
+      ],
+      "messageZh": "PMGM7039对已选PMBA6119的学生不开放",
+      "message": "PMGM7039 cannot be selected when PMBA6119 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6023",
+      "whenSelected": [
+        "IMBA6034"
+      ],
+      "messageZh": "PMBA6023对已选IMBA6034的学生不开放",
+      "message": "PMBA6023 cannot be selected when IMBA6034 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6034",
+      "whenSelected": [
+        "PMBA6023"
+      ],
+      "messageZh": "IMBA6034对已选PMBA6023的学生不开放",
+      "message": "IMBA6034 cannot be selected when PMBA6023 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MACC7013",
+      "whenSelected": [
+        "MSAF7026"
+      ],
+      "messageZh": "MACC7013对已选MSAF7026的学生不开放",
+      "message": "MACC7013 cannot be selected when MSAF7026 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7026",
+      "whenSelected": [
+        "MACC7013"
+      ],
+      "messageZh": "MSAF7026对已选MACC7013的学生不开放",
+      "message": "MSAF7026 cannot be selected when MACC7013 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MACC7011",
+      "whenSelected": [
+        "PMGM7021"
+      ],
+      "messageZh": "MACC7011对已选PMGM7021的学生不开放",
+      "message": "MACC7011 cannot be selected when PMGM7021 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7021",
+      "whenSelected": [
+        "MACC7011"
+      ],
+      "messageZh": "PMGM7021对已选MACC7011的学生不开放",
+      "message": "PMGM7021 cannot be selected when MACC7011 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MACC7011",
+      "whenSelected": [
+        "MSAF7008"
+      ],
+      "messageZh": "MACC7011对已选MSAF7008的学生不开放",
+      "message": "MACC7011 cannot be selected when MSAF7008 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7008",
+      "whenSelected": [
+        "MACC7011"
+      ],
+      "messageZh": "MSAF7008对已选MACC7011的学生不开放",
+      "message": "MSAF7008 cannot be selected when MACC7011 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MFIN7068",
+      "whenSelected": [
+        "PMAA7008"
+      ],
+      "messageZh": "MFIN7068对已选PMAA7008的学生不开放",
+      "message": "MFIN7068 cannot be selected when PMAA7008 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMAA7008",
+      "whenSelected": [
+        "MFIN7068"
+      ],
+      "messageZh": "PMAA7008对已选MFIN7068的学生不开放",
+      "message": "PMAA7008 cannot be selected when MFIN7068 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MFIN7053",
+      "whenSelected": [
+        "MACC7023"
+      ],
+      "messageZh": "MFIN7053对已选MACC7023的学生不开放",
+      "message": "MFIN7053 cannot be selected when MACC7023 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MACC7023",
+      "whenSelected": [
+        "MFIN7053"
+      ],
+      "messageZh": "MACC7023对已选MFIN7053的学生不开放",
+      "message": "MACC7023 cannot be selected when MFIN7053 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MFIN7053",
+      "whenSelected": [
+        "PMAA7022"
+      ],
+      "messageZh": "MFIN7053对已选PMAA7022的学生不开放",
+      "message": "MFIN7053 cannot be selected when PMAA7022 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMAA7022",
+      "whenSelected": [
+        "MFIN7053"
+      ],
+      "messageZh": "PMAA7022对已选MFIN7053的学生不开放",
+      "message": "PMAA7022 cannot be selected when MFIN7053 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7021",
+      "whenSelected": [
+        "MSAF7008"
+      ],
+      "messageZh": "PMGM7021对已选MSAF7008的学生不开放",
+      "message": "PMGM7021 cannot be selected when MSAF7008 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7008",
+      "whenSelected": [
+        "PMGM7021"
+      ],
+      "messageZh": "MSAF7008对已选PMGM7021的学生不开放",
+      "message": "MSAF7008 cannot be selected when PMGM7021 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7008",
+      "whenSelected": [
+        "PMGM7028"
+      ],
+      "messageZh": "MSAF7008对已选PMGM7028的学生不开放",
+      "message": "MSAF7008 cannot be selected when PMGM7028 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7028",
+      "whenSelected": [
+        "MSAF7008"
+      ],
+      "messageZh": "PMGM7028对已选MSAF7008的学生不开放",
+      "message": "PMGM7028 cannot be selected when MSAF7008 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMWM7016",
+      "whenSelected": [
+        "MSAF7017"
+      ],
+      "messageZh": "PMWM7016对已选MSAF7017的学生不开放",
+      "message": "PMWM7016 cannot be selected when MSAF7017 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7017",
+      "whenSelected": [
+        "PMWM7016"
+      ],
+      "messageZh": "MSAF7017对已选PMWM7016的学生不开放",
+      "message": "MSAF7017 cannot be selected when PMWM7016 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMWM7017",
+      "whenSelected": [
+        "MSAF7019"
+      ],
+      "messageZh": "PMWM7017对已选MSAF7019的学生不开放",
+      "message": "PMWM7017 cannot be selected when MSAF7019 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSAF7019",
+      "whenSelected": [
+        "PMWM7017"
+      ],
+      "messageZh": "MSAF7019对已选PMWM7017的学生不开放",
+      "message": "MSAF7019 cannot be selected when PMWM7017 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7040",
+      "whenSelected": [
+        "ECON6105"
+      ],
+      "messageZh": "PMGM7040对已选ECON6105的学生不开放",
+      "message": "PMGM7040 cannot be selected when ECON6105 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7046",
+      "whenSelected": [
+        "ECON6117"
+      ],
+      "messageZh": "PMGM7046对已选ECON6117的学生不开放",
+      "message": "PMGM7046 cannot be selected when ECON6117 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7015",
+      "whenSelected": [
+        "ECON6090"
+      ],
+      "messageZh": "PMGM7015对已选ECON6090的学生不开放",
+      "message": "PMGM7015 cannot be selected when ECON6090 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "ECON6090",
+      "whenSelected": [
+        "PMGM7015"
+      ],
+      "messageZh": "ECON6090对已选PMGM7015的学生不开放",
+      "message": "ECON6090 cannot be selected when PMGM7015 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMGM7036",
+      "whenSelected": [
+        "ECON6103"
+      ],
+      "messageZh": "PMGM7036对已选ECON6103的学生不开放",
+      "message": "PMGM7036 cannot be selected when ECON6103 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSMK7021",
+      "whenSelected": [
+        "IMBA6114"
+      ],
+      "messageZh": "MSMK7021对已选IMBA6114的学生不开放",
+      "message": "MSMK7021 cannot be selected when IMBA6114 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6114",
+      "whenSelected": [
+        "MSMK7021"
+      ],
+      "messageZh": "IMBA6114对已选MSMK7021的学生不开放",
+      "message": "IMBA6114 cannot be selected when MSMK7021 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6067",
+      "whenSelected": [
+        "PMBA6100"
+      ],
+      "messageZh": "IMBA6067对已选PMBA6100的学生不开放",
+      "message": "IMBA6067 cannot be selected when PMBA6100 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "PMBA6100",
+      "whenSelected": [
+        "IMBA6067"
+      ],
+      "messageZh": "PMBA6100对已选IMBA6067的学生不开放",
+      "message": "PMBA6100 cannot be selected when IMBA6067 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "IMBA6067",
+      "whenSelected": [
+        "MSMK7013"
+      ],
+      "messageZh": "IMBA6067对已选MSMK7013的学生不开放",
+      "message": "IMBA6067 cannot be selected when MSMK7013 has been chosen"
+    },
+    {
+      "type": "antirequisite",
+      "courseCode": "MSMK7013",
+      "whenSelected": [
+        "IMBA6067"
+      ],
+      "messageZh": "MSMK7013对已选IMBA6067的学生不开放",
+      "message": "MSMK7013 cannot be selected when IMBA6067 has been chosen"
     }
   ],
   "notes": [

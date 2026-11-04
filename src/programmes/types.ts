@@ -53,7 +53,12 @@ export interface ProgrammeIcsConfig {
 }
 
 /** Planner grouping / badge types. MEcon also uses Stream Core. */
-export type ProgrammeCourseType = 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
+export type ProgrammeCourseType =
+  | 'Core'
+  | 'Stream Core'
+  | 'Elective'
+  | 'Capstone'
+  | 'Common Elective'
 
 export interface ProgrammeConfig {
   id: ProgrammeId
@@ -81,8 +86,8 @@ export interface ProgrammeConfig {
   requirementsDataPath: string
   storage: ProgrammeStorageKeys
   features: ProgrammeFeatureFlags
-  /** Programme Office sync stamp (HKT) */
-  dataSync: { display: string; iso: string }
+  /** Programme Office sync stamp as HKT wall clock (`yyyy/MM/dd HH:mm`) */
+  dataSync: string
   studyStatus: ProgrammeStudyStatusConfig
   ics: ProgrammeIcsConfig
 }

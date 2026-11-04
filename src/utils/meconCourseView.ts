@@ -66,6 +66,9 @@ function capstoneStreams(course: Course): MeconStreamId[] {
 }
 
 function rolesForStream(course: Course, stream: MeconStreamId): MeconRole[] {
+  if (course.commonElective || course.courseType === 'Common Elective') {
+    return ['Elective']
+  }
   const roles: MeconRole[] = []
   if (coreStreams(course).includes(stream)) roles.push('Core')
   if (streamCoreStreams(course).includes(stream)) roles.push('Stream Core')
@@ -83,6 +86,16 @@ export function getMeconCourseView(
   course: Course,
   stream: MeconStreamId | null,
 ): MeconCourseView | null {
+  // Common electives are visible to all streams; badges rendered by the shell.
+  if (course.commonElective || course.courseType === 'Common Elective') {
+    return {
+      effectiveType: 'Elective',
+      badges: [{ label: 'Common Elective', variant: 'elective' }],
+      ownRoles: ['Elective'],
+      otherRoles: [],
+    }
+  }
+
   if (!stream) {
     return {
       effectiveType: course.courseType === 'Stream Core' ? 'Stream Core' : course.courseType as MeconRole,
@@ -221,6 +234,9 @@ export function isMeconDualStreamCapstone(course: Course): boolean {
 
 /** Default planner grouping type when adding a dual-role course. */
 export function defaultSelectionType(course: Course, stream: MeconStreamId | null): string {
+  if (course.commonElective || course.courseType === 'Common Elective') {
+    return 'Common Elective'
+  }
   const view = getMeconCourseView(course, stream)
   if (!view?.effectiveType) return course.courseType
   if (isMeconDualStreamCapstone(course) && view.ownRoles.includes('Stream Core')) {

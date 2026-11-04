@@ -111,7 +111,7 @@
 | 培养要求/方向 | `public/requirements.json` |
 | 课程大纲 PDF | `public/courseOutline/` |
 | 更新通知数据 | `src/data/teachingPlanUpdates.ts` |
-| 同步时间（关于页 / 页脚文案共用） | `src/utils/appMeta.ts` → `DATA_SYNC_HKT` |
+| 同步时间（关于页） | `public/{id}/meta.json` → SQL `ProgrammeMeta`（pack `dataSync` / `appMeta` 兜底） |
 | 日历改动叠加 | `src/utils/teachingPlanImpact.ts`、`PlannerCalendar` |
 | 已读状态 | `src/utils/teachingPlanDismiss.ts` |
 

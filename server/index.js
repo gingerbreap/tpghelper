@@ -4,6 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { academicYearDefault, sqlConfigured } from './db.js'
 import { getProgrammeCourses, isProgrammeId } from './catalogue.js'
+import { getProgrammeMeta } from './meta.js'
 import { getProgrammeNotices } from './notices.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -61,6 +62,26 @@ app.get('/api/programmes/:programmeId/notices', async (req, res) => {
     console.error('[api] notices', programmeId, err)
     res.status(status).json({
       error: err.message || 'notices_unavailable',
+      programmeId,
+    })
+  }
+})
+
+app.get('/api/programmes/:programmeId/meta', async (req, res) => {
+  const { programmeId } = req.params
+  if (!isProgrammeId(programmeId)) {
+    res.status(404).json({ error: 'unknown_programme' })
+    return
+  }
+  try {
+    const { meta, source } = await getProgrammeMeta(programmeId)
+    res.setHeader('Cache-Control', 'public, max-age=60')
+    res.json({ programmeId, source, meta })
+  } catch (err) {
+    const status = err.status || 500
+    console.error('[api] meta', programmeId, err)
+    res.status(status).json({
+      error: err.message || 'meta_unavailable',
       programmeId,
     })
   }

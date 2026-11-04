@@ -60,14 +60,26 @@ export interface Course {
   courseCode: string
   courseTitle: string
   module: number
-  courseType: 'Core' | 'Stream Core' | 'Elective' | 'Capstone'
+  courseType: 'Core' | 'Stream Core' | 'Elective' | 'Capstone' | 'Common Elective'
   /**
    * Extra type badges when a course can satisfy more than one category
    * (e.g. Theory Stream ECON6077/6078 → Stream Core + Capstone).
    * Primary grouping uses `courseType`.
    */
-  courseTypes?: Array<'Core' | 'Stream Core' | 'Elective' | 'Capstone'>
+  courseTypes?: Array<'Core' | 'Stream Core' | 'Elective' | 'Capstone' | 'Common Elective'>
   streamTags: string[]
+  /** Guest common-elective offering (hide host programme role tags). */
+  commonElective?: boolean
+  /** Source programme id when shown as a common elective (e.g. imba, macct). */
+  hostProgramme?: string
+  /** Cross-listed / equivalent course codes (not shared Offering). */
+  crossList?: string[]
+  /**
+   * Non-attendance “other requirements” shown on detail + confirm-on-select.
+   * (70% attendance is stripped at import time.)
+   */
+  otherRequirements?: string[]
+  otherRequirementsZh?: string[]
   /**
    * Streams for which this course is Core / Stream Core / Capstone in the TP.
    * Empty or omitted = not stream-gated (typical Elective / "for all" Core).

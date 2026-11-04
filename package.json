@@ -23,6 +23,10 @@
     "db:import-courses": "node scripts/import-courses-from-public.mjs",
     "db:export-notices": "node scripts/export-teaching-plan-notices.mjs",
     "db:import-notices": "node scripts/import-notices-from-public.mjs",
+    "db:import-meta": "node scripts/import-meta-from-public.mjs",
+    "ce:import": "node scripts/import-common-electives.mjs",
+    "ce:parse": "node scripts/import-common-electives.mjs --parse-only",
+    "ce:merge": "node scripts/import-common-electives.mjs --merge-only",
     "lint": "oxlint",
     "preview": "vite preview"
   },

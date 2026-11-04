@@ -37,7 +37,7 @@ export const meconProgramme: ProgrammeConfig = {
   /** Display order: Bootcamp → Sem1 → M1–3 → Sem2 → M4–6 */
   moduleNumbers: [0, 11, 1, 2, 3, 12, 4, 5, 6],
   streamIds: ['ARS', 'THY', 'DA', 'PL'],
-  selectionTypeOrder: ['Core', 'Stream Core', 'Capstone', 'Elective'],
+  selectionTypeOrder: ['Core', 'Stream Core', 'Capstone', 'Elective', 'Common Elective'],
   coursesDataPath: 'courses.json',
   requirementsDataPath: 'requirements.json',
   storage: {
@@ -57,13 +57,10 @@ export const meconProgramme: ProgrammeConfig = {
     /** Hide planner calendar/lists until the student picks a stream. */
     requireStreamSelection: true,
   },
-  dataSync: {
-    display: '2026/10/14 16:05',
-    iso: '2026-10-14T16:05:00+08:00',
-  },
+  dataSync: '2026/11/04 17:32',
   studyStatus: {
     sampleCourseCode: 'ECON6001',
-    courseCodePattern: String.raw`(?:ECON|PMSC|PMGM|MSMK)\d{4}`,
+    courseCodePattern: String.raw`(?:ECON|PMSC|PMGM|MSMK|MSBA|PMBA|IMBA|MACC|MAIB|MFIN|PMWM|PMAA|MSAF)\d{4}`,
   },
   ics: {
     prodId: '-//HKUBS MEcon Course Planner//CN',

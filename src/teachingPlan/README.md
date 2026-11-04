@@ -51,7 +51,7 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 | 存档页卡片正文 | `src/components/TeachingPlanNoticeBody.tsx`、`src/pages/TeachingPlanArchive.tsx` |
 | 日历改动叠加 | `src/utils/teachingPlanImpact.ts`、`src/components/PlannerCalendar.tsx` |
 | 已读持久化 | `src/utils/teachingPlanDismiss.ts` |
-| 数据最后同步时间（关于页） | `src/programmes/{msba\|mgm}/index.ts` → `dataSync` |
+| 数据最后同步时间（关于页） | `public/{id}/meta.json` → SQL `ProgrammeMeta`（pack `dataSync` 为冷启动兜底） |
 
 通知约定：
 
@@ -110,7 +110,7 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 2. 对照旧版 + 扫新版红字，列出「课程 / 班或 TUT / 旧值 / 新值」（含邮件未点名的课）。
 3. 改 `public/{programme}/courses.json`（TUT 共用则相关 meeting 一并改，并填写 `tutorialFor`）。
 4. 更新 `src/programmes/{programme}/teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` + `tutorialFor` 并沉底。
-5. 更新三语 i18n body（MSBA：`src/i18n/locales`；MGM：另更新 `src/programmes/mgm/locales`）；更新 programme `dataSync`。
+5. 更新三语 i18n body（MSBA：`src/i18n/locales`；MGM：另更新 `src/programmes/mgm/locales`）；更新 `public/{id}/meta.json`（及 pack `dataSync`），再 `npm run db:import-meta`。
 6. 用对应 `PROGRAMME=` 本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页。
 7. Commit（约定式提交）+ 按部署流程发布。
 

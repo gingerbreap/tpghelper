@@ -40,7 +40,7 @@
 1. 选定稳定 id（小写短码，如 `msmkt`、`mfin`），与 lander 目录里预留项对齐更佳。
 2. 以 **MSBA** 为默认模板复制 pack + `public/`（功能接近 BA）；若需要「备选列表 / 选课互斥规则」，对照 **MGM**。
 3. 按第 3 节「接线清单」改类型、catalogue、Vite、构建脚本、lander、siteConfig 硬编码。
-4. 填 `courses.json` / `requirements.json` / outlines / 首份 Teaching Plan PDF；配置 `dataSync` 与 notices（可先空）。
+4. 填 `courses.json` / `requirements.json` / outlines / 首份 Teaching Plan PDF；配置 `public/{id}/meta.json`（dataSync）与 notices（可先空）；pack `index.ts` 的 `dataSync` 作兜底。
 5. 本地：`npm run build:site` 必须全绿；`npm run dev:all` 点通 lander → 新子站路径。
 6. 提交后 `push main` 走 Azure 部署（见根 `README.md`）。
 
@@ -232,6 +232,13 @@ Lander：`/#/`（Auth）、`/#/programmes`（专业选择）。
 - `streams`：concentration + list（`minRequired` + `courses[]`）；无 Stream 可 `{}`，并确认 `Requirements.tsx` 空态可接受
 - `enrollmentRules?`：选课限制规则数组（见 **§4.2.1**）；仅当 pack `features.enrollmentRules === true` 时生效
 - `notes[]` / `planningRules[]`：见上「文案策略」
+- **Planner 统计分母（必填对齐）**：选课页顶部 `current/required` 直接读这些字段（非 MEcon 流式算法）：
+  - **Selected** → `totalCourses`
+  - **Core** → `coreRequired`（缺省则 `coreCourses.length`）
+  - **Electives** → `electiveCount`（统计时本专业 Elective + Common Elective **合计**）
+  - **Capstone** → `capstoneRequired`（缺省 `1`）
+  - MEcon 仍走 `getMeconRequirementTargets`（学分/Stream Capstone）；新非 MEcon pack 保持上表即可
+- 可选覆盖：`coreRequired` / `capstoneRequired`（当 core 列表含候选项多于必选门数时用）
 
 课程**标题**展示时用课号回查 `courses.json`，不必在 requirements 里重复维护（Capstone 条目除外，JSON 内自带 title）。
 
@@ -339,7 +346,17 @@ Lander：`/#/`（Auth）、`/#/programmes`（专业选择）。
 | `teachingPlanImpactCalendar` | true | true | 选课页内嵌 TP 改动层 |
 | `enrollmentRules` | false | true | 读取 `requirements.json` → `enrollmentRules[]`（见 **§4.2.1**） |
 
-wishlist 开启时按 `selectionTypeOrder` **大类分组**（组内可拖拽）。已选列表仅当 `groupSelectedByType` 时分组。展示文案用 i18n `planner.groupCore` / `groupCapstone` / `groupElective`（MSBA：Core · Capstone Core · Self Programme - Electives；MGM overlay：Core · Elective · Capstone）。MGM 旧 storage 键 `mgm-planner-backup` 会在首次加载时迁到 `mgm-planner-wishlist`。
+wishlist 开启时按 `selectionTypeOrder` **大类分组**（组内可拖拽）。已选列表仅当 `groupSelectedByType` 时分组。展示文案用 i18n：
+
+| Key | 默认文案 | 样式 |
+|-----|----------|------|
+| `planner.groupCore` | Core | 蓝 |
+| `planner.groupCapstone` | Capstone / Capstone Core | 黄 |
+| `planner.groupElective` | Electives | 绿 |
+| `planner.groupCommonElective` | Common Elective | **灰**（全专业统一；来自 CE master） |
+| `planner.commonElectiveBadge` | Common Elective | **灰** badge |
+
+顶部 Electives 统计 = 本专业 Elective + Common Elective。**Common Elective 全专业上限 2 门**（`src/utils/commonElectiveLimit.ts`）；达上限后在「已选 X班，请先移除」同位置显示 `planner.commonElectiveCapHint`。MGM 旧 storage 键 `mgm-planner-backup` 会在首次加载时迁到 `mgm-planner-wishlist`。
 
 **通常原样保留的壳能力**：选课冲突、月历、ICS（假日不上 ICS）、TP 通知 UI、PWA（`navigateFallbackDenylist` 含 `\.pdf$`）、三语、Study Status 粘贴（按 `studyStatus.courseCodePattern` 调正则）。
 

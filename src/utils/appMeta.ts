@@ -1,9 +1,10 @@
 import { APP_REPO_URL } from '../config/appRepo'
+import { getProgrammeDataSync } from '../data/programmeMetaStore'
 import { getActiveProgramme } from '../programmes'
 
 const programme = getActiveProgramme()
 
-/** Programme Office sync/check timestamp (Hong Kong Time). Shared by About + footer copy. */
+/** Pack fallback HKT stamp; prefer runtime store via getProgrammeDataSync. */
 export const DATA_SYNC_HKT = programme.dataSync
 
 export const DEFAULT_LANDING_STORAGE_KEY = programme.storage.defaultLanding
@@ -74,9 +75,21 @@ function formatInTimeZone(date: Date, timeZone: string): string {
   return `${year}/${month}/${day} ${hour}:${minute}`
 }
 
-export function formatDataSyncTime(mode: SyncTimezoneMode): string {
-  if (mode === 'HKT') return DATA_SYNC_HKT.display
-  const date = new Date(DATA_SYNC_HKT.iso)
+/** Parse stored HKT wall clock `yyyy/MM/dd HH:mm` into an absolute Date. */
+function parseHktWallClock(hkt: string): Date | null {
+  const m = /^(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2})$/.exec(hkt.trim())
+  if (!m) return null
+  const date = new Date(`${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:00+08:00`)
+  return Number.isNaN(date.getTime()) ? null : date
+}
+
+export function formatDataSyncTime(
+  mode: SyncTimezoneMode,
+  hkt: string = getProgrammeDataSync(),
+): string {
+  if (mode === 'HKT') return hkt
+  const date = parseHktWallClock(hkt)
+  if (!date) return hkt
   const localTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
   return formatInTimeZone(date, localTz)
 }

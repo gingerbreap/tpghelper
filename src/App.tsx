@@ -15,6 +15,7 @@ import PwaSettings from './pages/PwaSettings'
 import PwaInstallBanner from './components/PwaInstallBanner'
 import { useI18n } from './i18n/context'
 import { usePwaInstall } from './hooks/usePwaInstall'
+import { useHydrateProgrammeMeta } from './hooks/useProgrammeMeta'
 import { useHydrateTeachingPlanNotices } from './hooks/useTeachingPlanNotices'
 import { getActiveProgramme } from './programmes'
 import { trackPageView } from './utils/analytics'
@@ -125,6 +126,7 @@ function App() {
   const location = useLocation()
   const isInitialPageView = useRef(true)
   useHydrateTeachingPlanNotices()
+  useHydrateProgrammeMeta()
 
   useEffect(() => {
     const path = `${location.pathname}${location.search}`

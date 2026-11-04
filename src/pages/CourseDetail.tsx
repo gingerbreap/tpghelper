@@ -161,7 +161,12 @@ export function CourseDetailContent({
       <div className="detail-header">
         <h1>{matchedCourses[0].courseCode} {matchedCourses[0].courseTitle}</h1>
         <div className="detail-meta">
-          {meconView ? (
+          {matchedCourses[0].commonElective ||
+          matchedCourses[0].courseType === 'Common Elective' ? (
+            <span className="badge badge-common-elective">
+              {t('planner.commonElectiveBadge')}
+            </span>
+          ) : meconView ? (
             <MeconRoleBadges badges={meconView.badges} />
           ) : (
             <>
@@ -183,6 +188,27 @@ export function CourseDetailContent({
           )}
         </div>
       </div>
+
+      {!!matchedCourses[0].otherRequirements?.length && (
+        <div
+          style={{
+            marginBottom: 16,
+            padding: '10px 12px',
+            background: 'var(--bg-secondary, #f8f9fa)',
+            borderRadius: 8,
+            fontSize: 13,
+          }}
+        >
+          <div style={{ fontWeight: 600, marginBottom: 6 }}>
+            {t('planner.otherRequirementsTitle')}
+          </div>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {matchedCourses[0].otherRequirements.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {instructors.length > 0 && (
         <div style={{ marginBottom: 16 }}>

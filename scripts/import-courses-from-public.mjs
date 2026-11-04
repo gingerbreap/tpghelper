@@ -169,6 +169,7 @@ async function replaceSections(tx, offeringId, hostProgramme, sections) {
 }
 
 async function upsertProgrammeCourse(tx, programmeId, course) {
+  const isCe = !!(course.commonElective || course.courseType === 'Common Elective')
   await tx
     .request()
     .input('programmeId', sql.NVarChar(16), programmeId)
@@ -182,6 +183,9 @@ async function upsertProgrammeCourse(tx, programmeId, course) {
     .input('capstoneFor', sql.NVarChar(sql.MAX), j(course.capstoneForStreams))
     .input('streamCoreFor', sql.NVarChar(sql.MAX), j(course.streamCoreForStreams))
     .input('coreFor', sql.NVarChar(sql.MAX), j(course.coreForStreams))
+    .input('commonElective', sql.Bit, isCe)
+    .input('otherReq', sql.NVarChar(sql.MAX), j(course.otherRequirements))
+    .input('crossList', sql.NVarChar(sql.MAX), j(course.crossList))
     .query(`
       MERGE dbo.ProgrammeCourse AS t
       USING (SELECT @programmeId AS ProgrammeId, @year AS AcademicYear,
@@ -195,14 +199,19 @@ async function upsertProgrammeCourse(tx, programmeId, course) {
         OfferedToStreamsJson = @offeredTo,
         CapstoneForStreamsJson = @capstoneFor,
         StreamCoreForStreamsJson = @streamCoreFor,
-        CoreForStreamsJson = @coreFor
+        CoreForStreamsJson = @coreFor,
+        CommonElective = @commonElective,
+        OtherRequirementsJson = @otherReq,
+        CrossListJson = @crossList
       WHEN NOT MATCHED THEN INSERT (
         ProgrammeId, AcademicYear, CourseCode, Module, CourseType, CourseTypesJson,
         StreamTagsJson, OfferedToStreamsJson, CapstoneForStreamsJson,
-        StreamCoreForStreamsJson, CoreForStreamsJson
+        StreamCoreForStreamsJson, CoreForStreamsJson,
+        CommonElective, OtherRequirementsJson, CrossListJson
       ) VALUES (
         @programmeId, @year, @code, @module, @courseType, @courseTypes,
-        @streamTags, @offeredTo, @capstoneFor, @streamCoreFor, @coreFor
+        @streamTags, @offeredTo, @capstoneFor, @streamCoreFor, @coreFor,
+        @commonElective, @otherReq, @crossList
       );
     `)
 }
@@ -221,6 +230,7 @@ async function importProgramme(pool, programmeId) {
   try {
     for (const course of courses) {
       await ensureCourse(tx, course.courseCode, course.courseTitle)
+      // Offering.HostProgramme = pack that stores the outline under public/{id}/
       const offeringId = await upsertOffering(tx, programmeId, course)
       await replaceSections(tx, offeringId, programmeId, course.sections)
       // course-level outline: stamp onto sections missing outline

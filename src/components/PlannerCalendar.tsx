@@ -646,21 +646,109 @@ export default function PlannerCalendar({
   const atStart = monthIndex(year, month) <= monthIndex(CALENDAR_START.year, CALENDAR_START.month)
   const atEnd = monthIndex(year, month) >= monthIndex(CALENDAR_END.year, CALENDAR_END.month)
 
-  const prevMonth = () => {
+  const [slideClass, setSlideClass] = useState('')
+  const [dragX, setDragX] = useState(0)
+  const swipeRef = useRef<{
+    pointerId: number
+    startX: number
+    startY: number
+    dragging: boolean
+    dx: number
+  } | null>(null)
+
+  const goToMonth = useCallback(
+    (y: number, m: number, dir: 'from-left' | 'from-right' | null = null) => {
+      const next = clampMonth(y, m)
+      if (next.year === year && next.month === month) return
+      if (dir) setSlideClass(`calendar-grid-slide--${dir}`)
+      else {
+        const cur = monthIndex(year, month)
+        const tgt = monthIndex(next.year, next.month)
+        setSlideClass(
+          tgt > cur ? 'calendar-grid-slide--from-right' : 'calendar-grid-slide--from-left',
+        )
+      }
+      setView(next)
+    },
+    [month, year],
+  )
+
+  const prevMonth = useCallback(() => {
+    if (atStart) return
     const m = month === 0 ? 11 : month - 1
     const y = month === 0 ? year - 1 : year
-    setView(clampMonth(y, m))
-  }
+    goToMonth(y, m, 'from-left')
+  }, [atStart, goToMonth, month, year])
 
-  const nextMonth = () => {
+  const nextMonth = useCallback(() => {
+    if (atEnd) return
     const m = month === 11 ? 0 : month + 1
     const y = month === 11 ? year + 1 : year
-    setView(clampMonth(y, m))
+    goToMonth(y, m, 'from-right')
+  }, [atEnd, goToMonth, month, year])
+
+  const onSwipePointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return
+    swipeRef.current = {
+      pointerId: e.pointerId,
+      startX: e.clientX,
+      startY: e.clientY,
+      dragging: false,
+      dx: 0,
+    }
+    setDragX(0)
+  }
+
+  const onSwipePointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const s = swipeRef.current
+    if (!s || s.pointerId !== e.pointerId) return
+    const dx = e.clientX - s.startX
+    const dy = e.clientY - s.startY
+    if (!s.dragging) {
+      if (Math.abs(dx) < 12 && Math.abs(dy) < 12) return
+      // Prefer horizontal swipe; abandon if clearly vertical scrolling
+      if (Math.abs(dy) > Math.abs(dx)) {
+        swipeRef.current = null
+        setDragX(0)
+        return
+      }
+      s.dragging = true
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId)
+      } catch {
+        /* ignore */
+      }
+    }
+    e.preventDefault()
+    const clamped = Math.max(-120, Math.min(120, dx))
+    const visual =
+      (clamped > 0 && atStart) || (clamped < 0 && atEnd) ? clamped * 0.35 : clamped
+    s.dx = visual
+    setDragX(visual)
+  }
+
+  const finishSwipe = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const s = swipeRef.current
+    if (!s || s.pointerId !== e.pointerId) return
+    const dx = s.dx
+    const wasDragging = s.dragging
+    swipeRef.current = null
+    setDragX(0)
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId)
+      }
+    } catch {
+      /* ignore */
+    }
+    if (!wasDragging) return
+    if (dx > 56) prevMonth()
+    else if (dx < -56) nextMonth()
   }
 
   const jumpMonthToDate = (dateKey: string) => {
     const target = monthFromDateKey(dateKey)
-    if (target) setView(target)
+    if (target) goToMonth(target.year, target.month)
   }
 
   const focusChange = (index: number) => {
@@ -679,7 +767,7 @@ export default function PlannerCalendar({
     setFocusIndex(index)
     if (needsMonthJump && target) {
       setPendingFocusHighlight(true)
-      setView(target)
+      goToMonth(target.year, target.month)
     } else {
       setPendingFocusHighlight(false)
       setFocusHighlightActive(true)
@@ -880,13 +968,33 @@ export default function PlannerCalendar({
         </div>
       )}
 
+      <div
+        className="calendar-swipe-surface"
+        onPointerDown={onSwipePointerDown}
+        onPointerMove={onSwipePointerMove}
+        onPointerUp={finishSwipe}
+        onPointerCancel={finishSwipe}
+      >
       <div className="calendar-weekdays">
         {weekdays.map(d => (
           <div key={d} className="calendar-weekday">{d}</div>
         ))}
       </div>
 
-      <div className="calendar-grid">
+      <div
+        key={`${year}-${month}`}
+        className={['calendar-grid', slideClass].filter(Boolean).join(' ')}
+        style={
+          dragX
+            ? {
+                transform: `translateX(${dragX}px)`,
+                transition: 'none',
+                opacity: Math.max(0.55, 1 - Math.abs(dragX) / 280),
+              }
+            : undefined
+        }
+        onAnimationEnd={() => setSlideClass('')}
+      >
         {grid.map(cell => {
           const dayEvents = byDate[cell.dateKey] || []
           const holidayKey = holidayLabelKey(cell.dateKey)
@@ -954,6 +1062,7 @@ export default function PlannerCalendar({
             </div>
           )
         })}
+      </div>
       </div>
 
       {showRelatedFooter && (

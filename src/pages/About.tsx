@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useProgrammeDataSync } from '../hooks/useProgrammeMeta'
 import { useI18n } from '../i18n/context'
 import { landerProgrammesUrl } from '../session/tpgSession'
 import {
@@ -16,11 +17,12 @@ import {
 export default function About() {
   const { t } = useI18n()
   const [tzMode, setTzMode] = useState<SyncTimezoneMode>(() => getSyncTimezoneMode())
+  const dataSync = useProgrammeDataSync()
   const version = getAppVersion()
   const sha = getAppCommitSha()
   const commitUrl = getCommitUrl(sha)
   const repoUrl = getAppRepoUrl()
-  const syncTime = formatDataSyncTime(tzMode)
+  const syncTime = formatDataSyncTime(tzMode, dataSync)
   const tzLabel = tzMode === 'HKT' ? t('about.tzHkt') : t('about.tzLocal')
 
   const toggleTz = () => {

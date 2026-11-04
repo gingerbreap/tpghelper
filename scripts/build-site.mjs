@@ -49,6 +49,14 @@ buildProgramme('msba', 'server/public/msba')
 buildProgramme('mgm', 'server/public/mgm')
 buildProgramme('mecon', 'server/public/mecon')
 
+// Shared common-electives master index + outline PDFs (site-root /common-electives/…)
+const ceSrc = path.join(root, 'public/common-electives')
+const ceDest = path.join(publicDir, 'common-electives')
+if (fs.existsSync(ceSrc)) {
+  fs.cpSync(ceSrc, ceDest, { recursive: true })
+  console.log('\n[build-site] copied public/common-electives → server/public/common-electives')
+}
+
 // Leave shared re-exports on the default pack for local/dev consistency.
 run('select msba (reset)', process.execPath, [
   path.join(root, 'scripts/select-programme.mjs'),

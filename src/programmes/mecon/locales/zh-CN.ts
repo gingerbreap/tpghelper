@@ -35,6 +35,7 @@ const overlay: TranslationTree = {
     groupStreamCore: 'Stream Core',
     groupCapstone: 'Capstone',
     groupElective: 'Electives',
+    groupCommonElective: 'Common Elective',
     streamArs: 'Advanced Research Stream',
     streamThy: 'Theory Stream',
     streamDa: 'Data Analysis Stream',
