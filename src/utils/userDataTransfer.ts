@@ -77,11 +77,22 @@ export async function copyTextToClipboard(text: string): Promise<void> {
   document.body.removeChild(ta)
 }
 
-export async function readTextFromClipboard(): Promise<string> {
-  if (navigator.clipboard?.readText) {
-    return navigator.clipboard.readText()
+/**
+ * Start a clipboard read under the current user gesture.
+ * IMPORTANT: call this synchronously from a click handler (no prior await),
+ * otherwise Chromium drops transient activation and denies clipboard-read
+ * without showing a permission prompt.
+ */
+export function beginClipboardReadText(): Promise<string> {
+  if (!navigator.clipboard?.readText) {
+    return Promise.reject(new Error('clipboardUnavailable'))
   }
-  throw new Error('clipboardUnavailable')
+  // Invoking readText() here is what triggers the browser permission prompt.
+  return navigator.clipboard.readText()
+}
+
+export async function readTextFromClipboard(): Promise<string> {
+  return beginClipboardReadText()
 }
 
 export function readFileAsText(file: File): Promise<string> {

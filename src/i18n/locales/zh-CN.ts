@@ -79,11 +79,24 @@ const zhCN: TranslationTree = {
       exportFileOk: '已下载 JSON 文件。',
       exportClipboardOk: '已复制 JSON 到剪贴板。',
       exportFailed: '导出失败，请重试。',
+      toastCopied: '已复制',
+      toastImportOk: '导入成功',
+      toastImportFailed: '导入失败',
+      exportClipboardModalTitle: '导出到剪贴板',
+      exportClipboardModalDesc:
+        '已尝试复制至剪贴板。若系统限制导致无法自动复制，请点击下方文本手动复制。',
       importTitle: '导入',
       importDesc:
         '可从 JSON 文件导入，或从剪贴板读取 JSON。将覆盖文件中包含的各专业配置；亦兼容 BA 站点 1.5 精简备份。',
       importFile: '从 JSON 文件导入',
       importClipboard: '从剪贴板导入 JSON',
+      importClipboardModalTitle: '从剪贴板导入',
+      importClipboardModalDesc:
+        '自动检测剪贴板失败。请在下方文本框粘贴，并点击“导入”按钮导入。',
+      importClipboardPlaceholder: '请在此粘贴需导入的JSON......',
+      importClipboardSubmit: '导入',
+      importClipboardInvalid:
+        '导入内容非法，请检查是否与导出时显示的内容一致后重试',
       importConfirm:
         '导入将覆盖文件中各专业的语言偏好、默认页、Teaching Plan 已阅状态、已选课程与备选列表，并可能切换 currentProgramme。是否继续？',
       programmeMismatch:

@@ -1,4 +1,4 @@
-import { useRef, useState, type ChangeEvent } from 'react'
+import { useEffect, useRef, useState, type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AboutBackLink from '../components/AboutBackLink'
 import { useI18n } from '../i18n/context'
@@ -10,9 +10,9 @@ import {
   copyTextToClipboard,
   defaultExportFilename,
   downloadJsonFile,
+  beginClipboardReadText,
   parseUserDataJson,
   readFileAsText,
-  readTextFromClipboard,
   snapshotToJson,
 } from '../utils/userDataTransfer'
 
@@ -23,15 +23,100 @@ interface Status {
   message: string
 }
 
+type ToastKind = 'ok' | 'error'
+
+interface ToastState {
+  kind: ToastKind
+  message: string
+}
+
+const TOAST_MS = 2400
+
 export default function ImportExport() {
   const { t } = useI18n()
   const navigate = useNavigate()
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const exportJsonRef = useRef<HTMLTextAreaElement>(null)
   const [status, setStatus] = useState<Status | null>(null)
   const [busy, setBusy] = useState(false)
+  const [toast, setToast] = useState<ToastState | null>(null)
+  const [exportModalJson, setExportModalJson] = useState<string | null>(null)
+  const [importModalOpen, setImportModalOpen] = useState(false)
+  const [importDraft, setImportDraft] = useState('')
+  const [importFieldError, setImportFieldError] = useState(false)
+  const [importSubmitLocked, setImportSubmitLocked] = useState(false)
 
   const showOk = (message: string) => setStatus({ kind: 'ok', message })
   const showError = (message: string) => setStatus({ kind: 'error', message })
+
+  const showToast = (kind: ToastKind, message: string) => {
+    setToast({ kind, message })
+  }
+
+  useEffect(() => {
+    if (!toast) return
+    const id = window.setTimeout(() => setToast(null), TOAST_MS)
+    return () => window.clearTimeout(id)
+  }, [toast])
+
+  useEffect(() => {
+    if (!exportModalJson) return
+    const el = exportJsonRef.current
+    if (!el) return
+    el.focus()
+    el.select()
+  }, [exportModalJson])
+
+  const finishImportSuccess = (targetId: string | null | undefined) => {
+    showToast('ok', t('about.transfer.toastImportOk'))
+    const targetPath = targetId ? programmeAppPath(targetId) : null
+    const activeId = getActiveProgramme().id
+
+    window.setTimeout(() => {
+      if (targetPath && targetId && targetId !== activeId) {
+        window.location.assign(targetPath)
+        return
+      }
+      navigate('/about', { replace: true })
+      window.location.reload()
+    }, 400)
+  }
+
+  const applyImportText = async (
+    text: string,
+    opts?: { fromModal?: boolean },
+  ): Promise<'ok' | 'invalid' | 'cancelled' | 'failed'> => {
+    const parsed = parseUserDataJson(text)
+    if (!parsed.ok) {
+      if (!opts?.fromModal) {
+        showError(
+          parsed.error === 'invalidJson'
+            ? t('about.transfer.importInvalidJson')
+            : t('about.transfer.importInvalidShape'),
+        )
+      }
+      return 'invalid'
+    }
+
+    const proceed = window.confirm(t('about.transfer.importConfirm'))
+    if (!proceed) {
+      if (!opts?.fromModal) showError(t('about.transfer.importCancelled'))
+      return 'cancelled'
+    }
+
+    try {
+      await applyUserDataSnapshot(parsed.data)
+    } catch {
+      if (!opts?.fromModal) showError(t('about.transfer.importFailed'))
+      return 'failed'
+    }
+
+    if (!opts?.fromModal) {
+      showOk(t('about.transfer.importOk'))
+    }
+    finishImportSuccess(parsed.data.currentProgramme)
+    return 'ok'
+  }
 
   const handleExportFile = async () => {
     setBusy(true)
@@ -50,8 +135,13 @@ export default function ImportExport() {
     setBusy(true)
     try {
       const json = snapshotToJson(await buildUserDataSnapshot())
-      await copyTextToClipboard(json)
-      showOk(t('about.transfer.exportClipboardOk'))
+      try {
+        await copyTextToClipboard(json)
+      } catch {
+        /* still show modal for manual copy */
+      }
+      showToast('ok', t('about.transfer.toastCopied'))
+      setExportModalJson(json)
     } catch {
       showError(t('about.transfer.exportFailed'))
     } finally {
@@ -59,56 +149,82 @@ export default function ImportExport() {
     }
   }
 
-  const applyImportText = async (text: string) => {
-    const parsed = parseUserDataJson(text)
-    if (!parsed.ok) {
-      showError(
-        parsed.error === 'invalidJson'
-          ? t('about.transfer.importInvalidJson')
-          : t('about.transfer.importInvalidShape'),
-      )
-      return
-    }
-
-    const proceed = window.confirm(t('about.transfer.importConfirm'))
-    if (!proceed) {
-      showError(t('about.transfer.importCancelled'))
-      return
-    }
-
+  const handleExportJsonClick = async () => {
+    const el = exportJsonRef.current
+    if (!el || !exportModalJson) return
+    el.focus()
+    el.select()
     try {
-      await applyUserDataSnapshot(parsed.data)
+      await copyTextToClipboard(exportModalJson)
+      showToast('ok', t('about.transfer.toastCopied'))
     } catch {
-      showError(t('about.transfer.importFailed'))
-      return
+      /* selection still helps manual copy */
     }
-    showOk(t('about.transfer.importOk'))
-
-    const targetId = parsed.data.currentProgramme
-    const targetPath = targetId ? programmeAppPath(targetId) : null
-    const activeId = getActiveProgramme().id
-
-    window.setTimeout(() => {
-      if (targetPath && targetId && targetId !== activeId) {
-        window.location.assign(targetPath)
-        return
-      }
-      navigate('/about', { replace: true })
-      window.location.reload()
-    }, 400)
   }
 
-  const handleImportClipboard = async () => {
-    setBusy(true)
+  const openImportFallbackModal = (prefill = '') => {
+    setImportDraft(prefill)
+    setImportFieldError(false)
+    setImportSubmitLocked(false)
+    setImportModalOpen(true)
+  }
+
+  const handleImportClipboard = () => {
+    // Must start readText() synchronously in the click turn — any prior await
+    // drops Chromium transient activation and denies clipboard-read with no prompt.
+    let readPromise: Promise<string>
     try {
-      const text = await readTextFromClipboard()
-      if (!text.trim()) {
-        showError(t('about.transfer.importEmptyClipboard'))
+      readPromise = beginClipboardReadText()
+    } catch {
+      showToast('error', t('about.transfer.toastImportFailed'))
+      openImportFallbackModal()
+      return
+    }
+
+    void (async () => {
+      setBusy(true)
+      try {
+        let text = ''
+        try {
+          text = await readPromise
+        } catch {
+          showToast('error', t('about.transfer.toastImportFailed'))
+          openImportFallbackModal()
+          return
+        }
+        if (!text.trim()) {
+          showToast('error', t('about.transfer.toastImportFailed'))
+          openImportFallbackModal()
+          return
+        }
+
+        const result = await applyImportText(text)
+        if (result === 'ok') return
+        if (result === 'cancelled') return
+
+        showToast('error', t('about.transfer.toastImportFailed'))
+        openImportFallbackModal(text)
+      } finally {
+        setBusy(false)
+      }
+    })()
+  }
+
+  const handleImportModalSubmit = async () => {
+    if (importSubmitLocked || busy) return
+    setBusy(true)
+    setImportFieldError(false)
+    try {
+      const result = await applyImportText(importDraft, { fromModal: true })
+      if (result === 'ok') {
+        setImportModalOpen(false)
         return
       }
-      await applyImportText(text)
-    } catch {
-      showError(t('about.transfer.clipboardUnavailable'))
+      if (result === 'cancelled') return
+
+      setImportFieldError(true)
+      setImportSubmitLocked(true)
+      window.setTimeout(() => setImportSubmitLocked(false), 1000)
     } finally {
       setBusy(false)
     }
@@ -175,12 +291,132 @@ export default function ImportExport() {
       {status && (
         <p
           className={
-            status.kind === 'ok' ? 'about-transfer-status about-transfer-status--ok' : 'about-transfer-status about-transfer-status--error'
+            status.kind === 'ok'
+              ? 'about-transfer-status about-transfer-status--ok'
+              : 'about-transfer-status about-transfer-status--error'
           }
           role="status"
         >
           {status.message}
         </p>
+      )}
+
+      {toast && (
+        <div
+          className={`transfer-toast transfer-toast--${toast.kind}`}
+          role="status"
+          aria-live="polite"
+        >
+          <i
+            className={toast.kind === 'ok' ? 'far fa-check-circle' : 'far fa-times-circle'}
+            aria-hidden="true"
+          />
+          <span>{toast.message}</span>
+        </div>
+      )}
+
+      {exportModalJson != null && (
+        <div
+          className="modal-overlay"
+          onClick={() => setExportModalJson(null)}
+          role="presentation"
+        >
+          <div
+            className="modal-window transfer-json-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="transfer-export-title"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="modal-close"
+              onClick={() => setExportModalJson(null)}
+              aria-label={t('common.close')}
+            >
+              ×
+            </button>
+            <div className="modal-body">
+              <h2 id="transfer-export-title" className="transfer-json-modal-title">
+                {t('about.transfer.exportClipboardModalTitle')}
+              </h2>
+              <p className="transfer-json-modal-desc">
+                {t('about.transfer.exportClipboardModalDesc')}
+              </p>
+              <textarea
+                ref={exportJsonRef}
+                className="transfer-json-textarea"
+                readOnly
+                value={exportModalJson}
+                onClick={() => {
+                  void handleExportJsonClick()
+                }}
+                onFocus={e => e.currentTarget.select()}
+                aria-label={t('about.transfer.exportClipboardModalTitle')}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {importModalOpen && (
+        <div
+          className="modal-overlay"
+          onClick={() => setImportModalOpen(false)}
+          role="presentation"
+        >
+          <div
+            className="modal-window transfer-json-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="transfer-import-title"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="modal-close"
+              onClick={() => setImportModalOpen(false)}
+              aria-label={t('common.close')}
+            >
+              ×
+            </button>
+            <div className="modal-body">
+              <h2 id="transfer-import-title" className="transfer-json-modal-title">
+                {t('about.transfer.importClipboardModalTitle')}
+              </h2>
+              <p className="transfer-json-modal-desc">
+                {t('about.transfer.importClipboardModalDesc')}
+              </p>
+              <textarea
+                className="transfer-json-textarea transfer-json-textarea--editable"
+                value={importDraft}
+                placeholder={t('about.transfer.importClipboardPlaceholder')}
+                onChange={e => {
+                  setImportDraft(e.target.value)
+                  setImportFieldError(false)
+                }}
+                aria-label={t('about.transfer.importClipboardModalTitle')}
+              />
+              <div className="transfer-import-footer">
+                {importFieldError && (
+                  <span className="transfer-import-error" role="alert">
+                    {t('about.transfer.importClipboardInvalid')}
+                  </span>
+                )}
+                <button
+                  type="button"
+                  className="transfer-import-submit"
+                  disabled={busy || importSubmitLocked || !importDraft.trim()}
+                  onClick={() => {
+                    void handleImportModalSubmit()
+                  }}
+                >
+                  {t('about.transfer.importClipboardSubmit')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

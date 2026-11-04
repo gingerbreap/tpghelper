@@ -81,11 +81,24 @@ const en: TranslationTree = {
       exportFileOk: 'JSON file downloaded.',
       exportClipboardOk: 'JSON copied to clipboard.',
       exportFailed: 'Export failed. Please try again.',
+      toastCopied: 'Copied',
+      toastImportOk: 'Import successful',
+      toastImportFailed: 'Import failed',
+      exportClipboardModalTitle: 'Export to clipboard',
+      exportClipboardModalDesc:
+        'We tried to copy to the clipboard. If your system blocked automatic copy, tap the text below to copy manually.',
       importTitle: 'Import',
       importDesc:
         'Load from a JSON file or paste JSON from the clipboard. Replaces config for programmes in the file. BA schema 1.5 slim backups are also accepted.',
       importFile: 'Import JSON file',
       importClipboard: 'Import JSON from clipboard',
+      importClipboardModalTitle: 'Import from clipboard',
+      importClipboardModalDesc:
+        'Automatic clipboard detection failed. Paste below and tap Import.',
+      importClipboardPlaceholder: 'Paste the JSON to import here......',
+      importClipboardSubmit: 'Import',
+      importClipboardInvalid:
+        'Invalid import content. Check that it matches what you exported, then try again.',
       importConfirm:
         'Import will replace language, default page, Teaching Plan read status, selected courses, and wishlist for each programme in the file, and may switch currentProgramme. Continue?',
       programmeMismatch:
