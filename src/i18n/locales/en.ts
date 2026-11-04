@@ -94,7 +94,7 @@ const en: TranslationTree = {
       importClipboard: 'Import JSON from clipboard',
       importClipboardModalTitle: 'Import from clipboard',
       importClipboardModalDesc:
-        'Automatic clipboard detection failed. Paste below and tap Import.',
+        'Automatic clipboard detection failed, possibly because clipboard read permission was not granted or the clipboard content is unavailable. Please paste manually below and tap Import.',
       importClipboardPlaceholder: 'Paste the JSON to import here......',
       importClipboardSubmit: 'Import',
       importClipboardInvalid:

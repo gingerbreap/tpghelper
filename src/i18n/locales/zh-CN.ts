@@ -92,7 +92,7 @@ const zhCN: TranslationTree = {
       importClipboard: '从剪贴板导入 JSON',
       importClipboardModalTitle: '从剪贴板导入',
       importClipboardModalDesc:
-        '自动检测剪贴板失败。请在下方文本框粘贴，并点击“导入”按钮导入。',
+        '自动检测剪贴板失败，可能是由于未授予剪贴板读取权限或剪贴板内内容。请手动在下方文本框粘贴，并点击“导入”按钮导入。',
       importClipboardPlaceholder: '请在此粘贴需导入的JSON......',
       importClipboardSubmit: '导入',
       importClipboardInvalid:

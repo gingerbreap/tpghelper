@@ -92,7 +92,7 @@ const zhHK: TranslationTree = {
       importClipboard: '從剪貼簿匯入 JSON',
       importClipboardModalTitle: '從剪貼簿匯入',
       importClipboardModalDesc:
-        '自動檢測剪貼簿失敗。請在下方文本框貼上，並點擊「匯入」按鈕匯入。',
+        '自動檢測剪貼簿失敗，可能是由於未授予剪貼簿讀取權限或剪貼簿內內容。請手動在下方文本框貼上，並點擊「匯入」按鈕匯入。',
       importClipboardPlaceholder: '請在此貼上需匯入的JSON......',
       importClipboardSubmit: '匯入',
       importClipboardInvalid:
