@@ -493,6 +493,33 @@
       ],
       "messageZh": "PMGM7028对已选MSAF7008的学生不开放",
       "message": "PMGM7028 cannot be selected when MSAF7008 has been chosen"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "ECON6114",
+      "requires": [
+        "ECON6021"
+      ],
+      "message": "ECON6114 requires ECON6021 first",
+      "messageZh": "ECON6114 需先满足先修：ECON6021"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "ECON6118",
+      "requires": [
+        "ECON6074"
+      ],
+      "message": "ECON6118 requires ECON6074 first",
+      "messageZh": "ECON6118 需先满足先修：ECON6074"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSMK7024",
+      "requires": [
+        "MSMK7001"
+      ],
+      "message": "MSMK7024 requires MSMK7001 first",
+      "messageZh": "MSMK7024 需先满足先修：MSMK7001"
     }
   ],
   "notes": [

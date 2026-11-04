@@ -72,6 +72,25 @@ function compareSelectionsMsba(a: SelectedSection, b: SelectedSection): number {
   return a.courseCode.localeCompare(b.courseCode)
 }
 
+function readAcknowledgedPrereqCodes(storageKey: string): Set<string> {
+  try {
+    const raw = localStorage.getItem(storageKey)
+    if (!raw) return new Set()
+    const parsed: unknown = JSON.parse(raw)
+    return new Set(Array.isArray(parsed) ? parsed.filter(x => typeof x === 'string') : [])
+  } catch {
+    return new Set()
+  }
+}
+
+function writeAcknowledgedPrereqCodes(storageKey: string, codes: Set<string>) {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify([...codes]))
+  } catch {
+    /* ignore quota / private mode */
+  }
+}
+
 export default function Planner() {
   const { t, sectionLabel, locale } = useI18n()
   const programme = getActiveProgramme()
@@ -187,13 +206,6 @@ export default function Planner() {
       return 'duplicate' as const
     }
     if (adding && useEnrollmentRules) {
-      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
-      if (!prereq.ok) {
-        setDuplicateMsg(
-          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
-        )
-        return 'duplicate' as const
-      }
       const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
       if (!antireq.ok) {
         setDuplicateMsg(
@@ -303,13 +315,6 @@ export default function Planner() {
     }
 
     if (useEnrollmentRules) {
-      const prereq = checkPrerequisitesForCourse(s.courseCode, planCodes, enrollmentRules)
-      if (!prereq.ok) {
-        setDuplicateMsg(
-          t('planner.prerequisiteBlockedHint', { codes: prereq.missing.join(', ') }),
-        )
-        return
-      }
       const antireq = checkAntirequisiteForCourse(s.courseCode, planCodes, enrollmentRules)
       if (!antireq.ok) {
         setDuplicateMsg(
@@ -340,6 +345,67 @@ export default function Planner() {
   ])
 
   const conflicts = useMemo(() => detectConflicts(selections, courses), [selections, courses])
+
+  const prerequisiteWarnings = useMemo(() => {
+    if (!useEnrollmentRules || selections.length === 0) return []
+    const codes = selectedCourseCodes(selections)
+    const seen = new Set<string>()
+    const warnings: Array<{ courseCode: string; missing: string[] }> = []
+    for (const s of selections) {
+      if (seen.has(s.courseCode)) continue
+      seen.add(s.courseCode)
+      const extra =
+        courses
+          .find(c => c.courseCode === s.courseCode)
+          ?.prerequisites?.map(p => p.courseCode) ?? []
+      const check = checkPrerequisitesForCourse(
+        s.courseCode,
+        codes,
+        enrollmentRules,
+        extra,
+      )
+      if (!check.ok) {
+        warnings.push({ courseCode: s.courseCode, missing: check.missing })
+      }
+    }
+    return warnings
+  }, [useEnrollmentRules, selections, courses, enrollmentRules])
+
+  const prereqAckStorageKey = `${programme.id}-prereq-warnings-acked`
+  const [ackedPrereqCodes, setAckedPrereqCodes] = useState(
+    () => readAcknowledgedPrereqCodes(prereqAckStorageKey),
+  )
+
+  // Dropping a course clears its ack so re-selecting shows the banner/label again.
+  useEffect(() => {
+    const selected = new Set(selections.map(s => s.courseCode))
+    setAckedPrereqCodes(prev => {
+      let changed = false
+      const next = new Set<string>()
+      for (const code of prev) {
+        if (selected.has(code)) next.add(code)
+        else changed = true
+      }
+      if (!changed) return prev
+      writeAcknowledgedPrereqCodes(prereqAckStorageKey, next)
+      return next
+    })
+  }, [selections, prereqAckStorageKey])
+
+  const visiblePrerequisiteWarnings = useMemo(
+    () => prerequisiteWarnings.filter(w => !ackedPrereqCodes.has(w.courseCode)),
+    [prerequisiteWarnings, ackedPrereqCodes],
+  )
+
+  const dismissPrerequisiteWarnings = useCallback(() => {
+    setAckedPrereqCodes(prev => {
+      const next = new Set(prev)
+      for (const w of prerequisiteWarnings) next.add(w.courseCode)
+      writeAcknowledgedPrereqCodes(prereqAckStorageKey, next)
+      return next
+    })
+  }, [prerequisiteWarnings, prereqAckStorageKey])
+
   const calendarEvents = useMemo(() => buildCalendarEvents(selections, courses), [selections, courses])
 
   const sortedSelections = useMemo(
@@ -594,10 +660,13 @@ export default function Planner() {
       autoResetKeys.has(itemKey(s)) && retypeOptions.length === 0
     const instructorLabel = sec ? formatSectionInstructors(sec) : s.instructor
     const waiting = isSelectionWaiting(s)
+    const prereqExtra =
+      course?.prerequisites?.map(p => p.courseCode) ?? []
     const prereqCheck = useEnrollmentRules
-      ? selectionMissingPrerequisites(s, selections, enrollmentRules)
+      ? selectionMissingPrerequisites(s, selections, enrollmentRules, prereqExtra)
       : { ok: true, missing: [] as string[] }
-    const missingPrereq = !prereqCheck.ok
+    const missingPrereq =
+      !prereqCheck.ok && !ackedPrereqCodes.has(s.courseCode)
     return (
       <div
         className={`selection-item${missingPrereq ? ' selection-item--prereq-missing' : ''}`}
@@ -844,6 +913,31 @@ export default function Planner() {
       />
 
       <ConflictNotices conflicts={conflicts} />
+
+      {visiblePrerequisiteWarnings.length > 0 && (
+        <div className="conflict-alert conflict-error" role="alert">
+          <button
+            type="button"
+            className="notice-dismiss-btn"
+            onClick={dismissPrerequisiteWarnings}
+          >
+            {t('teachingPlan.dismissRead')}
+          </button>
+          <div className="conflict-alert-header">
+            {t('planner.prerequisiteMissingHeader')}
+          </div>
+          <ul className="conflict-alert-list">
+            {visiblePrerequisiteWarnings.map(w => (
+              <li key={w.courseCode}>
+                {t('planner.prerequisiteMissingBanner', {
+                  code: w.courseCode,
+                  missing: w.missing.join(locale.startsWith('zh') ? '、' : ', '),
+                })}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="tabs">
         <button className={`tab ${tab === 'selected' ? 'active' : ''}`} onClick={() => setTab('selected')}>
@@ -1162,31 +1256,18 @@ export default function Planner() {
                     }
 
                     if (!sel && useEnrollmentRules) {
-                      const prereq = checkPrerequisitesForCourse(
+                      const antireq = checkAntirequisiteForCourse(
                         course.courseCode,
                         planCodes,
                         enrollmentRules,
                       )
-                      if (!prereq.ok) {
+                      if (!antireq.ok) {
                         blocked = true
-                        blockHint = t('planner.prerequisiteBlockedHint', {
-                          codes: prereq.missing.join(', '),
-                        })
-                      }
-                      if (!blocked) {
-                        const antireq = checkAntirequisiteForCourse(
+                        blockHint = formatAntirequisiteBlockMessage(
                           course.courseCode,
-                          planCodes,
-                          enrollmentRules,
+                          antireq.blocking,
+                          locale,
                         )
-                        if (!antireq.ok) {
-                          blocked = true
-                          blockHint = formatAntirequisiteBlockMessage(
-                            course.courseCode,
-                            antireq.blocking,
-                            locale,
-                          )
-                        }
                       }
                     }
 

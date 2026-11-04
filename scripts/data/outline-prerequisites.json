@@ -1,0 +1,202 @@
+{
+  "ECON6114": {
+    "prerequisites": [
+      {
+        "courseCode": "ECON6021",
+        "courseTitle": "Microeconomic Analysis"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "ECON6118": {
+    "prerequisites": [
+      {
+        "courseCode": "ECON6074",
+        "courseTitle": "Causal Inference"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "IMBA6111": {
+    "prerequisites": [
+      {
+        "courseCode": "IMBA6050",
+        "courseTitle": "Business Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7001": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "Topics covered in the boot camp"
+    ]
+  },
+  "MSBA7002": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "Basic mathematical skills, especially a knowledge of algebra. Experiences with using statistical softwares (course focuses on R)."
+    ]
+  },
+  "MSBA7004": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7005": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "MSBA Core Courses"
+    ]
+  },
+  "MSBA7014": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7015": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      },
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7016": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7017": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7021": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "calculus & linear algebra; probability & statistics; Python coding"
+    ]
+  },
+  "MSBA7025": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7027": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7028": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7027",
+        "courseTitle": "Machine Learning"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSBA7032": {
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7027",
+        "courseTitle": "Machine Learning"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "MSMK7024": {
+    "prerequisites": [
+      {
+        "courseCode": "MSMK7001",
+        "courseTitle": "Strategic Marketing Management"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "PMAA7024": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "Financial Accounting Foundation or equivalent"
+    ]
+  },
+  "PMBA6023": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "Corporate Finance"
+    ]
+  },
+  "PMBA6036": {
+    "prerequisites": [
+      {
+        "courseCode": "PMBA6003",
+        "courseTitle": "Corporate Finance"
+      }
+    ],
+    "prerequisiteNotes": []
+  },
+  "PMBA6117": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "An introductory level of statistics is helpful. Students with no statistics background are expected to learn (basic) linear regression and other basic statistics concepts/tools in their own time."
+    ]
+  },
+  "PMGM7040": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "Intermediate microeconomics and macroeconomics; Elementary (college level) calculus and econometrics"
+    ]
+  },
+  "PMGM7046": {
+    "prerequisites": [],
+    "prerequisiteNotes": [
+      "An introductory course in econometrics or statistics. Comfort with at least one programming language (R, Python, or Stata)"
+    ]
+  }
+}

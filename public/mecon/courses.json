@@ -6356,6 +6356,12 @@
     ],
     "streamCoreForStreams": [
       "PL"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "ECON6021",
+        "courseTitle": "Microeconomic Analysis"
+      }
     ]
   },
   {
@@ -6743,6 +6749,12 @@
           }
         ]
       }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "ECON6074",
+        "courseTitle": "Causal Inference"
+      }
     ]
   },
   {
@@ -7036,6 +7048,12 @@
     "hostProgramme": "imba",
     "otherRequirements": [
       "Work Experience: 2 years or more"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "IMBA6050",
+        "courseTitle": "Business Analytics"
+      }
     ]
   },
   {
@@ -7454,6 +7472,12 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "PMBA6003",
+        "courseTitle": "Corporate Finance"
+      }
     ]
   },
   {
@@ -7719,6 +7743,9 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisiteNotes": [
+      "An introductory level of statistics is helpful. Students with no statistics background are expected to learn (basic) linear regression and other basic statistics concepts/tools in their own time."
     ]
   },
   {
@@ -7850,6 +7877,9 @@
     ],
     "crossList": [
       "IMBA6034"
+    ],
+    "prerequisiteNotes": [
+      "Corporate Finance"
     ]
   },
   {
@@ -7936,7 +7966,10 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "maa"
+    "hostProgramme": "maa",
+    "prerequisiteNotes": [
+      "Financial Accounting Foundation or equivalent"
+    ]
   },
   {
     "courseCode": "MACC7013",
@@ -9996,6 +10029,9 @@
     "hostProgramme": "msba",
     "otherRequirements": [
       "calculus & linear algebra; probability & statistics; Python coding"
+    ],
+    "prerequisiteNotes": [
+      "calculus & linear algebra; probability & statistics; Python coding"
     ]
   },
   {
@@ -10399,7 +10435,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "msmkt"
+    "hostProgramme": "msmkt",
+    "prerequisites": [
+      {
+        "courseCode": "MSMK7001",
+        "courseTitle": "Strategic Marketing Management"
+      }
+    ]
   },
   {
     "courseCode": "MSMK7026",

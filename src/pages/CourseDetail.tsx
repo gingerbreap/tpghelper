@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useCourses } from '../hooks/useCoursesData'
+import { Link, useParams } from 'react-router-dom'
+import { useCourses, useRequirements } from '../hooks/useCoursesData'
 import WeekdayStrip from '../components/WeekdayStrip'
 import MeconRoleBadges from '../components/MeconRoleBadges'
 import StreamTagBadges from '../components/StreamTagBadges'
@@ -9,6 +9,8 @@ import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
 import { useSelectedStream } from '../hooks/useSelectedStream'
 import { getActiveProgramme } from '../programmes'
+import { formatEnrollmentRuleMessage } from '../hooks/useSelections'
+import { enrollmentRulesForCourse } from '../utils/enrollmentRulesDisplay'
 import {
   courseInstructors,
   formatSectionInstructors,
@@ -81,8 +83,9 @@ export function CourseDetailContent({
   courseCode: string
   compact?: boolean
 }) {
-  const { t, sectionLabel } = useI18n()
+  const { t, sectionLabel, locale } = useI18n()
   const { courses, loading } = useCourses()
+  const requirements = useRequirements()
   const programme = getActiveProgramme()
   const { stream } = useSelectedStream()
 
@@ -90,6 +93,54 @@ export function CourseDetailContent({
     () => courses.filter(c => c.courseCode === courseCode),
     [courses, courseCode],
   )
+
+  const coursePrerequisites = useMemo(() => {
+    const hit = courses.find(c => c.courseCode === courseCode)
+    const fromCourse = hit?.prerequisites
+    if (fromCourse?.length) {
+      return fromCourse.map(p => ({
+        courseCode: p.courseCode,
+        courseTitle:
+          p.courseTitle ||
+          courses.find(c => c.courseCode === p.courseCode)?.courseTitle,
+      }))
+    }
+    if (!programme.features.enrollmentRules) return []
+    const rules = enrollmentRulesForCourse(
+      courseCode,
+      requirements?.enrollmentRules,
+    ).filter(r => r.type === 'prerequisite')
+    const out: Array<{ courseCode: string; courseTitle?: string }> = []
+    const seen = new Set<string>()
+    for (const rule of rules) {
+      for (const code of rule.requires ?? []) {
+        if (seen.has(code)) continue
+        seen.add(code)
+        out.push({
+          courseCode: code,
+          courseTitle: courses.find(c => c.courseCode === code)?.courseTitle,
+        })
+      }
+    }
+    return out
+  }, [
+    courses,
+    courseCode,
+    programme.features.enrollmentRules,
+    requirements?.enrollmentRules,
+  ])
+
+  const coursePrerequisiteNotes = useMemo(() => {
+    const hit = courses.find(c => c.courseCode === courseCode)
+    return hit?.prerequisiteNotes?.filter(Boolean) ?? []
+  }, [courses, courseCode])
+
+  const courseOtherEnrollmentRules = useMemo(() => {
+    if (!programme.features.enrollmentRules) return []
+    return enrollmentRulesForCourse(courseCode, requirements?.enrollmentRules).filter(
+      r => r.type !== 'prerequisite',
+    )
+  }, [programme.features.enrollmentRules, courseCode, requirements?.enrollmentRules])
 
   const instructors = useMemo(() => {
     const base = courseInstructors(matchedCourses)
@@ -188,6 +239,69 @@ export function CourseDetailContent({
           )}
         </div>
       </div>
+
+      {(coursePrerequisites.length > 0 || coursePrerequisiteNotes.length > 0) && (
+        <div
+          style={{
+            marginBottom: 16,
+            padding: '10px 12px',
+            background: 'var(--bg-secondary, #f8f9fa)',
+            borderRadius: 8,
+            fontSize: 13,
+          }}
+        >
+          <div style={{ fontWeight: 600, marginBottom: 6 }}>
+            {t('courseDetail.prerequisiteTitle')}
+          </div>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: 0,
+              listStyle: 'none',
+              lineHeight: 1.6,
+            }}
+          >
+            {coursePrerequisites.map(p => (
+              <li key={p.courseCode} style={{ display: 'flex', gap: 6 }}>
+                <span aria-hidden="true">-</span>
+                <span>
+                  <Link to={`/course/${encodeURIComponent(p.courseCode)}`}>
+                    {p.courseCode}
+                  </Link>
+                  {p.courseTitle ? ` ${p.courseTitle}` : ''}
+                </span>
+              </li>
+            ))}
+            {coursePrerequisiteNotes.map(note => (
+              <li key={note} style={{ display: 'flex', gap: 6 }}>
+                <span aria-hidden="true">-</span>
+                <span>{note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {courseOtherEnrollmentRules.length > 0 && (
+        <div
+          style={{
+            marginBottom: 16,
+            padding: '10px 12px',
+            background: 'var(--bg-secondary, #f8f9fa)',
+            borderRadius: 8,
+            fontSize: 13,
+          }}
+        >
+          <div style={{ fontWeight: 600, marginBottom: 6 }}>
+            {t('requirements.enrollmentRulesTitle')}
+          </div>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {courseOtherEnrollmentRules.map((rule, i) => (
+              <li key={i}>{formatEnrollmentRuleMessage(rule, locale)}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {!!matchedCourses[0].otherRequirements?.length && (
         <div

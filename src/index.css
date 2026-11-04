@@ -420,6 +420,7 @@ a:hover { text-decoration: underline; }
   overflow-wrap: anywhere;
 }
 .conflict-error .conflict-alert-header { padding-right: 0; }
+.conflict-error:has(.notice-dismiss-btn) .conflict-alert-header { padding-right: 72px; }
 .conflict-alert-list {
   margin: 0;
   padding-left: 20px;

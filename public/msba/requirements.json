@@ -431,6 +431,119 @@
       ],
       "messageZh": "MSMK7013对已选IMBA6067的学生不开放",
       "message": "MSMK7013 cannot be selected when IMBA6067 has been chosen"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7004",
+      "requires": [
+        "MSBA7003"
+      ],
+      "message": "MSBA7004 requires MSBA7003 first",
+      "messageZh": "MSBA7004 需先满足先修：MSBA7003"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7014",
+      "requires": [
+        "MSBA7002",
+        "MSBA7003"
+      ],
+      "message": "MSBA7014 requires MSBA7002, MSBA7003 first",
+      "messageZh": "MSBA7014 需先满足先修：MSBA7002、MSBA7003"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7017",
+      "requires": [
+        "MSBA7002",
+        "MSBA7003"
+      ],
+      "message": "MSBA7017 requires MSBA7002, MSBA7003 first",
+      "messageZh": "MSBA7017 需先满足先修：MSBA7002、MSBA7003"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7027",
+      "requires": [
+        "MSBA7002"
+      ],
+      "message": "MSBA7027 requires MSBA7002 first",
+      "messageZh": "MSBA7027 需先满足先修：MSBA7002"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7025",
+      "requires": [
+        "MSBA7002"
+      ],
+      "message": "MSBA7025 requires MSBA7002 first",
+      "messageZh": "MSBA7025 需先满足先修：MSBA7002"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7028",
+      "requires": [
+        "MSBA7002",
+        "MSBA7027"
+      ],
+      "message": "MSBA7028 requires MSBA7002, MSBA7027 first",
+      "messageZh": "MSBA7028 需先满足先修：MSBA7002、MSBA7027"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7015",
+      "requires": [
+        "MSBA7003",
+        "MSBA7004"
+      ],
+      "message": "MSBA7015 requires MSBA7003, MSBA7004 first",
+      "messageZh": "MSBA7015 需先满足先修：MSBA7003、MSBA7004"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7016",
+      "requires": [
+        "MSBA7004"
+      ],
+      "message": "MSBA7016 requires MSBA7004 first",
+      "messageZh": "MSBA7016 需先满足先修：MSBA7004"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSBA7032",
+      "requires": [
+        "MSBA7002",
+        "MSBA7027"
+      ],
+      "message": "MSBA7032 requires MSBA7002, MSBA7027 first",
+      "messageZh": "MSBA7032 需先满足先修：MSBA7002、MSBA7027"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "ECON6114",
+      "requires": [
+        "ECON6021"
+      ],
+      "message": "ECON6114 requires ECON6021 first",
+      "messageZh": "ECON6114 需先满足先修：ECON6021"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "ECON6118",
+      "requires": [
+        "ECON6074"
+      ],
+      "message": "ECON6118 requires ECON6074 first",
+      "messageZh": "ECON6118 需先满足先修：ECON6074"
+    },
+    {
+      "type": "prerequisite",
+      "courseCode": "MSMK7024",
+      "requires": [
+        "MSMK7001"
+      ],
+      "message": "MSMK7024 requires MSMK7001 first",
+      "messageZh": "MSMK7024 需先满足先修：MSMK7001"
     }
   ]
 }

@@ -120,24 +120,49 @@ async function loadFromSql(programmeId, year) {
         ${baseSelect},
         pc.CommonElective,
         pc.OtherRequirementsJson,
-        pc.CrossListJson
+        pc.CrossListJson,
+        pc.PrerequisitesJson,
+        pc.PrerequisiteNotesJson
       ${fromWhere}
     `)
   } catch (err) {
-    // Pre-migration DBs without sql/004 columns
-    console.warn('[catalogue] CE columns missing; falling back', err?.message || err)
-    result = await pool
-      .request()
-      .input('programmeId', sql.NVarChar(16), programmeId)
-      .input('year', sql.NVarChar(10), year)
-      .query(`
+    // Pre-migration DBs without sql/006 prerequisite columns
+    try {
+      result = await pool
+        .request()
+        .input('programmeId', sql.NVarChar(16), programmeId)
+        .input('year', sql.NVarChar(10), year)
+        .query(`
+      SELECT
+        ${baseSelect},
+        pc.CommonElective,
+        pc.OtherRequirementsJson,
+        pc.CrossListJson,
+        CAST(NULL AS NVARCHAR(MAX)) AS PrerequisitesJson,
+        CAST(NULL AS NVARCHAR(MAX)) AS PrerequisiteNotesJson
+      ${fromWhere}
+    `)
+    } catch (err2) {
+      // Pre-migration DBs without sql/004 columns
+      console.warn('[catalogue] CE columns missing; falling back', err2?.message || err2)
+      result = await pool
+        .request()
+        .input('programmeId', sql.NVarChar(16), programmeId)
+        .input('year', sql.NVarChar(10), year)
+        .query(`
       SELECT
         ${baseSelect},
         CAST(0 AS BIT) AS CommonElective,
         CAST(NULL AS NVARCHAR(MAX)) AS OtherRequirementsJson,
-        CAST(NULL AS NVARCHAR(MAX)) AS CrossListJson
+        CAST(NULL AS NVARCHAR(MAX)) AS CrossListJson,
+        CAST(NULL AS NVARCHAR(MAX)) AS PrerequisitesJson,
+        CAST(NULL AS NVARCHAR(MAX)) AS PrerequisiteNotesJson
       ${fromWhere}
     `)
+    }
+    if (err?.message && !String(err.message).includes('Prerequisite')) {
+      console.warn('[catalogue] catalogue query fallback', err?.message || err)
+    }
   }
 
   /** @type {Map<string, any>} */
@@ -167,6 +192,8 @@ async function loadFromSql(programmeId, year) {
         hostProgramme: commonElective ? row.HostProgramme : undefined,
         otherRequirements: parseJson(row.OtherRequirementsJson, undefined),
         crossList: parseJson(row.CrossListJson, undefined),
+        prerequisites: parseJson(row.PrerequisitesJson, undefined),
+        prerequisiteNotes: parseJson(row.PrerequisiteNotesJson, undefined),
         outlinePdfPath: null,
         examOrFinal: parseJson(row.OfferingExamJson, null),
         sections: [],
@@ -226,6 +253,8 @@ async function loadFromSql(programmeId, year) {
     if (rest.coreForStreams == null) delete rest.coreForStreams
     if (rest.parts == null) delete rest.parts
     if (!rest.commonElective) delete rest.commonElective
+    if (!rest.prerequisites?.length) delete rest.prerequisites
+    if (!rest.prerequisiteNotes?.length) delete rest.prerequisiteNotes
     if (rest.hostProgramme == null) delete rest.hostProgramme
     if (rest.otherRequirements == null) delete rest.otherRequirements
     if (rest.crossList == null) delete rest.crossList

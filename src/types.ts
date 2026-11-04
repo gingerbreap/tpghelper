@@ -81,6 +81,12 @@ export interface Course {
   otherRequirements?: string[]
   otherRequirementsZh?: string[]
   /**
+   * Course-code prerequisites from outline / CE sheet (display + enrollmentRules sync).
+   */
+  prerequisites?: Array<{ courseCode: string; courseTitle?: string }>
+  /** Free-text outline prerequisites (knowledge / boot camp / soft requirements). */
+  prerequisiteNotes?: string[]
+  /**
    * Streams for which this course is Core / Stream Core / Capstone in the TP.
    * Empty or omitted = not stream-gated (typical Elective / "for all" Core).
    * Values: ARS | THY | DA | PL (MEcon).

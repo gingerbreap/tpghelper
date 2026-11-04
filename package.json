@@ -27,6 +27,7 @@
     "ce:import": "node scripts/import-common-electives.mjs",
     "ce:parse": "node scripts/import-common-electives.mjs --parse-only",
     "ce:merge": "node scripts/import-common-electives.mjs --merge-only",
+    "prereq:apply": "node scripts/apply-outline-prerequisites.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },

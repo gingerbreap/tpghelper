@@ -32,8 +32,11 @@ export function checkPrerequisitesForCourse(
   courseCode: string,
   selectedCodes: Set<string>,
   rules: EnrollmentRule[],
+  extraRequires: string[] = [],
 ): PrerequisiteCheckResult {
-  const requires = requiresForCourse(courseCode, rules)
+  const requires = [
+    ...new Set([...requiresForCourse(courseCode, rules), ...extraRequires]),
+  ]
   if (requires.length === 0) return { ok: true, missing: [] }
   const missing = requires.filter(code => !selectedCodes.has(code))
   return { ok: missing.length === 0, missing }
@@ -44,7 +47,8 @@ export function selectionMissingPrerequisites(
   selection: Pick<SelectedSection, 'courseCode'>,
   selections: SelectedSection[],
   rules: EnrollmentRule[],
+  extraRequires: string[] = [],
 ): PrerequisiteCheckResult {
   const codes = selectedCourseCodes(selections)
-  return checkPrerequisitesForCourse(selection.courseCode, codes, rules)
+  return checkPrerequisitesForCourse(selection.courseCode, codes, rules, extraRequires)
 }

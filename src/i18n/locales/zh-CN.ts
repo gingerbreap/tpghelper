@@ -185,6 +185,9 @@ const zhCN: TranslationTree = {
     enrollmentWaitlistTitle: '标记为已选上',
     missingPrerequisite: '⛔️ 前置课程未满足',
     prerequisiteBlockedHint: '前置课程未满足：{{codes}}',
+    prerequisiteMissingHeader:
+      '以下课程未选择其前置课程，可能导致选课无效，如其中包含已豁免的必修课请忽略：',
+    prerequisiteMissingBanner: '{{code}}: 未选择前置课程 {{missing}}',
   },
   timetable: {
     title: '2026-27 学年课程开设详情',
@@ -196,7 +199,7 @@ const zhCN: TranslationTree = {
     module5: 'Module 5 — Mar 18 ~ May 4, 2027',
   },
   courseDetail: {
-    notFound: '未找到课程 {{code}}',
+    notFound: '系统内暂未收录此课程',
     instructor: 'Instructor',
     outline: '课程大纲',
     date: '日期',
@@ -214,6 +217,7 @@ const zhCN: TranslationTree = {
     pdfOr: '或',
     pdfOpen: '在新页面中查看 PDF',
     pdfDownload: '下载 PDF',
+    prerequisiteTitle: '前置课程/知识',
   },
   requirements: {
     title: '培养要求',

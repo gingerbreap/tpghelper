@@ -4410,6 +4410,9 @@
     ],
     "crossList": [
       "ECON6105"
+    ],
+    "prerequisiteNotes": [
+      "Intermediate microeconomics and macroeconomics; Elementary (college level) calculus and econometrics"
     ]
   },
   {
@@ -4511,6 +4514,9 @@
     ],
     "crossList": [
       "ECON6117"
+    ],
+    "prerequisiteNotes": [
+      "An introductory course in econometrics or statistics. Comfort with at least one programming language (R, Python, or Stata)"
     ]
   },
   {
@@ -5801,6 +5807,12 @@
     "hostProgramme": "imba",
     "otherRequirements": [
       "Work Experience: 2 years or more"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "IMBA6050",
+        "courseTitle": "Business Analytics"
+      }
     ]
   },
   {
@@ -6219,6 +6231,12 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "PMBA6003",
+        "courseTitle": "Corporate Finance"
+      }
     ]
   },
   {
@@ -6484,6 +6502,9 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisiteNotes": [
+      "An introductory level of statistics is helpful. Students with no statistics background are expected to learn (basic) linear regression and other basic statistics concepts/tools in their own time."
     ]
   },
   {
@@ -6615,6 +6636,9 @@
     ],
     "crossList": [
       "IMBA6034"
+    ],
+    "prerequisiteNotes": [
+      "Corporate Finance"
     ]
   },
   {
@@ -6701,7 +6725,10 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "maa"
+    "hostProgramme": "maa",
+    "prerequisiteNotes": [
+      "Financial Accounting Foundation or equivalent"
+    ]
   },
   {
     "courseCode": "MACC7013",
@@ -7643,7 +7670,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "mecon"
+    "hostProgramme": "mecon",
+    "prerequisites": [
+      {
+        "courseCode": "ECON6021",
+        "courseTitle": "Microeconomic Analysis"
+      }
+    ]
   },
   {
     "courseCode": "ECON6118",
@@ -7743,7 +7776,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "mecon"
+    "hostProgramme": "mecon",
+    "prerequisites": [
+      {
+        "courseCode": "ECON6074",
+        "courseTitle": "Causal Inference"
+      }
+    ]
   },
   {
     "courseCode": "ECON6060",
@@ -8552,6 +8591,9 @@
     "hostProgramme": "msba",
     "otherRequirements": [
       "calculus & linear algebra; probability & statistics; Python coding"
+    ],
+    "prerequisiteNotes": [
+      "calculus & linear algebra; probability & statistics; Python coding"
     ]
   },
   {
@@ -8955,7 +8997,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "msmkt"
+    "hostProgramme": "msmkt",
+    "prerequisites": [
+      {
+        "courseCode": "MSMK7001",
+        "courseTitle": "Strategic Marketing Management"
+      }
+    ]
   },
   {
     "courseCode": "MSMK7026",

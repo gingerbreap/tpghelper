@@ -187,6 +187,9 @@ const en: TranslationTree = {
     enrollmentWaitlistTitle: 'Mark as Registered',
     missingPrerequisite: '⛔️ Missing Prerequisite',
     prerequisiteBlockedHint: 'Prerequisites not met: {{codes}}',
+    prerequisiteMissingHeader:
+      'The following courses are missing prerequisites and may not be valid selections. If a missing course was waived, you can ignore this:',
+    prerequisiteMissingBanner: '{{code}}: missing prerequisite {{missing}}',
   },
   timetable: {
     title: 'AY 2026-27 Available Course Details',
@@ -198,7 +201,7 @@ const en: TranslationTree = {
     module5: 'Module 5 — Mar 18 ~ May 4, 2027',
   },
   courseDetail: {
-    notFound: 'Course not found: {{code}}',
+    notFound: 'This course is not in the catalogue yet',
     instructor: 'Instructor',
     outline: 'Course Outline',
     date: 'Date',
@@ -216,6 +219,7 @@ const en: TranslationTree = {
     pdfOr: 'or',
     pdfOpen: 'Open PDF in a new page',
     pdfDownload: 'Download PDF',
+    prerequisiteTitle: 'Prerequisites / Prior knowledge',
   },
   requirements: {
     title: 'Programme Requirements',

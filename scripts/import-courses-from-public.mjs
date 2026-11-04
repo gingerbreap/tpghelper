@@ -186,6 +186,8 @@ async function upsertProgrammeCourse(tx, programmeId, course) {
     .input('commonElective', sql.Bit, isCe)
     .input('otherReq', sql.NVarChar(sql.MAX), j(course.otherRequirements))
     .input('crossList', sql.NVarChar(sql.MAX), j(course.crossList))
+    .input('prerequisites', sql.NVarChar(sql.MAX), j(course.prerequisites))
+    .input('prerequisiteNotes', sql.NVarChar(sql.MAX), j(course.prerequisiteNotes))
     .query(`
       MERGE dbo.ProgrammeCourse AS t
       USING (SELECT @programmeId AS ProgrammeId, @year AS AcademicYear,
@@ -202,16 +204,19 @@ async function upsertProgrammeCourse(tx, programmeId, course) {
         CoreForStreamsJson = @coreFor,
         CommonElective = @commonElective,
         OtherRequirementsJson = @otherReq,
-        CrossListJson = @crossList
+        CrossListJson = @crossList,
+        PrerequisitesJson = @prerequisites,
+        PrerequisiteNotesJson = @prerequisiteNotes
       WHEN NOT MATCHED THEN INSERT (
         ProgrammeId, AcademicYear, CourseCode, Module, CourseType, CourseTypesJson,
         StreamTagsJson, OfferedToStreamsJson, CapstoneForStreamsJson,
         StreamCoreForStreamsJson, CoreForStreamsJson,
-        CommonElective, OtherRequirementsJson, CrossListJson
+        CommonElective, OtherRequirementsJson, CrossListJson,
+        PrerequisitesJson, PrerequisiteNotesJson
       ) VALUES (
         @programmeId, @year, @code, @module, @courseType, @courseTypes,
         @streamTags, @offeredTo, @capstoneFor, @streamCoreFor, @coreFor,
-        @commonElective, @otherReq, @crossList
+        @commonElective, @otherReq, @crossList, @prerequisites, @prerequisiteNotes
       );
     `)
 }

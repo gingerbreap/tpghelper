@@ -1,7 +1,6 @@
 import { useRequirements, useCourses } from '../hooks/useCoursesData'
 import { useI18n } from '../i18n/context'
 import { getActiveProgramme } from '../programmes'
-import { formatEnrollmentRuleMessage } from '../hooks/useSelections'
 import type { Stream, StreamList } from '../types'
 
 function isFlatStream(stream: Stream): stream is Stream & { minRequired: number; courses: string[] } {
@@ -16,7 +15,7 @@ function getNestedLists(stream: Stream): StreamList[] {
 }
 
 export default function Requirements() {
-  const { t, tList, locale } = useI18n()
+  const { t, tList } = useI18n()
   const req = useRequirements()
   const { courses } = useCourses()
   const programme = getActiveProgramme()
@@ -34,12 +33,6 @@ export default function Requirements() {
         : tList('requirements.planningRules')
   const notes =
     preferJsonCopy && req.notes.length > 0 ? req.notes : tList('requirements.notes')
-
-  const showEnrollmentRules =
-    !isMecon
-    && programme.features.enrollmentRules
-    && req.enrollmentRules
-    && req.enrollmentRules.length > 0
 
   if (isMecon) {
     const coreTracks = req.coreTracks ?? []
@@ -288,19 +281,6 @@ export default function Requirements() {
           </div>
         )
       })}
-
-      {showEnrollmentRules && (
-        <div className="card req-section">
-          <h2>{t('requirements.enrollmentRulesTitle')}</h2>
-          <ul className="course-list">
-            {req.enrollmentRules!.map((rule, i) => (
-              <li key={i} style={{ fontSize: 13 }}>
-                {formatEnrollmentRuleMessage(rule, locale)}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       {planningRules.length > 0 && (
         <div className="card req-section">

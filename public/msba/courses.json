@@ -363,6 +363,9 @@
           }
         ]
       }
+    ],
+    "prerequisiteNotes": [
+      "Topics covered in the boot camp"
     ]
   },
   {
@@ -1571,6 +1574,9 @@
           }
         ]
       }
+    ],
+    "prerequisiteNotes": [
+      "Basic mathematical skills, especially a knowledge of algebra. Experiences with using statistical softwares (course focuses on R)."
     ]
   },
   {
@@ -2165,6 +2171,12 @@
           }
         ]
       }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      }
     ]
   },
   {
@@ -2422,6 +2434,16 @@
           }
         ]
       }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      }
     ]
   },
   {
@@ -2568,6 +2590,16 @@
             ]
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
       }
     ]
   },
@@ -3376,6 +3408,12 @@
           }
         ]
       }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      }
     ]
   },
   {
@@ -4055,6 +4093,9 @@
     ],
     "otherRequirements": [
       "calculus & linear algebra; probability & statistics; Python coding"
+    ],
+    "prerequisiteNotes": [
+      "calculus & linear algebra; probability & statistics; Python coding"
     ]
   },
   {
@@ -4161,6 +4202,12 @@
             "sessionType": "lecture"
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
       }
     ]
   },
@@ -4573,6 +4620,16 @@
             ]
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7027",
+        "courseTitle": "Machine Learning"
       }
     ]
   },
@@ -5212,6 +5269,9 @@
           }
         ]
       }
+    ],
+    "prerequisiteNotes": [
+      "MSBA Core Courses"
     ]
   },
   {
@@ -5269,6 +5329,16 @@
             "sessionType": "lecture"
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7003",
+        "courseTitle": "Decision Analytics"
+      },
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics"
       }
     ]
   },
@@ -5376,6 +5446,12 @@
             "sessionType": "lecture"
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7004",
+        "courseTitle": "Operations Analytics"
       }
     ]
   },
@@ -5649,6 +5725,12 @@
           "raw": "Final Presentation: Apr 30, 2027 (Fri), 14:00-17:00, LT104"
         }
       }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      }
     ]
   },
   {
@@ -5765,6 +5847,16 @@
             "sessionType": "lecture"
           }
         ]
+      }
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "MSBA7002",
+        "courseTitle": "Business Statistics"
+      },
+      {
+        "courseCode": "MSBA7027",
+        "courseTitle": "Machine Learning"
       }
     ]
   },
@@ -5915,6 +6007,12 @@
     "hostProgramme": "imba",
     "otherRequirements": [
       "Work Experience: 2 years or more"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "IMBA6050",
+        "courseTitle": "Business Analytics"
+      }
     ]
   },
   {
@@ -6333,6 +6431,12 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisites": [
+      {
+        "courseCode": "PMBA6003",
+        "courseTitle": "Corporate Finance"
+      }
     ]
   },
   {
@@ -6598,6 +6702,9 @@
     "hostProgramme": "mba",
     "otherRequirements": [
       "2 years of work experience and English proficiency"
+    ],
+    "prerequisiteNotes": [
+      "An introductory level of statistics is helpful. Students with no statistics background are expected to learn (basic) linear regression and other basic statistics concepts/tools in their own time."
     ]
   },
   {
@@ -6729,6 +6836,9 @@
     ],
     "crossList": [
       "IMBA6034"
+    ],
+    "prerequisiteNotes": [
+      "Corporate Finance"
     ]
   },
   {
@@ -6815,7 +6925,10 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "maa"
+    "hostProgramme": "maa",
+    "prerequisiteNotes": [
+      "Financial Accounting Foundation or equivalent"
+    ]
   },
   {
     "courseCode": "MACC7013",
@@ -7861,7 +7974,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "mecon"
+    "hostProgramme": "mecon",
+    "prerequisites": [
+      {
+        "courseCode": "ECON6021",
+        "courseTitle": "Microeconomic Analysis"
+      }
+    ]
   },
   {
     "courseCode": "ECON6118",
@@ -7961,7 +8080,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "mecon"
+    "hostProgramme": "mecon",
+    "prerequisites": [
+      {
+        "courseCode": "ECON6074",
+        "courseTitle": "Causal Inference"
+      }
+    ]
   },
   {
     "courseCode": "ECON6060",
@@ -9170,7 +9295,13 @@
       }
     ],
     "commonElective": true,
-    "hostProgramme": "msmkt"
+    "hostProgramme": "msmkt",
+    "prerequisites": [
+      {
+        "courseCode": "MSMK7001",
+        "courseTitle": "Strategic Marketing Management"
+      }
+    ]
   },
   {
     "courseCode": "MSMK7026",
