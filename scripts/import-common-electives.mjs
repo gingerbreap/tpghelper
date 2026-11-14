@@ -462,10 +462,7 @@ function buildMeetingsGeneric(entry) {
     if (d && t) exceptMap.set(d, t)
   }
 
-  // Occasionally alternate times on specific dates
-  const occRe =
-    /Occasionally[^\n]*\(([^)]+)\)[^\n]*?(\d{1,2}:\d{2}\s*(?:am|pm)?\s*[-–]\s*\d{1,2}:\d{2}\s*(?:am|pm)?)/gi
-  // Also: "Occasionally on Thursday 18:30-21:30 (Apr 22)"
+  // Occasionally on Thursday 18:30-21:30 (Apr 22)
   const occ2 = meetingRaw.match(
     /Occasionally[^\n]*?(\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2})[^\n]*\(([A-Za-z]+\s+\d{1,2})\)/i,
   )

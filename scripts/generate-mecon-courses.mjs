@@ -51,40 +51,6 @@ function parseDateToken(token, defaultYear) {
   throw new Error(`Unparsed date token: "${token}"`)
 }
 
-/** Parse a Class date cell into YYYY-MM-DD list (preserves duplicates if asked). */
-function parseDateList(raw, { defaultYear, fixYear, mapDate } = {}) {
-  let s = raw.replace(/\s+/g, ' ').trim()
-  // Strip trailing year(s) used as list terminator
-  const years = [...s.matchAll(/\b(20\d{2})\b/g)].map((x) => Number(x[1]))
-  const yearHint = years[years.length - 1] || defaultYear
-  s = s.replace(/,?\s*20\d{2}\s*$/g, '').trim()
-
-  // Split on commas
-  const parts = s.split(',').map((p) => p.trim()).filter(Boolean)
-  const out = []
-  let currentYear = defaultYear || yearHint
-  for (const part of parts) {
-    // token may include year: "15-Jan, 2027" already stripped; "5-Jan" etc.
-    // Handle "2026 5-Jan" leftovers
-    const cleaned = part.replace(/^20\d{2}\s+/, '').trim()
-    if (!cleaned || /^20\d{2}$/.test(cleaned)) {
-      if (/^20\d{2}$/.test(cleaned)) currentYear = Number(cleaned)
-      continue
-    }
-    // If token has embedded year
-    const withYear = cleaned.match(/20\d{2}/)
-    if (withYear) currentYear = Number(withYear[0])
-    let d = parseDateToken(cleaned.replace(/,?\s*20\d{2}/, '').trim(), currentYear)
-    if (fixYear) d = fixYear(d) || d
-    if (mapDate) d = mapDate(d) || d
-    out.push(d)
-    // Advance year heuristic: Jan after Dec in same list
-  }
-  // Year-boundary: if we see Jan/Feb after Nov/Dec in list without explicit year
-  // Re-parse with smarter year when defaultYear provided and list spans years
-  return out
-}
-
 function weekday(dateStr) {
   return new Date(dateStr + 'T12:00:00').getDay()
 }

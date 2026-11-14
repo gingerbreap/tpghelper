@@ -182,7 +182,6 @@ export default function EventFormatModal({
       return
     }
     event.preventDefault()
-    const order: FormatTab[] = ['class', 'final']
     let next: FormatTab = tab
     if (event.key === 'Home') next = 'class'
     else if (event.key === 'End') next = 'final'
