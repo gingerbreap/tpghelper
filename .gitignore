@@ -1,17 +1,194 @@
+# =============================================================================
+# Project (tpghelper) — keep these first; they encode deploy/layout specifics.
+# Extra stacks below are adapted from:
+#   https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,azurefunctions,venv,git,node
+# =============================================================================
+
+# Dependencies & build output
 node_modules/
 dist/
+.vite/
+
+# Site gateway copies Vite output into server/public for `npm start`
 server/public/**
 !server/public/.gitkeep
-.DS_Store
-.venv/
+
+# Env / secrets (keep committed examples)
 .env
 .env.*
 !.env.example
 *.local
-.vite/
+
+# TypeScript incremental build info
 tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Local Azure CLI / publish leftovers from deploy experiments
 .azure-cli/
 .azure-cli-session/
 .azure-cli-tmp/
 *.PublishSettings
 deploy-bundle/
+
+# Local scratch (parsers, outline dumps, etc.)
+tmp/
+tmp-*
+*.tmp
+
+# Cursor local agent / IDE noise (not on gitignore.io; safe to ignore)
+.cursor/
+
+# =============================================================================
+# gitignore.io: AzureFunctions
+# https://www.toptal.com/developers/gitignore/api/azurefunctions
+# =============================================================================
+local.settings.json
+
+# =============================================================================
+# gitignore.io: Git (merge-tool backups)
+# https://www.toptal.com/developers/gitignore/api/git
+# =============================================================================
+*.orig
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# =============================================================================
+# gitignore.io: macOS (+ Patch)
+# https://www.toptal.com/developers/gitignore/api/macos
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.icloud
+
+# =============================================================================
+# gitignore.io: Node (+ Patch) — omit entries already covered above
+# https://www.toptal.com/developers/gitignore/api/node
+# =============================================================================
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+lib-cov
+coverage
+*.lcov
+.nyc_output
+
+# Legacy / unused tooling caches (harmless if absent)
+.grunt
+bower_components
+.lock-wscript
+build/Release
+jspm_packages/
+web_modules/
+
+# Caches
+.npm
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.cache
+.parcel-cache
+.fusebox/
+.webpack/
+.tern-port
+.node_repl_history
+
+# Pack / yarn
+*.tgz
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Framework output dirs we do not use today (safe defaults)
+.next
+.nuxt
+.vuepress/dist
+.temp
+.docusaurus
+.serverless/
+.svelte-kit
+.vscode-test
+out
+
+# =============================================================================
+# gitignore.io: venv — SAFE subset only
+# Full template uses root globs like [Ss]cripts / [Ll]ib / [Bb]in which would
+# ignore this repo's tracked scripts/ (and scripts/lib/). Do not restore those.
+# https://www.toptal.com/developers/gitignore/api/venv
+# =============================================================================
+.Python
+pyvenv.cfg
+.venv
+venv/
+ENV/
+env/
+pip-selfcheck.json
+
+# =============================================================================
+# gitignore.io: VisualStudioCode (+ Patch)
+# https://www.toptal.com/developers/gitignore/api/visualstudiocode
+# =============================================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+.history
+.ionide
+*.vsix
+
+# =============================================================================
+# Extra (not in the requested gitignore.io combo; useful for this machine mix)
+# Windows — https://www.toptal.com/developers/gitignore/api/windows
+# =============================================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk

@@ -9,48 +9,6 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUT = path.join(__dirname, '../public/mecon/courses.json')
 
-const MONTHS = {
-  Jan: 1, January: 1, Feb: 2, February: 2, Mar: 3, March: 3, Apr: 4, April: 4,
-  May: 5, Jun: 6, June: 6, Jul: 7, July: 7, Aug: 8, August: 8,
-  Sep: 9, Sept: 9, September: 9, Oct: 10, October: 10, Nov: 11, November: 11,
-  Dec: 12, December: 12,
-}
-
-function pad(n) {
-  return String(n).padStart(2, '0')
-}
-
-function ymd(y, m, d) {
-  return `${y}-${pad(m)}-${pad(d)}`
-}
-
-function parseDateToken(token, defaultYear) {
-  const t = token.trim().replace(/,$/, '').replace(/\s+/g, ' ')
-  if (!t) return null
-  // "Jan 22" / "22-Jan" / "22-August" / "1-Arp" (typo) / "16-Ap"
-  let m
-  m = t.match(/^(\d{1,2})[- ]([A-Za-z]+)(?:[, ]+(\d{4}))?$/i)
-  if (m) {
-    let monName = m[2]
-    if (/^arp$/i.test(monName)) monName = 'Apr'
-    if (/^ap$/i.test(monName)) monName = 'Apr'
-    const mon = MONTHS[monName] || MONTHS[monName.slice(0, 3)]
-    if (!mon) throw new Error(`Bad month in "${token}"`)
-    const year = m[3] ? Number(m[3]) : defaultYear
-    return ymd(year, mon, Number(m[1]))
-  }
-  m = t.match(/^([A-Za-z]+)[- ](\d{1,2})(?:[, ]+(\d{4}))?$/i)
-  if (m) {
-    let monName = m[1]
-    if (/^arp$/i.test(monName)) monName = 'Apr'
-    const mon = MONTHS[monName] || MONTHS[monName.slice(0, 3)]
-    if (!mon) throw new Error(`Bad month in "${token}"`)
-    const year = m[3] ? Number(m[3]) : defaultYear
-    return ymd(year, mon, Number(m[2]))
-  }
-  throw new Error(`Unparsed date token: "${token}"`)
-}
-
 function weekday(dateStr) {
   return new Date(dateStr + 'T12:00:00').getDay()
 }
