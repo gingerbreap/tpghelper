@@ -84,8 +84,8 @@ export default function About() {
         <Link to="/about/teaching-plan-archive" className="about-menu-item" viewTransition>
           {t('about.menuArchive')}
         </Link>
-        <Link to="/about/default-page" className="about-menu-item" viewTransition>
-          {t('about.menuDefaultPage')}
+        <Link to="/about/customize" className="about-menu-item" viewTransition>
+          {t('about.menuCustomize')}
         </Link>
         <Link to="/about/import-export" className="about-menu-item" viewTransition>
           {t('about.menuImportExport')}

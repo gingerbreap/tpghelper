@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- MANDATORY (MWG dark-mode): declare schemes before paint; FOUC script follows -->
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var meta = document.querySelector('meta[name="color-scheme"]')
+          if (!meta) return
+          var raw = localStorage.getItem('tpghelper-color-scheme')
+          if (raw === 'light' || raw === 'dark') meta.content = raw
+          else meta.content = 'light dark'
+        } catch (e) {}
+      })()
+    </script>
     <title>HKU MSc(BA) 选课助手</title>
     <!-- Root-absolute paths; Vite rewrites them with `base` on build -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -38,7 +51,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #ffffff;
+        background: light-dark(#ffffff, #121212);
+        background-color: canvas;
       }
       #tpg-boot-splash img {
         width: 96px;

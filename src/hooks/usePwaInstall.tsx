@@ -71,7 +71,7 @@ export function PwaInstallProvider({ children }: { children: ReactNode }) {
       el.name = APP_SHORT_NAME
       el.description = description
       el.icon = iconUrl
-      el.styles = { '--tint-color': '#1a73e8' }
+      el.styles = { '--tint-color': 'var(--chrome, #1a73e8)' }
       // Keep dialogs manual on Apple, Chromium, and Android-fallback paths.
       el.hideDialog()
     }

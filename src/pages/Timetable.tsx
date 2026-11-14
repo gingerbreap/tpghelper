@@ -124,12 +124,12 @@ function CourseCard({
       ))}
       {course.sections.some(s => s.examOrFinal) ? (
         course.sections.filter(s => s.examOrFinal).map(s => (
-          <div key={s.sectionId} style={{ fontSize: 12, color: '#5f6368', paddingTop: 4 }}>
+          <div key={s.sectionId} style={{ fontSize: 12, color: 'var(--text-secondary)', paddingTop: 4 }}>
             📝 {sectionLabel(s.sectionId)} {timetableExamLine(s.examOrFinal!)}
           </div>
         ))
       ) : course.examOrFinal ? (
-        <div style={{ fontSize: 12, color: '#5f6368', paddingTop: 4 }}>
+        <div style={{ fontSize: 12, color: 'var(--text-secondary)', paddingTop: 4 }}>
           📝 {timetableExamLine(course.examOrFinal)}
         </div>
       ) : null}

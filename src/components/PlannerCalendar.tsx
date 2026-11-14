@@ -72,6 +72,19 @@ function toDateKey(year: number, month: number, day: number) {
   return `${year}-${pad(month + 1)}-${pad(day)}`
 }
 
+/** Calendar “today” uses Hong Kong civil date (programme locale), not the browser TZ. */
+function hktTodayDateKey(now = new Date()): string {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Hong_Kong',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(now)
+  const get = (type: Intl.DateTimeFormatPartTypes) =>
+    parts.find(p => p.type === type)?.value ?? ''
+  return `${get('year')}-${get('month')}-${get('day')}`
+}
+
 function monthIndex(year: number, month: number) {
   return year * 12 + month
 }
@@ -638,6 +651,7 @@ export default function PlannerCalendar({
 
   const byDate = useMemo(() => eventsByDate(displayEvents.events), [displayEvents.events])
   const grid = useMemo(() => buildMonthGrid(year, month), [year, month])
+  const todayHktKey = hktTodayDateKey()
   /** All date keys actually rendered in this month grid (incl. spillover days). */
   const visibleDateKeys = useMemo(() => new Set(grid.map(c => c.dateKey)), [grid])
 
@@ -1001,6 +1015,7 @@ export default function PlannerCalendar({
           const label = holidayKey ? t(`holidays.${holidayKey}`) : undefined
           const fullLabel = holidayKey ? holidayFullLabel(holidayKey) : undefined
           const lunarTag = holidayLunarTag(cell.dateKey)
+          const isToday = cell.dateKey === todayHktKey
           const dayHasFocus = !!(
             highlightChangeId
             && dayEvents.some(ev => ev.planChangeId === highlightChangeId)
@@ -1013,7 +1028,7 @@ export default function PlannerCalendar({
                 'calendar-day',
                 !cell.inMonth && 'calendar-day--other',
                 holidayKey && 'calendar-day--holiday',
-                dayEvents.length > 0 && 'calendar-day--has-events',
+                isToday && 'calendar-day--today',
                 dayHasFocus && 'calendar-day--focus-raise',
               ].filter(Boolean).join(' ')}
             >

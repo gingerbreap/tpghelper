@@ -57,7 +57,7 @@ npx modern-web-guidance@latest legacy-scan src --json
 | P2 | 焦点 / 可访问名 | ✅ 课程详情用 heading `labelledby`；确认类 Cancel autofocus；详情默认焦关闭钮；关闭后回焦由原生 dialog 承担 | — |
 | OK | Safe area | 已用 `env(safe-area-inset-*)` + `constant()` | 符合 form-factor 方向 |
 | OK | 冲突 / 先修 banner | 持久可见 +「已读」 | 比 transient toast 更符合「重要信息用 banner」 |
-| N/A | Dark mode | 产品未做系统暗色主题 | 无缺口；若要做再跟 `dark-mode` / `color` |
+| OK | Dark mode | ✅ `meta color-scheme` + FOUC + `:has`；`light-dark()` / `--chrome`；cycle + Appearance；硬编码色已扫迁（badge/表头/inline/CTA） | 焦点橙 `#D74E09`、toast 深底保留；继续跟 `prefers-reduced-motion` |
 
 ---
 
@@ -164,8 +164,9 @@ dialog::backdrop {
 4. **P1** Toast — ✅ 固定 `role="region"`、可关闭、`popover="manual"`、焦点内暂停自动消失。
 5. **路由过渡 / Loading** — ✅ `viewTransition` + `app-main` View Transition；课程/培养要求模块缓存；`PageLoading` spinner 替代整页「Loading...」文案。
 6. **P2 Copy / 焦点** — ✅ ImportExport copy tip live region；课程详情 labelledby；AppDialog 默认焦关闭钮 / 表单 autofocus。
-7. **P2（未做）** 全局更多 `prefers-reduced-motion`；LanguagePicker 完整 `popover`+menu；方向性 slide 过渡。
-8. **文档（未做）：** 在 `AGENTS.md` 写明 Baseline / fallback 策略。
+7. **Dark mode** — ✅ MWG `dark-mode` / `dark-mode-toggle`：`meta[name=color-scheme]` + 内联 FOUC；`:root:has(meta)` 映射；语义 token + 高流量色迁移；顶栏 `ColorSchemeCycleButton`（`fa-circle-half-stroke` + sun/moon badge）；About「外观」radios；lander 同步。
+8. **P2（未做）** 全局更多 `prefers-reduced-motion`；LanguagePicker 完整 `popover`+menu；方向性 slide 过渡；残余装饰色逐页清理。
+9. **文档（未做）：** 在 `AGENTS.md` 写明 Baseline / fallback 策略。
 
 ---
 
@@ -194,3 +195,6 @@ Agent 侧：项目 skill 位于 `.agents/skills/modern-web-guidance/SKILL.md`，
 | `.agents/skills/modern-web-guidance/` | MWG 主 skill + guides |
 | `.agents/skills/chrome-extensions/` | 随官方安装一并拷贝；本产品不适用 |
 | `docs/MWG_COMPLIANCE_REVIEW.md` | 本审阅报告 |
+| `src/utils/colorScheme.ts` | 外观偏好 API（localStorage + meta） |
+| `src/components/ColorSchemeCycleButton.tsx` | 顶栏 cycle 控件 |
+| `src/pages/AppearanceSettings.tsx` | About → 外观 |

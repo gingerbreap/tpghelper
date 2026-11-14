@@ -718,7 +718,7 @@ export default function Planner() {
               course && <StreamTagBadges tags={course.streamTags} />
             )}
           </div>
-          <div style={{ fontSize: 13, color: '#5f6368' }}>
+          <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
             {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {formatModuleLabelCompact(s.module, t)}
           </div>
         </div>
@@ -993,7 +993,7 @@ export default function Planner() {
         <>
           <div className="card" style={{ padding: 0 }}>
             {selections.length === 0 ? (
-              <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
+              <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-secondary)' }}>
                 {t('planner.emptySelected')}
               </div>
             ) : groupSelectedByType ? (
@@ -1034,7 +1034,7 @@ export default function Planner() {
               </div>
               <div className="card" style={{ padding: 0 }}>
                 {wishlist.length === 0 ? (
-                  <div style={{ padding: 24, textAlign: 'center', color: '#5f6368' }}>
+                  <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-secondary)' }}>
                     {t('planner.emptyWishlist')}
                   </div>
                 ) : (
@@ -1173,7 +1173,7 @@ export default function Planner() {
                                   course && <StreamTagBadges tags={course.streamTags} />
                                 )}
                               </div>
-                              <div style={{ fontSize: 13, color: '#5f6368' }}>
+                              <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
                                 {s.courseTitle} · {t('common.instructor', { name: instructorLabel })} · {formatModuleLabelCompact(s.module, t)}
                               </div>
                             </div>

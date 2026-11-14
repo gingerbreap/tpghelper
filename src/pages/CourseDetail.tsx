@@ -65,7 +65,7 @@ function FinalSessionRow({ exam }: { exam: ExamOrFinal }) {
   const time = exam.startTime && exam.endTime ? `${exam.startTime}-${exam.endTime}` : '-'
   const venue = exam.venue || '-'
   return (
-    <tr style={{ borderBottom: '1px solid #f1f3f4' }}>
+    <tr style={{ borderBottom: '1px solid var(--border)' }}>
       <td style={{ padding: '4px 8px' }}>{date}</td>
       <td style={{ padding: '4px 8px' }}>{time}</td>
       <td style={{ padding: '4px 8px' }}>{venue}</td>
@@ -271,7 +271,7 @@ export function CourseDetailContent({
           style={{
             marginBottom: 16,
             padding: '10px 12px',
-            background: 'var(--bg-secondary, #f8f9fa)',
+            background: 'var(--surface-muted)',
             borderRadius: 8,
             fontSize: 13,
           }}
@@ -313,7 +313,7 @@ export function CourseDetailContent({
           style={{
             marginBottom: 16,
             padding: '10px 12px',
-            background: 'var(--bg-secondary, #f8f9fa)',
+            background: 'var(--surface-muted)',
             borderRadius: 8,
             fontSize: 13,
           }}
@@ -334,7 +334,7 @@ export function CourseDetailContent({
           style={{
             marginBottom: 16,
             padding: '10px 12px',
-            background: 'var(--bg-secondary, #f8f9fa)',
+            background: 'var(--surface-muted)',
             borderRadius: 8,
             fontSize: 13,
           }}
@@ -420,7 +420,7 @@ export function CourseDetailContent({
                         const taught = meetingInstructorNames(sec, m)
                         const byActive = !activeInstructor || taught.includes(activeInstructor)
                         return (
-                          <tr key={i} style={{ borderBottom: '1px solid #f1f3f4', opacity: byActive ? 1 : 0.5 }}>
+                          <tr key={i} style={{ borderBottom: '1px solid var(--border)', opacity: byActive ? 1 : 0.5 }}>
                             <td style={{ padding: '4px 8px' }}>{m.date}</td>
                             <td style={{ padding: '4px 8px' }}>{m.startTime}-{m.endTime}</td>
                             <td style={{ padding: '4px 8px' }}>{m.venue}</td>
@@ -452,7 +452,7 @@ export function CourseDetailContent({
                         </tr>
                         {tutExpanded &&
                           tutorialMeetings.map((m, i) => (
-                            <tr key={`tut-${i}`} style={{ borderBottom: '1px solid #f1f3f4' }}>
+                            <tr key={`tut-${i}`} style={{ borderBottom: '1px solid var(--border)' }}>
                               <td style={{ padding: '4px 8px' }}>{m.date}</td>
                               <td style={{ padding: '4px 8px' }}>{m.startTime}-{m.endTime}</td>
                               <td style={{ padding: '4px 8px' }}>{m.venue}</td>

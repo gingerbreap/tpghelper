@@ -20,6 +20,12 @@ const en: TranslationTree = {
     guestPrivacy:
       'If you continue as a guest: all data stays in this browser. Moving to another device requires manual export and import.',
   },
+  appearance: {
+    system: 'System',
+    light: 'Light',
+    dark: 'Dark',
+    cycleAria: 'Color scheme: {{pref}} (showing {{resolved}}). Click to cycle.',
+  },
   programmes: {
     title: 'Which Programme are you in?',
     helper:

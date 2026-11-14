@@ -20,6 +20,12 @@ const zhHK: TranslationTree = {
     guestPrivacy:
       '如以訪客繼續：所有數據僅保存在本瀏覽器。換裝置時需自行匯出與匯入。',
   },
+  appearance: {
+    system: '跟隨系統',
+    light: '淺色',
+    dark: '深色',
+    cycleAria: '配色方案：{{pref}}（目前顯示{{resolved}}）。點擊切換。',
+  },
   programmes: {
     title: 'Which Programme are you in?',
     helper: '目前並非所有課程已接入本選課工具，請稍後回來查看。',

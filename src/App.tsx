@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink, Link, Navigate, useLocation } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
+import ColorSchemeCycleButton from './components/ColorSchemeCycleButton'
 import LanguagePicker from './components/LanguagePicker'
 import ProgrammeMismatchGate from './components/ProgrammeMismatchGate'
 import Timetable from './pages/Timetable'
@@ -9,7 +10,7 @@ import CourseDetail from './pages/CourseDetail'
 import Requirements from './pages/Requirements'
 import About from './pages/About'
 import TeachingPlanArchive from './pages/TeachingPlanArchive'
-import DefaultPageSettings from './pages/DefaultPageSettings'
+import CustomizeSettings from './pages/CustomizeSettings'
 import ImportExport from './pages/ImportExport'
 import PwaSettings from './pages/PwaSettings'
 import PwaInstallBanner from './components/PwaInstallBanner'
@@ -189,12 +190,28 @@ function App() {
               </NavLink>
               <div className="navbar-utilities">
                 <PwaInstallNavButton />
+                <ColorSchemeCycleButton
+                  labelFor={(pref, resolved) =>
+                    t('about.appearance.cycleAria', {
+                      pref: t(`about.appearance.${pref}`),
+                      resolved: t(`about.appearance.${resolved}`),
+                    })
+                  }
+                />
                 <LanguagePicker className="lang-picker-desktop" />
               </div>
             </div>
             <div className="navbar-mobile-controls">
               <div className="navbar-utilities">
                 <PwaInstallNavButton />
+                <ColorSchemeCycleButton
+                  labelFor={(pref, resolved) =>
+                    t('about.appearance.cycleAria', {
+                      pref: t(`about.appearance.${pref}`),
+                      resolved: t(`about.appearance.${resolved}`),
+                    })
+                  }
+                />
                 <LanguagePicker className="lang-picker-mobile" />
               </div>
             </div>
@@ -212,7 +229,9 @@ function App() {
           <Route path="/requirements" element={<Requirements />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/teaching-plan-archive" element={<TeachingPlanArchive />} />
-          <Route path="/about/default-page" element={<DefaultPageSettings />} />
+          <Route path="/about/customize" element={<CustomizeSettings />} />
+          <Route path="/about/default-page" element={<Navigate to="/about/customize" replace />} />
+          <Route path="/about/appearance" element={<Navigate to="/about/customize" replace />} />
           <Route path="/about/import-export" element={<ImportExport />} />
           <Route path="/about/pwa" element={<PwaSettings />} />
           {/* Shared archive aliases (“回顾所有更新” + About menu) */}

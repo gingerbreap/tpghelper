@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import LanguagePicker from '../components/LanguagePicker'
+import LanderTopbarUtilities from '../components/LanderTopbarUtilities'
 import { useLanderI18n } from '../i18n/context'
 import { syncCurrentProgramme } from '../../utils/siteConfig'
 import {
@@ -29,7 +29,7 @@ export default function ProgrammePicker() {
   return (
     <div className="lander-shell">
       <header className="lander-topbar">
-        <LanguagePicker />
+        <LanderTopbarUtilities />
       </header>
 
       <main className="lander-stage lander-stage--picker">

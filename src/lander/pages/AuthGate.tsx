@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanderI18n } from '../i18n/context'
-import LanguagePicker from '../components/LanguagePicker'
+import LanderTopbarUtilities from '../components/LanderTopbarUtilities'
 import {
   getAuthMode,
   programmeAppPath,
@@ -38,7 +38,7 @@ export default function AuthGate() {
   return (
     <div className="lander-shell">
       <header className="lander-topbar">
-        <LanguagePicker />
+        <LanderTopbarUtilities />
       </header>
 
       <main className="lander-stage">

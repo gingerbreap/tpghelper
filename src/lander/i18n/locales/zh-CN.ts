@@ -20,6 +20,12 @@ const zhCN: TranslationTree = {
     guestPrivacy:
       '如以访客继续：所有数据仅保存在本浏览器。换设备时需自行导出与导入。',
   },
+  appearance: {
+    system: '跟随系统',
+    light: '浅色',
+    dark: '深色',
+    cycleAria: '配色方案：{{pref}}（当前显示{{resolved}}）。点击切换。',
+  },
   programmes: {
     title: 'Which Programme are you in?',
     helper: '目前并非所有课程已接入本选课工具，请稍后回来查看。',
