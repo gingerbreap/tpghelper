@@ -47,14 +47,14 @@ npx modern-web-guidance@latest legacy-scan src --json
 
 | 优先级 | 主题 | 现状 | 建议 |
 |---|---|---|---|
-| P0 | 原生 `<dialog>` | 全部自建 `div[role=dialog]` + portal + 手写 Esc / `body.overflow` | 迁到 `<dialog>.showModal()`，去掉手写 inert/Esc/overflow 锁 |
-| P0 | 弹层滚动锁 | 多处 `document.body.style.overflow = 'hidden'` | MWG **禁止**用 body overflow 锁；改用 `dialog:modal` + `::backdrop` 的 `overscroll-behavior` |
-| P1 | Tabs 语义 | Planner 用 `.tabs` 按钮，无 `tablist`/`tab`/`tabpanel` | 需要可访问标签页时按 `tabs` guide 补齐；若只是页面分区导航则保持按钮并避免伪 ARIA tabs |
-| P1 | Toast | `.planner-toast` + `role="status"`，无关闭钮、无通知区域 | 关键/低优先级可继续；若保留 toast，按 guide 用固定 region + 可关闭；关键信息优先用现有 conflict banner |
-| P1 | Language picker | 自建 listbox，有 light-dismiss | 可逐步改为 `popover` 菜单（`menu` guide） |
-| P2 | Copy UX | 已用 Async Clipboard + 手势内 `readText`，有 `execCommand` 回退 | 与 `copy-button` 方向一致；可补 live region 成功反馈 |
+| P0 | 原生 `<dialog>` | ✅ `AppDialog` + 各 modal / ImportExport / PWA confirm / mismatch gate | — |
+| P0 | 弹层滚动锁 | ✅ 已移除 body overflow；`dialog:modal` + `::backdrop` overscroll | — |
+| P1 | Tabs 语义 | ✅ EventFormatModal；Planner Selected/Browse 仍为视图按钮（非 ARIA tabs） | — |
+| P1 | Toast | ✅ region + 关闭钮 + `popover="manual"` + 焦点内暂停超时 | — |
+| P1 | Language picker | ✅ Esc + 打开焦点 + 关闭回焦；完整 popover menu 留 P2 | — |
+| P2 | Copy UX | ✅ 按钮旁 `role="status"` tip + 图标态；失败也会反馈；toast live region 常驻 | — |
 | P2 | PWA install | `beforeinstallprompt` 自定义 UI | 与当前生态兼容；关注未来 Web Install API / `<install>` 作为增强，勿立刻替换 |
-| P2 | 焦点 / 可访问名 | 部分 modal 有 `aria-labelledby`，部分仅 `aria-label`；无可靠初始 `autofocus` / 关闭后焦点还原 | 迁 `<dialog>` 后由平台承担；迁移前至少补 heading + autofocus |
+| P2 | 焦点 / 可访问名 | ✅ 课程详情用 heading `labelledby`；确认类 Cancel autofocus；详情默认焦关闭钮；关闭后回焦由原生 dialog 承担 | — |
 | OK | Safe area | 已用 `env(safe-area-inset-*)` + `constant()` | 符合 form-factor 方向 |
 | OK | 冲突 / 先修 banner | 持久可见 +「已读」 | 比 transient toast 更符合「重要信息用 banner」 |
 | N/A | Dark mode | 产品未做系统暗色主题 | 无缺口；若要做再跟 `dark-mode` / `color` |
@@ -156,14 +156,16 @@ dialog::backdrop {
 
 ---
 
-## 5. 推荐改造路线（仅审阅，本提交未改业务代码）
+## 5. 改造路线
 
-1. **P0 Dialog 统一组件**（最大合规缺口，也减少重复 Esc/overflow 代码）。
-2. **P1** EventFormatModal tabs 语义对齐；LanguagePicker Esc + 焦点。
-3. **P1** Toast：要么降级为仅非关键提示并加关闭，要么并入 banner 体系。
-4. **P2** `prefers-reduced-motion` 全局；复制成功 live region。
-5. **文档：** 在 `AGENTS.md`（或等价文件）写明 Browser Support 策略，例如：  
-   `Allow Baseline Newly Available with lightweight CSS/JS fallbacks; no heavy polyfill bundles unless required for Dialog/Popover critical path.`
+1. **P0 Dialog 统一组件** — ✅ `AppDialog` + 全站 modal 已迁 `<dialog>.showModal()`；去掉 body overflow / 手写 Esc；`closedby` + Safari light-dismiss fallback。
+2. **P1** EventFormatModal tabs — ✅ `tablist`/`tab`/`tabpanel`、方向键、以 `aria-selected` 驱动下划线。
+3. **P1** LanguagePicker — ✅ Esc 关闭并回焦触发器；打开时焦点落入首选项。
+4. **P1** Toast — ✅ 固定 `role="region"`、可关闭、`popover="manual"`、焦点内暂停自动消失。
+5. **路由过渡 / Loading** — ✅ `viewTransition` + `app-main` View Transition；课程/培养要求模块缓存；`PageLoading` spinner 替代整页「Loading...」文案。
+6. **P2 Copy / 焦点** — ✅ ImportExport copy tip live region；课程详情 labelledby；AppDialog 默认焦关闭钮 / 表单 autofocus。
+7. **P2（未做）** 全局更多 `prefers-reduced-motion`；LanguagePicker 完整 `popover`+menu；方向性 slide 过渡。
+8. **文档（未做）：** 在 `AGENTS.md` 写明 Baseline / fallback 策略。
 
 ---
 

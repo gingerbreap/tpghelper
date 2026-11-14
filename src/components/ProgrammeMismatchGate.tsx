@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useI18n } from '../i18n/context'
 import {
   landerProgrammesUrl,
@@ -21,14 +22,39 @@ export default function ProgrammeMismatchGate({
   currentShortName,
 }: ProgrammeMismatchGateProps) {
   const { t } = useI18n()
+  const dialogRef = useRef<HTMLDialogElement>(null)
   const preferred = resolveOpenProgrammeId()
+  const shouldShow = Boolean(preferred && preferred !== currentProgrammeId)
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+    dialog.setAttribute('closedby', 'none')
+    if (shouldShow && !dialog.open) dialog.showModal()
+    if (!shouldShow && dialog.open) dialog.close()
+  }, [shouldShow])
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+    const blockCancel = (event: Event) => {
+      event.preventDefault()
+    }
+    dialog.addEventListener('cancel', blockCancel)
+    return () => dialog.removeEventListener('cancel', blockCancel)
+  }, [])
+
   if (!preferred || preferred === currentProgrammeId) return null
 
   const preferredPath = programmeAppPath(preferred)
   const preferredLabel = getProgrammeShortName(preferred)
 
   return (
-    <div className="programme-mismatch-overlay" role="dialog" aria-modal="true" aria-labelledby="programme-mismatch-title">
+    <dialog
+      ref={dialogRef}
+      className="programme-mismatch-dialog"
+      aria-labelledby="programme-mismatch-title"
+    >
       <div className="programme-mismatch-card">
         <h1 id="programme-mismatch-title" className="programme-mismatch-title">
           {t('mismatch.title')}
@@ -44,6 +70,7 @@ export default function ProgrammeMismatchGate({
             <button
               type="button"
               className="lander-btn lander-btn-guest"
+              autoFocus
               onClick={() => {
                 window.location.assign(preferredPath)
               }}
@@ -72,6 +99,6 @@ export default function ProgrammeMismatchGate({
           </button>
         </div>
       </div>
-    </div>
+    </dialog>
   )
 }

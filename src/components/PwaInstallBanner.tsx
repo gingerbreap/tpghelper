@@ -49,6 +49,7 @@ export default function PwaInstallBanner() {
         <p className="pwa-install-banner-text">{t('about.pwa.bannerMessage')}</p>
         <Link
           to="/about/pwa"
+          viewTransition
           className="pwa-install-banner-link"
           onClick={dismiss}
         >

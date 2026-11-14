@@ -525,7 +525,7 @@ export default function TeachingPlanUpdateNotice({
       <div className="teaching-plan-section-header">
         <h1 className="page-title teaching-plan-section-title">{t('teachingPlan.sectionTitle')}</h1>
         <div className="teaching-plan-section-actions">
-          <Link to="/archive/teaching-plan" className="alt-btn teaching-plan-section-btn">
+          <Link to="/archive/teaching-plan" className="alt-btn teaching-plan-section-btn" viewTransition>
             {t('teachingPlan.reviewAllUpdates')}
           </Link>
           <button

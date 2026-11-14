@@ -1106,7 +1106,6 @@ export default function PlannerCalendar({
           events={events}
           onClose={() => setFormatOpen(false)}
           onSaved={setTemplates}
-          lockScroll={!exportOpen}
         />
       )}
       {detailEvent && (

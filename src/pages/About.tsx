@@ -81,16 +81,16 @@ export default function About() {
       </div>
 
       <nav className="about-menu" aria-label={t('about.menuLabel')}>
-        <Link to="/about/teaching-plan-archive" className="about-menu-item">
+        <Link to="/about/teaching-plan-archive" className="about-menu-item" viewTransition>
           {t('about.menuArchive')}
         </Link>
-        <Link to="/about/default-page" className="about-menu-item">
+        <Link to="/about/default-page" className="about-menu-item" viewTransition>
           {t('about.menuDefaultPage')}
         </Link>
-        <Link to="/about/import-export" className="about-menu-item">
+        <Link to="/about/import-export" className="about-menu-item" viewTransition>
           {t('about.menuImportExport')}
         </Link>
-        <Link to="/about/pwa" className="about-menu-item">
+        <Link to="/about/pwa" className="about-menu-item" viewTransition>
           {t('about.menuPwa')}
         </Link>
         <a href={landerProgrammesUrl()} className="about-menu-item">

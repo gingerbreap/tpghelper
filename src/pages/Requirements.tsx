@@ -1,3 +1,4 @@
+import PageLoading from '../components/PageLoading'
 import { useRequirements, useCourses } from '../hooks/useCoursesData'
 import { useI18n } from '../i18n/context'
 import { getActiveProgramme } from '../programmes'
@@ -22,7 +23,7 @@ export default function Requirements() {
   const preferJsonCopy = programme.id === 'mgm' || programme.id === 'mecon'
   const isMecon = programme.id === 'mecon'
 
-  if (!req) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
+  if (!req) return <PageLoading />
 
   const getTitle = (code: string) => courses.find(c => c.courseCode === code)?.courseTitle || code
   const planningRules =

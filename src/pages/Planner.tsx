@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect, useCallback, useRef } from 'react'
 import ConflictNotices from '../components/ConflictNotices'
 import CourseDetailModal from '../components/CourseDetailModal'
 import MeconRoleBadges from '../components/MeconRoleBadges'
+import PageLoading from '../components/PageLoading'
 import PlannerCalendar from '../components/PlannerCalendar'
 import OtherRequirementsConfirmModal from '../components/OtherRequirementsConfirmModal'
 import StreamSwitchModal from '../components/StreamSwitchModal'
@@ -139,8 +140,31 @@ export default function Planner() {
 
   useEffect(() => {
     if (!duplicateMsg) return
-    const timer = window.setTimeout(() => setDuplicateMsg(null), 4000)
-    return () => window.clearTimeout(timer)
+    const region = document.getElementById('planner-toast-region')
+    const toastEl = region?.querySelector<HTMLElement>('.planner-toast')
+    let timer = window.setTimeout(() => setDuplicateMsg(null), 4000)
+
+    const pause = () => window.clearTimeout(timer)
+    const resume = () => {
+      window.clearTimeout(timer)
+      timer = window.setTimeout(() => setDuplicateMsg(null), 4000)
+    }
+
+    toastEl?.addEventListener('focusin', pause)
+    toastEl?.addEventListener('focusout', resume)
+    if (toastEl && 'showPopover' in toastEl) {
+      try {
+        ;(toastEl as HTMLElement & { showPopover: () => void }).showPopover()
+      } catch {
+        /* already open / unsupported */
+      }
+    }
+
+    return () => {
+      window.clearTimeout(timer)
+      toastEl?.removeEventListener('focusin', pause)
+      toastEl?.removeEventListener('focusout', resume)
+    }
   }, [duplicateMsg])
 
   const planCodes = useMemo(() => selectedCourseCodes(selections), [selections])
@@ -631,7 +655,7 @@ export default function Planner() {
         ? effectiveCount
         : selections.length
 
-  if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
+  if (loading) return <PageLoading />
 
   const renderSelectionRow = (s: SelectedSection) => {
     const sec = findSection(s.courseCode, s.module, s.sectionId)
@@ -883,9 +907,26 @@ export default function Planner() {
         </div>
       )}
 
-      {duplicateMsg && (
-        <div className="planner-toast" role="status">{duplicateMsg}</div>
-      )}
+      <div
+        id="planner-toast-region"
+        className="planner-toast-region"
+        role="region"
+        aria-label={t('planner.notifications')}
+      >
+        {duplicateMsg && (
+          <div className="planner-toast" role="status" popover="manual">
+            <span className="planner-toast-msg">{duplicateMsg}</span>
+            <button
+              type="button"
+              className="planner-toast-close"
+              aria-label={t('common.close')}
+              onClick={() => setDuplicateMsg(null)}
+            >
+              ×
+            </button>
+          </div>
+        )}
+      </div>
 
       {!needsStream && (
         <>

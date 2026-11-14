@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { createPortal } from 'react-dom'
+import AppDialog from './AppDialog'
 import { useI18n } from '../i18n/context'
 import type { CalendarEvent } from '../utils/calendarEvents'
 import {
@@ -33,111 +32,88 @@ export default function CalendarEventDetailModal({
     || event.sessionType === 'presentation'
     || event.sessionType === 'other'
 
-  useEffect(() => {
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = prev
-    }
-  }, [])
+  return (
+    <AppDialog
+      open
+      onClose={onClose}
+      className="calendar-event-detail-modal"
+      labelledBy="calendar-event-detail-title"
+      closeLabel={t('common.close')}
+    >
+      <div className="modal-body calendar-event-detail-body">
+        {(isPrevious || isUpdated) && (
+          <div className="calendar-event-detail-badges">
+            {isPrevious && (
+              <span className="calendar-event-plan-badge">{t('calendar.planPreviousBadge')}</span>
+            )}
+            {isUpdated && (
+              <span className="calendar-event-plan-badge calendar-event-plan-badge--updated">
+                {t('calendar.planUpdatedBadge')}
+              </span>
+            )}
+          </div>
+        )}
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+        <h2 id="calendar-event-detail-title" className="calendar-event-detail-title">
+          {summary}
+        </h2>
 
-  return createPortal(
-    <div className="modal-overlay" onClick={onClose} role="presentation">
-      <div
-        className="modal-window calendar-event-detail-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="calendar-event-detail-title"
-        onClick={e => e.stopPropagation()}
-      >
-        <button type="button" className="modal-close" onClick={onClose} aria-label={t('common.close')}>
-          ×
-        </button>
+        <div className="calendar-event-detail-when">{when}</div>
 
-        <div className="modal-body calendar-event-detail-body">
-          {(isPrevious || isUpdated) && (
-            <div className="calendar-event-detail-badges">
-              {isPrevious && (
-                <span className="calendar-event-plan-badge">{t('calendar.planPreviousBadge')}</span>
-              )}
-              {isUpdated && (
-                <span className="calendar-event-plan-badge calendar-event-plan-badge--updated">
-                  {t('calendar.planUpdatedBadge')}
-                </span>
-              )}
-            </div>
-          )}
+        {!isFinal && event.sectionId && (
+          <div className="calendar-event-detail-row">
+            <span className="calendar-event-detail-label">{t('calendar.eventSection')}</span>
+            <span>{sectionLabel(event.sectionId)}</span>
+          </div>
+        )}
 
-          <h2 id="calendar-event-detail-title" className="calendar-event-detail-title">
-            {summary}
-          </h2>
+        {!isFinal && event.sessionNumber != null && (
+          <div className="calendar-event-detail-row">
+            <span className="calendar-event-detail-label">{t('calendar.eventSession')}</span>
+            <span>{event.sessionNumber}</span>
+          </div>
+        )}
 
-          <div className="calendar-event-detail-when">{when}</div>
+        {event.instructor && (
+          <div className="calendar-event-detail-row">
+            <span className="calendar-event-detail-label">{t('calendar.eventInstructor')}</span>
+            <span>{event.instructor}</span>
+          </div>
+        )}
 
-          {!isFinal && event.sectionId && (
-            <div className="calendar-event-detail-row">
-              <span className="calendar-event-detail-label">{t('calendar.eventSection')}</span>
-              <span>{sectionLabel(event.sectionId)}</span>
-            </div>
-          )}
+        {event.venue && (
+          <div className="calendar-event-detail-row">
+            <span className="calendar-event-detail-label">{t('calendar.eventVenue')}</span>
+            <span>{event.venue}</span>
+          </div>
+        )}
 
-          {!isFinal && event.sessionNumber != null && (
-            <div className="calendar-event-detail-row">
-              <span className="calendar-event-detail-label">{t('calendar.eventSession')}</span>
-              <span>{event.sessionNumber}</span>
-            </div>
-          )}
+        {description && (
+          <div className="calendar-event-detail-desc-block">
+            <div className="calendar-event-detail-label">{t('calendar.eventDescription')}</div>
+            <pre className="calendar-event-detail-desc">{description}</pre>
+          </div>
+        )}
 
-          {event.instructor && (
-            <div className="calendar-event-detail-row">
-              <span className="calendar-event-detail-label">{t('calendar.eventInstructor')}</span>
-              <span>{event.instructor}</span>
-            </div>
-          )}
+        {isPrevious && (
+          <p className="calendar-event-detail-note">{t('calendar.planPreviousTitle')}</p>
+        )}
+        {isUpdated && !isPrevious && (
+          <p className="calendar-event-detail-note">{t('calendar.planUpdatedTitle')}</p>
+        )}
 
-          {event.venue && (
-            <div className="calendar-event-detail-row">
-              <span className="calendar-event-detail-label">{t('calendar.eventVenue')}</span>
-              <span>{event.venue}</span>
-            </div>
-          )}
-
-          {description && (
-            <div className="calendar-event-detail-desc-block">
-              <div className="calendar-event-detail-label">{t('calendar.eventDescription')}</div>
-              <pre className="calendar-event-detail-desc">{description}</pre>
-            </div>
-          )}
-
-          {isPrevious && (
-            <p className="calendar-event-detail-note">{t('calendar.planPreviousTitle')}</p>
-          )}
-          {isUpdated && !isPrevious && (
-            <p className="calendar-event-detail-note">{t('calendar.planUpdatedTitle')}</p>
-          )}
-
-          {onViewCourse && !isPrevious && (
-            <div className="calendar-event-detail-actions">
-              <button
-                type="button"
-                className="select-btn"
-                onClick={() => onViewCourse(event.courseCode)}
-              >
-                {t('calendar.viewCourse')}
-              </button>
-            </div>
-          )}
-        </div>
+        {onViewCourse && !isPrevious && (
+          <div className="calendar-event-detail-actions">
+            <button
+              type="button"
+              className="select-btn"
+              onClick={() => onViewCourse(event.courseCode)}
+            >
+              {t('calendar.viewCourse')}
+            </button>
+          </div>
+        )}
       </div>
-    </div>,
-    document.body,
+    </AppDialog>
   )
 }

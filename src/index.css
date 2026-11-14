@@ -928,20 +928,66 @@ a:hover { text-decoration: underline; }
   color: var(--error);
 }
 
-.planner-toast {
+.planner-toast-region {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   max-width: min(480px, calc(100vw - 32px));
-  padding: 12px 16px;
+  pointer-events: none;
+}
+
+.planner-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: min(480px, calc(100vw - 32px));
+  padding: 12px 12px 12px 16px;
   background: #323232;
   color: #fff;
   border-radius: var(--radius);
   font-size: 13px;
   line-height: 1.4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  border: none;
+  margin: 0;
+}
+
+.planner-toast[popover]:is(:popover-open, .\:popover-open) {
+  position: fixed;
+  inset: auto auto 24px 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.planner-toast-msg {
+  flex: 1;
+  min-width: 0;
+}
+
+.planner-toast-close {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.planner-toast-close:hover,
+.planner-toast-close:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Detail page */
@@ -1052,9 +1098,175 @@ a:hover { text-decoration: underline; }
 .app-main {
   padding-top: 8px;
   padding-bottom: 24px;
+  /* SPA content morphs; chrome (nav bars) stays out of the root cross-fade */
+  view-transition-name: app-main;
 }
+
+.navbar {
+  view-transition-name: app-navbar;
+}
+
 .mobile-bottom-nav {
   display: none;
+  view-transition-name: app-bottom-nav;
+}
+
+/* Soft cross-fade for route content (RR wraps updates in startViewTransition) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(app-main),
+::view-transition-new(app-main) {
+  animation-duration: 0.28s;
+  animation-timing-function: ease;
+}
+
+::view-transition-old(app-navbar),
+::view-transition-new(app-navbar),
+::view-transition-old(app-bottom-nav),
+::view-transition-new(app-bottom-nav) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* In-shell loading (MWG spinner on native <progress>) */
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: min(40vh, 280px);
+  padding: 40px 16px;
+  color: var(--text-secondary);
+}
+
+.page-loading--compact {
+  min-height: 120px;
+  padding: 16px;
+  gap: 10px;
+}
+
+.page-loading-label {
+  font-size: 13px;
+}
+
+@property --arc-start {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --arc-end {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 90deg;
+}
+
+progress.loading-spinner {
+  --spinner-size: 2rem;
+  --thickness: 3px;
+  --spinner-color: var(--primary, #1a73e8);
+  --track-color: #e8eaed;
+  --_used-spinner-duration: 1s;
+  --_from: var(--arc-start);
+  --_to: var(--arc-end);
+  --progress-dash-animation: progress-dash var(--_used-spinner-duration) linear infinite;
+
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      from var(--_from),
+      var(--spinner-color) calc(var(--_to) - var(--_from)),
+      transparent 0
+    )
+    var(--track-color);
+  animation:
+    progress-spin var(--_used-spinner-duration) linear infinite
+    var(--progress-dash-animation, );
+}
+
+progress.loading-spinner:indeterminate::-webkit-progress-bar,
+progress.loading-spinner:indeterminate::-webkit-progress-value {
+  display: none;
+  background: none;
+}
+
+progress.loading-spinner:indeterminate::-moz-progress-bar {
+  display: none;
+  background: none;
+}
+
+@supports (background-clip: border-area) {
+  progress.loading-spinner {
+    background-clip: border-area;
+    border: var(--thickness) solid transparent;
+    background-origin: border-box;
+  }
+}
+
+@supports not (background-clip: border-area) {
+  progress.loading-spinner {
+    --clip-boundary: calc(100% - var(--thickness));
+    mask-image: radial-gradient(
+      farthest-side,
+      transparent var(--clip-boundary),
+      black var(--clip-boundary)
+    );
+    border: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  progress.loading-spinner {
+    forced-color-adjust: none;
+    --spinner-color: CanvasText;
+    --track-color: Canvas;
+  }
+}
+
+@keyframes progress-spin {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@keyframes progress-dash {
+  from {
+    --arc-start: 0deg;
+    --arc-end: 3deg;
+  }
+  50% {
+    --arc-start: 100deg;
+    --arc-end: 358deg;
+  }
+  to {
+    --arc-start: 360deg;
+    --arc-end: 363deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  progress.loading-spinner:indeterminate {
+    --_used-spinner-duration: 6s;
+    --progress-dash-animation: ;
+    --arc-end: 158deg;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1197,6 +1409,7 @@ a:hover { text-decoration: underline; }
   margin-bottom: 16px;
 }
 .tab {
+  position: relative;
   padding: 8px 20px;
   cursor: pointer;
   font-size: 14px;
@@ -1209,7 +1422,21 @@ a:hover { text-decoration: underline; }
   border-left: none;
   border-right: none;
 }
-.tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+.tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+/* ARIA tabs: underline shape (not color alone) for Forced Colors / WCAG 1.4.1 */
+.tab[aria-selected="true"] {
+  color: var(--primary);
+  border-bottom-color: transparent;
+}
+.tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  border-block-end: 3px solid var(--primary);
+}
 
 /* Planner calendar */
 .planner-calendar { padding: 16px; margin-bottom: 16px; }
@@ -1865,20 +2092,39 @@ button.calendar-holiday-label {
   }
 }
 
-/* Course detail popup (Planner) */
-.modal-overlay {
+/* Native modal dialogs (MWG: dialog + showModal; no body overflow lock) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog.modal-window {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 2000;
+  width: min(960px, 90vw);
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  border: none;
+  padding: 0;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  /* Do not set display unless open — overrides closed dialog state */
+}
+
+dialog.modal-window[open] {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
+  flex-direction: column;
+  overflow: hidden;
 }
-.modal-overlay--stacked {
-  z-index: 2100;
+
+dialog.modal-window::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
+
+/* Legacy class kept for non-dialog chrome sizing modifiers */
 .modal-window {
   position: relative;
   width: min(960px, 90vw);
@@ -1887,9 +2133,6 @@ button.calendar-holiday-label {
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 .modal-close {
   position: absolute;
@@ -2584,12 +2827,104 @@ button.calendar-holiday-label {
   color: var(--error);
 }
 
-.transfer-toast {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* MWG copy-button: tip is the live region; show via opacity, not display/visibility */
+.copy-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-inline-size: 24px;
+  min-block-size: 24px;
+}
+
+.copy-button-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.copy-button-icon--ok,
+.copy-button-icon--fail {
+  display: none;
+}
+
+.copy-button[data-copied] .copy-button-icon--idle,
+.copy-button[data-failed] .copy-button-icon--idle {
+  display: none;
+}
+
+.copy-button[data-copied] .copy-button-icon--ok {
+  display: inline-block;
+  color: #0d652d;
+}
+
+.copy-button[data-failed] .copy-button-icon--fail {
+  display: inline-block;
+  color: #c5221f;
+}
+
+.copy-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #202124;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.copy-button[data-copied] + .copy-tip,
+.copy-button[data-failed] + .copy-tip {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-tip {
+    transition: opacity 0.01ms;
+  }
+}
+
+.transfer-copy-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.transfer-toast-host {
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3000;
+  pointer-events: none;
+  min-height: 0;
+}
+
+.transfer-toast {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2600,7 +2935,6 @@ button.calendar-holiday-label {
   font-weight: 600;
   line-height: 1.3;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  pointer-events: none;
 }
 .transfer-toast--ok {
   background: #e6f4ea;
@@ -3648,16 +3982,25 @@ button.calendar-holiday-label {
 }
 
 /* ========== Programme mismatch (cross-entry) ========== */
-.programme-mismatch-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
+dialog.programme-mismatch-dialog {
+  border: none;
+  padding: 24px;
+  margin: auto;
+  max-width: calc(100vw - 32px);
+  background: transparent;
+}
+
+dialog.programme-mismatch-dialog[open] {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+}
+
+dialog.programme-mismatch-dialog::backdrop {
   background: rgba(32, 33, 36, 0.45);
   backdrop-filter: blur(2px);
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 
 .programme-mismatch-card {

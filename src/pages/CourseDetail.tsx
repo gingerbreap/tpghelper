@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useCourses, useRequirements } from '../hooks/useCoursesData'
 import WeekdayStrip from '../components/WeekdayStrip'
 import MeconRoleBadges from '../components/MeconRoleBadges'
+import PageLoading from '../components/PageLoading'
 import StreamTagBadges from '../components/StreamTagBadges'
 import CourseOutlineViewer from '../components/CourseOutlineViewer'
 import TimeBadge from '../components/TimeBadge'
@@ -79,9 +80,12 @@ function FinalSessionRow({ exam }: { exam: ExamOrFinal }) {
 export function CourseDetailContent({
   courseCode,
   compact = false,
+  titleId,
 }: {
   courseCode: string
   compact?: boolean
+  /** When set (e.g. modal), used as `aria-labelledby` target on the heading. */
+  titleId?: string
 }) {
   const { t, sectionLabel, locale } = useI18n()
   const { courses, loading } = useCourses()
@@ -177,9 +181,31 @@ export function CourseDetailContent({
   const activeInstructor = selectedInstructor ?? instructors[0]?.name ?? null
   const [tutExpandedBySectionKey, setTutExpandedBySectionKey] = useState<Record<string, boolean>>({})
 
-  if (loading) return <div style={{ padding: compact ? 16 : 40, textAlign: 'center' }}>{t('common.loading')}</div>
+  if (loading) {
+    return (
+      <>
+        {titleId && (
+          <h2 id={titleId} className="visually-hidden">
+            {t('courseDetail.modalLabel')}: {courseCode}
+          </h2>
+        )}
+        <PageLoading compact={compact} />
+      </>
+    )
+  }
   if (matchedCourses.length === 0) {
-    return <div style={{ padding: compact ? 16 : 40, textAlign: 'center' }}>{t('courseDetail.notFound', { code: courseCode })}</div>
+    return (
+      <>
+        {titleId && (
+          <h2 id={titleId} className="visually-hidden">
+            {t('courseDetail.modalLabel')}: {courseCode}
+          </h2>
+        )}
+        <div style={{ padding: compact ? 16 : 40, textAlign: 'center' }}>
+          {t('courseDetail.notFound', { code: courseCode })}
+        </div>
+      </>
+    )
   }
 
   const sectionsOf = (course: Course): Section[] =>
@@ -210,7 +236,7 @@ export function CourseDetailContent({
   return (
     <div>
       <div className="detail-header">
-        <h1>{matchedCourses[0].courseCode} {matchedCourses[0].courseTitle}</h1>
+        <h1 id={titleId}>{matchedCourses[0].courseCode} {matchedCourses[0].courseTitle}</h1>
         <div className="detail-meta">
           {matchedCourses[0].commonElective ||
           matchedCourses[0].courseType === 'Common Elective' ? (
@@ -265,7 +291,7 @@ export function CourseDetailContent({
               <li key={p.courseCode} style={{ display: 'flex', gap: 6 }}>
                 <span aria-hidden="true">-</span>
                 <span>
-                  <Link to={`/course/${encodeURIComponent(p.courseCode)}`}>
+                  <Link to={`/course/${encodeURIComponent(p.courseCode)}`} viewTransition>
                     {p.courseCode}
                   </Link>
                   {p.courseTitle ? ` ${p.courseTitle}` : ''}

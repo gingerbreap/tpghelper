@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { createPortal } from 'react-dom'
+import AppDialog from './AppDialog'
 import { useI18n } from '../i18n/context'
 import { MECON_STREAMS, type MeconStreamId } from '../programmes/mecon/streamTags'
 import type { Course, SelectedSection } from '../types'
@@ -46,24 +46,6 @@ export default function StreamSwitchModal({
     setPolicy('choose')
   }, [open, mode, currentStream])
 
-  useEffect(() => {
-    if (!open) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = prev
-    }
-  }, [open])
-
-  useEffect(() => {
-    if (!open) return
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open, onClose])
-
   const needsPolicy =
     mode === 'switch'
     && !!currentStream
@@ -80,8 +62,6 @@ export default function StreamSwitchModal({
     !!target
     && (mode === 'select' || target === currentStream || !needsPolicy || policy !== 'choose')
 
-  if (!open) return null
-
   const handleSave = () => {
     if (!target || !canSave) return
     if (mode === 'select' || !currentStream || target === currentStream || !needsPolicy) {
@@ -92,119 +72,113 @@ export default function StreamSwitchModal({
     onConfirm(target, next)
   }
 
-  return createPortal(
-    <div className="modal-overlay" onClick={onClose} role="presentation">
-      <div
-        className="modal-window stream-switch-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="stream-switch-title"
-        onClick={e => e.stopPropagation()}
-      >
-        <button type="button" className="modal-close" onClick={onClose} aria-label={t('common.close')}>
-          ×
-        </button>
-        <div className="modal-body stream-switch-modal-body">
-          <h2 id="stream-switch-title" className="stream-switch-title">
-            {t('planner.streamSwitchTitle')}
-          </h2>
+  return (
+    <AppDialog
+      open={open}
+      onClose={onClose}
+      className="stream-switch-modal"
+      labelledBy="stream-switch-title"
+      closeLabel={t('common.close')}
+    >
+      <div className="modal-body stream-switch-modal-body">
+        <h2 id="stream-switch-title" className="stream-switch-title">
+          {t('planner.streamSwitchTitle')}
+        </h2>
 
-          <div className="stream-switch-info-banner" role="note">
-            <i className="fas fa-info-circle" aria-hidden="true" />
-            <span>{t('planner.streamSwitchWarning')}</span>
-          </div>
+        <div className="stream-switch-info-banner" role="note">
+          <i className="fas fa-info-circle" aria-hidden="true" />
+          <span>{t('planner.streamSwitchWarning')}</span>
+        </div>
 
-          <div className="stream-switch-options" role="radiogroup" aria-label={t('planner.streamSwitchTitle')}>
-            {MECON_STREAMS.map(s => (
-              <label key={s.id} className={`stream-switch-option${target === s.id ? ' selected' : ''}`}>
-                <input
-                  type="radio"
-                  name="mecon-stream"
-                  value={s.id}
-                  checked={target === s.id}
-                  onChange={() => setTarget(s.id)}
-                />
-                <span className="stream-switch-option-id">{s.id}</span>
-                <span className="stream-switch-option-name">{s.name}</span>
-              </label>
-            ))}
-          </div>
+        <div className="stream-switch-options" role="radiogroup" aria-label={t('planner.streamSwitchTitle')}>
+          {MECON_STREAMS.map(s => (
+            <label key={s.id} className={`stream-switch-option${target === s.id ? ' selected' : ''}`}>
+              <input
+                type="radio"
+                name="mecon-stream"
+                value={s.id}
+                checked={target === s.id}
+                onChange={() => setTarget(s.id)}
+              />
+              <span className="stream-switch-option-id">{s.id}</span>
+              <span className="stream-switch-option-name">{s.name}</span>
+            </label>
+          ))}
+        </div>
 
-          {needsPolicy && (
-            <div className="stream-switch-policy">
-              <label className="stream-switch-policy-label" htmlFor="stream-switch-policy">
-                {t('planner.streamPolicyPrompt')}
-              </label>
-              <select
-                id="stream-switch-policy"
-                value={policy}
-                onChange={e => setPolicy(e.target.value as StreamSwitchPolicy)}
-              >
-                {POLICY_OPTIONS.map(opt => (
-                  <option key={opt.id} value={opt.id}>
-                    {t(opt.labelKey)}
-                  </option>
-                ))}
-              </select>
-
-              {policy !== 'choose' && (
-                <div className="stream-switch-preview">
-                  <div className="stream-switch-preview-title">{t('planner.streamPreviewTitle')}</div>
-                  {preview.length === 0 ? (
-                    <div className="stream-switch-preview-empty">{t('planner.streamPreviewEmpty')}</div>
-                  ) : (
-                    <div className="stream-switch-preview-table-wrap">
-                      <table className="stream-switch-preview-table">
-                        <thead>
-                          <tr>
-                            <th>{t('planner.streamPreviewCode')}</th>
-                            <th>{t('planner.streamPreviewTitleCol')}</th>
-                            <th>{t('planner.streamPreviewCurrent')}</th>
-                            <th>{t('planner.streamPreviewNext')}</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {preview.map(row => (
-                            <tr key={`${row.courseCode}-${row.module}-${row.sectionId}`}>
-                              <td>{row.courseCode}</td>
-                              <td>{row.courseTitle}</td>
-                              <td>{row.currentStatus === 'Stream Core' ? 'STM CORE' : row.currentStatus === 'Elective' ? 'ELECTIVES' : row.currentStatus.toUpperCase()}</td>
-                              <td>
-                                {row.nextStatus === null
-                                  ? '✕'
-                                  : row.nextStatus === 'Stream Core'
-                                    ? 'STM CORE'
-                                    : row.nextStatus === 'Elective'
-                                      ? 'ELECTIVES'
-                                      : row.nextStatus.toUpperCase()}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-
-          <div className="stream-switch-actions">
-            <button type="button" className="remove-btn" onClick={onClose}>
-              {t('common.cancel')}
-            </button>
-            <button
-              type="button"
-              className="select-btn"
-              disabled={!canSave}
-              onClick={handleSave}
+        {needsPolicy && (
+          <div className="stream-switch-policy">
+            <label className="stream-switch-policy-label" htmlFor="stream-switch-policy">
+              {t('planner.streamPolicyPrompt')}
+            </label>
+            <select
+              id="stream-switch-policy"
+              value={policy}
+              onChange={e => setPolicy(e.target.value as StreamSwitchPolicy)}
             >
-              {t('common.save')}
-            </button>
+              {POLICY_OPTIONS.map(opt => (
+                <option key={opt.id} value={opt.id}>
+                  {t(opt.labelKey)}
+                </option>
+              ))}
+            </select>
+
+            {policy !== 'choose' && (
+              <div className="stream-switch-preview">
+                <div className="stream-switch-preview-title">{t('planner.streamPreviewTitle')}</div>
+                {preview.length === 0 ? (
+                  <div className="stream-switch-preview-empty">{t('planner.streamPreviewEmpty')}</div>
+                ) : (
+                  <div className="stream-switch-preview-table-wrap">
+                    <table className="stream-switch-preview-table">
+                      <thead>
+                        <tr>
+                          <th>{t('planner.streamPreviewCode')}</th>
+                          <th>{t('planner.streamPreviewTitleCol')}</th>
+                          <th>{t('planner.streamPreviewCurrent')}</th>
+                          <th>{t('planner.streamPreviewNext')}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {preview.map(row => (
+                          <tr key={`${row.courseCode}-${row.module}-${row.sectionId}`}>
+                            <td>{row.courseCode}</td>
+                            <td>{row.courseTitle}</td>
+                            <td>{row.currentStatus === 'Stream Core' ? 'STM CORE' : row.currentStatus === 'Elective' ? 'ELECTIVES' : row.currentStatus.toUpperCase()}</td>
+                            <td>
+                              {row.nextStatus === null
+                                ? '✕'
+                                : row.nextStatus === 'Stream Core'
+                                  ? 'STM CORE'
+                                  : row.nextStatus === 'Elective'
+                                    ? 'ELECTIVES'
+                                    : row.nextStatus.toUpperCase()}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
+        )}
+
+        <div className="stream-switch-actions">
+          <button type="button" className="remove-btn" onClick={onClose} autoFocus>
+            {t('common.cancel')}
+          </button>
+          <button
+            type="button"
+            className="select-btn"
+            disabled={!canSave}
+            onClick={handleSave}
+          >
+            {t('common.save')}
+          </button>
         </div>
       </div>
-    </div>,
-    document.body,
+    </AppDialog>
   )
 }

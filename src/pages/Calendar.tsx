@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CourseDetailModal from '../components/CourseDetailModal'
+import PageLoading from '../components/PageLoading'
 import PlannerCalendar from '../components/PlannerCalendar'
 import { useI18n } from '../i18n/context'
 import { useCourses } from '../hooks/useCoursesData'
@@ -27,16 +28,14 @@ export default function Calendar() {
   )
   const unreadCount = unreadIds.size
 
-  if (loading) {
-    return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
-  }
+  if (loading) return <PageLoading />
 
   return (
     <div className="calendar-page">
       {/* Title slot: short unread tip only (not the full Planner Teaching Plan notice). */}
       {unreadCount > 0 && (
         <p className="calendar-unread-tp-notice" role="status">
-          <Link to="/planner">{t('calendar.unreadTeachingPlan', { count: unreadCount })}</Link>
+          <Link to="/planner" viewTransition>{t('calendar.unreadTeachingPlan', { count: unreadCount })}</Link>
         </p>
       )}
       <PlannerCalendar

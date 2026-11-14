@@ -83,6 +83,7 @@ function MobileBottomNav() {
         <NavLink
           key={item.to}
           to={item.to}
+          viewTransition
           className={[
             'mobile-bottom-nav-item',
             item.center && 'mobile-bottom-nav-item--center',
@@ -111,6 +112,7 @@ function PwaInstallNavButton() {
   return (
     <Link
       to="/about/pwa"
+      viewTransition
       className="navbar-icon-btn"
       aria-label={t('about.pwa.installAria')}
       title={t('about.pwa.installAria')}
@@ -145,37 +147,42 @@ function App() {
       />
       <nav className="navbar">
         <div className="container navbar-inner">
-          <NavLink to="/" className="navbar-brand">
+          <NavLink to="/" className="navbar-brand" viewTransition>
             {t('nav.brand')}
           </NavLink>
           <div className="navbar-end">
             <div className="navbar-links">
               <NavLink
                 to="/calendar"
+                viewTransition
                 className={location.pathname === '/calendar' ? 'active' : ''}
               >
                 {t('nav.calendar')}
               </NavLink>
               <NavLink
                 to="/planner"
+                viewTransition
                 className={location.pathname === '/planner' ? 'active' : ''}
               >
                 {t('nav.planner')}
               </NavLink>
               <NavLink
                 to="/courselist"
+                viewTransition
                 className={location.pathname === '/courselist' ? 'active' : ''}
               >
                 {t('nav.timetable')}
               </NavLink>
               <NavLink
                 to="/requirements"
+                viewTransition
                 className={location.pathname === '/requirements' ? 'active' : ''}
               >
                 {t('nav.requirements')}
               </NavLink>
               <NavLink
                 to="/about"
+                viewTransition
                 className={isAboutPath(location.pathname) ? 'active' : ''}
               >
                 {t('nav.about')}
@@ -195,7 +202,7 @@ function App() {
         </div>
       </nav>
       <PwaInstallBanner />
-      <div className="container app-main">
+      <div className="container app-main" id="app-main">
         <Routes>
           <Route path="/" element={<HomeRedirect />} />
           <Route path="/planner" element={<Planner />} />

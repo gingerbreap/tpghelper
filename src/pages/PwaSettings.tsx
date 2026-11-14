@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { createPortal } from 'react-dom'
 import AboutBackLink from '../components/AboutBackLink'
+import AppDialog from '../components/AppDialog'
 import { useI18n } from '../i18n/context'
 import { usePwaInstall } from '../hooks/usePwaInstall'
 import {
@@ -18,45 +18,33 @@ function ConfirmDialog({
   body,
   children,
   onClose,
+  preventClose = false,
 }: {
   title: string
   titleClassName?: string
   body: ReactNode
   children: ReactNode
   onClose: () => void
+  preventClose?: boolean
 }) {
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
-    }
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    document.addEventListener('keydown', onKeyDown)
-    return () => {
-      document.body.style.overflow = prev
-      document.removeEventListener('keydown', onKeyDown)
-    }
-  }, [onClose])
-
-  return createPortal(
-    <div className="modal-overlay" onClick={onClose} role="presentation">
-      <div
-        className="modal-window pwa-confirm-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="pwa-confirm-title"
-        onClick={event => event.stopPropagation()}
-      >
-        <div className="modal-body pwa-confirm-body">
-          <h2 id="pwa-confirm-title" className={titleClassName ?? 'pwa-confirm-title'}>
-            {title}
-          </h2>
-          <div className="pwa-confirm-text">{body}</div>
-          <div className="pwa-confirm-actions">{children}</div>
-        </div>
+  return (
+    <AppDialog
+      open
+      onClose={onClose}
+      className="pwa-confirm-modal"
+      labelledBy="pwa-confirm-title"
+      showCloseButton={false}
+      closedBy="any"
+      preventClose={preventClose}
+    >
+      <div className="modal-body pwa-confirm-body">
+        <h2 id="pwa-confirm-title" className={titleClassName ?? 'pwa-confirm-title'}>
+          {title}
+        </h2>
+        <div className="pwa-confirm-text">{body}</div>
+        <div className="pwa-confirm-actions">{children}</div>
       </div>
-    </div>,
-    document.body,
+    </AppDialog>
   )
 }
 
@@ -179,6 +167,7 @@ export default function PwaSettings() {
             <p key={index}>{line}</p>
           ))}
           onClose={closeDialog}
+          preventClose={busy}
         >
           <button
             type="button"
@@ -194,6 +183,7 @@ export default function PwaSettings() {
             type="button"
             className="pwa-storage-btn pwa-storage-btn--primary-outline"
             disabled={busy}
+            autoFocus
             onClick={closeDialog}
           >
             {t('about.pwa.no')}
@@ -207,11 +197,13 @@ export default function PwaSettings() {
           titleClassName="pwa-confirm-title pwa-confirm-title--danger"
           body={<p>{t('about.pwa.resetDialog1Body')}</p>}
           onClose={closeDialog}
+          preventClose={busy}
         >
           <button
             type="button"
             className="pwa-storage-btn pwa-storage-btn--danger-outline"
             disabled={busy}
+            autoFocus
             onClick={closeDialog}
           >
             {t('about.pwa.back')}
@@ -233,11 +225,13 @@ export default function PwaSettings() {
           titleClassName="pwa-confirm-title pwa-confirm-title--danger"
           body={<p>{t('about.pwa.resetDialog2Body')}</p>}
           onClose={closeDialog}
+          preventClose={busy}
         >
           <button
             type="button"
             className="pwa-storage-btn pwa-storage-btn--danger-soft"
             disabled={busy}
+            autoFocus
             onClick={closeDialog}
           >
             {t('about.pwa.cancel')}

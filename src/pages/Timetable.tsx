@@ -4,6 +4,7 @@ import { useCourses } from '../hooks/useCoursesData'
 import { useSelectedStream } from '../hooks/useSelectedStream'
 import WeekdayStrip from '../components/WeekdayStrip'
 import MeconRoleBadges from '../components/MeconRoleBadges'
+import PageLoading from '../components/PageLoading'
 import StreamTagBadges from '../components/StreamTagBadges'
 import TimeBadge from '../components/TimeBadge'
 import { useI18n } from '../i18n/context'
@@ -87,7 +88,10 @@ function CourseCard({
   if (isMecon && view === null) return null
 
   return (
-    <div className="card card-clickable course-card" onClick={() => navigate(`/course/${course.courseCode}`)}>
+    <div
+      className="card card-clickable course-card"
+      onClick={() => navigate(`/course/${course.courseCode}`, { viewTransition: true })}
+    >
       <div className="course-card-header">
         <div>
           <span className="course-code">{course.courseCode}</span>
@@ -153,7 +157,7 @@ export default function Timetable() {
     return map
   }, [courses, isMecon, stream])
 
-  if (loading) return <div style={{ padding: 40, textAlign: 'center' }}>{t('common.loading')}</div>
+  if (loading) return <PageLoading />
 
   const formatSessionCount = (count: number) => t('timetable.sessionCount', { count })
 

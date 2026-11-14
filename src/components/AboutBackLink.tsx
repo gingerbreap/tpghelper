@@ -5,7 +5,7 @@ export default function AboutBackLink() {
   const { t } = useI18n()
   return (
     <div className="about-back">
-      <Link to="/about" className="about-back-btn">
+      <Link to="/about" className="about-back-btn" viewTransition>
         <i className="fa-solid fa-chevron-left" aria-hidden="true" />
         <span>{t('about.backToAbout')}</span>
       </Link>
