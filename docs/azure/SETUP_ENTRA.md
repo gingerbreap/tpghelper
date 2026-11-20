@@ -55,7 +55,8 @@ export SQL_DATABASE=tpghelper
 export SQL_AUTH=entra
 export ACADEMIC_YEAR=26-27
 
-# Schema (once): run sql/001…005_*.sql in Query editor (incl. 005_programme_meta.sql)
+# Schema (once): run sql/001…006_*.sql in Query editor
+# (incl. 005_programme_meta.sql, 006_prerequisites_json.sql)
 
 npm run db:import-courses
 npm run db:export-notices   # pack TS → public/{id}/teachingPlanNotices.json

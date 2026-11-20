@@ -8,6 +8,7 @@
 |-----------|----------|
 | MSBA | `public/msba/teachingPlan/` |
 | MGM | `public/mgm/teachingPlan/` |
+| MEcon | `public/mecon/teachingPlan/` |
 
 | 角色 | 命名示例 |
 |------|----------|
@@ -40,18 +41,22 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 7. **与旧版 PDF 逐项 diff**：色标应能在旧版找到对应旧值；新版黑字但与旧版不一致也要同步。
 8. 工具辅助：按颜色抽 span + 按 Y 映射到课程行，再人工确认（含删除线）。
 
-## 3. 站点数据改哪里
+## 3. 数据落点与运行时优先级
 
-| 内容 | 文件 |
-|------|------|
-| 课表事实（日期/时间/教室/TUT） | `public/{msba\|mgm}/courses.json` |
-| 选课页更新通知（表格数据） | `src/programmes/{msba\|mgm}/teachingPlanUpdates.ts` |
-| 通知 / 日历 / 关于文案 | `src/i18n/locales/*` + `src/programmes/mgm/locales/*`（MGM 覆盖） |
-| 通知 UI（影响摘要 + 明细） | `src/components/TeachingPlanUpdateNotice.tsx` |
-| 存档页卡片正文 | `src/components/TeachingPlanNoticeBody.tsx`、`src/pages/TeachingPlanArchive.tsx` |
-| 日历改动叠加 | `src/utils/teachingPlanImpact.ts`、`src/components/PlannerCalendar.tsx` |
-| 已读持久化 | `src/utils/teachingPlanDismiss.ts` |
-| 数据最后同步时间（关于页） | `public/{id}/meta.json` → SQL `ProgrammeMeta`（pack `dataSync` 为冷启动兜底） |
+编辑仍从仓库文件开始；**线上有 API 时以 Azure SQL 为准**，JSON / pack 是兜底。
+
+| 内容 | 仓库编辑入口 | 导出 / 导入 | 运行时读取顺序 |
+|------|--------------|-------------|---------------|
+| 课表事实（日期/时间/教室/TUT） | `public/{msba\|mgm\|mecon}/courses.json` | `npm run db:import-courses` | `GET /api/programmes/:id/courses`（SQL）→ 同路径 `courses.json` |
+| 选课页更新通知（表格数据） | `src/programmes/{id}/teachingPlanUpdates.ts`（`teachingPlanNotices`） | `npm run db:export-notices` → 写出 `public/{id}/teachingPlanNotices.json` → `npm run db:import-notices` | `GET /api/.../notices`（SQL）→ `teachingPlanNotices.json` → pack 编译期数组 |
+| 数据最后同步时间（关于页） | `public/{id}/meta.json`（`dataSyncHkt`）+ pack `dataSync` | `npm run db:import-meta` | `GET /api/.../meta` → `meta.json` → pack `dataSync` |
+| 通知 / 日历 / 关于文案 | `src/i18n/locales/*`；MGM 另有 `src/programmes/mgm/locales/*` 覆盖；MEcon 覆盖在 `src/programmes/mecon/locales/*`（目前尚无 teachingPlan body） | — | i18n 合并 |
+| 通知 UI（影响摘要 + 明细） | `src/components/TeachingPlanUpdateNotice.tsx` | — | — |
+| 存档页卡片正文 | `src/components/TeachingPlanNoticeBody.tsx`、`src/pages/TeachingPlanArchive.tsx` | — | — |
+| 日历改动叠加 | `src/utils/teachingPlanImpact.ts`、`src/components/PlannerCalendar.tsx` | — | — |
+| 已读持久化 | `src/utils/teachingPlanDismiss.ts` | — | — |
+| 行展示 / TUT 归属辅助 | `src/utils/teachingPlanRows.ts` | — | — |
+| 通知 hydrate | `src/data/teachingPlanNoticesStore.ts`、`src/hooks/useTeachingPlanNotices.ts` | — | 见上表 |
 
 通知约定：
 
@@ -110,9 +115,13 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 2. 对照旧版 + 扫新版红字，列出「课程 / 班或 TUT / 旧值 / 新值」（含邮件未点名的课）。
 3. 改 `public/{programme}/courses.json`（TUT 共用则相关 meeting 一并改，并填写 `tutorialFor`）。
 4. 更新 `src/programmes/{programme}/teachingPlanUpdates.ts`：新 notice 或扩展现有 notice；TUT 行 `sectionId: 'TUT'` + `tutorialFor` 并沉底。
-5. 更新三语 i18n body（MSBA：`src/i18n/locales`；MGM：另更新 `src/programmes/mgm/locales`）；更新 `public/{id}/meta.json`（及 pack `dataSync`），再 `npm run db:import-meta`。
-6. 用对应 `PROGRAMME=` 本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页。
-7. Commit（约定式提交）+ 按部署流程发布。
+5. 更新三语 i18n body（共享：`src/i18n/locales`；MGM / MEcon 有 programme 覆盖时一并改）；更新 `public/{id}/meta.json` 的 `dataSyncHkt` 与 pack `dataSync`。
+6. 同步到 SQL / 静态兜底（需 `SQL_SERVER` + Entra / `az login`）：
+   - `npm run db:import-courses`
+   - `npm run db:export-notices` && `npm run db:import-notices`
+   - `npm run db:import-meta`
+7. 用对应 `PROGRAMME=`（或 `npm run dev:all`）本地核对：置顶通知标题/摘要/明细、选课日历改动层、「我的日历」未读条、存档页；确认 notices/courses/meta 来自 API（有后端时）而非仅 pack。
+8. Commit（约定式提交）+ 按部署流程发布。
 
 ## 6. 历史同步参考（MSBA）
 
@@ -126,6 +135,7 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 | `20260922` | 7003 C/D：Sep 29、Oct 2 取消，改至 C Oct 7/10、D Oct 8/12（均 18:30–21:30，LT104） |
 | `20261005` | 7004 TUT 取消：A&B 的 Nov 2、Nov 11；C&D 的 Oct 31、Nov 10。7027 B/C：Jan 9 讲座取消改至 B Jan 16 14:00-17:00 LT104、C Jan 16 09:30-12:30 LT104。同期起 TUT 用 `tutorialFor` 标明适用班。 |
 | `20261012` | 7001 考试时间 Oct 16：09:30-12:30 → 09:40-10:40；7003 考试时间 Oct 20：14:00-17:00 → 14:00-16:00 |
+| `20261119` | 7002/7004 期末考试时段缩短；7013 A Dec 16→17 + Tutorial 重排；7014 A Jan 13→18、Final Presentation Jan 19 Classroom H；7017 Tutorial Jan 8→Jan 5；7030 因低选课取消；7033 A Dec 11/18 取消晚间例外并改教室 |
 
 ## 7. 历史同步参考（MGM）
 
@@ -135,4 +145,10 @@ PO 的 Teaching Plan 通常用 **彩色** 标出相对上一版的改动。检�
 | `20260901` | 7001 A/B 补 Oct 15；C/D Sep 22→Oct 16/15；7024 完整课表 |
 | `20260922` | 补漏：7001 C/D 课表仍残留 Sep 22，已删除并发布更正通知 |
 
-维护代码入口：`src/programmes/*/teachingPlanUpdates.ts`、`TeachingPlanUpdateNotice.tsx`、`teachingPlanImpact.ts`、programme `dataSync`。
+## 8. 历史同步参考（MEcon）
+
+| 后缀日期 | 通知焦点 |
+|----------|----------|
+| `20260812` | 初始建站数据源（`teachingPlanNotices` 目前为空，尚无 PO 更新通知） |
+
+维护代码入口：`src/programmes/*/teachingPlanUpdates.ts`、`public/*/teachingPlanNotices.json`、`TeachingPlanUpdateNotice.tsx`、`teachingPlanNoticesStore.ts`、`teachingPlanImpact.ts`、programme `dataSync` / `meta.json`。

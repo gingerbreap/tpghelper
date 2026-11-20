@@ -158,12 +158,151 @@ const plain = (text: string): ChangePart => ({ text })
  */
 export const teachingPlanNotices: TeachingPlanNotice[] = [
   {
+    id: '20261120-7002-7004-7013-7014-7017-7030-7033',
+    timestamp: '2026/11/20 14:55',
+    courseRefs: '7002, 7004, 7013, 7014, 7017, 7030, 7033',
+    bodyKey: 'body_1119',
+    bodyParams: {
+      code1: 'MSBA7002',
+      code2: 'MSBA7004',
+      code3: 'MSBA7013',
+      code4: 'MSBA7014',
+      code5: 'MSBA7017',
+      code6: 'MSBA7030',
+      code7: 'MSBA7033',
+    },
+    defaultExpanded: true,
+    updates: [
+      {
+        courseCode: 'MSBA7002',
+        courseTitle: 'Business Statistics',
+        hasTutorials: true,
+        rows: [
+          {
+            itemKey: 'examFinal',
+            itemDate: 'Nov 28',
+            previous: [plain('09:30-12:30')],
+            updated: [time('09:30-12:00')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7004',
+        courseTitle: 'Operations Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            itemKey: 'examFinal',
+            itemDate: 'Nov 30',
+            previous: [plain('14:00-17:00')],
+            updated: [time('14:00-16:30')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7013',
+        courseTitle: 'Forecasting and Predictive Analytics',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'lecTimeVenue',
+            previous: [time('Dec 16, 2026 (Wed) 09:30-12:30')],
+            updated: [time('Dec 17, 2026 (Thu) 09:30-12:30'), venue('LT104')],
+          },
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['A'],
+            itemKey: 'dates',
+            sessionKind: 'TUT',
+            previous: [plain('NA')],
+            updated: [
+              time(
+                'Dec 14 & 21 14:00-15:00 LTB; Jan 7 & 14 17:00-18:00 Classroom H',
+              ),
+            ],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7014',
+        courseTitle: 'Business Simulation',
+        hasTutorials: false,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'lecTime',
+            previous: [time('Jan 13, 2027 (Wed) 18:30-21:30')],
+            updated: [time('Jan 18, 2027 (Mon) 18:30-21:30')],
+          },
+          {
+            sectionId: 'A',
+            itemKey: 'examFinal',
+            previous: [plain('Jan 16, 2027 (Sat) 18:30-21:30')],
+            updated: [time('Jan 19, 2027 (Tue) 18:30-21:30'), venue('Classroom H')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7017',
+        courseTitle: 'Financial Engineering',
+        hasTutorials: true,
+        rows: [
+          {
+            sectionId: 'TUT',
+            tutorialFor: ['A'],
+            itemKey: 'tutTime',
+            sessionKind: 'TUT',
+            previous: [time('Jan 8, 2027 (Fri) 09:30-10:30')],
+            updated: [time('Jan 5, 2027 (Tue) 17:00-18:00')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7030',
+        courseTitle: 'Digital Innovation',
+        hasTutorials: false,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'dates',
+            previous: [plain('Offered in Module 3')],
+            updated: [plain('Cancelled')],
+          },
+        ],
+      },
+      {
+        courseCode: 'MSBA7033',
+        courseTitle: 'Generative Artificial Intelligence',
+        hasTutorials: false,
+        rows: [
+          {
+            sectionId: 'A',
+            itemKey: 'sessionTimeVenue',
+            itemDate: 'Dec 11',
+            sessionKind: 'LEC',
+            previous: [time('18:30-21:30'), venue('LTB')],
+            updated: [time('09:30-12:30'), venue('Classroom J')],
+          },
+          {
+            sectionId: 'A',
+            itemKey: 'sessionTimeVenue',
+            itemDate: 'Dec 18',
+            sessionKind: 'LEC',
+            previous: [time('18:30-21:30'), venue('LTB')],
+            updated: [time('09:30-12:30'), venue('LT104')],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: '20261012-7001-7003',
     timestamp: '2026/10/12 18:36',
     courseRefs: '7001, 7003',
     bodyKey: 'body7001_7003_1012',
     bodyParams: { code1: 'MSBA7001', code2: 'MSBA7003' },
-    defaultExpanded: true,
+    defaultExpanded: false,
     updates: [
       {
         courseCode: 'MSBA7001',

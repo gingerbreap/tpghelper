@@ -44,7 +44,7 @@ export const msbaProgramme: ProgrammeConfig = {
     teachingPlanImpactCalendar: true,
     enrollmentRules: true,
   },
-  dataSync: '2026/11/04 17:32',
+  dataSync: '2026/11/20 14:55',
   studyStatus: {
     sampleCourseCode: 'MSBA7001',
     courseCodePattern: String.raw`(?:MSBA|PMGM|ECON|PMBA|IMBA|MACC|MAIB|MFIN|MSMK|PMWM|PMAA|MSAF|PMSC)\d{4}`,

@@ -386,6 +386,8 @@ const en: TranslationTree = {
       '{{code1}} exam time updated to Oct 16 (Fri) 09:40-10:40; {{code2}} exam time updated to Oct 20 (Tue) 14:00-16:00. See the calendar below for related changes. Wish you all the best in your exams!',
     body7004_7027_1005:
       '{{code1}} tutorials cancelled: Class A & B Nov 2 and Nov 11; Class C & D Oct 31 and Nov 10. {{code2}} (Class B & C) lectures on January 9 were cancelled and rescheduled: Class B moves to January 16 (14:00-17:00, LT104); Class C moves to January 16 (09:30-12:30, LT104). See the calendar below for related changes.',
+    body_1119:
+      '{{code1}} exam time updated to Nov 28 (Sat) 09:30-12:00; {{code2}} exam time updated to Nov 30 (Mon) 14:00-16:30. {{code3}} Class A Dec 16 lecture cancelled and moved to Dec 17; tutorials updated. {{code4}} Class A Jan 13 lecture moved to Jan 18; final presentation moved to Jan 19 (Classroom H). {{code5}} tutorial schedule updated. {{code6}} cancelled due to low enrolment. {{code7}} Class A Dec 11 and Dec 18 lecture time and venue updated. See the calendar below for related changes.',
     colCourse: 'Course',
     colClass: 'Class',
     colItem: 'Rescheduled Item',

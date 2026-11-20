@@ -383,6 +383,8 @@ const zhCN: TranslationTree = {
       '{{code1}} 考试时间已更新为 Oct 16（Fri）09:40-10:40；{{code2}} 考试时间已更新为 Oct 20（Tue）14:00-16:00。可参考下方日历查看相关改动。祝各位同学考试顺利！',
     body7004_7027_1005:
       '{{code1}} Tutorial 已取消：Class A & B 取消 Nov 2、Nov 11；Class C & D 取消 Oct 31、Nov 10。{{code2}}（Class B & C）1 月 9 日讲座已取消并改期：Class B 改至 1 月 16 日 14:00-17:00（LT104）；Class C 改至 1 月 16 日 09:30-12:30（LT104）。可参考下方日历查看相关改动。',
+    body_1119:
+      '{{code1}} 考试时间已更新为 Nov 28（Sat）09:30-12:00；{{code2}} 考试时间已更新为 Nov 30（Mon）14:00-16:30。{{code3}} Class A 的 Dec 16 讲座已取消并改至 Dec 17，Tutorial 安排已更新。{{code4}} Class A 的 Jan 13 讲座改至 Jan 18；期末汇报改至 Jan 19（Classroom H）。{{code5}} Tutorial 安排已更新。{{code6}} 因选课人数不足已取消。{{code7}} Class A 的 Dec 11、Dec 18 讲座时间与教室已更新。可参考下方日历查看相关改动。',
     colCourse: '课程',
     colClass: '班',
     colItem: '调整项',

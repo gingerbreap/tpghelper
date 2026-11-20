@@ -905,9 +905,9 @@
       "kind": "exam",
       "date": "2026-11-28",
       "startTime": "09:30",
-      "endTime": "12:30",
+      "endTime": "12:00",
       "venue": "LT104, Classroom ABC, D, EFG, J",
-      "raw": "Nov 28, 2026 (Sat), 09:30-12:30, LT104, Classroom ABC, D, EFG, J"
+      "raw": "Nov 28, 2026 (Sat), 09:30-12:00, LT104, Classroom ABC, D, EFG, J"
     },
     "sections": [
       {
@@ -1590,9 +1590,9 @@
       "kind": "exam",
       "date": "2026-11-30",
       "startTime": "14:00",
-      "endTime": "17:00",
+      "endTime": "16:30",
       "venue": "LT104, LTA, Classroom ABC, EFG, J, A205-1&2",
-      "raw": "Nov 30, 2026 (Mon), 14:00-17:00, LT104, LTA, Classroom ABC, EFG, J, A205-1&2"
+      "raw": "Nov 30, 2026 (Mon), 14:00-16:30, LT104, LTA, Classroom ABC, EFG, J, A205-1&2"
     },
     "sections": [
       {
@@ -2227,16 +2227,6 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2026-12-12",
-            "startTime": "18:30",
-            "endTime": "19:30",
-            "venue": "Classroom D",
-            "sessionType": "tutorial",
-            "tutorialFor": [
-              "A"
-            ]
-          },
-          {
             "date": "2026-12-14",
             "startTime": "09:30",
             "endTime": "12:30",
@@ -2244,21 +2234,21 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2026-12-16",
-            "startTime": "09:30",
-            "endTime": "12:30",
+            "date": "2026-12-14",
+            "startTime": "14:00",
+            "endTime": "15:00",
             "venue": "LTB",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-19",
-            "startTime": "18:30",
-            "endTime": "19:30",
-            "venue": "Classroom D",
             "sessionType": "tutorial",
             "tutorialFor": [
               "A"
             ]
+          },
+          {
+            "date": "2026-12-17",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "LT104",
+            "sessionType": "lecture"
           },
           {
             "date": "2026-12-21",
@@ -2268,23 +2258,23 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-04",
-            "startTime": "09:30",
-            "endTime": "12:30",
-            "venue": "LTA",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2027-01-04",
-            "startTime": "18:30",
-            "endTime": "19:30",
-            "venue": "Classroom D",
+            "date": "2026-12-21",
+            "startTime": "14:00",
+            "endTime": "15:00",
+            "venue": "LTB",
             "sessionType": "tutorial",
             "tutorialFor": [
               "A"
             ]
           },
           {
+            "date": "2027-01-04",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "LTA",
+            "sessionType": "lecture"
+          },
+          {
             "date": "2027-01-07",
             "startTime": "09:30",
             "endTime": "12:30",
@@ -2293,9 +2283,9 @@
           },
           {
             "date": "2027-01-07",
-            "startTime": "18:30",
-            "endTime": "19:30",
-            "venue": "Classroom D",
+            "startTime": "17:00",
+            "endTime": "18:00",
+            "venue": "Classroom H",
             "sessionType": "tutorial",
             "tutorialFor": [
               "A"
@@ -2316,10 +2306,10 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-16",
-            "startTime": "18:30",
-            "endTime": "19:30",
-            "venue": "Classroom D",
+            "date": "2027-01-14",
+            "startTime": "17:00",
+            "endTime": "18:00",
+            "venue": "Classroom H",
             "sessionType": "tutorial",
             "tutorialFor": [
               "A"
@@ -2340,11 +2330,11 @@
     "outlinePdfPath": "courseOutline/M3/MSBA7014-Business-Simulation-(2026-27).pdf",
     "examOrFinal": {
       "kind": "presentation",
-      "date": "2027-01-16",
+      "date": "2027-01-19",
       "startTime": "18:30",
       "endTime": "21:30",
-      "venue": "LT104",
-      "raw": "Final Presentation: Jan 16, 2027 (Sat), 18:30-21:30, LT104"
+      "venue": "Classroom H",
+      "raw": "Final Presentation: Jan 19, 2027 (Tue), 18:30-21:30, Classroom H"
     },
     "sections": [
       {
@@ -2426,7 +2416,7 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-13",
+            "date": "2027-01-18",
             "startTime": "18:30",
             "endTime": "21:30",
             "venue": "LT104",
@@ -2549,21 +2539,21 @@
             "sessionType": "lecture"
           },
           {
-            "date": "2027-01-07",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2027-01-08",
-            "startTime": "09:30",
-            "endTime": "10:30",
+            "date": "2027-01-05",
+            "startTime": "17:00",
+            "endTime": "18:00",
             "venue": "Classroom D",
             "sessionType": "tutorial",
             "tutorialFor": [
               "A"
             ]
+          },
+          {
+            "date": "2027-01-07",
+            "startTime": "18:30",
+            "endTime": "21:30",
+            "venue": "LT104",
+            "sessionType": "lecture"
           },
           {
             "date": "2027-01-11",
@@ -3434,90 +3424,14 @@
             "name": "Prof. Zhenhui Jack JIANG"
           }
         ],
-        "timeBucket": "NT",
-        "dayPattern": "Tuesday & Friday 18:30-21:30",
+        "timeBucket": "AM",
+        "dayPattern": "Tuesday & Friday 9:30-12:30",
         "meetingDays": [
-          0,
-          1,
           2,
-          3,
-          4,
-          5,
-          6
+          5
         ],
         "outlinePdfPath": "courseOutline/CE/MSBA7030_Digital_Innovation_2627.pdf",
-        "meetings": [
-          {
-            "date": "2026-12-01",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-02",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTB",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-03",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "Classroom D",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-04",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-06",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTA",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-07",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTB",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-08",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-09",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "Classroom D",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-11",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LT104",
-            "sessionType": "lecture"
-          },
-          {
-            "date": "2026-12-19",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTB",
-            "sessionType": "lecture"
-          }
-        ]
+        "meetings": []
       }
     ]
   },
@@ -3577,9 +3491,9 @@
           },
           {
             "date": "2026-12-11",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTB",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "Classroom J",
             "sessionType": "lecture"
           },
           {
@@ -3591,9 +3505,9 @@
           },
           {
             "date": "2026-12-18",
-            "startTime": "18:30",
-            "endTime": "21:30",
-            "venue": "LTB",
+            "startTime": "09:30",
+            "endTime": "12:30",
+            "venue": "LT104",
             "sessionType": "lecture"
           },
           {
