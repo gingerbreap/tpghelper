@@ -3,6 +3,7 @@
  * Prefer /api → public meta.json → pack compile-time fallback.
  */
 import { getActiveProgramme } from '../programmes'
+import { fetchWithTimeout } from '../utils/fetchWithTimeout'
 
 const packFallback = getActiveProgramme().dataSync
 
@@ -73,7 +74,11 @@ export async function loadProgrammeMeta(): Promise<typeof source> {
   const base = import.meta.env.BASE_URL
 
   try {
-    const apiRes = await fetch(`/api/programmes/${programme.id}/meta`)
+    const apiRes = await fetchWithTimeout(
+      `/api/programmes/${programme.id}/meta`,
+      { cache: 'no-store' },
+      4000,
+    )
     if (apiRes.ok) {
       const body: unknown = await apiRes.json()
       const hkt = readHkt(body)

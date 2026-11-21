@@ -34,11 +34,18 @@ export async function getPool() {
   }
   if (!poolPromise) {
     poolPromise = (async () => {
+      // #region agent log
+      const _t0 = Date.now()
+      fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'db.js:getPool:start',message:'SQL pool connect start',data:{server:SQL_SERVER,database:SQL_DATABASE,auth:SQL_AUTH},timestamp:Date.now()})}).catch(()=>{})
+      // #endregion
       if (SQL_AUTH !== 'entra') {
         throw new Error(`Unsupported SQL_AUTH="${SQL_AUTH}" (expected entra)`)
       }
       const token = await accessToken()
-      return sql.connect({
+      // #region agent log
+      fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'db.js:getPool:token',message:'Entra token acquired',data:{ms:Date.now()-_t0,tokenLen:token?.length??0},timestamp:Date.now()})}).catch(()=>{})
+      // #endregion
+      const pool = await sql.connect({
         server: SQL_SERVER,
         database: SQL_DATABASE,
         authentication: {
@@ -48,6 +55,9 @@ export async function getPool() {
         options: {
           encrypt: true,
           trustServerCertificate: false,
+          // Serverless auto-pause wake can exceed this; fail fast → filesystem catalogue.
+          connectTimeout: Number(process.env.SQL_CONNECT_TIMEOUT_MS || 5000),
+          requestTimeout: Number(process.env.SQL_REQUEST_TIMEOUT_MS || 15000),
         },
         pool: {
           max: 5,
@@ -55,7 +65,14 @@ export async function getPool() {
           idleTimeoutMillis: 30000,
         },
       })
+      // #region agent log
+      fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'db.js:getPool:connected',message:'SQL connected',data:{ms:Date.now()-_t0},timestamp:Date.now()})}).catch(()=>{})
+      // #endregion
+      return pool
     })().catch(err => {
+      // #region agent log
+      fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'db.js:getPool:error',message:'SQL pool failed',data:{err:err instanceof Error?err.message:String(err)},timestamp:Date.now()})}).catch(()=>{})
+      // #endregion
       poolPromise = null
       throw err
     })

@@ -5,6 +5,7 @@
 import { teachingPlanNotices as packFallback } from '../programmes/activePack'
 import type { TeachingPlanNotice } from '../programmes/activePack'
 import { getActiveProgramme } from '../programmes'
+import { fetchWithTimeout } from '../utils/fetchWithTimeout'
 
 let notices: TeachingPlanNotice[] = [...packFallback]
 let source: 'pack' | 'api' | 'json' | 'pending' = 'pack'
@@ -45,9 +46,20 @@ export function setTeachingPlanNotices(
 export async function loadTeachingPlanNotices(): Promise<typeof source> {
   const programme = getActiveProgramme()
   const base = import.meta.env.BASE_URL
+  // #region agent log
+  const _t0 = performance.now()
+  fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'D',location:'teachingPlanNoticesStore.ts:start',message:'notices hydrate start',data:{programmeId:programme.id},timestamp:Date.now()})}).catch(()=>{})
+  // #endregion
 
   try {
-    const apiRes = await fetch(`/api/programmes/${programme.id}/notices`)
+    const apiRes = await fetchWithTimeout(
+      `/api/programmes/${programme.id}/notices`,
+      { cache: 'no-store' },
+      4000,
+    )
+    // #region agent log
+    fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'post-fix',hypothesisId:'D',location:'teachingPlanNoticesStore.ts:apiRes',message:'notices API response',data:{status:apiRes.status,ok:apiRes.ok,ms:Math.round(performance.now()-_t0)},timestamp:Date.now()})}).catch(()=>{})
+    // #endregion
     if (apiRes.ok) {
       const body: unknown = await apiRes.json()
       if (
@@ -93,7 +105,11 @@ export async function loadProgrammeNoticesCatalog(
   if (cached) return cached
 
   try {
-    const apiRes = await fetch(`/api/programmes/${programmeId}/notices`)
+    const apiRes = await fetchWithTimeout(
+      `/api/programmes/${programmeId}/notices`,
+      { cache: 'no-store' },
+      4000,
+    )
     if (apiRes.ok) {
       const body: unknown = await apiRes.json()
       if (

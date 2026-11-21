@@ -135,12 +135,12 @@ const pwaPlugin = VitePWA({
     // for the lander SW so sibling apps are not claimed.
     navigateFallbackDenylist: [
       /\.pdf$/i,
+      /^\/api(?:\/|$)/i,
       ...(programmeId === 'lander'
         ? [
             /^\/msba(?:\/|$)/i,
             /^\/mgm(?:\/|$)/i,
             /^\/mecon(?:\/|$)/i,
-            /^\/api(?:\/|$)/i,
           ]
         : []),
     ],

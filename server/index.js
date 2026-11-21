@@ -32,11 +32,21 @@ app.get('/api/programmes/:programmeId/courses', async (req, res) => {
     return
   }
   const year = typeof req.query.year === 'string' && req.query.year ? req.query.year : academicYearDefault()
+  // #region agent log
+  const _t0 = Date.now()
+  fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'server/index.js:courses:start',message:'API courses request',data:{programmeId,year,sqlConfigured:sqlConfigured()},timestamp:Date.now()})}).catch(()=>{})
+  // #endregion
   try {
     const { courses, source, year: y } = await getProgrammeCourses(programmeId, year)
+    // #region agent log
+    fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'server/index.js:courses:done',message:'API courses done',data:{programmeId,source,count:courses?.length??0,ms:Date.now()-_t0},timestamp:Date.now()})}).catch(()=>{})
+    // #endregion
     res.setHeader('Cache-Control', 'public, max-age=60')
     res.json({ programmeId, academicYear: y, source, courses })
   } catch (err) {
+    // #region agent log
+    fetch('http://127.0.0.1:7469/ingest/4ca7d749-a7d9-4b5d-ae5c-233979a57a10',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ca5ade'},body:JSON.stringify({sessionId:'ca5ade',runId:'pre',hypothesisId:'B',location:'server/index.js:courses:error',message:'API courses error',data:{programmeId,err:err?.message||String(err),ms:Date.now()-_t0},timestamp:Date.now()})}).catch(()=>{})
+    // #endregion
     const status = err.status || 500
     console.error('[api] courses', programmeId, err)
     res.status(status).json({
